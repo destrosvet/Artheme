@@ -344,6 +344,6 @@ add_filter ('wp_nav_menu_args', 'define_class');
 
 function theme_add_bootstrap() {
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );
-	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+//	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );

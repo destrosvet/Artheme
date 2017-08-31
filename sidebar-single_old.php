@@ -1,34 +1,35 @@
-<!--    <div class="single_sidebar">-->
-<!--    -->
-<!--      --><?php
-//      $args = array(
-////                   'category_name' => 'featured small',
-//                   'post_type' => 'post',
-//                   'posts_per_page' => 6,
-//				   'orderby' => 'rand',
-//                   'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-//                   );
-//      query_posts($args);
-//      $x = 0;
-//      while (have_posts()) : the_post(); ?><!--    -->
-<!--      -->
-<!--      --><?php //if($x % 2 == 0) { ?>
-<!--        <div class="recent_box">-->
-<!--      --><?php //} else { ?>
-<!--        <div class="recent_box recent_right">-->
-<!--      --><?php //} ?>
-<!--        -->
-<!--<!--        <a href="-->--><?php //the_permalink(); ?><!--<!--"class="img_hover_trans">-->--><?php ////the_post_thumbnail('recent-sidebar'); ?><!--<!--</a>-->-->
-<!--<!--        -->-->
-<!--        -->
-<!--        </div><!--//recent_box-->-->
-<!--        -->
-<!--        --><?php //if($x % 2 == 1) { ?>
-<!--          <div class="clear"></div>-->
-<!--        --><?php //} ?>
-<!---->
-<!--        --><?php //$x++; echo $x?>
-<!--      -->
-<!--      --><?php //endwhile; ?><!--      -->
-<!--    -->
-<!--    </div><!--//single_sidebar-->-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script>document.documentElement.className = 'doc-not-ready';</script>
+	<?php wp_head(); ?>
+    <!--        <script>
+			var artalkFontActiveCallback = jQuery.Callbacks();
+			 WebFont.load({
+				 custom: { families: ['SimplonNorm'] },
+				 active: function () { artalkFontActiveCallback.fire(); },
+			 });
+			</script>-->
+</head>
+<body>
+<div class="row-fluid">
+    <div class="container">
+        <h1 class="site-title hidden"><?php bloginfo('name'); ?></h1>
+        <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php do_action('artalk_logo'); ?>
+        </a>
+    </div>
+    <nav class="navbar-art">
+        <div class="container nopadding navbar-art-container">
+			<?php wp_nav_menu(array(
+				'theme_location' => 'main-menu',
+//                        'container_class'   => 'navbar-collapse collapse',
+				'menu_class'        => 'nav navbar-nav'
+			)); ?>
+
+        </div>
+    </nav>
+    <div class="container post-container">
