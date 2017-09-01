@@ -45,7 +45,7 @@
                         <span id ="icona" class="icon-bar"></span>
                     </button>
                     </div>
-                <div id="myNavbar" class="accordion-body collapse">
+                <div id="myNavbar" class="collapse">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'main-menu',
