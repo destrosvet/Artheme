@@ -1,11 +1,14 @@
 /*
-Theme Name:Artheme
-Theme URI: http://www.artalk.cz
-Description: Artheme for artalk
-Author: Filip Uhlir
-Author URI: http://www.teapot.cz
-Tags: 3 column theme, red, blue, magazine
-/*!
+* Theme Name:Artheme
+* Theme URI: http://www.artalk.cz
+* Description: Artheme for artalk
+* Author: Filip Uhlir
+* Author URI: http://www.teapot.cz
+* Tags: 3 column theme, red, blue, magazine
+* Version:          0.1.0
+* Template Version: 0.5.0
+* GitHub Theme URL: https://github.com/glmcz/Artheme
+/*
 
 # Table of Content:
 - Normalize
@@ -24,6 +27,7 @@ and open the template in the editor.
     Author     : Filip Uhlir
 */
 @import "vars";
+
 
 html {
   font-family: Arial, Helvetica, sans-serif;
@@ -3157,6 +3161,7 @@ Artheme author widget
   .bar-info{
     margin-left: 15px;
     margin-right: 5px;
+    margin-bottom: 20px !important;
   }
 }
 
@@ -3455,6 +3460,10 @@ Feature Box
   width: 100%;
   vertical-align: bottom;
 }
+
+#plus{
+  background-image: url('../artheme/assets/images/plus.png');
+}
 #search-text {
   border: 0px;
   border-bottom-width: 0px ;
@@ -3467,59 +3476,31 @@ Feature Box
   background-image: url('../artheme/assets/images/searchicon.png');
   background-repeat: no-repeat;
   background-position: right;
-  background-size: 35px 25px;
+  background-size: 35px 30px;
   margin-top: 17%;
 }
-//@media only screen and (max-width: 780px){
-//  #search-button{
-//    margin-top: 0%;
-//  }
-//  #search-text{
-//    margin-top: 0%;
-//  }
-//}
 
-//End Mobile menu
+.collapse {
+  display: none;
+  &.in      { display: block; }
+  // [converter] extracted tr&.in to tr.collapse.in
+  // [converter] extracted tbody&.in to tbody.collapse.in
+}
+tr.collapse.in    { display: table-row; }
+tbody.collapse.in { display: table-row-group; }
 
-.navbar-collapse {
-  overflow-x: visible;
-  padding-right: $navbar-padding-horizontal;
-  padding-left:  $navbar-padding-horizontal;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
-  @include clearfix;
-  -webkit-overflow-scrolling: touch;
 
-  &.in {
-    overflow-y: auto;
-  }
-
-  @media (min-width: $grid-float-breakpoint) {
-    width: auto;
-    border-top: 0;
-    box-shadow: none;
-
-    &.collapse {
-      display: block !important;
-      height: auto !important;
-      padding-bottom: 0; // Override default setting
-      overflow: visible !important;
-    }
-
-    &.in {
-      overflow-y: visible;
-    }
-
-    // Undo the collapse side padding for navbars with containers to ensure
-    // alignment of right-aligned contents.
-    .navbar-fixed-top &,
-    .navbar-static-top &,
-    .navbar-fixed-bottom & {
-      padding-left: 0;
-      padding-right: 0;
-    }
+.collapse{
+  @media(min-width:780px ) {
+    display: block !important;
   }
 }
+@media only screen and(max-width: 780px) {
+  #myNavbar {
+    text-align: center;  }
+}
+//End Mobile menu
+
 .collapse.in {
   text-align: center;
 }
@@ -3533,6 +3514,7 @@ Feature Box
     }
   }
 }
+
 
 
 // Both navbar header and collapse
@@ -3552,104 +3534,3 @@ Feature Box
     }
   }
 }
-// Navbar nav links
-//
-// Builds on top of the `.nav` components with its own modifier class to make
-// the nav the full height of the horizontal nav (above 768px).
-
-.navbar-nav {
-  margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
-
-  > li > a {
-    padding-top:    10px;
-    padding-bottom: 10px;
-    line-height: $line-height-computed;
-  }
-
-  @media (max-width: $grid-float-breakpoint-max) {
-    // Dropdowns get custom display when collapsed
-    .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      box-shadow: none;
-      > li > a,
-      .dropdown-header {
-        padding: 5px 15px 5px 25px;
-      }
-      > li > a {
-        line-height: $line-height-computed;
-        &:hover,
-        &:focus {
-          background-image: none;
-        }
-      }
-    }
-  }
-
-  // Uncollapse the nav
-  @media (min-width: $grid-float-breakpoint) {
-    float: left;
-    margin: 0;
-
-    > li {
-      float: left;
-      > a {
-        padding-top:    $navbar-padding-vertical;
-        padding-bottom: $navbar-padding-vertical;
-      }
-    }
-  }
-}
-// Navbar toggle
-//
-// Custom button for toggling the `.navbar-collapse`, powered by the collapse
-// JavaScript plugin.
-
-.navbar-toggle {
-  position: relative;
-  float: right;
-  margin-right: $navbar-padding-horizontal;
-  padding: 9px 10px;
-  @include navbar-vertical-align(34px);
-  background-color: transparent;
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
-  border-radius: $border-radius-base;
-
-  // We remove the `outline` here, but later compensate by attaching `:hover`
-  // styles to `:focus`.
-  &:focus {
-    outline: 0;
-  }
-
-  // Bars
-  .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px;
-  }
-  .icon-bar + .icon-bar {
-    margin-top: 4px;
-  }
-  @media (min-width: $grid-float-breakpoint) {
-    display: none;
-  }
-}
-.collapse {
-  display: none;
-  &.in      { display: block; }
-  // [converter] extracted tr&.in to tr.collapse.in
-  // [converter] extracted tbody&.in to tbody.collapse.in
-}
-tr.collapse.in    { display: table-row; }
-tbody.collapse.in { display: table-row-group; }
-
-#plus{
-  background-image: url("/wp-content/themes/Artheme/assets/images/plus.png");
-}
-

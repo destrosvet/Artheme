@@ -2,7 +2,6 @@
   
   <div id="content">
 
-
       <?php if (have_posts()) : ?>
       <?php $x = 0; ?>
       <?php while (have_posts()) : the_post(); ?>
@@ -31,7 +30,7 @@
 
       <?php else : ?>
 
-      <h3>No posts found. Try a different search?</h2>
+      <h2>No posts found. Try a different search?</h2>
       <?php get_search_form(); ?>
 
     <?php endif; ?>

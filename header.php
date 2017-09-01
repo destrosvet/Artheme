@@ -19,16 +19,17 @@
     <div id="no-padding-right" class="container">
         <h1 class="site-title hidden"><?php bloginfo('name'); ?></h1>
         <div class="row logo-search">
-        <div class="col-md-8 col-xs-2  nopadding">
+        <div class="col-md-8 col-xs-2 nopadding">
         <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php do_action('artalk_logo'); ?>
         </a>
         </div>
         <div class="col-md-4 col-xs-10 nopadding">
-        <a id="search-button"class="button"
-           href="
-<!--           --><?php //get_template_part('search')  ?>
-" >
+        <a id="search-button"class="button" href="
+        <?php
+                echo home_url().''
+        ?>
+        " >
             <img src="<?php echo get_template_directory_uri().'/assets/images/plus.png' ?>" alt=""/>
         </a>
         <input id="search-text" type="text" class="search-query form-control" />
@@ -44,7 +45,7 @@
                         <span id ="icona" class="icon-bar"></span>
                     </button>
                     </div>
-                <div id="myNavbar" class="collapse">
+                <div id="myNavbar" class="accordion-body collapse">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'main-menu',

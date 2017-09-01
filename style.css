@@ -1,11 +1,14 @@
 /*
-Theme Name:Artheme
-Theme URI: http://www.artalk.cz
-Description: Artheme for artalk
-Author: Filip Uhlir
-Author URI: http://www.teapot.cz
-Tags: 3 column theme, red, blue, magazine
-/*!
+* Theme Name:Artheme
+* Theme URI: http://www.artalk.cz
+* Description: Artheme for artalk
+* Author: Filip Uhlir
+* Author URI: http://www.teapot.cz
+* Tags: 3 column theme, red, blue, magazine
+* Version:          0.1.0
+* Template Version: 0.5.0
+* GitHub Theme URL: https://github.com/glmcz/Artheme
+/*
 
 # Table of Content:
 - Normalize
@@ -2552,7 +2555,8 @@ Artheme author widget
 @media only screen and (max-width: 780px) {
   .bar-info {
     margin-left: 15px;
-    margin-right: 5px; } }
+    margin-right: 5px;
+    margin-bottom: 20px !important; } }
 .bar-info {
   line-height: 34px;
   height: 34px;
@@ -2798,6 +2802,9 @@ authors-list-single-text {
   width: 100%;
   vertical-align: bottom; }
 
+#plus {
+  background-image: url("../artheme/assets/images/plus.png"); }
+
 #search-text {
   border: 0px;
   border-bottom-width: 0px;
@@ -2810,39 +2817,27 @@ authors-list-single-text {
   background-image: url("../artheme/assets/images/searchicon.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: 35px 25px;
+  background-size: 35px 3px;
   margin-top: 17%; }
 
-.navbar-collapse {
-  overflow-x: visible;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  -webkit-overflow-scrolling: touch; }
-  .navbar-collapse:before, .navbar-collapse:after {
-    content: " ";
-    display: table; }
-  .navbar-collapse:after {
-    clear: both; }
-  .navbar-collapse.in {
-    overflow-y: auto; }
-  @media (min-width: 768px) {
-    .navbar-collapse {
-      width: auto;
-      border-top: 0;
-      box-shadow: none; }
-      .navbar-collapse.collapse {
-        display: block !important;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important; }
-      .navbar-collapse.in {
-        overflow-y: visible; }
-      .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-        padding-left: 0;
-        padding-right: 0; } }
+.collapse {
+  display: none; }
+  .collapse.in {
+    display: block; }
 
+tr.collapse.in {
+  display: table-row; }
+
+tbody.collapse.in {
+  display: table-row-group; }
+
+@media (min-width: 780px) {
+  .collapse {
+    display: block !important; } }
+
+@media only screen and (max-width: 780px) {
+  #myNavbar {
+    text-align: center; } }
 .collapse.in {
   text-align: center; }
 
@@ -2867,75 +2862,5 @@ authors-list-single-text {
     .container-fluid > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
-
-.navbar-nav {
-  margin: 7.5px -15px; }
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 20px; }
-  @media (max-width: 767px) {
-    .navbar-nav .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      box-shadow: none; }
-      .navbar-nav .open .dropdown-menu > li > a,
-      .navbar-nav .open .dropdown-menu .dropdown-header {
-        padding: 5px 15px 5px 25px; }
-      .navbar-nav .open .dropdown-menu > li > a {
-        line-height: 20px; }
-        .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
-          background-image: none; } }
-  @media (min-width: 768px) {
-    .navbar-nav {
-      float: left;
-      margin: 0; }
-      .navbar-nav > li {
-        float: left; }
-        .navbar-nav > li > a {
-          padding-top: 15px;
-          padding-bottom: 15px; } }
-
-.navbar-toggle {
-  position: relative;
-  float: right;
-  margin-right: 15px;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px; }
-  .navbar-toggle:focus {
-    outline: 0; }
-  .navbar-toggle .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px; }
-  .navbar-toggle .icon-bar + .icon-bar {
-    margin-top: 4px; }
-  @media (min-width: 768px) {
-    .navbar-toggle {
-      display: none; } }
-
-.collapse {
-  display: none; }
-  .collapse.in {
-    display: block; }
-
-tr.collapse.in {
-  display: table-row; }
-
-tbody.collapse.in {
-  display: table-row-group; }
-
-#plus {
-  background-image: url("/wp-content/themes/Artheme/assets/images/plus.png"); }
 
 /*# sourceMappingURL=style.css.map */
