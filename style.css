@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.0
-* Template Version: 0.5.0
+* Version:          0.1.1
+* Template Version: 0.5.1
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -140,6 +140,9 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em; }
+
+article a {
+  color: #212121; }
 
 button,
 input,
@@ -358,7 +361,7 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #337ab7;
+  color: #212121;
   text-decoration: none; }
 
 a:hover,
@@ -1976,8 +1979,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .nopadding780 {
     padding: 0 !important; }
 
-  .noleftpadding780 {
-    padding: 0 !important; } }
+  .noleftpadding-for-780 {
+    padding-left: 0 !important; } }
 .nopadding {
   padding: 0 !important; }
 
@@ -2377,6 +2380,9 @@ Artheme author widget
 
 .post-container {
   background-color: #F9F9F9; }
+
+.single-content a {
+  text-decoration: underline; }
 
 .post-meta li {
   text-transform: uppercase;
@@ -2793,6 +2799,29 @@ authors-list-single-text {
 #icona {
   background-color: #212121; }
 
+.custom form.search_form_image_button {
+  font-family: arial;
+  margin-left: auto;
+  margin-right: 0;
+  width: 260px; }
+
+.custom form.search_form_image_button #s {
+  background: #fff;
+  border: 1px solid #BBB59A;
+  font-size: 12px;
+  font-variant: small-caps;
+  margin: 0 6px 0 0;
+  padding: 4px;
+  width: 214px; }
+
+.custom input#searchsubmit.my-search-image {
+  background: #fff url("/assets/images/searchicon.png") no-repeat 50% 50%;
+  border: 0 none;
+  cursor: pointer;
+  height: 28px;
+  text-indent: -9999px;
+  width: 28px; }
+
 #search-button {
   float: right;
   margin-top: 17%; }
@@ -2803,7 +2832,7 @@ authors-list-single-text {
   vertical-align: bottom; }
 
 #plus {
-  background-image: url("../artheme/assets/images/plus.png"); }
+  background-image: url("/assets/images/plus.png"); }
 
 #search-text {
   border: 0px;
@@ -2814,10 +2843,10 @@ authors-list-single-text {
   margin-bottom: 5px;
   background: transparent;
   float: right;
-  background-image: url("../artheme/assets/images/searchicon.png");
+  background-image: url("/assets/images/searchicon.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: 35px 3px;
+  background-size: 35px 30px;
   margin-top: 17%; }
 
 .collapse {
@@ -2831,11 +2860,11 @@ tr.collapse.in {
 tbody.collapse.in {
   display: table-row-group; }
 
-@media (min-width: 780px) {
+@media (min-width: 765px) {
   .collapse {
     display: block !important; } }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 765px) {
   #myNavbar {
     text-align: center; } }
 .collapse.in {

@@ -347,3 +347,16 @@ function theme_add_bootstrap() {
 //	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
+
+
+function search_with_image_submit() {
+	?>
+	<form method="get" class="search_form_image_button" action="<?php echo home_url(); ?>">
+		<p>
+			<input class="text_input" type="text" value="Enter Text &amp; Click to Search" name="s" id="s" onfocus="if (this.value == 'Enter Text &amp; Click to Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter Text &amp; Click to Search';}" />
+			<input type="submit" class="my-search-image" id="searchsubmit" value="" />
+		</p>
+	</form>
+	<?php
+}
+add_action('thesis_hook_before_content', 'search_with_image_submit');

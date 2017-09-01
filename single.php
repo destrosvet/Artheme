@@ -1,7 +1,7 @@
 <?php get_header();   ?>
     <div class="row">
         <article>
-            <div class="col-md-8 no-margin text_width ">
+            <div class="col-md-8 no-margin single-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post();?>
 

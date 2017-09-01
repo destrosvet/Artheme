@@ -1,5 +1,10 @@
-<?php get_header(); ?>    
-  
+<?php /*
+Template Name: Search Page
+*/
+?>
+<?php if (function_exists('get_header')){
+    get_header();} endif?>
+
   <div id="content">
 
       <?php if (have_posts()) : ?>
@@ -34,9 +39,9 @@
       <?php get_search_form(); ?>
 
     <?php endif; ?>
-    
+
   </div><!--//content-->
-  
+
 
 <?php get_sidebar(); ?>
 

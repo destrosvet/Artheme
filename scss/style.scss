@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.0
-* Template Version: 0.5.0
+* Version:          0.1.1
+* Template Version: 0.5.1
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -156,6 +156,8 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
+article a {
+  color: $ArtBlack;}
 
 button,
 input,
@@ -415,7 +417,7 @@ textarea {
 }
 
 a {
-  color: #337ab7;
+  color: $ArtBlack;
   text-decoration: none;
 }
 
@@ -2324,8 +2326,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .nopadding780 {
     padding: 0 !important;
   }
-  .noleftpadding780{
-    padding: 0 !important;
+  .noleftpadding-for-780{
+    padding-left: 0 !important;
 
   }
 
@@ -2893,16 +2895,14 @@ Artheme author widget
 .author_details{
   text-align: initial;
 }
-
-
 .post-container {
   background-color: $ArtInnerColor;
 
 }
-.text_width p{
-  //width: 600px;
-}
+.single-content{
+  a{text-decoration: underline;}
 
+}
 .post-meta {
   li {
     text-transform: uppercase;
@@ -3297,6 +3297,7 @@ Feature Box
   color: $ArtBlack;
 }
 
+
 .focuswp-content {
   h2 {
     font-size: 28px;
@@ -3451,6 +3452,33 @@ Feature Box
 #icona {
   background-color: $ArtBlack; }
 
+.custom form.search_form_image_button {
+  font-family:arial;
+  margin-left:auto;
+  margin-right:0;
+  width:260px;
+}
+
+.custom form.search_form_image_button #s {
+  background:#fff;
+  border:1px solid #BBB59A;
+  font-size:12px;
+  font-variant:small-caps;
+  margin:0 6px 0 0;
+  padding:4px;
+  width:214px;
+}
+
+.custom input#searchsubmit.my-search-image {
+  background:#fff url("/assets/images/searchicon.png") no-repeat 50% 50%;
+  border:0 none;
+  cursor:pointer;
+  height:28px;
+  text-indent:-9999px;
+  width:28px;
+}
+
+
 #search-button {
   float: right;
   margin-top: 17%;
@@ -3462,7 +3490,7 @@ Feature Box
 }
 
 #plus{
-  background-image: url('../artheme/assets/images/plus.png');
+  background-image: url('/assets/images/plus.png');
 }
 #search-text {
   border: 0px;
@@ -3473,7 +3501,7 @@ Feature Box
   margin-bottom: 5px;
   background: transparent;
   float: right;
-  background-image: url('../artheme/assets/images/searchicon.png');
+  background-image: url('/assets/images/searchicon.png');
   background-repeat: no-repeat;
   background-position: right;
   background-size: 35px 30px;
@@ -3491,11 +3519,11 @@ tbody.collapse.in { display: table-row-group; }
 
 
 .collapse{
-  @media(min-width:780px ) {
+  @media(min-width:765px ) {
     display: block !important;
   }
 }
-@media only screen and(max-width: 780px) {
+@media only screen and(max-width: 765px) {
   #myNavbar {
     text-align: center;  }
 }
@@ -3514,9 +3542,6 @@ tbody.collapse.in { display: table-row-group; }
     }
   }
 }
-
-
-
 // Both navbar header and collapse
 //
 // When a container is present, change the behavior of the header and collapse.

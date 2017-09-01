@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="no title" charset="utf-8"/>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -25,10 +26,15 @@
         </a>
         </div>
         <div class="col-md-4 col-xs-10 nopadding">
+            <?php get_search_template();            ?>
+<!--            <form role="search" method="get" id="searchform" class="searchform" action="//example.com/">-->
+<!---->
+<!--                        <input  type="text" value="" name="s" id="s" placeholder="Search..." />-->
+<!--                        <button id="searchsubmit" type="submit"  />-->
+<!--                        <span class="icon"><i class="fa fa-search"></i></span>-->
+<!--                        </button>-->
+<!--            </form>-->
         <a id="search-button"class="button" href="
-        <?php
-                echo home_url().''
-        ?>
         " >
             <img src="<?php echo get_template_directory_uri().'/assets/images/plus.png' ?>" alt=""/>
         </a>
