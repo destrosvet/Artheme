@@ -1,14 +1,17 @@
-<aside id="sidebar" class="col-md-12 no-margin sidebar-wrapper hide-for-small text-center">
+<aside id="sidebar" class="col-md-12 no-margin sidebar-wrapper d-md-block d-sm-none text-center">
     <div class="relatedposts">
 
         <?php wp_author_info_box();?>
 
     </div>
      <div class="relatedposts">
+         <?php
+         if (get_the_author_posts() > 1): ?>
          <p class="widget_single">Dlaší články autora</p>
          <div class="relatedthumb">
              <?php echo get_related_author_posts() ?>
          </div>
+         <?php endif; ?>
         <p class="widget_single">Související články</p>
 
          <div class="relatedthumb">

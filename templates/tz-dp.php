@@ -7,7 +7,7 @@
  */
 ?>
 <div class="nopadding nomargin" id="service-bottom">
-    <div class="col-md-12 noleftpadding noleftpadding-for-780 service-b-tz" id="b-tz">
+    <div class="col-md-12 noleftpadding noleftpadding-md service-b-tz" id="b-tz">
             <?php  do_action(artalk_service_part('Tiskové zprávy','Tiskové zprávy','s-b-tz',true,10,2,'double')) ?>
     </div>
 </div>

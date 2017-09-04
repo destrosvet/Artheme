@@ -17,7 +17,7 @@
                 </div>
 
 
-                <div class="col-md-9 col_9_padding_single_right">
+                <div class="col-md-9 single-text-container">
 					<?php
 					the_contents();
                      ?>

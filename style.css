@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.1
-* Template Version: 0.5.1
+* Version:          0.1.2
+* Template Version: 0.5.2
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -745,7 +745,7 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 10px; }
+  padding: 10px 18px; }
 
 .nav > li.disabled > a {
   color: #777; }
@@ -1976,10 +1976,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px; }
 
 @media only screen and (max-width: 780px) {
-  .nopadding780 {
+  .nopadding-md {
     padding: 0 !important; }
 
-  .noleftpadding-for-780 {
+  .noleftpadding-md {
     padding-left: 0 !important; } }
 .nopadding {
   padding: 0 !important; }
@@ -2015,6 +2015,139 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .center {
   text-align: center !important; }
 
+/*
+    Visibility for displays
+ */
+.d-none {
+  display: none !important; }
+
+.d-inline {
+  display: inline !important; }
+
+.d-inline-block {
+  display: inline-block !important; }
+
+.d-block {
+  display: block !important; }
+
+.d-table {
+  display: table !important; }
+
+.d-table-cell {
+  display: table-cell !important; }
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+.d-inline-flex {
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important; }
+
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none !important; }
+
+  .d-sm-inline {
+    display: inline !important; }
+
+  .d-sm-inline-block {
+    display: inline-block !important; }
+
+  .d-sm-block {
+    display: block !important; }
+
+  .d-sm-table {
+    display: table !important; }
+
+  .d-sm-table-cell {
+    display: table-cell !important; }
+
+  .d-sm-flex {
+    display: -ms-flexbox !important;
+    display: flex !important; }
+
+  .d-sm-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important; } }
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important; }
+
+  .d-md-inline {
+    display: inline !important; }
+
+  .d-md-inline-block {
+    display: inline-block !important; }
+
+  .d-md-block {
+    display: block !important; }
+
+  .d-md-table {
+    display: table !important; }
+
+  .d-md-table-cell {
+    display: table-cell !important; }
+
+  .d-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important; }
+
+  .d-md-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important; } }
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important; }
+
+  .d-lg-inline {
+    display: inline !important; }
+
+  .d-lg-inline-block {
+    display: inline-block !important; }
+
+  .d-lg-block {
+    display: block !important; }
+
+  .d-lg-table {
+    display: table !important; }
+
+  .d-lg-table-cell {
+    display: table-cell !important; }
+
+  .d-lg-flex {
+    display: -ms-flexbox !important;
+    display: flex !important; }
+
+  .d-lg-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important; } }
+@media (min-width: 1200px) {
+  .d-xl-none {
+    display: none !important; }
+
+  .d-xl-inline {
+    display: inline !important; }
+
+  .d-xl-inline-block {
+    display: inline-block !important; }
+
+  .d-xl-block {
+    display: block !important; }
+
+  .d-xl-table {
+    display: table !important; }
+
+  .d-xl-table-cell {
+    display: table-cell !important; }
+
+  .d-xl-flex {
+    display: -ms-flexbox !important;
+    display: flex !important; }
+
+  .d-xl-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important; } }
 /*
     Artheme specific
 */
@@ -2068,11 +2201,13 @@ Artheme social button
 .no-margin {
   padding-left: 0px; }
 
-.col_9_padding_single_right {
+.single-text-container {
   padding-right: 10px;
   padding-left: 0px; }
+  .single-text-container a {
+    text-decoration: underline; }
 
-.col_9_padding_single_right img {
+.single-text-container img {
   height: auto;
   max-width: 134%;
   padding-bottom: 1em;
@@ -2171,11 +2306,11 @@ Artheme social button
 /*
 Artheme citate collum
  */
-.col_9_padding_single_right {
+.single-text-container {
   padding-right: 10px;
   padding-left: 0px; }
 
-.col_9_padding_single_right img {
+.single-text-container img {
   height: auto;
   max-width: 134%;
   min-width: 134%;
@@ -2314,14 +2449,14 @@ Artheme citate collum
   width: 191.25px; }
 
 /*
-Artheme tags
- */
-/*
 Artheme sidebar_right_collumn
  */
 .sidebar_right {
   margin-left: -25px; }
 
+/*
+Artheme tags
+ */
 div.tags {
   margin: 0;
   padding: 0;
@@ -2381,9 +2516,6 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
-.single-content a {
-  text-decoration: underline; }
-
 .post-meta li {
   text-transform: uppercase;
   list-style: none; }
@@ -2397,7 +2529,11 @@ Artheme author widget
     margin-left: 2px;
     margin-right: 2px; }
     .post-meta-single span a {
-      color: black; }
+      color: black;
+      text-decoration: none; }
+      .post-meta-single span a:hover {
+        color: #fb026a;
+        text-decoration: underline; }
   .post-meta-single time {
     margin-left: 5px;
     margin-right: 5px; }
@@ -2496,7 +2632,8 @@ Artheme author widget
 
 .service-news {
   height: 100%;
-  border-left: 1px solid black; }
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
   .service-news .s-news-content {
     padding: 10px; }
   .service-news li {
@@ -2543,8 +2680,7 @@ Artheme author widget
   float: left; }
 
 .service-photoreport {
-  height: 100%;
-  border-left: 1px solid black; }
+  height: 100%; }
   .service-photoreport .s-photoreport-content {
     padding: 10px 0px 10px 10px; }
     .service-photoreport .s-photoreport-content .photo-article {
@@ -2585,7 +2721,7 @@ Sidebar
 .side-recent-item {
   text-align: left;
   list-style: none;
-  padding-bottom: 15px; }
+  padding: 0 0 15px 0; }
   .side-recent-item a {
     color: #212121;
     display: inline-block; }
@@ -2672,7 +2808,8 @@ Feature Box
   font-size: 12px;
   line-height: 6px; }
   .focuswp-content .post-meta a {
-    color: #212121; }
+    color: #212121;
+    text-decoration: none; }
   .focuswp-content .post-meta ul {
     display: inline-block; }
 
