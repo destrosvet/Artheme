@@ -1975,7 +1975,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .col-padding {
   padding: 60px; }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 768px) {
   .nopadding-md {
     padding: 0 !important; }
 
@@ -1989,7 +1989,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     padding: 10px !important; }
 
   .hidden-md {
-    display: none !important; } }
+    display: none !important; }
+
+  .search-margin-top-xs {
+    margin-top: 0px !important; } }
 .nopadding {
   padding: 0 !important; }
 
@@ -2334,14 +2337,15 @@ Artheme citate collum
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  width: 500px; }
+  width: auto !important; }
 
 .wp-caption img {
   margin: 0;
   border: 0 none;
   padding-left: 0px;
   padding-right: 0px;
-  min-height: 500px; }
+  min-height: 500px;
+  width: 100%; }
 
 .wp-caption p.wp-caption-text {
   font-size: 11px;
@@ -2703,7 +2707,7 @@ Artheme author widget
       .service-photoreport .s-photoreport-content .photo-article a:hover {
         color: #fb026a; }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 765px) {
   .bar-info {
     margin-left: 15px;
     margin-right: 5px;
@@ -2771,7 +2775,7 @@ Utils
 /*
 Feature Box
 */
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 765px) {
   .featured {
     margin-left: 15px;
     margin-right: 5px; } }

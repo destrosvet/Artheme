@@ -15,9 +15,27 @@
                     <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
+                    <div class="col-md-4" style="float: right">
+                    <div class="single-tags-container">
+						<?php
+
+						$terms =wp_get_post_tags($post->ID);
+						//                   echo '<p>';
+						foreach($terms as $term) {
+
+							//                            echo $term->name; //the output
+							//                            echo get_tag_link($term->term_id);
+							echo '<span class="single-tags-tag"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>';
+							//                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
+
+						}
+						//                    echo '</p>';
+						//  the_tags('', '' ,'' ); ?>
+                    </div>
+                    </div>
 
 
-                <div class="col-md-9 single-text-container">
+
 					<?php
 					the_contents();
                      ?>
@@ -32,29 +50,12 @@
 					?>
 
                     <div class="clear"></div>
-                </div>
 
-                <div class="col-md-3 col_3_padding_single_left">
-                    <div class="single-tags-container">
-                        <?php
 
-                        $terms =wp_get_post_tags($post->ID);
-                        //                   echo '<p>';
-                        foreach($terms as $term) {
-
-                            //                            echo $term->name; //the output
-                            //                            echo get_tag_link($term->term_id);
-                            echo '<span class="single-tags-tag"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>';
-                            //                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
-
-                        }
-                        //                    echo '</p>';
-                        //  the_tags('', '' ,'' ); ?>
-                    </div>
                     <?php
                     do_action( 'side_matter_list_notes' );
                     ?>
-                </div>
+
 
             </div>
 
