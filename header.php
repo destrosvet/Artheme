@@ -19,39 +19,29 @@
 <div class="row-fluid">
     <div id="no-padding-right" class="container">
         <h1 class="site-title hidden"><?php bloginfo('name'); ?></h1>
-        <div class="row logo-search">
-        <div class="col-md-8 col-xs-2 nopadding">
+        <div class="row logo-search-container">
+        <div class="col-md-10 col-xs-12 nopadding">
         <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php do_action('artalk_logo'); ?>
         </a>
         </div>
-        <div class="col-md-4 col-xs-10 nopadding">
-            <?php get_search_template();            ?>
-<!--            <form role="search" method="get" id="searchform" class="searchform" action="//example.com/">-->
-<!---->
-<!--                        <input  type="text" value="" name="s" id="s" placeholder="Search..." />-->
-<!--                        <button id="searchsubmit" type="submit"  />-->
-<!--                        <span class="icon"><i class="fa fa-search"></i></span>-->
-<!--                        </button>-->
-<!--            </form>-->
-        <a id="search-button"class="button" href="
-        " >
-            <img src="<?php echo get_template_directory_uri().'/assets/images/plus.png' ?>" alt=""/>
-        </a>
-        <input id="search-text" type="text" class="search-query form-control" />
+        <div class="col-md-2 col-xs-12 nopadding">
+            <?php get_search_form();     ?>
+
+
         </div>
         </div>
     </div>
     <nav class="navbar-art">
-        <div class="container nopadding navbar-art-container">
+        <div class="container nopadding navbar-toggleable-sm navbar-art-container">
                     <div class="container">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
                         <span id ="icona" class="icon-bar"></span>
                         <span id ="icona" class="icon-bar"></span>
                         <span id ="icona" class="icon-bar"></span>
                     </button>
                     </div>
-                <div id="myNavbar" class="collapse">
+                <div id="myNavbar" class="navbar-collapse collapse">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'main-menu',
@@ -62,7 +52,6 @@
                         'container_id'      => 'bs-example-navbar-collapse-1',
                         //Process nav menu using our custom nav walker
                     ));
-
                     ?>
                 </div>
 

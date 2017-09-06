@@ -8,7 +8,7 @@
 function bg_recent_comments($no_comments = 5, $comment_len = 30, $avatar_size = 48) {
     $comments_query = new WP_Comment_Query();
     $comments = $comments_query->query( array( 'number' => $no_comments ) );
-    $comm = '<ul class="recent-comments">';
+    $comm = '<ul class="recent-comments padding-md-10">';
     if ( $comments ) : foreach ( $comments as $comment ) :
         $comm .= '<li class="bott-border"><a class="recent-comments-post xs-top-margin" href="' . get_permalink( $comment->comment_post_ID ). '">&#9679; '.$comment->post_title.'</a>';
         $comm .= ''.$comment->comment_author.': ';
@@ -47,7 +47,7 @@ function bg_popular_post($no_posts = 5, $comment_len = 30) {
 	//$ppost.='<li><a href="'.the_permalink().'">'.the_title().'</a></li>';
     //endwhile;
     //var_dump($popular);
-    $ppost.='<ul>';
+    $ppost.='<ul class="padding-md-10">';
     foreach ( $popular as $post ) : setup_postdata( $post );
         $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; '.$post->post_title.'</a></li>';
 

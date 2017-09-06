@@ -10,6 +10,14 @@ function artalk_assets(){
 	$ver = '1.0.23';
 	$deps = array();
 
+	wp_enqueue_script(
+		'bootstrap4-js',
+		$dir.'/assets/scripts/bootstrap-4.js',
+		array(),
+		$ver,
+		false
+	);
+
 	// modernizr
 	/*wp_enqueue_script(
 		'modernizr',

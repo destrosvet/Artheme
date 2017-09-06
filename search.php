@@ -1,48 +1,32 @@
-<?php /*
-Template Name: Search Page
-*/
-?>
-<?php if (function_exists('get_header')){
-    get_header();} endif?>
+<?php get_header(); ?>
 
-  <div id="content">
+    <div class="row">
 
-      <?php if (have_posts()) : ?>
-      <?php $x = 0; ?>
-      <?php while (have_posts()) : the_post(); ?>
+        <div class="col-xs-12 col-sm-8">
 
-        <?php if($x == 0) { ?>
-        <div class="featured_box first">
-        <?php } elseif($x == 5) { ?>
-        <div class="featured_box last">
-        <?php } else { ?>
-        <div class="featured_box">
-        <?php } ?>
+            <div class="row">
 
-          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('featured-small'); ?></a>
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <p><?php echo substr(strip_tags(get_the_content()),0,150); ?></p>
-        </div><!--//featured_box-->
+				<?php
 
-        <?php if($x == 5) { $x=-1; ?>
-        <div class="clear"></div>
-        <div class="post_divider"></div>
-        <?php } ?>
+				if( have_posts() ):
 
-        <?php $x++; ?>
+					while( have_posts() ): the_post(); ?>
 
-      <?php endwhile; ?>
+						<?php get_template_part('content', 'search'); ?>
 
-      <?php else : ?>
+					<?php endwhile;
 
-      <h2>No posts found. Try a different search?</h2>
-      <?php get_search_form(); ?>
+				endif;
 
-    <?php endif; ?>
+				?>
+            </div>
 
-  </div><!--//content-->
+        </div>
 
+        <div class="col-xs-12 col-sm-4">
+			<?php get_sidebar(); ?>
+        </div>
 
-<?php get_sidebar(); ?>
+    </div>
 
 <?php get_footer(); ?>

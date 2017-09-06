@@ -342,21 +342,9 @@ function define_class ($args) {/*== Set classes of menu container ==*/
 }
 add_filter ('wp_nav_menu_args', 'define_class');
 
-function theme_add_bootstrap() {
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );
-//	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
-}
-add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 
+function wpdocs_theme_name_scripts() {
+	wp_enqueue_style( 'style-name', get_stylesheet_directory_uri().'/font-awesome-4.7.0/css/font-awesome.min.css' );
 
-function search_with_image_submit() {
-	?>
-	<form method="get" class="search_form_image_button" action="<?php echo home_url(); ?>">
-		<p>
-			<input class="text_input" type="text" value="Enter Text &amp; Click to Search" name="s" id="s" onfocus="if (this.value == 'Enter Text &amp; Click to Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter Text &amp; Click to Search';}" />
-			<input type="submit" class="my-search-image" id="searchsubmit" value="" />
-		</p>
-	</form>
-	<?php
 }
-add_action('thesis_hook_before_content', 'search_with_image_submit');
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
