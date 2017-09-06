@@ -20,40 +20,39 @@
     <div id="no-padding-right" class="container">
         <h1 class="site-title hidden"><?php bloginfo('name'); ?></h1>
         <div class="row logo-search-container">
-        <div class="col-md-10 col-xs-12 nopadding">
-        <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php do_action('artalk_logo'); ?>
-        </a>
-        </div>
-        <div class="col-md-2 col-xs-12 nopadding">
-            <?php get_search_form();     ?>
-
-
-        </div>
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 nopadding">
+                <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php do_action('artalk_logo'); ?>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 nopadding">
+				<?php get_search_form();     ?>
+            </div>
         </div>
     </div>
+
     <nav class="navbar-art">
         <div class="container nopadding navbar-toggleable-sm navbar-art-container">
-                    <div class="container">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
-                        <span id ="icona" class="icon-bar"></span>
-                        <span id ="icona" class="icon-bar"></span>
-                        <span id ="icona" class="icon-bar"></span>
-                    </button>
-                    </div>
-                <div id="myNavbar" class="navbar-collapse collapse">
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'main-menu',
-                        'menu' => 'top_menu',
-                        'container' => false,
-                        'menu_class' => 'nav navbar-nav',
-                        'container_class'   => 'collapse navbar-collapse',
-                        'container_id'      => 'bs-example-navbar-collapse-1',
-                        //Process nav menu using our custom nav walker
-                    ));
-                    ?>
-                </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+                    <span id ="icona" class="icon-bar"></span>
+                    <span id ="icona" class="icon-bar"></span>
+                    <span id ="icona" class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="myNavbar" class="navbar-collapse collapse nopadding">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'main-menu',
+					'menu' => 'top_menu',
+					'container' => false,
+					'menu_class' => 'nav navbar-nav',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'bs-example-navbar-collapse-1',
+					//Process nav menu using our custom nav walker
+				));
+				?>
+            </div>
 
         </div>
     </nav>

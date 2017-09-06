@@ -347,4 +347,42 @@ function wpdocs_theme_name_scripts() {
 	wp_enqueue_style( 'style-name', get_stylesheet_directory_uri().'/font-awesome-4.7.0/css/font-awesome.min.css' );
 
 }
+
+// dulezite >
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+
+//function gc_remove_p_tags_around_images($content)
+//{
+//	$contentWithFixedPTags =  preg_replace_callback('/<p>((?:.(?!p>))*?)(<a[^>]*>)?\s*(<img[^>]+>)(<\/a>)?(.*?)<\/p>/is', function($matches)
+//	{
+//		/*
+//		Groups 	Regex 			Description
+//			<p>			starting <p> tag
+//		1	((?:.(?!p>))*?)		match 0 or more of anything not followed by p>
+//			    .(?!p>) 		anything that's not followed by p>
+//			  ?: 			non-capturing group.
+//				    *?		match the ". modified by p> condition" expression non-greedily
+//		2	(<a[^>]*>)?		starting <a> tag (optional)
+//			\s*			white space (optional)
+//		3	(<img[^>]+>)		<img> tag
+//			\s*			white space (optional)
+//		4	(<\/a>)? 		ending </a> tag (optional)
+//		5	(.*?)<\/p>		everything up to the final </p>
+//			i modifier 		case insensitive
+//			s modifier		allows . to match multiple lines (important for 1st and 5th group)
+//		*/
+//
+//		// image and (optional) link: <a ...><img ...></a>
+//		$image = $matches[2] . $matches[3] . $matches[4];
+//		// content before and after image. wrap in <p> unless it's empty
+//		$content = trim( $matches[1] . $matches[5] );
+//		if ($content) {
+//			$content = '<figure>'. $content .'</figure>';
+//		}
+//		return $image . $content;
+//	}, $content);
+//
+//	// On large strings, this regular expression fails to execute, returning NULL
+//	return is_null($contentWithFixedPTags) ? $content : $contentWithFixedPTags;
+//}
+//add_filter('the_content', 'gc_remove_p_tags_around_images');
