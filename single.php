@@ -1,7 +1,7 @@
 <?php get_header();   ?>
     <div class="row">
         <article>
-            <div class="col-md-8 leftmargin-xs-10 no-margin single-content">
+            <div class="col-md-8 no-margin single-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post();?>
 
@@ -15,7 +15,26 @@
                     <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
-                    <div class="col-md-4 col-xs-4" style="float: right">
+
+
+                <div class="col-md-9 single-text-container">
+					<?php
+					the_contents();
+					?>
+
+					<?php endwhile; else: ?>
+
+                        <h3>Sorry, no posts matched your criteria.</h3>
+
+					<?php endif;
+
+
+					?>
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="col-md-3 col_3_padding_single_left">
                     <div class="single-tags-container">
 						<?php
 
@@ -32,30 +51,10 @@
 						//                    echo '</p>';
 						//  the_tags('', '' ,'' ); ?>
                     </div>
-                    </div>
-
-
-
 					<?php
-					the_contents();
-                     ?>
-
-					<?php endwhile; else: ?>
-
-                        <h3>Sorry, no posts matched your criteria.</h3>
-
-					<?php endif;
-
-
+					do_action( 'side_matter_list_notes' );
 					?>
-
-                    <div class="clear"></div>
-
-
-                    <?php
-                    do_action( 'side_matter_list_notes' );
-                    ?>
-
+                </div>
 
             </div>
 

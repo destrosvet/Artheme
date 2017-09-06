@@ -1995,11 +1995,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     display: none !important; }
 
   .search-margin-top-xs {
-    margin-top: 0px !important; }
-  .leftmargin-xs-10{
-    margin-left: 10px !important;
-  }
-}
+    margin-top: 0px !important; } }
 .nopadding {
   padding: 0 !important; }
 
@@ -2324,9 +2320,17 @@ Artheme social button
 
 /*
 Artheme citate collum
- */
-.single-content p {
-  margin-right: 30%; }
+*/
+.single-text-container {
+  padding-right: 10px;
+  padding-left: 0px; }
+
+.single-text-container img {
+  height: auto;
+  max-width: 134%;
+  min-width: 134%;
+  padding-bottom: 1em;
+  padding-top: 1em; }
 
 .wp-caption {
   border: 1px solid #ddd;
@@ -2336,16 +2340,14 @@ Artheme citate collum
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  width: auto !important;
-  margin-bottom: 10px; }
+  width: auto  !important; }
 
 .wp-caption img {
   margin: 0;
   border: 0 none;
   padding-left: 0px;
   padding-right: 0px;
-  min-height: 500px;
-  width: 100%; }
+  min-height: 500px; }
 
 .wp-caption p.wp-caption-text {
   font-size: 11px;
