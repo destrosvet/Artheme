@@ -343,7 +343,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2467,6 +2467,29 @@ Artheme sidebar_right_collumn
 .sidebar_right {
   margin-left: -25px; }
 
+/**
+* Mail poet Forms
+*
+ */
+.mailpoet_paragraph {
+  float: left;
+  display: block;
+  margin: 0;
+  line-height: 30px !important; }
+  .mailpoet_paragraph :first-child {
+    border-right: 1px #212121 solid; }
+  .mailpoet_paragraph .mailpoet_text {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px #212121 solid;
+    width: 190px !important; }
+  .mailpoet_paragraph .mailpoet_submit {
+    background: #212121;
+    border: 0;
+    padding-bottom: 3px;
+    width: 190px !important;
+    color: #F9F9F9; }
+
 /*
 Artheme tags
  */
@@ -2697,7 +2720,8 @@ Artheme author widget
   .service-photoreport .s-photoreport-content {
     padding: 10px 0px 10px 10px; }
     .service-photoreport .s-photoreport-content .photo-article {
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      height: 225px; }
       .service-photoreport .s-photoreport-content .photo-article img {
         object-fit: cover;
         width: 280px;
@@ -2747,7 +2771,7 @@ Sidebar
     height: 86px;
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
-    height: 57.3333333333px; }
+    height: 57.33333px; }
 
 .recent-comments .recent-comments-post {
   display: block;
@@ -2950,6 +2974,7 @@ authors-list-single-text {
   background-color: #212121; }
 
 #search-button {
+  color: #7a7a7a;
   float: right;
   margin-top: 30%;
   width: 10%;
@@ -2963,17 +2988,10 @@ authors-list-single-text {
 
 #search-text {
   border: 0px;
-  border-bottom-width: 0px;
-  border-bottom-style: none;
-  border-bottom-color: currentcolor;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #7a7a7a;
   margin-bottom: 5px;
-  background: transparent;
   float: right;
-  background-image: url("/assets/images/searchicon.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 35px 30px;
+  background: transparent;
   margin-top: 30%;
   width: 90%; }
 

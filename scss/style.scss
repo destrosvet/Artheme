@@ -2935,7 +2935,32 @@ Artheme sidebar_right_collumn
   margin-left: -25px;
 }
 
-
+/**
+* Mail poet Forms
+*
+ */
+.mailpoet_paragraph {
+  float: left;
+  display: block;
+  margin: 0;
+  line-height: 30px !important;
+  :first-child {
+    border-right: 1px $ArtBlack solid;
+  }
+  .mailpoet_text {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px $ArtBlack solid;
+    width:190px !important;
+  }
+  .mailpoet_submit {
+    background: $ArtBlack;
+    border: 0;
+    padding-bottom: 3px;
+    width:190px !important;
+    color: $ArtInnerColor;
+  }
+}
 /*
 Artheme tags
  */
@@ -3260,6 +3285,7 @@ Artheme author widget
     padding: 10px 0px 10px 10px;
     .photo-article {
       margin-bottom: 20px;
+      height: 225px;
       img {
         object-fit: cover;
         width: 280px;
@@ -3569,6 +3595,7 @@ Feature Box
   background-color: $ArtBlack; }
 
 #search-button {
+  color: #7a7a7a;
   float: right;
   margin-top: 30%;
   width: 10%;
@@ -3583,17 +3610,14 @@ Feature Box
 
 #search-text {
   border: 0px;
-  border-bottom-width: 0px ;
-  border-bottom-style: none ;
-  border-bottom-color: currentcolor;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #7a7a7a;
   margin-bottom: 5px;
-  background: transparent;
   float: right;
-  background-image: url('/assets/images/searchicon.png');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 35px 30px;
+  background: transparent;
+  //background-image: url('/assets/images/searchicon.png');
+  //background-repeat: no-repeat;
+  //background-position: right;
+  //background-size: 35px 30px;
   margin-top: 30%;
   width: 90%
 }

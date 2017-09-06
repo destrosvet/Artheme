@@ -1,12 +1,20 @@
-<div class="artalk-widget newsletter-widget">
+<?php
+/**
+ * Newsleeter form
+ * User: Filip Uhlir
+ * Date: 20.01.2017
+ * Time: 15:30
+ */
+?>
+<div class="row">
+    <div class="col-md-12 col-xs-12 recent-header nobottommargin">
+        <h5>Artalk newsletter</h5>
+    </div>
+    <div class="artalk-widget newsletter-widget">
 
-	<div class="inner">
-		<h3 class="widget-title">Artalk Newsletter</h3>
-		<p><?php _e('Máte-li zájem o pravidelné zasílání e-mailů s výběrem z nejnovějších článků, vyplňte tento formulář:','artalk');  ?></p>
-	</div>
-	<div class="newsletter-form-wrapper">
-		<?php //echo do_shortcode('[wysija_form id="1"]'); ?>
-	</div>
+        <?php $form_widget = new \MailPoet\Form\Widget();
+        echo $form_widget->widget(array('form' => 1, 'form_type' => 'php')); ?>
 
+    </div>
 </div>
 
