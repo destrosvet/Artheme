@@ -878,7 +878,10 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 18px;
+  padding: 10px 15px;
+}
+.nav li:last-child a{
+  padding-right: 0px !important;
 }
 
 .nav > li > a:hover,
@@ -2755,18 +2758,8 @@ Artheme social button
 Artheme citate collum
  */
 
-.single-text-container{
-  padding-right: 10px;
-  padding-left: 0px;
-}
-
-.single-text-container img {
-  height: auto;
-  //width: 134%;
-  max-width: 134%;
-  min-width: 134%;
-  padding-bottom: 1em;
-  padding-top: 1em;
+.single-content p {
+  margin-right: 30%;
 }
 .wp-caption {
   border: 1px solid #ddd;
@@ -2777,6 +2770,7 @@ Artheme citate collum
   -webkit-border-radius: 3px;
   border-radius: 3px;
   width: auto !important;
+  margin-bottom: 10px;
 }
 .wp-caption img {
   margin: 0;

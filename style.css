@@ -745,7 +745,10 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 18px; }
+  padding: 10px 15px; }
+
+.nav li:last-child a {
+  padding-right: 0px !important; }
 
 .nav > li.disabled > a {
   color: #777; }
@@ -1992,7 +1995,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     display: none !important; }
 
   .search-margin-top-xs {
-    margin-top: 0px !important; } }
+    margin-top: 0px !important; }
+  .leftmargin-xs-10{
+    margin-left: 10px !important;
+  }
+}
 .nopadding {
   padding: 0 !important; }
 
@@ -2318,16 +2325,8 @@ Artheme social button
 /*
 Artheme citate collum
  */
-.single-text-container {
-  padding-right: 10px;
-  padding-left: 0px; }
-
-.single-text-container img {
-  height: auto;
-  max-width: 134%;
-  min-width: 134%;
-  padding-bottom: 1em;
-  padding-top: 1em; }
+.single-content p {
+  margin-right: 30%; }
 
 .wp-caption {
   border: 1px solid #ddd;
@@ -2337,7 +2336,8 @@ Artheme citate collum
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  width: auto !important; }
+  width: auto !important;
+  margin-bottom: 10px; }
 
 .wp-caption img {
   margin: 0;

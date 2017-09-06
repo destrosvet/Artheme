@@ -1,7 +1,7 @@
 <?php get_header();   ?>
     <div class="row">
         <article>
-            <div class="col-md-8 no-margin single-content">
+            <div class="col-md-8 leftmargin-xs-10 no-margin single-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post();?>
 
@@ -15,7 +15,7 @@
                     <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
-                    <div class="col-md-4" style="float: right">
+                    <div class="col-md-4 col-xs-4" style="float: right">
                     <div class="single-tags-container">
 						<?php
 
