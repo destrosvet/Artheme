@@ -5,7 +5,7 @@
  * Date: 20.01.2017
  * Time: 15:27
  */
-function bg_recent_comments($no_comments = 5, $comment_len = 30, $avatar_size = 48) {
+function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 48) {
     $comments_query = new WP_Comment_Query();
     $comments = $comments_query->query( array( 'number' => $no_comments ) );
     $comm = '<ul class="recent-comments padding-md-10">';
@@ -24,10 +24,10 @@ function bg_recent_comments($no_comments = 5, $comment_len = 30, $avatar_size = 
     echo $comm;
 }
 
-function bg_popular_post($no_posts = 5, $comment_len = 30) {
+function bg_popular_post($no_posts = 4, $comment_len = 30) {
     $ppost ='';
     //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
-    $args = array('post_type' => 'post', 'posts_per_page' => 6, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
+    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
     //$args = array('meta_key'=>'popular_posts');
 /*    $args = array(
         'posts_per_page' => 5,
