@@ -177,7 +177,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
                         </header><!-- .comment-meta -->
 
 						<?php if ( '0' == $comment->comment_approved ) : ?>
-                            <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'fws' ); ?></p>
+                            <p class="comment-awaiting-moderation"><?php _e( 'Čéka se na schváení komentáře.', 'fws' ); ?></p>
 						<?php endif; ?>
 
                         <section class="col-md-6">
@@ -189,7 +189,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
 								sprintf( __( '%1$s ( %2$s  )', 'fws' ), get_comment_date(), get_comment_time() )
 							);
 							comment_text(); ?>
-							<?php edit_comment_link( __( 'Edit', 'fws' ), '<p class="edit-link">', '</p>' ); ?>
+							<?php edit_comment_link( __( 'upravit', 'fws' ), '<p class="edit-link">', '</p>' ); ?>
                         </section><!-- .comment-content -->
 
                         <div class="col-md-3">

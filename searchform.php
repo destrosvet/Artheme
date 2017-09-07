@@ -1,8 +1,8 @@
 <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url(); ?>">
-    <button id="search-button" class="search-margin-top-xs" type="submit"  />
+    <button id="search-button" class="search-margin-top-xs search-margin-top-lg" type="submit"  />
     <i class="fa fa-search fa-lg" aria-hidden="true"></i>
     </button>
-    <input  id="search-text" class="search-margin-top-xs" type="text" value="" name="s"   />
+    <input  id="search-text" class="search-margin-top-xs search-margin-top-lg" type="text" value="" name="s"   />
 
 </form>
 
