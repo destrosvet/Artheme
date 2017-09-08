@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.4
-* Template Version: 0.5.4
+* Version:          0.1.5
+* Template Version: 0.5.5
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -2380,6 +2380,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .no-paddin-right-lg {
     padding-right: 0px !important; ;
   }
+}
+@media only screen and (min-width: 767px) {
+  .side-recent-item {
+    padding-left: 0px !important; ;
+    padding-right: 0px !important; ;
+  }
+
 }
 
 

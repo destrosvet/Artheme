@@ -47,7 +47,7 @@ function bg_popular_post($no_posts = 4, $comment_len = 30) {
 	//$ppost.='<li><a href="'.the_permalink().'">'.the_title().'</a></li>';
     //endwhile;
     //var_dump($popular);
-    $ppost.='<ul class="padding-md-10">';
+    $ppost.='<ul class="">';
     foreach ( $popular as $post ) : setup_postdata( $post );
         $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; '.$post->post_title.'</a></li>';
 
