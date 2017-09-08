@@ -86,7 +86,7 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
 
     $serContent = '<div class="'.$class.'">';
     $serContent .= '<div class="s-header"><a href="'.$category_link.'"><h5>'.$title.'</h5></a></div>';
-    $serContent .= '<ul class="row">';
+    $serContent .= '<ul class="col-md-12 col-xs-12 no-paddin-right-lg">';
 
     $QArgsActual = array( 'category_name' => $category,'posts_per_page' => $num );
     query_posts($QArgsActual);
