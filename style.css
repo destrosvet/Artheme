@@ -2018,11 +2018,21 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
   .submit {
     padding-left: 0px;
-    margin-left: 10px; } }
+    margin-left: 10px; }
+
+  .author_bio_section {
+    padding-left: 10px !important;
+    padding-right: 10px !important; }
+
+  .no-padding-right-md {
+    padding-right: 0px !important; } }
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
     padding: 0px; } }
 @media only screen and (min-width: 769px) {
+  .no-paddin-right-lg {
+    padding-right: 0px !important; }
+
   .no-paddin-right-lg {
     padding-right: 0px !important; } }
 @media only screen and (min-width: 767px) {
@@ -2047,6 +2057,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     width: 100%; } }
 .nopadding {
   padding: 0 !important; }
+
+.nopadding-i {
+  padding: 0; }
 
 .noleftpadding {
   padding-left: 0 !important; }

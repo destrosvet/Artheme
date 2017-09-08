@@ -46,7 +46,7 @@ function add_comment() {
 
 ?>
 
-<div id="comments" class="col-md-8 col-xs-12 nopadding">
+<div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
 	<?php // You can start editing here -- including this comment! ?>
 	<?php if ( have_comments() ) : ?>
         <div class="comments-title">

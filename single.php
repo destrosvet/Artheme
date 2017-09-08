@@ -5,7 +5,7 @@
 
 				<?php if (have_posts()) : while (have_posts()) : the_post();?>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 nopadding"><h1><?php the_title(); ?></h1>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-md-10 nopadding-i"><h1><?php the_title(); ?></h1>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-md-20 padding-right-lg-45">
                     <div class="social-icon">
@@ -22,7 +22,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="post-meta-single ">
+                <div class="post-meta-single padding-left-md-10 ">
                     <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
