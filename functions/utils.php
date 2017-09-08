@@ -329,7 +329,7 @@ function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_c
 //}
 //add_filter('the_content', 'filter_images');
 //add_theme_support( 'post-thumbnails' );
-remove_filter( 'the_content', 'wp_make_content_images_responsive' );
+//remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
 function add_custom_query_var( $vars ){
     $vars[] = "c";
@@ -351,38 +351,16 @@ function wpdocs_theme_name_scripts() {
 // dulezite >
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
-//function gc_remove_p_tags_around_images($content)
-//{
-//	$contentWithFixedPTags =  preg_replace_callback('/<p>((?:.(?!p>))*?)(<a[^>]*>)?\s*(<img[^>]+>)(<\/a>)?(.*?)<\/p>/is', function($matches)
-//	{
-//		/*
-//		Groups 	Regex 			Description
-//			<p>			starting <p> tag
-//		1	((?:.(?!p>))*?)		match 0 or more of anything not followed by p>
-//			    .(?!p>) 		anything that's not followed by p>
-//			  ?: 			non-capturing group.
-//				    *?		match the ". modified by p> condition" expression non-greedily
-//		2	(<a[^>]*>)?		starting <a> tag (optional)
-//			\s*			white space (optional)
-//		3	(<img[^>]+>)		<img> tag
-//			\s*			white space (optional)
-//		4	(<\/a>)? 		ending </a> tag (optional)
-//		5	(.*?)<\/p>		everything up to the final </p>
-//			i modifier 		case insensitive
-//			s modifier		allows . to match multiple lines (important for 1st and 5th group)
-//		*/
-//
-//		// image and (optional) link: <a ...><img ...></a>
-//		$image = $matches[2] . $matches[3] . $matches[4];
-//		// content before and after image. wrap in <p> unless it's empty
-//		$content = trim( $matches[1] . $matches[5] );
-//		if ($content) {
-//			$content = '<figure>'. $content .'</figure>';
-//		}
-//		return $image . $content;
-//	}, $content);
-//
-//	// On large strings, this regular expression fails to execute, returning NULL
-//	return is_null($contentWithFixedPTags) ? $content : $contentWithFixedPTags;
+
+//function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
+//	//Calculate Image Sizes by type and breakpoint
+//	//Header Images
+//	if ($size === 'header-thumb') {
+//		$attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
+//		//Blog Thumbnails
+//	} else if ($size === 'blog-thumb') {
+//		$attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
+//	}
+//	return $attr;
 //}
-//add_filter('the_content', 'gc_remove_p_tags_around_images');
+//add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_attr', 10 , 3);

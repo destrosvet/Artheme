@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.2
-* Template Version: 0.5.2
+* Version:          0.1.5
+* Template Version: 0.5.5
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -449,6 +449,7 @@ Artheme single content
 .cont p {
   margin-right: 33.3333%;
 }
+
 
 .thumb img {
   width: 792px;
@@ -2327,7 +2328,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 @media only screen and (max-width: 768px) {
-  .nopadding-md {
+  .no-padding-md {
     padding: 0 !important;
   }
   .noleftpadding-md{
@@ -2339,21 +2340,107 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .padding-md-10{
     padding: 10px !important;
   }
+  .padding-right-md-10{
+    padding-right: 10px !important;
+  }
+  .padding-left-md-10{
+    padding-left: 10px !important;
+  }
+  .no-margin-left-md {
+    margin-left: 0 !important;
+  }
+  .margin-left-md-10{
+    margin-left: 10px !important;
+  }
   .hidden-md{
     display: none !important;
   }
+  .relatedthumb{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .sidebar_right{
+    margin-left: 0 !important;
+  }
+  .form-submit.submit{
+    padding-left:0px ;
+  }
+   .submit{
+     padding-left:0px ;
+     margin-left: 10px;
+ }
+  .author_bio_section{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .no-padding-right-md {
+    padding-right: 0px !important; ;
+  }
+
+}
+@media only screen and (max-width: 990px) {
+  .no-padding-lg {
+    padding: 0px ;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .no-paddin-right-lg {
+    padding-right: 0px !important; ;
+  }
+  .no-paddin-right-lg {
+    padding-right: 0px !important; ;
+  }
+
+}
+@media only screen and (min-width: 767px) {
+  .side-recent-item {
+    padding-left: 0px !important; ;
+    padding-right: 0px !important; ;
+  }
+
+
+}
+
+
+@media only screen and(min-width: 360px) and (max-width: 1800px) {
+  .padding-right-lg-45 {
+    padding-right: 45px !important;
+    padding-left: 0px;
+  }
+}
+
+@media only screen and(max-width: 767px){
   .search-margin-top-xs{
     margin-top: 0px !important;
   }
+  .padding-right-md-20{
+    padding-right: 45px !important;
+  }
+}
+@media only screen and(min-width: 800px) and (max-width: 2000px){
+  .search-margin-top-lg{
+    margin-top: 32% !important;
+  }
+}
 
+@media only screen and(min-width: 979px) and (max-width: 2000px){
+  .comment-input{
+    width: 100%;
+  }
 }
 
 .nopadding {
   padding: 0 !important;
 }
+.nopadding-i {
+  padding: 0 ;
+}
 
 .noleftpadding {
   padding-left: 0 !important;
+}
+.noleftpadding-i {
+  padding-left: 0 ;
 }
 
 .norightpadding {
@@ -2429,7 +2516,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+@media only screen and(max-width: 576px) {
+
   .d-sm-none {
     display: none !important;
   }
@@ -2458,7 +2546,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .d-md-none {
     display: none !important;
   }
@@ -2487,7 +2575,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .d-lg-none {
     display: none !important;
   }
@@ -2516,7 +2604,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .d-xl-none {
     display: none !important;
   }
@@ -2623,6 +2711,11 @@ Artheme social button
   padding-left: 0px;
 }
 
+.hidden-text{
+  height: 160px;
+  overflow: hidden;
+}
+
 .single-text-container{
   padding-right: 10px;
   padding-left: 0px;
@@ -2633,12 +2726,7 @@ Artheme social button
 
 }
 
-.single-text-container img {
-  height: auto;
-  max-width: 134%;
-  padding-bottom: 1em;
-  padding-top: 1em;
-}
+
 
 .no-padding-left{
   padding-left: 0px;
@@ -2679,12 +2767,12 @@ Artheme social button
 }
 #reply-title{
   background-color: lightgrey;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 50px;
-
+  //font: $Artfonts; nejaky divny
   font-size: small;
-
 }
+
 .comment-reply-title{
   background-color: grey;
   padding: 5px;
@@ -2705,6 +2793,7 @@ Artheme social button
   width: 31%;
 
 }
+
 .commentlist{
   padding-left: 0px;
 }
@@ -2757,16 +2846,20 @@ Artheme social button
 /*
 Artheme citate collum
 */
+.social-icon{
+  margin-top: 15%;
+  float: right;
+}
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px; }
 
 .single-text-container img {
-  height: auto;
-  max-width: 134%;
-  min-width: 134%;
+  max-height: 500px;
+  width: 150%;
   padding-bottom: 1em;
-  padding-top: 1em; }
+  padding-top: 1em;
+}
 
 .wp-caption {
   border: 1px solid #ddd;
@@ -2801,9 +2894,6 @@ Artheme citate collum
   padding-left: 5px;
   list-style-type: none;
 }
-.col_3_padding_single_left{
-  padding-left: 0px;
-}
 .comment_author_bio li a{
   color: black;
 }
@@ -2835,7 +2925,7 @@ Artheme citate collum
   display: none;
 }
 #reply-title{
-  background-color: lightgrey;
+  background-color: #e5e5e5;
   padding: 5px;
   margin-bottom: 50px;
 
@@ -2843,7 +2933,7 @@ Artheme citate collum
 
 }
 .comment-reply-title{
-  background-color: grey;
+  background-color: #e5e5e5;
   padding: 5px;
   margin-bottom: 50px;
 }
@@ -2915,8 +3005,8 @@ Artheme citate collum
 Artheme citate collum
  */
 
-.col_3_padding_single_left{
-  padding-left: 0px;
+.float-right{
+ float: right;
 }
 .citate_left{
   position: absolute;
@@ -2930,6 +3020,7 @@ Artheme sidebar_right_collumn
  */
 .sidebar_right {
   margin-left: -25px;
+  padding-right: 0px;
 }
 
 /**
@@ -2994,6 +3085,7 @@ Artheme author widget
 }
 .relatedposts{
   text-align: left;
+
 }
 .external_link{
   width: 100%;
@@ -3004,6 +3096,7 @@ Artheme author widget
 }
 
 .author_bio_section{
+  //margin-left: 20px ;
   //background: none repeat scroll 0 0 #F5F5F5;
   //padding: 15px;
   //border: 1px solid #ccc;
@@ -3034,7 +3127,13 @@ Artheme author widget
 
 }
 
+@media only screen and(max-width: 990px){
+  .social-icon{
+    margin-top: 0 !important;
+  }
+}
 .post-meta {
+  height: 60px;
   li {
     text-transform: uppercase;
     list-style: none;
@@ -3098,8 +3197,7 @@ Artheme author widget
   }
 }
 .post-content {
-  margin-bottom: 24px;
-  min-height: 378px;
+  height: 387px;
 }
 
 .post-category-content {
@@ -3115,6 +3213,7 @@ Artheme author widget
   line-height: 1;
   height: 2em;
   font-size: 1.3em;
+  margin-bottom: 20px; //splekulativni zmena prosim o kontrolu
 
   &:active,
   &:visited,
@@ -3333,7 +3432,8 @@ Sidebar
   text-align: left;
   //list-style-position:inside;
   list-style: none;
-  padding: 0 0 15px 0;
+  padding-right: 10px;
+  padding-left: 10px;
 
   a {
     color: $ArtBlack;
@@ -3618,10 +3718,6 @@ authors-list-single-text {
   margin-bottom: 5px;
   float: right;
   background: transparent;
-  //background-image: url('/assets/images/searchicon.png');
-  //background-repeat: no-repeat;
-  //background-position: right;
-  //background-size: 35px 30px;
   margin-top: 30%;
   width: 90%
 }

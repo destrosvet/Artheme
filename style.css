@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.2
-* Template Version: 0.5.2
+* Version:          0.1.5
+* Template Version: 0.5.5
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -343,7 +343,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1979,7 +1979,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px; }
 
 @media only screen and (max-width: 768px) {
-  .nopadding-md {
+  .no-padding-md {
     padding: 0 !important; }
 
   .noleftpadding-md {
@@ -1991,16 +1991,81 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .padding-md-10 {
     padding: 10px !important; }
 
+  .padding-right-md-10 {
+    padding-right: 10px !important; }
+
+  .padding-left-md-10 {
+    padding-left: 10px !important; }
+
+  .no-margin-left-md {
+    margin-left: 0 !important; }
+
+  .margin-left-md-10 {
+    margin-left: 10px !important; }
+
   .hidden-md {
     display: none !important; }
 
+  .relatedthumb {
+    padding-left: 10px;
+    padding-right: 10px; }
+
+  .sidebar_right {
+    margin-left: 0 !important; }
+
+  .form-submit.submit {
+    padding-left: 0px; }
+
+  .submit {
+    padding-left: 0px;
+    margin-left: 10px; }
+
+  .author_bio_section {
+    padding-left: 10px !important;
+    padding-right: 10px !important; }
+
+  .no-padding-right-md {
+    padding-right: 0px !important; } }
+@media only screen and (max-width: 990px) {
+  .no-padding-lg {
+    padding: 0px; } }
+@media only screen and (min-width: 769px) {
+  .no-paddin-right-lg {
+    padding-right: 0px !important; }
+
+  .no-paddin-right-lg {
+    padding-right: 0px !important; } }
+@media only screen and (min-width: 767px) {
+  .side-recent-item {
+    padding-left: 0px !important;
+    padding-right: 0px !important; } }
+@media only screen and (min-width: 360px) and (max-width: 1800px) {
+  .padding-right-lg-45 {
+    padding-right: 45px !important;
+    padding-left: 0px; } }
+@media only screen and (max-width: 767px) {
   .search-margin-top-xs {
-    margin-top: 0px !important; } }
+    margin-top: 0px !important; }
+
+  .padding-right-md-20 {
+    padding-right: 45px !important; } }
+@media only screen and (min-width: 800px) and (max-width: 2000px) {
+  .search-margin-top-lg {
+    margin-top: 32% !important; } }
+@media only screen and (min-width: 979px) and (max-width: 2000px) {
+  .comment-input {
+    width: 100%; } }
 .nopadding {
   padding: 0 !important; }
 
+.nopadding-i {
+  padding: 0; }
+
 .noleftpadding {
   padding-left: 0 !important; }
+
+.noleftpadding-i {
+  padding-left: 0; }
 
 .norightpadding {
   padding-right: 0 !important; }
@@ -2059,7 +2124,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   display: -ms-inline-flexbox !important;
   display: inline-flex !important; }
 
-@media (min-width: 576px) {
+@media only screen and (max-width: 576px) {
   .d-sm-none {
     display: none !important; }
 
@@ -2085,7 +2150,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-sm-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .d-md-none {
     display: none !important; }
 
@@ -2111,7 +2176,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-md-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .d-lg-none {
     display: none !important; }
 
@@ -2137,7 +2202,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-lg-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .d-xl-none {
     display: none !important; }
 
@@ -2216,17 +2281,15 @@ Artheme social button
 .no-margin {
   padding-left: 0px; }
 
+.hidden-text {
+  height: 160px;
+  overflow: hidden; }
+
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px; }
   .single-text-container a {
     text-decoration: underline; }
-
-.single-text-container img {
-  height: auto;
-  max-width: 134%;
-  padding-bottom: 1em;
-  padding-top: 1em; }
 
 .no-padding-left {
   padding-left: 0px; }
@@ -2258,7 +2321,7 @@ Artheme social button
 
 #reply-title {
   background-color: lightgrey;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 50px;
   font-size: small; }
 
@@ -2321,14 +2384,17 @@ Artheme social button
 /*
 Artheme citate collum
 */
+.social-icon {
+  margin-top: 15%;
+  float: right; }
+
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px; }
 
 .single-text-container img {
-  height: auto;
-  max-width: 134%;
-  min-width: 134%;
+  max-height: 500px;
+  width: 150%;
   padding-bottom: 1em;
   padding-top: 1em; }
 
@@ -2363,9 +2429,6 @@ Artheme citate collum
   padding-left: 5px;
   list-style-type: none; }
 
-.col_3_padding_single_left {
-  padding-left: 0px; }
-
 .comment_author_bio li a {
   color: black; }
 
@@ -2391,13 +2454,13 @@ Artheme citate collum
   display: none; }
 
 #reply-title {
-  background-color: lightgrey;
+  background-color: #e5e5e5;
   padding: 5px;
   margin-bottom: 50px;
   font-size: small; }
 
 .comment-reply-title {
-  background-color: grey;
+  background-color: #e5e5e5;
   padding: 5px;
   margin-bottom: 50px; }
 
@@ -2455,8 +2518,8 @@ Artheme citate collum
 /*
 Artheme citate collum
  */
-.col_3_padding_single_left {
-  padding-left: 0px; }
+.float-right {
+  float: right; }
 
 .citate_left {
   position: absolute;
@@ -2467,7 +2530,8 @@ Artheme citate collum
 Artheme sidebar_right_collumn
  */
 .sidebar_right {
-  margin-left: -25px; }
+  margin-left: -25px;
+  padding-right: 0px; }
 
 /**
 * Mail poet Forms
@@ -2554,11 +2618,16 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
-.post-meta li {
-  text-transform: uppercase;
-  list-style: none; }
-.post-meta .post-categories {
-  padding-left: 0; }
+@media only screen and (max-width: 990px) {
+  .social-icon {
+    margin-top: 0 !important; } }
+.post-meta {
+  height: 60px; }
+  .post-meta li {
+    text-transform: uppercase;
+    list-style: none; }
+  .post-meta .post-categories {
+    padding-left: 0; }
 
 .post-meta-single {
   display: inline-flex;
@@ -2596,8 +2665,7 @@ Artheme author widget
       text-decoration: underline; }
 
 .post-content {
-  margin-bottom: 24px;
-  min-height: 378px; }
+  height: 387px; }
 
 .post-category-content {
   margin-bottom: 24px;
@@ -2609,7 +2677,8 @@ Artheme author widget
 .post-title {
   line-height: 1;
   height: 2em;
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  margin-bottom: 20px; }
   .post-title:active, .post-title:visited, .post-title:focus {
     color: #212121; }
   .post-title a {
@@ -2760,7 +2829,8 @@ Sidebar
 .side-recent-item {
   text-align: left;
   list-style: none;
-  padding: 0 0 15px 0; }
+  padding-right: 10px;
+  padding-left: 10px; }
   .side-recent-item a {
     color: #212121;
     display: inline-block; }
@@ -2773,7 +2843,7 @@ Sidebar
     height: 86px;
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
 
 .recent-comments .recent-comments-post {
   display: block;

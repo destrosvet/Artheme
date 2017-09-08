@@ -10,13 +10,7 @@ function artalk_assets(){
 	$ver = '1.0.23';
 	$deps = array();
 
-	wp_enqueue_script(
-		'bootstrap4-js',
-		$dir.'/assets/scripts/bootstrap-4.js',
-		array(),
-		$ver,
-		false
-	);
+
 
 	// modernizr
 	/*wp_enqueue_script(
@@ -36,6 +30,15 @@ function artalk_assets(){
 		false
 	);
 	$deps[] = 'jquery';
+
+	wp_enqueue_script(
+		'bootstrap4-js',
+		$dir.'/assets/scripts/bootstrap-4.js',
+		array(),
+		$ver,
+		false
+	);
+	$deps[] = 'bootstrap4-js';
         
 	// webfontloader
 	wp_enqueue_script(

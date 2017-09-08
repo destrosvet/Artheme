@@ -7,7 +7,7 @@
                 </h2>
             </header>
 
-            <div class="content excerpt">
+            <div class="content excerpt hidden-text">
                 <?php echo artalk_get_the_excerpt(get_the_ID(),45, $more = '… ', $allowed_tags = '<a>'); ?>
             </div>
             <footer>

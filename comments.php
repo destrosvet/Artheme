@@ -21,16 +21,18 @@ function add_comment() {
 //		'url'    => '<p class="comment-form-url">' .
 //		            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 //	)
-    ;$commenter = wp_get_current_commenter();
+	;$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
-		'author' => '<p class="comment-form-author" style="float: left; padding-right: 25px;">'  .
-		            '<input id="author" name="author" type="text" value="Jméno' . esc_attr( $commenter['comment_author'] ) . '" size="35"' . $aria_req . ' /></p>',
-		'email'  => '<p class="comment-form-email" style="float: left; padding-right: 25px;">
-		            <input id="email" name="email" type="text" value="email ' . esc_attr(  $commenter['comment_author_email'] ) . '" size="35"' . $aria_req . ' /></p>',
-		'web_field'    => '<p class="comment-form-web">' .
-		            '<input id="url" name="url" type="text" value="Web" size="35" /></p>',
+		'author' => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-author" style="float: left; padding-right: 25px;">'  .
+		            '<input id="author"  class="comment-input" name="author" type="text"  value="Jméno' . esc_attr( $commenter['comment_author'] ) . '" size="35"' . $aria_req . ' /></p>',
+
+        'email'  => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-email" style="float: left; padding-right: 25px;">
+		            <input id="email" class="comment-input" name="email" type="text"  value="email ' . esc_attr(  $commenter['comment_author_email'] ) . '" size="35"' . $aria_req . ' /></p>',
+
+			'web_field'    => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-web">' .
+		                  '<input id="url" class="comment-input" name="url" type="text" value="Web" size="35"  /></p>',
 
 	);
 
@@ -44,12 +46,12 @@ function add_comment() {
 
 ?>
 
-<div id="comments" class="col-md-8 no-padding-left">
+<div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
 	<?php // You can start editing here -- including this comment! ?>
 	<?php if ( have_comments() ) : ?>
-    <div class="comments-title">
-                 <p>Komentáře</p>
-             </div>
+        <div class="comments-title">
+            <p>Komentáře</p>
+        </div>
 
         <ol class="commentlist">
 			<?php wp_list_comments( array( 'callback' => 'fws_comment', 'style' => 'ol' ) ); ?>
