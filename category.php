@@ -27,7 +27,14 @@
 
         <?php while ($query -> have_posts()) : $query->the_post(); ?>
 
-            <?php get_template_part('templates/post-category', artalk_get_current_category() ); ?>
+
+            <?php
+
+            if(artalk_get_current_category() == 'foto-report') {
+                get_template_part('templates/post', artalk_get_current_category() );
+            } else {
+                get_template_part('templates/post-category', artalk_get_current_category() );
+            }?>
 
         <?php endwhile; ?>
 
@@ -36,9 +43,8 @@
     </div>
 
 <?php wp_reset_query(); ?>
-<?php wp_reset_query(); ?>
 
 <?php get_template_part('templates/sidebar'); ?>
 <?php get_sidebar(); ?>
 
-<?php //get_footer(); ?>
+<?php get_footer(); ?>

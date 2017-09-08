@@ -2881,6 +2881,13 @@ Feature Box
   float: none;
   border-right: 1px solid #000; }
 
+.authors-list-row > .col-md-4:last-child {
+  display: inline-block;
+  padding: .33rem;
+  width: 100%;
+  float: none;
+  border-right: 0; }
+
 .authors-letter-line > a {
   color: #fff;
   display: table-cell;

@@ -17,12 +17,20 @@ get_header();
 
 		<div class="authors-list-row">
 
-			<?php foreach( artalk_get_authors() as $author ) : ?>
+			<?php
 
-				<?php if ( $bio = get_the_author_meta('description', $author->ID) ) : ?>
+            $counter = 0;
+            $authorCount = count(artalk_get_authors());
+            $authorPerCol = floor ($authorCount/3);
 
-					<div class="col-md-4">
-						<div class="authors-list-single">
+            foreach( artalk_get_authors() as $author ) :
+
+                //var_dump(($counter % $authorPerCol) == 0);
+
+                if (($counter % $authorPerCol) == 0 || $counter < $authorCount ) echo '<div class="col-md-4">';
+                $counter++;
+                if ( $bio = get_the_author_meta('description', $author->ID) ) : ?>
+                        <div class="authors-list-single">
 							<div class="authors-list-single-text">
 								<h1><a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>" ><?php esc_html_e($author->data->display_name);?></a></h1>
 								<div class="content bio">
@@ -34,9 +42,10 @@ get_header();
                             echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>'; */?>
 							</div>
 						</div>
-					</div>
+
 
 				<?php endif; ?>
+            <?php if ($counter % $authorPerCol == 0 || $counter < $authorCount) echo '</div><!--/column-->';  ?>
 
 			<?php endforeach; ?>
 
