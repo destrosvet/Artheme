@@ -31,7 +31,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-6 nopadding nomargin hidden-md service-photoreport" id="photoreport">
+    <div class="col-md-6 nopadding nomargin hidden-md hidden-sm service-photoreport" id="photoreport">
         <div class="s-photoreport-content">
             <h3>Fotoreport</h3>
                 <?php

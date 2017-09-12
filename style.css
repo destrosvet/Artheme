@@ -2039,6 +2039,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .side-recent-item {
     padding-left: 0px !important;
     padding-right: 0px !important; } }
+@media only screen and (max-width: 989px) {
+  .hidden-sm {
+    display: none; } }
+@media only screen and (min-width: 360px) and (max-width: 989px) {
+  .thumb-link img {
+    width: 100%;
+    height: auto; } }
 @media only screen and (min-width: 360px) and (max-width: 1800px) {
   .padding-right-lg-45 {
     padding-right: 45px !important;
@@ -2829,7 +2836,7 @@ Sidebar
 .side-recent-item {
   text-align: left;
   list-style: none;
-  padding-right: 10px;
+  padding-right: 15px;
   padding-left: 10px; }
   .side-recent-item a {
     color: #212121;
