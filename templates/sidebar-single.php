@@ -1,4 +1,4 @@
-<aside id="sidebar" class="col-md-12 col-sm-12 col-xs-12 no-margin norightpadding padding-right-md-10 sidebar-wrapper d-md-block d-sm-none text-center">
+<aside id="sidebar" class="col-md-12 col-sm-12 col-xs-12 no-margin norightpadding padding-right-sm-10 sidebar-wrapper d-md-block d-sm-none text-center">
     <div class="relatedposts">
 
         <?php wp_author_info_box();?>

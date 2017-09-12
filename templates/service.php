@@ -8,7 +8,7 @@
 ?>
 
 
-<div class="col-md-6 d-md-block d-sm-none service nopadding nomargin" id="service">
+<div class="col-md-6 hidden-dm service nopadding nomargin" id="service">
     <div class="col-md-6 col-sm-12 nopadding nomargin service-news" id="news">
         <div class="s-news-content">
             <h3>Aktuality</h3>
@@ -31,7 +31,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-6 nopadding nomargin hidden-md hidden-sm service-photoreport" id="photoreport">
+    <div class="col-md-6 nopadding nomargin hidden-dm hidden-dm service-photoreport" id="photoreport">
         <div class="s-photoreport-content">
             <h3>Fotoreport</h3>
                 <?php

@@ -1,11 +1,11 @@
 <?php get_header();   ?>
     <div class="row">
         <article>
-            <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-md single-content">
+            <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post();?>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-md-10 nopadding-i"><h1><?php the_title(); ?></h1>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 nopadding-i"><h1><?php the_title(); ?></h1>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-md-20 padding-right-lg-45">
                     <div class="social-icon">
@@ -22,7 +22,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="post-meta-single padding-left-md-10 ">
+                <div class="post-meta-single padding-left-sm-10 ">
                     <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
@@ -54,7 +54,7 @@
 
 
 
-                <div class="col-lg-8 col-sm-8 col-xs-8 padding-md-10 single-text-container">
+                <div class="col-lg-8 col-sm-8 col-xs-8 padding-sm-10 single-text-container">
 					<?php
 					the_contents();
 					?>
@@ -75,7 +75,7 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding-md sidebar_right">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding-sm sidebar_right">
 
                 <!--//single_left-->
 

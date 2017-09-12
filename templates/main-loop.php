@@ -3,7 +3,7 @@
         <div class="col-md-8 col-sm-6 col-xs-12 noleftpadding">Nejnovější články</div>
         <div class="col-md-4 col-sm-6">Inzerce</div>
     </div>
-    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding noleftpadding-md" id="posts">
+    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding no-left-padding-sm" id="posts">
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		if ( is_home() ) {
@@ -32,6 +32,7 @@
 		<?php endwhile; ?>
 
 		<?php next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
+
 
     </div>
 

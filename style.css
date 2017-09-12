@@ -1979,32 +1979,29 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px; }
 
 @media only screen and (max-width: 768px) {
-  .no-padding-md {
+  .no-padding-sm {
     padding: 0 !important; }
 
-  .noleftpadding-md {
+  .no-left-padding-sm {
     padding-left: 0 !important; }
 
-  .norightpadding-md {
+  .no-right-padding-sm {
     padding-right: 0 !important; }
 
-  .padding-md-10 {
+  .padding-sm-10 {
     padding: 10px !important; }
 
-  .padding-right-md-10 {
+  .padding-right-sm-10 {
     padding-right: 10px !important; }
 
-  .padding-left-md-10 {
+  .padding-left-sm-10 {
     padding-left: 10px !important; }
 
-  .no-margin-left-md {
+  .no-margin-left-sm {
     margin-left: 0 !important; }
 
-  .margin-left-md-10 {
+  .margin-left-sm-10 {
     margin-left: 10px !important; }
-
-  .hidden-md {
-    display: none !important; }
 
   .relatedthumb {
     padding-left: 10px;
@@ -2040,12 +2037,19 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     padding-left: 0px !important;
     padding-right: 0px !important; } }
 @media only screen and (max-width: 989px) {
-  .hidden-sm {
+  .hidden-dm {
     display: none; } }
 @media only screen and (min-width: 360px) and (max-width: 989px) {
   .thumb-link img {
     width: 100%;
-    height: auto; } }
+    height: 250px; }
+
+  .post-content {
+    height: 435px !important; }
+
+  .post-title {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important; } }
 @media only screen and (min-width: 360px) and (max-width: 1800px) {
   .padding-right-lg-45 {
     padding-right: 45px !important;
@@ -2157,7 +2161,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-sm-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .d-md-none {
     display: none !important; }
 
@@ -2623,7 +2627,8 @@ Artheme author widget
   text-align: initial; }
 
 .post-container {
-  background-color: #F9F9F9; }
+  background-color: #F9F9F9;
+  margin-bottom: 10px; }
 
 @media only screen and (max-width: 990px) {
   .social-icon {
@@ -2695,8 +2700,9 @@ Artheme author widget
       color: #fb026a; }
 
 .further-content {
+  margin-bottom: 3%;
+  margin-left: 15px;
   clear: both;
-  margin: 0 15px 0 15px;
   line-height: 60px;
   background-color: #D0D0D0;
   color: #212121;
