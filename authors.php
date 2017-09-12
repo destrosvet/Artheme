@@ -15,7 +15,7 @@ get_header();
     <?php author_letter_line();?>
 </div>
 
-		<div class="authors-list-row">
+		<div class="authors-list-row row">
 
 			<?php
 
@@ -27,7 +27,7 @@ get_header();
 
                 //var_dump(($counter % $authorPerCol) == 0);
 
-                if (($counter % $authorPerCol) == 0 || $counter < $authorCount ) echo '<div class="col-md-4">';
+                if (($counter % $authorPerCol) == 0 && $counter+1 < $authorCount ) echo '<div class="authors-list-col">';
                 $counter++;
                 if ( $bio = get_the_author_meta('description', $author->ID) ) : ?>
                         <div class="authors-list-single">
@@ -45,7 +45,7 @@ get_header();
 
 
 				<?php endif; ?>
-            <?php if ($counter % $authorPerCol == 0 || $counter < $authorCount) echo '</div><!--/column-->';  ?>
+            <?php if ($counter % $authorPerCol == 0 && $counter+1 < $authorCount) echo '</div><!--/column-->';  ?>
 
 			<?php endforeach; ?>
 

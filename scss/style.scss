@@ -3483,6 +3483,9 @@ Utils
 .xs-top-margin {
   margin-top: 4px;
 }
+.small-side-padding {
+  padding: 0px 5px 0px 5px !important;
+}
 /*
 Feature Box
 */
@@ -3582,20 +3585,19 @@ Feature Box
   -webkit-column-width: 25em;
   -moz-column-gap: 1em;
   -webkit-column-gap:1em;
+  display: table;
 }
 
-.authors-list-row > .col-md-4 {
-  display: inline-block;
-  padding:  .33rem;
-  width:  100%;
-  float:none;
+.authors-list-row > .authors-list-col {
+  display: table-cell;
+  width: 33%;
+  padding: 0px 8px 10px 8px;
   border-right: 1px solid #000;
 }
-.authors-list-row > .col-md-4:last-child {
-  display: inline-block;
-  padding:  .33rem;
-  width:  100%;
-  float:none;
+.authors-list-row > .authors-list-col:last-child {
+  display: table-cell;
+  width: 33%;
+  padding: 0px 8px 10px 8px;
   border-right: 0;
 }
 .authors-letter-line > a {
