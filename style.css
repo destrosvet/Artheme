@@ -4,9 +4,9 @@
 * Description: Artheme for artalk
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
-* Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.5
-* Template Version: 0.5.5
+* Tags: 3 column theme, white, black, magazine
+* Version:          0.1.6
+* Template Version: 0.5.6
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -2700,7 +2700,7 @@ Artheme author widget
       color: #fb026a; }
 
 .further-content {
-  margin-bottom: 3%;
+  margin-bottom: 5px;
   margin-left: 15px;
   clear: both;
   line-height: 60px;
