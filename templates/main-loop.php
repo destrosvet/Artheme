@@ -3,7 +3,7 @@
         <div class="col-md-8 col-sm-6 col-xs-12 noleftpadding">Nejnovější články</div>
         <div class="col-md-4 col-sm-6">Inzerce</div>
     </div>
-    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding noleftpadding-md" id="posts">
+    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding no-left-padding-sm" id="posts">
             <?php
             $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
@@ -25,18 +25,20 @@
         }
     ?>
 
-        <?php while ($query -> have_posts()) : $query->the_post(); ?>
+		<?php while ($query -> have_posts()) : $query->the_post(); ?>
 
-            <?php get_template_part('templates/post', artalk_get_current_category() ); ?>
+			<?php get_template_part('templates/post', artalk_get_current_category() ); ?>
 
-        <?php endwhile; ?>
+		<?php endwhile; ?>
 
-        <?php next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
+		<?php next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
+
 
     </div>
 
-    <?php wp_reset_query(); ?>
+	<?php wp_reset_query(); ?>
+	<?php wp_reset_query(); ?>
 
-    <?php get_template_part('templates/sidebar'); ?>
+	<?php get_template_part('templates/sidebar'); ?>
 
-    <?php  get_template_part('templates/magazine-bottom'); ?>
+	<?php  get_template_part('templates/magazine-bottom'); ?>

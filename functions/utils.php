@@ -348,6 +348,9 @@ function wpdocs_theme_name_scripts() {
 
 }
 
+//add_image_size( 'wp-post-image', 700, 200, true );
+//add_image_size( 'img-responsive wp-post-image', 700, 200, true );
+
 // dulezite >
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 

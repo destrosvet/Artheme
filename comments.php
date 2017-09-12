@@ -25,14 +25,14 @@ function add_comment() {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
-		'author' => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-author" style="float: left; padding-right: 25px;">'  .
+		'author' => '<p class="col-md-4 noleftpadding-i padding-left-sm-10 comment-form-author" style="float: left; padding-right: 25px;">' .
 		            '<input id="author"  class="comment-input" name="author" type="text"  value="Jméno' . esc_attr( $commenter['comment_author'] ) . '" size="35"' . $aria_req . ' /></p>',
 
-        'email'  => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-email" style="float: left; padding-right: 25px;">
+        'email'  => '<p class="col-md-4 noleftpadding-i padding-left-sm-10 comment-form-email" style="float: left; padding-right: 25px;">
 		            <input id="email" class="comment-input" name="email" type="text"  value="email ' . esc_attr(  $commenter['comment_author_email'] ) . '" size="35"' . $aria_req . ' /></p>',
 
-			'web_field'    => '<p class="col-md-4 noleftpadding-i padding-left-md-10 comment-form-web">' .
-		                  '<input id="url" class="comment-input" name="url" type="text" value="Web" size="35"  /></p>',
+			'web_field'    => '<p class="col-md-4 noleftpadding-i padding-left-sm-10 comment-form-web">' .
+			                  '<input id="url" class="comment-input" name="url" type="text" value="Web" size="35"  /></p>',
 
 	);
 
