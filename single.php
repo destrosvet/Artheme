@@ -27,7 +27,7 @@
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4 no-padding-left padding-right-md-20 padding-right-lg-45 float-right">
+                <div class="col-md-4 col-sm-4 col-xs-4 noleftpadding padding-right-md-20 padding-right-lg-45 float-right">
                     <div class="single-tags-container">
 			            <?php
 

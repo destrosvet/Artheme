@@ -20,34 +20,45 @@ get_header();
 			<?php
 
             $counter = 0;
+            $authorCol = 0;
             $authorCount = count(artalk_get_authors());
-            $authorPerCol = floor ($authorCount/3);
+            //var_dump(count(artalk_get_authors()));
+            $authorPerCol = ($authorCount > 1 ? floor($authorCount/3):0);
+//            var_dump($authorCount);
+//            var_dump($authorPerCol);
 
-            foreach( artalk_get_authors() as $author ) :
+            if ($authorCount > 1) {
+                foreach (artalk_get_authors() as $author) :
+                    $counter++;
+                    if (((($counter ) % $authorPerCol) == 0 && $counter != 1 && $authorCol < 3  )) echo '</div>';
+                    if (((($counter ) % $authorPerCol) == 0 || $counter == 1) && $authorCol < 3  ) {
+                        $authorCol++;
+                        echo '<div class="authors-list-col">';
+                    }
 
-                //var_dump(($counter % $authorPerCol) == 0);
 
-                if (($counter % $authorPerCol) == 0 && $counter+1 < $authorCount ) echo '<div class="authors-list-col">';
-                $counter++;
-                if ( $bio = get_the_author_meta('description', $author->ID) ) : ?>
+                    if ($bio = get_the_author_meta('description', $author->ID)) : ?>
                         <div class="authors-list-single">
-							<div class="authors-list-single-text">
-								<h1><a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>" ><?php esc_html_e($author->data->display_name);?></a></h1>
-								<div class="content bio">
+                            <div class="authors-list-single-text">
+                                <h1><a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>"><?php esc_html_e($author->data->display_name); ?></a></h1>
+                                <div class="content bio">
                                     <?php echo artalk_awatar($author->ID); ?>
-									<?php echo esc_html($bio); ?>
-								</div>
-<!--                            --><?php
-/*                            $user_posts = get_author_posts_url(  $author->ID);
-                            echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>'; */?>
-							</div>
-						</div>
+                                    <?php echo esc_html($bio); ?>
+                                </div>
+                                <!--                            --><?php
+                                /*                            $user_posts = get_author_posts_url(  $author->ID);
+                                                            echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>'; */ ?>
+                            </div>
+                        </div>
 
 
-				<?php endif; ?>
-            <?php if ($counter % $authorPerCol == 0 && $counter+1 < $authorCount) echo '</div><!--/column-->';  ?>
-
-			<?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php //if ((($counter-1) % $authorPerCol) == 0 && $counter != 1 && $counter != $authorCount ) echo '</div><!--/column-->'; ?>
+                <?php endforeach;
+            }
+            else {
+                echo "<p>Je nám líto, ale žádný autor nebyl nenalezen.</p>";
+            } ?>
 
 		</div>
 

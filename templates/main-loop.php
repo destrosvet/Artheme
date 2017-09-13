@@ -1,7 +1,7 @@
 <div class="row main-magazine">
     <div class="bar-info d-md-block d-sm-none">
-        <div class="col-md-8 col-sm-6 col-xs-12 noleftpadding">Nejnovější články</div>
-        <div class="col-md-4 col-sm-6">Inzerce</div>
+        <div class="col-md-8 col-sm-6 col-xs-12">Nejnovější články</div>
+        <div class="col-md-4 col-sm-6 noleftpadding">Inzerce</div>
     </div>
     <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding no-left-padding-sm" id="posts">
             <?php

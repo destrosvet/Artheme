@@ -2359,8 +2359,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .sidebar_right{
     margin-left: 0 !important;
   }
-  .form-submit.submit{
+  .form-submit .submit{
     padding-left:0px ;
+    border: 0;
+    height: 34px;
+    background-color: #BCBCBC;
   }
    .submit{
      padding-left:0px ;
@@ -2805,11 +2808,20 @@ Artheme social button
   display: none;
 }
 .form-submit .submit{
-  //width: 238px;
-  width: 31%;
+  border: 0;
+  text-align: left;
+  width: 230px;
+  height: 34px;
+  background-color: #BCBCBC;
+  &:hover {
+    color: $ArtInnerColor;
+  }
 
 }
-
+.comment-input {
+  height: 34px;
+  padding: 10px;
+}
 .commentlist{
   padding-left: 0px;
 }
@@ -2865,6 +2877,9 @@ Artheme citate collum
 .social-icon{
   margin-top: 15%;
   float: right;
+  a:hover,a:visited,a:active {
+    text-decoration: none;
+  }
 }
 .single-text-container {
   padding-right: 10px;
@@ -2900,122 +2915,6 @@ Artheme citate collum
   padding: 0 4px 5px;
   margin: 0; }
 
-.no-padding-left {
-  padding-left: 0px; }
-
-
-/* Artheme comments */
-
-.comment_author_bio {
-  padding-left: 5px;
-  list-style-type: none;
-}
-.comment_author_bio li a{
-  color: black;
-}
-.links time{
-  color: black;
-}
-.comment-reply-link{
-  color: black;
-}
-//#respond {
-//  background: #ececec;
-//  padding:0 5px 0 5px;
-//}
-
-/* Highlight active form field */
-#respond input[type=text], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-
-  border: 1px solid #DDDDDD;
-}
-#comment{
-  width: 100%;
-}
-#email-notes{
-  display: none;
-}
-#reply-title{
-  background-color: #e5e5e5;
-  padding: 5px;
-  margin-bottom: 50px;
-
-  font-size: small;
-
-}
-.comment-reply-title{
-  background-color: #e5e5e5;
-  padding: 5px;
-  margin-bottom: 50px;
-}
-
-.comment-respond{
-  padding: 0px;
-}
-.comment-notes{
-  display: none;
-}
-.comment-form-comment label{
-  display: none;
-}
-.form-submit .submit{
-  //width: 238px;
-  width: 31%;
-
-}
-.commentlist{
-  padding-left: 0px;
-}
-//#respond input[type=text]:focus, textarea:focus {
-//  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-//  margin: 0px 1px 3px 0px;
-//  border: 1px solid rgba(81, 203, 238, 1);
-//}
-
-#respond .comment-form-author label,
-#respond .comment-form-email label,
-#respond .comment-form-url label,
-#respond .comment-form-age label
-{
-  background: #eee;
-  -webkit-box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
-  -moz-box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
-  box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
-  color: #555;
-  display: inline-block;
-  font-size: 13px;
-  left: 4px;
-  min-width: 60px;
-  padding: 4px 10px;
-  position: relative;
-  top: 40px;
-  z-index: 1;
-}
-
-.comments-area{
-  padding-left: 0px;
-}
-.comments-title{
-  background-color: black;
-  color: white;
-
-}
-.comments-title p {
-  padding: 5px;
-}
-.commented-list{
-  list-style-type: none;
-  margin-top: 20px;
-  border-bottom: 1px solid black;
-}
-.commented-list:last-child{
-  border-bottom: none;
-}
 
 /*
 Artheme citate collum
@@ -3055,13 +2954,13 @@ Artheme sidebar_right_collumn
     background: transparent;
     border: 0;
     border-bottom: 1px $ArtBlack solid;
-    width:190px !important;
+    width:195px !important;
   }
   .mailpoet_submit {
     background: $ArtBlack;
     border: 0;
     padding-bottom: 3px;
-    width:190px !important;
+    width:195px !important;
     color: $ArtInnerColor;
   }
 }
@@ -3605,6 +3504,11 @@ Feature Box
   -moz-column-gap: 1em;
   -webkit-column-gap:1em;
   display: table;
+}
+.authors-list-row p{
+  margin: 10px 0;
+  text-align: center;
+
 }
 
 .authors-list-row > .authors-list-col {

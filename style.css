@@ -4,9 +4,9 @@
 * Description: Artheme for artalk
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
-* Tags: 3 column theme, white, black, magazine
-* Version:          0.1.6
-* Template Version: 0.5.6
+* Tags: 3 column theme, red, blue, magazine
+* Version:          0.1.5
+* Template Version: 0.5.5
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -350,7 +350,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #212121;
-  background-color: #F9F9F9; }
+  background-color: #FFF; }
 
 input,
 button,
@@ -2010,8 +2010,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .sidebar_right {
     margin-left: 0 !important; }
 
-  .form-submit.submit {
-    padding-left: 0px; }
+  .form-submit .submit {
+    padding-left: 0px;
+    border: 0;
+    height: 34px;
+    background-color: #BCBCBC; }
 
   .submit {
     padding-left: 0px;
@@ -2351,7 +2354,17 @@ Artheme social button
   display: none; }
 
 .form-submit .submit {
-  width: 31%; }
+  border: 0;
+  text-align: left;
+  width: 230px;
+  height: 34px;
+  background-color: #BCBCBC; }
+  .form-submit .submit:hover {
+    color: #FFF; }
+
+.comment-input {
+  height: 34px;
+  padding: 10px; }
 
 .commentlist {
   padding-left: 0px; }
@@ -2398,6 +2411,8 @@ Artheme citate collum
 .social-icon {
   margin-top: 15%;
   float: right; }
+  .social-icon a:hover, .social-icon a:visited, .social-icon a:active {
+    text-decoration: none; }
 
 .single-text-container {
   padding-right: 10px;
@@ -2432,100 +2447,6 @@ Artheme citate collum
   padding: 0 4px 5px;
   margin: 0; }
 
-.no-padding-left {
-  padding-left: 0px; }
-
-/* Artheme comments */
-.comment_author_bio {
-  padding-left: 5px;
-  list-style-type: none; }
-
-.comment_author_bio li a {
-  color: black; }
-
-.links time {
-  color: black; }
-
-.comment-reply-link {
-  color: black; }
-
-/* Highlight active form field */
-#respond input[type=text], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-  border: 1px solid #DDDDDD; }
-
-#comment {
-  width: 100%; }
-
-#email-notes {
-  display: none; }
-
-#reply-title {
-  background-color: #e5e5e5;
-  padding: 5px;
-  margin-bottom: 50px;
-  font-size: small; }
-
-.comment-reply-title {
-  background-color: #e5e5e5;
-  padding: 5px;
-  margin-bottom: 50px; }
-
-.comment-respond {
-  padding: 0px; }
-
-.comment-notes {
-  display: none; }
-
-.comment-form-comment label {
-  display: none; }
-
-.form-submit .submit {
-  width: 31%; }
-
-.commentlist {
-  padding-left: 0px; }
-
-#respond .comment-form-author label,
-#respond .comment-form-email label,
-#respond .comment-form-url label,
-#respond .comment-form-age label {
-  background: #eee;
-  -webkit-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  -moz-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  color: #555;
-  display: inline-block;
-  font-size: 13px;
-  left: 4px;
-  min-width: 60px;
-  padding: 4px 10px;
-  position: relative;
-  top: 40px;
-  z-index: 1; }
-
-.comments-area {
-  padding-left: 0px; }
-
-.comments-title {
-  background-color: black;
-  color: white; }
-
-.comments-title p {
-  padding: 5px; }
-
-.commented-list {
-  list-style-type: none;
-  margin-top: 20px;
-  border-bottom: 1px solid black; }
-
-.commented-list:last-child {
-  border-bottom: none; }
-
 /*
 Artheme citate collum
  */
@@ -2559,13 +2480,13 @@ Artheme sidebar_right_collumn
     background: transparent;
     border: 0;
     border-bottom: 1px #212121 solid;
-    width: 190px !important; }
+    width: 195px !important; }
   .mailpoet_paragraph .mailpoet_submit {
     background: #212121;
     border: 0;
     padding-bottom: 3px;
-    width: 190px !important;
-    color: #F9F9F9; }
+    width: 195px !important;
+    color: #FFF; }
 
 /*
 Artheme tags
@@ -2627,7 +2548,7 @@ Artheme author widget
   text-align: initial; }
 
 .post-container {
-  background-color: #F9F9F9;
+  background-color: #FFF;
   margin-bottom: 10px; }
 
 @media only screen and (max-width: 990px) {
@@ -2720,7 +2641,7 @@ Artheme author widget
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 20px;
-  color: #F9F9F9;
+  color: #FFF;
   text-align: left;
   background-color: #212121; }
   .art-footer li {
@@ -2729,7 +2650,7 @@ Artheme author widget
       margin-left: 15px; }
   .art-footer a {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: #F9F9F9;
+    color: #FFF;
     text-transform: uppercase; }
   .art-footer .information {
     font-size: 0.8em;
@@ -2778,7 +2699,7 @@ Artheme author widget
 .service-b-tz .s-b-mm li, .service-b-tz .s-b-top li, .service-b-dp .s-b-mm li, .service-b-dp .s-b-top li, .service-b-mm .s-b-mm li, .service-b-mm .s-b-top li, .service-b-top .s-b-mm li, .service-b-top .s-b-top li {
   height: 3.0em; }
 .service-b-tz h5, .service-b-dp h5, .service-b-mm h5, .service-b-top h5 {
-  color: #F9F9F9;
+  color: #FFF;
   line-height: 2.1em;
   font-weight: 200;
   padding-left: 1em; }
@@ -2837,7 +2758,7 @@ Sidebar
   .recent-header h5 {
     font-size: 1.1em;
     font-weight: 300;
-    color: #F9F9F9; }
+    color: #FFF; }
 
 .side-recent-item {
   text-align: left;
@@ -2961,6 +2882,10 @@ Feature Box
   -webkit-column-gap: 1em;
   display: table; }
 
+.authors-list-row p {
+  margin: 10px 0;
+  text-align: center; }
+
 .authors-list-row > .authors-list-col {
   display: table-cell;
   width: 33%;
@@ -3017,7 +2942,7 @@ authors-list-single-text {
   color: #212121;
   display: inline-block;
   background-color: #D1D1D1;
-  border-left: 1px solid #F9F9F9;
+  border-left: 1px solid #FFF;
   font-size: 12px;
   padding: 8px 6px 4px 6px; }
 
@@ -3027,7 +2952,7 @@ authors-list-single-text {
   left: 0;
   display: inline-block;
   width: 100%;
-  border-bottom: 1px solid #F9F9F9;
+  border-bottom: 1px solid #FFF;
   margin-top: 16px; }
 
 .single-tags-tag a {
@@ -3044,7 +2969,7 @@ authors-list-single-text {
   color: #212121;
   display: inline-block;
   background-color: #D1D1D1;
-  border-left: 1px solid #F9F9F9;
+  border-left: 1px solid #FFF;
   font-size: 12px;
   padding: 8px 6px 4px 6px; }
 
@@ -3054,7 +2979,7 @@ authors-list-single-text {
   left: 0;
   display: inline-block;
   width: 100%;
-  border-bottom: 1px solid #F9F9F9;
+  border-bottom: 1px solid #FFF;
   margin-top: 16px; }
 
 .single-tags-tag a {
