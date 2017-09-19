@@ -68,6 +68,8 @@ function artalk_widgets_init04()
     ));
 }
 
+//add_action('init', 'modify_jquery_version');
+
 
   /* BODY CLASS */
 /*  add_filter( 'body_class', 'artalk_body_class' );

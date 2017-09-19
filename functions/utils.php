@@ -217,7 +217,7 @@ function the_contents(){
 			}
 		}
 		for ($i = 0; $i < count($arr_citate_under_text);$i++){
-			$arr_citate_replace[$i] = $arr_citate_anchors[$i] . '<div class="citate_left">' . $arr_citate_under_text[$i] . '</div>' ;
+			$arr_citate_replace[$i] = $arr_citate_anchors[$i] . '<div class="citate-left citateN-'.$i.'">' . $arr_citate_under_text[$i] . '</div>' ;
 			//						deleted matched citate text under post
 			$cont = get_the_content_without_citate($arr_citate_under_text[$i], $cont,"","","");
 			//						moved citate text under post behind anchors in text
@@ -343,16 +343,9 @@ function define_class ($args) {/*== Set classes of menu container ==*/
 add_filter ('wp_nav_menu_args', 'define_class');
 
 
-function wpdocs_theme_name_scripts() {
-	wp_enqueue_style( 'style-name', get_stylesheet_directory_uri().'/font-awesome-4.7.0/css/font-awesome.min.css' );
-
-}
-
 //add_image_size( 'wp-post-image', 700, 200, true );
 //add_image_size( 'img-responsive wp-post-image', 700, 200, true );
 
-// dulezite >
-add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
 
 //function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {

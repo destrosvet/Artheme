@@ -22,10 +22,9 @@ get_header();
             $counter = 0;
             $authorCol = 0;
             $authorCount = count(artalk_get_authors());
-            //var_dump(count(artalk_get_authors()));
+
             $authorPerCol = ($authorCount > 1 ? floor($authorCount/3):0);
-//            var_dump($authorCount);
-//            var_dump($authorPerCol);
+
 
             if ($authorCount > 1) {
                 foreach (artalk_get_authors() as $author) :

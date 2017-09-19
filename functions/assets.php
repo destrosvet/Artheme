@@ -2,7 +2,21 @@
 
 add_action('wp_enqueue_scripts', 'artalk_assets');
 
+/* new jQuery override*/
+function modify_jquery_version() {
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery',
+            'http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js', false, '2.0.s');
+        wp_enqueue_script('jquery');
+    }
+}
+if (!is_admin()) {
+    add_action('init', 'modify_jquery_version');
+}
 
+
+/* */
 /* SCRIPTS */
 function artalk_assets(){
 	global $wp_query;
@@ -26,7 +40,7 @@ function artalk_assets(){
 		'jquery',
 		$dir.'/assets/scripts/jquery-2.2.0.min.js',
 		array(),
-		$ver,
+		'2.2.0',
 		false
 	);
 	$deps[] = 'jquery';
@@ -68,15 +82,36 @@ function artalk_assets(){
             }
         }
 
-	/*// fastclick
-	wp_enqueue_script(
-		'fastclick',
-		$dir.'/bower_components/foundation/js/vendor/fastclick.js',
-		array(),
-		$ver,
-		true
-	);
-	$deps[] = 'fastclick';*/
+    if (is_single()) {
+        // jQuery-Collision
+        wp_enqueue_script(
+            'jQuery-Collision',
+            $dir . '/assets/scripts/jquery-collision.min.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'jQuery-Collision';
+
+        // citation positioner
+        wp_enqueue_script(
+            'citation-positioner',
+            $dir . '/assets/scripts/citation-positioner.js',
+            array(),
+            $ver,
+            true
+        );
+        $deps[] = 'citation-positioner';
+    }
+
+    wp_enqueue_style(
+        'font-awesome',
+        $dir.'/font-awesome-4.7.0/css/font-awesome.min.css',
+        array(),
+        $ver
+    );
+
+
 
 	// foundation
 	/*wp_enqueue_script(

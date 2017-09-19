@@ -75,12 +75,17 @@ template {
   display: none; }
 
 a {
-  background-color: transparent; }
+  background-color: transparent;
+  color: #212121;
+  text-decoration: none;
+  outline: none; }
 
 a:active,
 a:hover {
-  outline: 0;
-  transition: color 0.10s ease-out; }
+  outline: none;
+  transition: color 0.10s ease-out;
+  color: #fb026a;
+  text-decoration: underline; }
 
 abbr[title] {
   border-bottom: 1px dotted; }
@@ -359,20 +364,6 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
-
-a {
-  color: #212121;
-  text-decoration: none; }
-
-a:hover,
-a:focus {
-  color: #fb026a;
-  text-decoration: underline; }
-
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px; }
 
 figure {
   margin: 0; }
@@ -2453,7 +2444,7 @@ Artheme citate collum
 .float-right {
   float: right; }
 
-.citate_left {
+.citate-left {
   position: absolute;
   left: 100%;
   width: 191.25px; }

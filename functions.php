@@ -102,7 +102,7 @@ function artalk_theme_init() {
     include_once('functions/recent-items.php');
 
 	/* CITACE  */
-	include_once ('simple_html_dom.php');
+	include_once ('functions/simple_html_dom.php');
 
 	/* MEDIA */
 	//include_once('functions/media.php');

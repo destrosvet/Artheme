@@ -76,13 +76,19 @@ template {
 
 a {
   background-color: transparent;
+  color: $ArtBlack;
+  text-decoration: none;
+  outline:none;
 }
 
 a:active,
 a:hover {
-  outline: 0;
+  outline:none;
   transition: color 0.10s ease-out;
+  color: $ArtPink;
+  text-decoration: underline;
 }
+
 
 abbr[title] {
   border-bottom: 1px dotted;
@@ -415,23 +421,6 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-
-a {
-  color: $ArtBlack;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: $ArtPink;
-  text-decoration: underline;
-}
-
-a:focus {
-  outline: thin dotted ;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
 }
 
 figure {
@@ -2923,7 +2912,7 @@ Artheme citate collum
 .float-right{
  float: right;
 }
-.citate_left{
+.citate-left{
   position: absolute;
   left: 100%;
   width: 191.25px;

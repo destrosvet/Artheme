@@ -1,7 +1,7 @@
 <?php
 
-$themename = "Ultra Grid";
-$shortname = "ultra_grid";
+$themename = "Artalk Theme";
+$shortname = "Artheme";
 $settings_list = array(
     'custom_logo_url',
     'custom_background_color',
