@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.5
-* Template Version: 0.5.5
+* Version:          0.1.6
+* Template Version: 0.5.6
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -2011,7 +2011,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     margin-left: 0 !important; }
 
   .form-submit .submit {
-    padding-left: 0px;
+    padding-left: 10px;
     border: 0;
     height: 34px;
     background-color: #BCBCBC; }
@@ -2028,7 +2028,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     padding-right: 0px !important; } }
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
-    padding: 0px; } }
+    padding: 0px; }
+
+  .comment-form-web {
+    padding-right: 25px; } }
 @media only screen and (min-width: 769px) {
   .no-paddin-right-lg {
     padding-right: 0px !important; }
@@ -2066,9 +2069,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 @media only screen and (min-width: 800px) and (max-width: 2000px) {
   .search-margin-top-lg {
     margin-top: 32% !important; } }
-@media only screen and (min-width: 979px) and (max-width: 2000px) {
-  .comment-input {
-    width: 100%; } }
 .nopadding {
   padding: 0 !important; }
 
@@ -2328,7 +2328,12 @@ Artheme social button
   border: 1px solid #DDDDDD; }
 
 #comment {
-  width: 100%; }
+  width: 100%;
+  margin-right: 5px; }
+
+.comment_author_bio {
+  list-style-type: none;
+  padding-left: 15px; }
 
 #email-notes {
   display: none; }
@@ -2553,7 +2558,10 @@ Artheme author widget
 
 @media only screen and (max-width: 990px) {
   .social-icon {
-    margin-top: 0 !important; } }
+    margin-top: 0 !important; }
+
+  .submit {
+    width: 255px; } }
 .post-meta {
   height: 60px; }
   .post-meta li {

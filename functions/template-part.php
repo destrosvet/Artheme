@@ -158,9 +158,9 @@ if ( ! function_exists( 'fws_comment' ) ) :
 				// Proceed with normal comments.
 				global $post;
 				?>
-                <li class="commented-list" id="li-comment-<?php comment_ID(); ?>">
+                <li class="commented-list padding-left-sm-10" id="li-comment-<?php comment_ID(); ?>">
                     <article id="comment-<?php comment_ID(); ?>" class="row">
-                        <header class="col-md-3">
+                        <header class="col-md-3 noleftpadding">
 							<?php
 							// user name, email and web page
                             echo '<ul class="comment_author_bio">';
