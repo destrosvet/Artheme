@@ -204,26 +204,31 @@ function the_contents(){
 	$arr_citate_anchors    = array();
 	$arr_citate_replace    = array();
 	$cont                  = "";
+
+
 	if($html->find(' * [href^=#_ftnref] ')){
-	//	                    find citate text under post
-		foreach($html->find(' * [href^=#_ftnref] ') as $element) {
-			$arr_citate_under_text[] = $element->parent();
+	//	                    find citation text under post
+		foreach ( $html->find( 'p a[href*=ref]' ) as $e ) {
+			$arr_citate_under_text[] = $e->parent();
 		}
-		//					anchors from text content
-		foreach ($html->find('p a[name^=_ftn]') as $el) {
-			$a = str_get_html( $el );
-			foreach ( $a->find( 'a[name^=_ftnref]' ) as $link ) {
-				$arr_citate_anchors[] = $link->outertext;
-			}
+
+//		find citation anchors from text
+		foreach ( $html->find( 'p a[href*=_ftn]' ) as $el ) {
+			$arr_citate_anchors[] = $el;
+
 		}
-		for ($i = 0; $i < count($arr_citate_under_text);$i++){
-			$arr_citate_replace[$i] = $arr_citate_anchors[$i] . '<div class="citate-left citateN-'.$i.'">' . $arr_citate_under_text[$i] . '</div>' ;
-			//						deleted matched citate text under post
-			$cont = get_the_content_without_citate($arr_citate_under_text[$i], $cont,"","","");
-			//						moved citate text under post behind anchors in text
-			$cont = get_the_content_with_formatting_replace($arr_citate_anchors[$i], $arr_citate_replace[$i], $cont,"","","");
-		}
-		echo $cont;
+		$len = count($arr_citate_anchors);
+		$firsthalf = array_slice($arr_citate_anchors, 0, $len / 2);
+
+//						anchors from text content
+	    for ( $i = 0; $i < count( $arr_citate_under_text ); $i ++ ) {
+		    $arr_citate_replace[ $i ] = $firsthalf[ $i ] . '<div class="citate_left">' . $arr_citate_under_text[ $i ] . '</div>';
+		    //						deleted matched citate text under post
+		    $cont = get_the_content_without_citate( $arr_citate_under_text[ $i ], $cont, "", "", "" );
+		    //						moved citate text under post behind anchors in text
+		    $cont = get_the_content_with_formatting_replace( $firsthalf[ $i ], $arr_citate_replace[ $i ], $cont, "", "", "" );
+	    }
+	    echo $cont;
 	}else {
 		the_content();
 	}
@@ -343,9 +348,16 @@ function define_class ($args) {/*== Set classes of menu container ==*/
 add_filter ('wp_nav_menu_args', 'define_class');
 
 
+function wpdocs_theme_name_scripts() {
+	wp_enqueue_style( 'style-name', get_stylesheet_directory_uri().'/font-awesome-4.7.0/css/font-awesome.min.css' );
+
+}
+
 //add_image_size( 'wp-post-image', 700, 200, true );
 //add_image_size( 'img-responsive wp-post-image', 700, 200, true );
 
+// dulezite >
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
 
 //function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
