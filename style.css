@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.1.6
-* Template Version: 0.5.6
+* Version:          0.1.7
+* Template Version: 0.5.7
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -75,17 +75,12 @@ template {
   display: none; }
 
 a {
-  background-color: transparent;
-  color: #212121;
-  text-decoration: none;
-  outline: none; }
+  background-color: transparent; }
 
 a:active,
 a:hover {
-  outline: none;
-  transition: color 0.10s ease-out;
-  color: #fb026a;
-  text-decoration: underline; }
+  outline: 0;
+  transition: color 0.10s ease-out; }
 
 abbr[title] {
   border-bottom: 1px dotted; }
@@ -348,7 +343,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -364,6 +359,20 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
+
+a {
+  color: #212121;
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  color: #fb026a;
+  text-decoration: underline; }
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
 
 figure {
   margin: 0; }
@@ -1887,9 +1896,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .leftmargin-sm {
   margin-left: 30px !important; }
 
-.rightmargin-sm {
-  margin-right: 30px !important; }
-
 .topmargin-sm {
   margin-top: 30px !important; }
 
@@ -2009,21 +2015,30 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
   .submit {
     padding-left: 0px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    width: 100%;
+    margin-right: 20px !important; }
+
+  .form-submit {
+    margin-right: 20px; }
 
   .author_bio_section {
     padding-left: 10px !important;
     padding-right: 10px !important; }
 
   .no-padding-right-md {
-    padding-right: 0px !important; } }
+    padding-right: 0px !important; }
+
+  .right-margin-sm-10 {
+    margin-right: 10px !important; } }
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
-    padding: 0px; }
-
-  .comment-form-web {
-    padding-right: 25px; } }
+    padding: 0px; } }
 @media only screen and (min-width: 769px) {
+  .comment-form-web {
+    padding-left: 15px;
+    padding-right: 0px !important; }
+
   .no-paddin-right-lg {
     padding-right: 0px !important; }
 
@@ -2038,11 +2053,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     display: none; } }
 @media only screen and (min-width: 360px) and (max-width: 989px) {
   .thumb-link img {
-    width: 100%;
-    height: 250px; }
-
-  .post-content {
-    height: 435px !important; }
+    width: 100%; }
 
   .post-title {
     margin-top: 10px !important;
@@ -2056,7 +2067,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     margin-top: 0px !important; }
 
   .padding-right-md-20 {
-    padding-right: 45px !important; } }
+    padding-right: 45px !important; }
+
+  .post-content {
+    height: 100% !important; } }
 @media only screen and (min-width: 800px) and (max-width: 2000px) {
   .search-margin-top-lg {
     margin-top: 32% !important; } }
@@ -2352,15 +2366,10 @@ Artheme social button
 .form-submit .submit {
   border: 0;
   text-align: left;
-  width: 230px;
   height: 34px;
   background-color: #BCBCBC; }
   .form-submit .submit:hover {
     color: #FFF; }
-
-.comment-input {
-  height: 34px;
-  padding: 10px; }
 
 .commentlist {
   padding-left: 0px; }
@@ -2449,7 +2458,7 @@ Artheme citate collum
 .float-right {
   float: right; }
 
-.citate-left {
+.citate_left {
   position: absolute;
   left: 100%;
   width: 191.25px; }
@@ -2549,10 +2558,7 @@ Artheme author widget
 
 @media only screen and (max-width: 990px) {
   .social-icon {
-    margin-top: 0 !important; }
-
-  .submit {
-    width: 255px; } }
+    margin-top: 0 !important; } }
 .post-meta {
   height: 60px; }
   .post-meta li {
@@ -2604,7 +2610,11 @@ Artheme author widget
   min-height: 270px; }
 
 .image_container {
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  overflow: hidden;
+  max-height: 300px !important;
+  background-position: center center;
+  background-repeat: no-repeat; }
 
 .post-title {
   line-height: 1;
@@ -2776,7 +2786,7 @@ Sidebar
     height: 86px;
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
 
 .recent-comments .recent-comments-post {
   display: block;
