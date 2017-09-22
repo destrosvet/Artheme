@@ -11,15 +11,18 @@
                     <?php get_template_part('templates/social-icon') ?>
                 </div>
                 <div class="post-meta-single padding-left-sm-10 ">
-                    <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
-                    <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
+                    <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
+                    <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
+                    <span class="post-meta-single-category">
+                        <?php do_action('artalk_post_cats','',array('separator' => ' ','main-category' => true),true); ?>
+                    </span>
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4 noleftpadding padding-right-md-20 padding-right-lg-45 float-right">
                     <div class="single-tags-container">
 			            <?php
 
-			            $terms =wp_get_post_tags($post->ID);
+			            $terms = wp_get_post_tags($post->ID);
 			            //                   echo '<p>';
 			            foreach($terms as $term) {
 
@@ -59,14 +62,12 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding-sm sidebar_right">
+
 
                 <!--//single_left-->
 
-				<?php get_template_part('templates/sidebar', 'single'); ?>
+            <?php get_template_part('templates/sidebar', 'single'); ?>
 
-                <div class="clear"></div>
-            </div>
 
 			<?php  comments_template(); ?>
         </article>

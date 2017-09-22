@@ -3,17 +3,23 @@
 add_action('wp_enqueue_scripts', 'artalk_assets');
 
 /* new jQuery override*/
-function modify_jquery_version() {
+/*function modify_jquery_version() {
     if (!is_admin()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery',
             'http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js', false, '2.0.s');
         wp_enqueue_script('jquery');
     }
+    else
+    {
+        wp_deregister_script('jquery');
+    }
 }
 if (!is_admin()) {
     add_action('init', 'modify_jquery_version');
-}
+}*/
+
+
 
 
 /* */
@@ -36,19 +42,19 @@ function artalk_assets(){
 	);
 	$deps[] = 'modernizr';*/
 	// webfontloader
-	wp_enqueue_script(
+/*	wp_enqueue_script(
 		'jquery',
 		$dir.'/assets/scripts/jquery-2.2.0.min.js',
 		array(),
 		'2.2.0',
 		false
 	);
-	$deps[] = 'jquery';
+	$deps[] = 'jquery';*/
 
 	wp_enqueue_script(
 		'bootstrap4-js',
 		$dir.'/assets/scripts/bootstrap-4.js',
-		array(),
+		array('jquery'),
 		$ver,
 		false
 	);
@@ -87,7 +93,7 @@ function artalk_assets(){
         wp_enqueue_script(
             'jQuery-Collision',
             $dir . '/assets/scripts/jquery-collision.min.js',
-            array(),
+            array('jquery'),
             $ver,
             false
         );

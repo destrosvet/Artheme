@@ -36,6 +36,124 @@ and open the template in the editor.
     Author     : Filip Uhlir
     Description: Variables for Artheme
 */
+/*
+* Style for display up to 768
+*
+*
+/*
+/*
+    Created on : 26.1.2016, 12:02:05
+    Author     : Filip Uhlir
+    Description: Display for Artheme
+*/
+@media only screen and (max-width: 765px) {
+  .logo-search-container {
+    display: block !important; }
+
+  .site-logo {
+    margin: 0 auto !important; } }
+@media only screen and (max-width: 765px) {
+  #myNavbar {
+    text-align: center; } }
+.collapse {
+  display: none; }
+
+@media (max-width: 768px) {
+  .collapse.in {
+    display: none; } }
+.collapse.show {
+  display: block; }
+
+tr.collapse.show {
+  display: table-row; }
+
+tbody.collapse.show {
+  display: table-row-group; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease; }
+
+@media only screen and (max-width: 768px) {
+  .d-md-none {
+    display: none !important; }
+
+  .d-md-inline {
+    display: inline !important; }
+
+  .d-md-inline-block {
+    display: inline-block !important; }
+
+  .d-md-block {
+    display: block !important; }
+
+  .d-md-table {
+    display: table !important; }
+
+  .d-md-table-cell {
+    display: table-cell !important; }
+
+  .d-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important; }
+
+  .d-md-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important; } }
+@media only screen and (max-width: 768px) {
+  .no-padding-sm {
+    padding: 0 !important; }
+
+  .no-left-padding-sm {
+    padding-left: 0 !important; }
+
+  .no-right-padding-sm {
+    padding-right: 0 !important; }
+
+  .padding-sm-10 {
+    padding: 10px !important; }
+
+  .padding-right-sm-10 {
+    padding-right: 10px !important; }
+
+  .padding-left-sm-10 {
+    padding-left: 10px !important; }
+
+  .no-margin-left-sm {
+    margin-left: 0 !important; }
+
+  .margin-left-sm-10 {
+    margin-left: 10px !important; }
+
+  .relatedthumb {
+    padding-left: 0px;
+    padding-right: 0px; }
+    .relatedthumb a:hover {
+      text-decoration: none; }
+    .relatedthumb .related-link {
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid black;
+      padding: 5px 5px 5px 10px;
+      color: #212121; }
+
+  .sidebar_right {
+    margin-left: 0 !important; }
+
+  .form-submit .submit {
+    padding-left: 10px;
+    border: 0;
+    height: 34px;
+    background-color: #BCBCBC; }
+
+  .submit {
+    padding-left: 0px;
+    margin-left: 10px; }
+
+  .no-padding-right-md {
+    padding-right: 0px !important; } }
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1969,54 +2087,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .col-padding {
   padding: 60px; }
 
-@media only screen and (max-width: 768px) {
-  .no-padding-sm {
-    padding: 0 !important; }
-
-  .no-left-padding-sm {
-    padding-left: 0 !important; }
-
-  .no-right-padding-sm {
-    padding-right: 0 !important; }
-
-  .padding-sm-10 {
-    padding: 10px !important; }
-
-  .padding-right-sm-10 {
-    padding-right: 10px !important; }
-
-  .padding-left-sm-10 {
-    padding-left: 10px !important; }
-
-  .no-margin-left-sm {
-    margin-left: 0 !important; }
-
-  .margin-left-sm-10 {
-    margin-left: 10px !important; }
-
-  .relatedthumb {
-    padding-left: 10px;
-    padding-right: 10px; }
-
-  .sidebar_right {
-    margin-left: 0 !important; }
-
-  .form-submit .submit {
-    padding-left: 10px;
-    border: 0;
-    height: 34px;
-    background-color: #BCBCBC; }
-
-  .submit {
-    padding-left: 0px;
-    margin-left: 10px; }
-
-  .author_bio_section {
-    padding-left: 10px !important;
-    padding-right: 10px !important; }
-
-  .no-padding-right-md {
-    padding-right: 0px !important; } }
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
     padding: 0px; }
@@ -2155,32 +2225,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-sm-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media only screen and (max-width: 768px) {
-  .d-md-none {
-    display: none !important; }
-
-  .d-md-inline {
-    display: inline !important; }
-
-  .d-md-inline-block {
-    display: inline-block !important; }
-
-  .d-md-block {
-    display: block !important; }
-
-  .d-md-table {
-    display: table !important; }
-
-  .d-md-table-cell {
-    display: table-cell !important; }
-
-  .d-md-flex {
-    display: -ms-flexbox !important;
-    display: flex !important; }
-
-  .d-md-inline-flex {
-    display: -ms-inline-flexbox !important;
-    display: inline-flex !important; } }
 @media (max-width: 992px) {
   .d-lg-none {
     display: none !important; }
@@ -2295,6 +2339,17 @@ Artheme social button
   padding-left: 0px; }
   .single-text-container a {
     text-decoration: underline; }
+
+.relatedthumb {
+  padding-left: 0px;
+  padding-right: 0px; }
+  .relatedthumb a:hover {
+    text-decoration: none; }
+  .relatedthumb .related-link {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 5px 5px 10px;
+    color: #212121; }
 
 .no-padding-left {
   padding-left: 0px; }
@@ -2458,7 +2513,6 @@ Artheme citate collum
 Artheme sidebar_right_collumn
  */
 .sidebar_right {
-  margin-left: -25px;
   padding-right: 0px; }
 
 /**
@@ -2483,6 +2537,8 @@ Artheme sidebar_right_collumn
     padding-bottom: 3px;
     width: 195px !important;
     color: #FFF; }
+    .mailpoet_paragraph .mailpoet_submit:hover {
+      text-decoration: underline; }
 
 /*
 Artheme tags
@@ -2518,23 +2574,11 @@ Artheme author widget
 .relatedposts {
   text-align: left; }
 
-.external_link {
-  width: 100%;
-  display: inline-block;
-  border-bottom: 1px solid black;
-  padding: 5px 5px 5px 10px;
-  color: #000; }
-
-.author_heading {
+.author-heading {
   font-size: 22px;
   font-weight: bold;
   text-align: left;
-  margin: 5px 0px 0px 0px; }
-
-.author_name {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: left; }
+  margin: 5px 0px 10px 0px; }
 
 .author_details img {
   float: left;
@@ -2560,6 +2604,19 @@ Artheme author widget
     list-style: none; }
   .post-meta .post-categories {
     padding-left: 0; }
+  .post-meta a {
+    color: #212121;
+    text-decoration: none; }
+    .post-meta a:hover {
+      color: #fb026a;
+      text-decoration: none; }
+
+.post-meta-single-category {
+  text-transform: uppercase; }
+
+.post-meta-category {
+  text-transform: uppercase;
+  display: block; }
 
 .post-meta-single {
   display: inline-flex;
@@ -2572,7 +2629,7 @@ Artheme author widget
       text-decoration: none; }
       .post-meta-single span a:hover {
         color: #fb026a;
-        text-decoration: underline; }
+        text-decoration: none; }
   .post-meta-single time {
     margin-left: 5px;
     margin-right: 5px; }
@@ -2593,8 +2650,8 @@ Artheme author widget
     text-decoration: none;
     color: #212121; }
     .post footer a:hover, .post-category footer a:hover {
-      color: #212121;
-      text-decoration: underline; }
+      color: #fb026a;
+      text-decoration: none; }
 
 .post-content {
   height: 387px; }
@@ -2669,6 +2726,8 @@ Artheme author widget
   .magazine h3 {
     margin-top: 0px;
     margin-bottom: 30px; }
+  .magazine a:hover {
+    text-decoration: none; }
 
 .service-news {
   height: 100%;
@@ -2695,6 +2754,8 @@ Artheme author widget
 .service-b-tz .s-header, .service-b-dp .s-header, .service-b-mm .s-header, .service-b-top .s-header {
   background-color: #212121;
   height: 2.1em; }
+  .service-b-tz .s-header a:hover, .service-b-dp .s-header a:hover, .service-b-mm .s-header a:hover, .service-b-top .s-header a:hover {
+    color: #FFF; }
 .service-b-tz .s-b-mm li, .service-b-tz .s-b-top li, .service-b-dp .s-b-mm li, .service-b-dp .s-b-top li, .service-b-mm .s-b-mm li, .service-b-mm .s-b-top li, .service-b-top .s-b-mm li, .service-b-top .s-b-top li {
   height: 3.0em; }
 .service-b-tz h5, .service-b-dp h5, .service-b-mm h5, .service-b-top h5 {
@@ -2702,6 +2763,8 @@ Artheme author widget
   line-height: 2.1em;
   font-weight: 200;
   padding-left: 1em; }
+  .service-b-tz h5:hover, .service-b-dp h5:hover, .service-b-mm h5:hover, .service-b-top h5:hover {
+    color: #FFF; }
 .service-b-tz ul, .service-b-dp ul, .service-b-mm ul, .service-b-top ul {
   list-style: none;
   padding-left: 0px;
@@ -2730,8 +2793,10 @@ Artheme author widget
         object-fit: cover;
         width: 280px;
         height: 180px; }
-      .service-photoreport .s-photoreport-content .photo-article h5 {
+      .service-photoreport .s-photoreport-content .photo-article a h5 {
         color: #212121; }
+        .service-photoreport .s-photoreport-content .photo-article a h5:hover {
+          color: #fb026a; }
       .service-photoreport .s-photoreport-content .photo-article a:hover {
         color: #fb026a; }
 
@@ -2768,7 +2833,8 @@ Sidebar
     color: #212121;
     display: inline-block; }
   .side-recent-item a:hover {
-    color: #fb026a; }
+    color: #fb026a;
+    text-decoration: none; }
   .side-recent-item ul {
     list-style: none;
     padding-left: 0px; }
@@ -2777,6 +2843,8 @@ Sidebar
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
     height: 57.33333px; }
+  .side-recent-item .triple-sm {
+    height: 34.4px; }
 
 .recent-comments .recent-comments-post {
   display: block;
@@ -2819,7 +2887,8 @@ Feature Box
   .featured a {
     color: #212121; }
   .featured a:hover {
-    color: #fb026a; }
+    color: #fb026a;
+    text-decoration: none; }
   .featured ul {
     display: inline-block;
     padding-left: 5px; }
@@ -2845,18 +2914,6 @@ Feature Box
 
 .article-title a {
   color: #212121; }
-
-.focuswp-content h2 {
-  font-size: 28px; }
-.focuswp-content .post-meta {
-  color: #212121;
-  font-size: 12px;
-  line-height: 6px; }
-  .focuswp-content .post-meta a {
-    color: #212121;
-    text-decoration: none; }
-  .focuswp-content .post-meta ul {
-    display: inline-block; }
 
 /*
     Easy Advert
@@ -2959,7 +3016,8 @@ authors-list-single-text {
   line-height: 1em; }
 
 .single-tags-tag a:hover {
-  color: #fb026a; }
+  color: #fb026a;
+  text-decoration: none; }
 
 .single-tags-container {
   background-color: #D1D1D1; }
@@ -3012,35 +3070,5 @@ authors-list-single-text {
   background: transparent;
   margin-top: 30%;
   width: 90%; }
-
-@media only screen and (max-width: 765px) {
-  .logo-search-container {
-    display: block !important; }
-
-  .site-logo {
-    margin: 0 auto !important; } }
-@media only screen and (max-width: 765px) {
-  #myNavbar {
-    text-align: center; } }
-.collapse {
-  display: none; }
-
-@media (max-width: 768px) {
-  .collapse.in {
-    display: none; } }
-.collapse.show {
-  display: block; }
-
-tr.collapse.show {
-  display: table-row; }
-
-tbody.collapse.show {
-  display: table-row-group; }
-
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.35s ease; }
 
 /*# sourceMappingURL=style.css.map */

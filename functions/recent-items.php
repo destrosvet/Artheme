@@ -13,7 +13,7 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
         $comm .= '<li class="bott-border"><a class="recent-comments-post xs-top-margin" href="' . get_permalink( $comment->comment_post_ID ). '">&#9679; '.$comment->post_title.'</a>';
         $comm .= ''.$comment->comment_author.': ';
         $comm .= '<a class="recent-comments-excerpt" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
-        $comm .= wp_trim_words( $comment->comment_content , $num_words = 8, $more = '… ' ). '</a></li>';
+        $comm .= wp_trim_words( $comment->comment_content , $num_words = 16, $more = '… ' ). '</a></li>';
         //$comm .= '<li><a class="author" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
         //$comm .= $comment->post_title . '</a> ';
         //$comm .= '<p>' .  wp_trim_words( $comment->comment_content , $num_words = 8, $more = '… ' ).'</p></li>';

@@ -1,0 +1,139 @@
+/*
+* Style for display up to 768
+*
+*
+/*
+/*
+    Created on : 26.1.2016, 12:02:05
+    Author     : Filip Uhlir
+    Description: Display for Artheme
+*/
+
+@media only screen and(max-width: 765px) {
+  .logo-search-container{
+    display: block !important;
+  }
+  .site-logo{
+    margin: 0 auto !important;
+  }
+
+}
+@media only screen and(max-width: 765px) {
+  #myNavbar {
+    text-align: center;  }
+}
+
+.collapse {
+  display: none;
+}
+@media (max-width: 768px)
+{
+  .collapse.in {
+    display: none;
+  }
+}
+
+.collapse.show {
+  display: block;
+}
+
+tr.collapse.show {
+  display: table-row;
+}
+
+tbody.collapse.show {
+  display: table-row-group;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+@media only screen and(max-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+  .d-md-inline {
+    display: inline !important;
+  }
+  .d-md-inline-block {
+    display: inline-block !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-table {
+    display: table !important;
+  }
+  .d-md-table-cell {
+    display: table-cell !important;
+  }
+  .d-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .d-md-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .no-padding-sm {
+    padding: 0 !important;
+  }
+  .no-left-padding-sm{
+    padding-left: 0 !important;
+  }
+  .no-right-padding-sm{
+    padding-right: 0 !important;
+  }
+  .padding-sm-10{
+    padding: 10px !important;
+  }
+  .padding-right-sm-10{
+    padding-right: 10px !important;
+  }
+  .padding-left-sm-10{
+    padding-left: 10px !important;
+  }
+  .no-margin-left-sm {
+    margin-left: 0 !important;
+  }
+  .margin-left-sm-10{
+    margin-left: 10px !important;
+  }
+  .relatedthumb{
+    padding-left: 0px;
+    padding-right: 0px;
+    a:hover {
+      text-decoration: none;
+    }
+    .related-link{
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid black;
+      padding: 5px 5px 5px 10px;
+      color: $ArtBlack;
+    }
+  }
+  .sidebar_right{
+    margin-left: 0 !important;
+  }
+  .form-submit .submit{
+    padding-left: 10px ;
+    border: 0;
+    height: 34px;
+    background-color: #BCBCBC;
+
+  }
+  .submit{
+    padding-left:0px ;
+    margin-left: 10px;
+  }
+  .no-padding-right-md {
+    padding-right: 0px !important; ;
+  }
+
+}

@@ -12,40 +12,59 @@ function artalk_logo() {
 }
 
 /* CATEGORIES */
-add_action( 'artalk_post_cats', 'artalk_post_cats',10,3);
+add_action( 'artalk_post_cats', 'artalk_post_cats',10,4);
 function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
+
     if ( ! absint($post_id) )
         $post_id = get_the_ID();
     if ( ! $post_id = absint($post_id) )
         return false;
+
     $defaults = array(
         'separator' => ' ',
+        'main-category' => false
     );
     $args = wp_parse_args( $args, $defaults );
     $cats = wp_get_object_terms($post_id, 'category', $args);
-
     if ( empty($cats) )
         return false;
-    $cats_out = array();
-    foreach ( $cats as $key => $cat ) {
-        if ( 'E-mail newsletter' == $cat->name )
-            continue;
-        $pre = '';
-        //if ( $parent = get_category_parents($cat->parent,'category',false,' &raquo; ') ) {
-        //   $pre = $parent.' &mdash; ';
-        /*            if ($parent) {
-                        $pre = '<a href="'.esc_url(get_term_link($parent)).'">'.$parent->name.'</a> &mdash; ';
-                    }*/
-        //}
-        $cats_out[] = '<li>'.$pre.'<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a></li>';
-    }
 
-    $cats_out = '<ul class="post-categories">'.join($args['separator'], $cats_out).'</ul>';
+    if (!$args['main-category'])
+    {
+        $cats_out = array();
+        foreach ( $cats as $key => $cat ) {
+            if ( 'E-mail newsletter' == $cat->name )
+                continue;
+            $pre = '';
+
+            $cats_out[] = '<li>'.$pre.'<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a></li>';
+        }
+
+        $cats_out = '<ul class="post-categories">'.join($args['separator'], $cats_out).'</ul>';
+     } else
+    {
+        $cats_out = '';
+        foreach ( $cats as $key => $cat ) {
+            if ( 'E-mail newsletter' == $cat->name )
+                continue;
+            $parent = get_category_parents($cat->parent,'false',false,' &raquo; ');
+            if ( $parent != 'artservis' && $parent != 'arena' ) {
+                $cats_tree = get_category_parents($cat->parent,'true','||',' &raquo; ');
+
+                $cats_Arr = explode('||',$cats_tree);
+                $cats_out = $cats_Arr[1];
+
+            } else {
+                $cats_out = '<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a>';
+            }
+        }
+    }
 
     if ( ! $echo )
         return $cats_out;
     echo $cats_out;
 }
+
 add_action( 'artalk_sub_cats', 'artalk_sub_cats' );
 function artalk_sub_cats() {
     if ( ! is_category() )
@@ -124,8 +143,8 @@ function artalk_feature() {
         $featured .= artalk_get_the_excerpt( get_the_ID(), $num_words = 26, $more = '… ',$allowed_tags = '<a>');
         $featured .='</div>';
         $featured .='<footer>';
-        $featured .= '<span><span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'<time> | ';
-        $featured .= artalk_post_cats(get_the_ID(), '', false).'</span>';
+        $featured .= '<span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'</time> | ';
+        $featured .= '<span class="post-meta-single-category">'.artalk_post_cats(get_the_ID(), array('separator' => '' ,'main-category' => true), false).'</span>';
         $featured .='</footer>';
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img"><a href="'. get_permalink() .'" />';
@@ -213,17 +232,95 @@ function get_related_author_posts() {
 	$authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5 ) );
 
 	$output = "";
+    $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
+    $output .= "<ul>";
 	foreach ( $authors_posts as $authors_post ) {
-		$output .= '<a class="external_link" href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a>';
+		$output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a></li>';
 	}
+    $output .= "</ul>";
+    $output .= "</div>";
 	return $output;
+}
+
+function get_related_posts() {
+    global $authordata, $post;
+
+    $authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5 ) );
+
+    $output = "";
+    $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
+    $output .= "<ul>";
+    foreach ( $authors_posts as $authors_post ) {
+        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a></li>';
+    }
+    $output .= "</ul>";
+    $output .= "</div>";
+    return $output;
+
+    /*
+
+	        <?php
+	        //loop thru author posts
+            $author_id = get_the_author_meta( 'ID' );
+            $tags = wp_get_post_tags($post->ID);
+	        if ($tags) {
+		        $first_tag = $tags[0]->term_id;
+		        $args=array(
+                    'author' => $authordata->ID,
+			        'posts_per_page'=>5,
+			        'ignore_sticky_posts'=>1
+		        );
+		        $my_query = new WP_Query($args);
+		        if( $my_query->have_posts() ) {
+			        while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                        <a class="related-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php echo short_title('...',6); ?></a>
+
+				        <?php
+			        endwhile;
+		        }
+		        wp_reset_query();
+	        }
+	        ?>
+<!--        --><?php
+//        $orig_post = $post;
+//        global $post;
+//        $tags = wp_get_post_tags($post->ID);
+//
+//        if ($tags) {
+//            $tag_ids = array();
+//            foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+//            $args=array(
+//                'tag__in' => $tag_ids,
+//                'post__not_in' => array($post->ID),
+//                'posts_per_page'=>4, // Number of related posts to display.
+//                'ignore_sticky_posts'=>1
+//            );
+//
+//            $my_query = new wp_query( $args );
+//
+//            while( $my_query->have_posts() ) {
+//                $my_query->the_post();
+//                ?>
+<!---->
+<!---->
+<!--                    <a class="external_link" rel="external" href="--><?// the_permalink()?><!--">-->
+<!--                        --><?php //the_title(); ?>
+<!--                    </a>-->
+<!---->
+<!---->
+<!--            --><?php //}
+//
+//        }
+//        $post = $orig_post;
+//        wp_reset_query();
+        ?>*/
 }
 
 function wp_author_info_box() {
 			global $post;
 
 // Detect if it is a single post with a post author
-			if ( is_single() && isset( $post->post_author ) ) {
+			if ( (is_single() || is_author()) && isset( $post->post_author ) ) {
 
 // Get author's display name
 				$display_name = get_the_author_meta( 'display_name', $post->post_author );
@@ -243,7 +340,7 @@ function wp_author_info_box() {
 				$user_posts = get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) );
 
 				if ( ! empty( $display_name ) ) {
-					$author_details = '<p class="author_heading">Autor</p><p class="author_name">' . $display_name . '</p>';
+					$author_details = '<p class="author-heading">Autor</p><h2 class="author-heading"><a href="'.esc_url(get_author_posts_url(get_the_author_meta( 'ID', $post->post_author ))).'">' . $display_name . '</a></h2>';
 				}
 
 				if ( ! empty( $user_description ) ) // Author avatar and bio
@@ -267,7 +364,7 @@ function wp_author_info_box() {
 
 // Pass all this info to post content
 
-				echo ' <footer class="author_bio_section" >' . $author_details . '</footer>';
+				echo ' <div class="author-bio-section" >' . $author_details . '</div>';
 
 			}
 		}

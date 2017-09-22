@@ -27,6 +27,7 @@ and open the template in the editor.
     Author     : Filip Uhlir
 */
 @import "vars";
+@import "mobile-display";
 
 
 html {
@@ -2316,58 +2317,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px;
 }
 
-@media only screen and (max-width: 768px) {
-  .no-padding-sm {
-    padding: 0 !important;
-  }
-  .no-left-padding-sm{
-    padding-left: 0 !important;
-  }
-  .no-right-padding-sm{
-    padding-right: 0 !important;
-  }
-  .padding-sm-10{
-    padding: 10px !important;
-  }
-  .padding-right-sm-10{
-    padding-right: 10px !important;
-  }
-  .padding-left-sm-10{
-    padding-left: 10px !important;
-  }
-  .no-margin-left-sm {
-    margin-left: 0 !important;
-  }
-  .margin-left-sm-10{
-    margin-left: 10px !important;
-  }
-  .relatedthumb{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .sidebar_right{
-    margin-left: 0 !important;
-  }
-  .form-submit .submit{
-    padding-left: 10px ;
-    border: 0;
-    height: 34px;
-    background-color: #BCBCBC;
 
-  }
-   .submit{
-     padding-left:0px ;
-     margin-left: 10px;
- }
-  .author_bio_section{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-  .no-padding-right-md {
-    padding-right: 0px !important; ;
-  }
-
-}
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
     padding: 0px ;
@@ -2554,34 +2504,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 
-@media only screen and(max-width: 768px) {
-  .d-md-none {
-    display: none !important;
-  }
-  .d-md-inline {
-    display: inline !important;
-  }
-  .d-md-inline-block {
-    display: inline-block !important;
-  }
-  .d-md-block {
-    display: block !important;
-  }
-  .d-md-table {
-    display: table !important;
-  }
-  .d-md-table-cell {
-    display: table-cell !important;
-  }
-  .d-md-flex {
-    display: -ms-flexbox !important;
-    display: flex !important;
-  }
-  .d-md-inline-flex {
-    display: -ms-inline-flexbox !important;
-    display: inline-flex !important;
-  }
-}
 
 @media (max-width: 992px) {
   .d-lg-none {
@@ -2734,7 +2656,20 @@ Artheme social button
 
 }
 
-
+.relatedthumb{
+  padding-left: 0px;
+  padding-right: 0px;
+  a:hover {
+    text-decoration: none;
+  }
+  .related-link{
+    width: 100%;
+    display: inline-block;
+    //border-bottom: 1px solid black;
+    padding: 5px 5px 5px 10px;
+    color: $ArtBlack;
+  }
+}
 
 .no-padding-left{
   padding-left: 0px;
@@ -2932,7 +2867,7 @@ Artheme citate collum
 Artheme sidebar_right_collumn
  */
 .sidebar_right {
-  margin-left: -25px;
+  //margin-left: -25px;
   padding-right: 0px;
 }
 
@@ -2960,6 +2895,9 @@ Artheme sidebar_right_collumn
     padding-bottom: 3px;
     width:195px !important;
     color: $ArtInnerColor;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 /*
@@ -3000,30 +2938,13 @@ Artheme author widget
   text-align: left;
 
 }
-.external_link{
-  width: 100%;
-  display: inline-block;
-  border-bottom: 1px solid black;
-  padding: 5px 5px 5px 10px;
-  color: #000;
-}
 
-.author_bio_section{
-  //margin-left: 20px ;
-  //background: none repeat scroll 0 0 #F5F5F5;
-  //padding: 15px;
-  //border: 1px solid #ccc;
-}
-.author_heading{
+
+.author-heading{
   font-size: 22px;
   font-weight: bold;
   text-align: left;
-  margin: 5px 0px 0px 0px;
-}
-.author_name{
-  font-size: 22px;
-  font-weight: bold;
-  text-align: left;
+  margin: 5px 0px 10px 0px;
 }
 
 .author_details img {
@@ -3058,7 +2979,22 @@ Artheme author widget
   .post-categories {
     padding-left: 0;
   }
+  a {
+    color: $ArtBlack;
+    text-decoration: none;
+    &:hover {
+      color: $ArtPink;
+      text-decoration: none;
+    }
+  }
 
+}
+.post-meta-single-category {
+  text-transform: uppercase;
+}
+.post-meta-category {
+  text-transform: uppercase;
+  display: block;
 }
 .post-meta-single{
   span{
@@ -3069,7 +3005,7 @@ Artheme author widget
       text-decoration: none;
       &:hover {
         color: $ArtPink;
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
 
@@ -3107,8 +3043,8 @@ Artheme author widget
       text-decoration: none;
       color: $ArtBlack;
       &:hover {
-        color: $ArtBlack;
-        text-decoration: underline;
+        color: $ArtPink;
+        text-decoration: none;
       }
     }
   }
@@ -3212,6 +3148,9 @@ Artheme author widget
     margin-top: 0px;
     margin-bottom: 30px;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .service-news {
@@ -3254,6 +3193,10 @@ Artheme author widget
   .s-header {
     background-color: $ArtBlack;
     height: 2.1em;
+
+    a:hover {
+      color: $ArtInnerColor;
+    }
   }
   .s-b-mm, .s-b-top {
     li {
@@ -3265,6 +3208,9 @@ Artheme author widget
     line-height: 2.1em;
     font-weight: 200;
     padding-left: 1em;
+    &:hover {
+      color: $ArtInnerColor;
+    }
   }
   ul {
     list-style: none;
@@ -3306,8 +3252,14 @@ Artheme author widget
         width: 280px;
         height: 180px;
       }
-      h5 {
-        color: $ArtBlack;
+      a {
+        h5 {
+          color: $ArtBlack;
+          &:hover {
+            color: $ArtPink;
+          }
+        }
+
       }
       a:hover {
         color: $ArtPink;
@@ -3360,6 +3312,7 @@ Sidebar
   }
   a:hover {
     color: $ArtPink;
+    text-decoration: none;
   }
   ul {
     list-style: none;
@@ -3371,6 +3324,9 @@ Sidebar
   }
   .twice-sm {
     height: $liHeight / 1.5;
+  }
+  .triple-sm {
+    height: $liHeight / 2.5;
   }
 }
 .recent-comments {
@@ -3426,6 +3382,7 @@ Feature Box
   }
   a:hover {
     color: $ArtPink;
+    text-decoration: none;
   }
   ul {
     display: inline-block;
@@ -3458,25 +3415,6 @@ Feature Box
 }
 .article-title a{
   color: $ArtBlack;
-}
-
-
-.focuswp-content {
-  h2 {
-    font-size: 28px;
-  }
-  .post-meta {
-    color: $ArtBlack;
-    font-size: 12px;
-    line-height: 6px;
-    a {
-      color: $ArtBlack;
-      text-decoration: none;
-    }
-    ul {
-      display: inline-block;
-    }
-  }
 }
 
 /*
@@ -3590,6 +3528,7 @@ authors-list-single-text {
 }
 .single-tags-tag a:hover {
   color: $ArtPink;
+  text-decoration: none;
 }
 
 .single-tags-container {
@@ -3648,47 +3587,6 @@ authors-list-single-text {
   width: 90%
 }
 
-@media only screen and(max-width: 765px) {
-  .logo-search-container{
-    display: block !important;
-  }
-  .site-logo{
-    margin: 0 auto !important;
-  }
 
-}
-@media only screen and(max-width: 765px) {
-  #myNavbar {
-    text-align: center;  }
-}
-
-.collapse {
-  display: none;
-}
-@media (max-width: 768px)
-{
-  .collapse.in {
-    display: none;
-  }
-}
-
-.collapse.show {
-  display: block;
-}
-
-tr.collapse.show {
-  display: table-row;
-}
-
-tbody.collapse.show {
-  display: table-row-group;
-}
-
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.35s ease;
-}
 //End Mobile menu
 

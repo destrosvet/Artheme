@@ -11,7 +11,7 @@
 <div class="col-md-6 hidden-dm service nopadding nomargin" id="service">
     <div class="col-md-6 col-sm-12 nopadding nomargin service-news" id="news">
         <div class="s-news-content">
-            <h3>Aktuality</h3>
+            <h3><a href="<?php echo esc_url( get_category_link(3905)); ?>" title="Aktuality">Aktuality</a></h3>
             <ul>
             <?php
             $QArgsActual = array( 'category_name' => 'aktuality','posts_per_page' => 6 );
@@ -33,7 +33,7 @@
     </div>
     <div class="col-md-6 nopadding nomargin hidden-dm hidden-dm service-photoreport" id="photoreport">
         <div class="s-photoreport-content">
-            <h3>Fotoreport</h3>
+            <h3><a href="<?php echo esc_url( get_category_link(3876)); ?>" title="Foto report">Fotoreport</a></h3>
                 <?php
                 $QArgsActual = array( 'category_name' => 'foto-report','posts_per_page' => 2 );
                 query_posts($QArgsActual);
