@@ -8,12 +8,12 @@
 ?>
 <?php //if ( is_active_sidebar( 'featured-widget' ) ) : ?>
 
-    <div class="col-md-6 nopadding nomargin" id="featured">
+    <div class="col-md-6 nopadding nomargin featured" id="featured">
 
         <?php
 
 
-            dynamic_sidebar( 'featured-widget' );
+            //dynamic_sidebar( 'featured-widget' );
             do_action(artalk_feature());
         ?>
 

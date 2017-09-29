@@ -222,7 +222,7 @@ function the_contents(){
 
 //						anchors from text content
 	    for ( $i = 0; $i < count( $arr_citate_under_text ); $i ++ ) {
-		    $arr_citate_replace[ $i ] = $firsthalf[ $i ] . '<div class="citate_left">' . $arr_citate_under_text[ $i ] . '</div>';
+		    $arr_citate_replace[ $i ] = $firsthalf[ $i ] . '<div class="citate-left">' . $arr_citate_under_text[ $i ] . '</div>';
 		    //						deleted matched citate text under post
 		    $cont = get_the_content_without_citate( $arr_citate_under_text[ $i ], $cont, "", "", "" );
 		    //						moved citate text under post behind anchors in text

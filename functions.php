@@ -105,7 +105,7 @@ function artalk_theme_init() {
 	include_once ('functions/simple_html_dom.php');
 
 	/* MEDIA */
-	//include_once('functions/media.php');
+	include_once('functions/media.php');
 
 	/* TEMPLATE TAGS */
 	//include_once('functions/template_tags.php');

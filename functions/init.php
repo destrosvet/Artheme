@@ -6,14 +6,12 @@
 
 /* NAVIGATION */
 // Topbar menu
-/*  add_filter('show_admin_bar', '__return_true');
+/*  add_filter('show_admin_bar', '__return_true');*/
   // Menus
   register_nav_menus( array(
     'main-menu' => 'Main Menu',
-    'header-news-menu'     => 'Header News',
-    'right-hand-menu'      => 'Right Hand Menu',
     'footer-menu'          => 'Footer Menu',
-  ) );*/
+  ) );
 
 
 /* WIDGETS */

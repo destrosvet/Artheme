@@ -14,7 +14,7 @@
 <!--                            --><?php //echo '<div class="thumb" style="background: url('.$url.')">'?>
 <!--                            --><?php //echo '</div>'; ?>
 <!--                            old version without resize -->
-<!--                         --><?php echo get_the_post_thumbnail($post, array( 350,200 ),array('class' => 'img-responsive')); ?>
+<!--                         --><?php echo get_the_post_thumbnail($post, 'post-thumbnail',array('class' => 'img-responsive')); ?>
                         </a>
                     </div>
                 <?php endif; ?>

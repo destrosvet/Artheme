@@ -137,10 +137,10 @@ function artalk_feature() {
     //$featuredPost = get_posts ($args);
     query_posts($args);
     while ( have_posts() ) : the_post();
-        $featured .='<div class="featured"><h2>';
-        $featured .='<header><a href="'.get_permalink().'" title="'.get_the_title(false).'">'.get_the_title().'</a></h2></header>';
-        $featured .='<div class="content excerpt">';
-        $featured .= artalk_get_the_excerpt( get_the_ID(), $num_words = 26, $more = '… ',$allowed_tags = '<a>');
+        $featured .='<header><h2>';
+        $featured .='<a href="'.get_permalink().'" title="'.get_the_title(false).'">'.get_the_title().'</a></h2></header>';
+        $featured .='<div class="featured-excerpt">';
+        $featured .= artalk_get_the_excerpt( get_the_ID(), $num_words = 30, $more = '… ',$allowed_tags = '<a>');
         $featured .='</div>';
         $featured .='<footer>';
         $featured .= '<span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'</time> | ';
@@ -148,13 +148,12 @@ function artalk_feature() {
         $featured .='</footer>';
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img"><a href="'. get_permalink() .'" />';
-            ///$featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
+            $featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
             //$featured .= fly_get_attachment_image( get_post_thumbnail_id(), array( 585, 416 ), true );
             $featured .= '</a></div>';
         }else{
             $featured .='neni nahled';
         }
-        $featured .='</div>';
         echo $featured;
     endwhile;
     wp_reset_query();

@@ -18,6 +18,24 @@ add_action('wp_enqueue_scripts', 'artalk_assets');
 if (!is_admin()) {
     add_action('init', 'modify_jquery_version');
 }*/
+//function to load WordPress Default jQuery
+/*function load_admin_query_function(){
+    wp_deregister_script('jquery_1_9_1');
+    wp_register_script('jquery', ("/wp-includes/js/jquery/jquery.js"), false, 'latest', false);
+    wp_enqueue_script('jquery');
+}
+*/
+//function to load latest jQuery
+/*function load_front_end_jquery_function() {
+    //load latest jquery CDN from jquery.com
+    wp_deregister_script('jquery');
+    wp_register_script('jquery_2_0_2', ("http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"), false, 'latest', false);
+    wp_enqueue_script('jquery_2_0_2');
+    //load admin_init action
+    add_action( 'admin_init', 'load_admin_query_function' );//call function load_admin_query_function to load default jquery
+}*/
+//hook wp_loaded action
+add_action( 'wp_loaded', 'load_front_end_jquery_function' );
 
 
 
@@ -30,7 +48,16 @@ function artalk_assets(){
 	$ver = '1.0.23';
 	$deps = array();
 
-
+    // JQuery
+    wp_deregister_script('jquery');
+    wp_enqueue_script(
+        'jquery',
+        $dir.'/assets/scripts/jquery-2.2.0.min.js',
+        array(),
+        '2.2.0',
+        false
+    );
+    $deps[] = 'jquery';
 
 	// modernizr
 	/*wp_enqueue_script(
@@ -71,7 +98,7 @@ function artalk_assets(){
 	$deps[] = 'webfontloader';
         
         // scripts for home
-        if ( is_home() || is_category( array('artservis','arena','magazine') ) || is_single() ) {
+/*        if ( is_home() || is_category( array('artservis','arena','magazine') ) || is_single() ) {
                     $theme_scripts = array(
                         'slick.min',
                     'artalk.featured'
@@ -86,7 +113,7 @@ function artalk_assets(){
                     );
                     $deps[] = $script_handle;
             }
-        }
+        }*/
 
     if (is_single()) {
         // jQuery-Collision
