@@ -35,7 +35,7 @@ if (!is_admin()) {
     add_action( 'admin_init', 'load_admin_query_function' );//call function load_admin_query_function to load default jquery
 }*/
 //hook wp_loaded action
-add_action( 'wp_loaded', 'load_front_end_jquery_function' );
+//add_action( 'wp_loaded', 'load_front_end_jquery_function' );
 
 
 

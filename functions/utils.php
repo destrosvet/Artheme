@@ -266,7 +266,12 @@ function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_c
 		return $content;
 	}
 }
-
+function getRegistredImageSize () {
+    global $_wp_additional_image_sizes;
+    print '<pre>';
+    print_r( $_wp_additional_image_sizes );
+    print '</pre>';
+}
 
 //function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
 //	$content = get_the_content($more_link_text, $stripteaser, $more_file);
