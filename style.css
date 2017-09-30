@@ -127,6 +127,9 @@ tbody.collapse.show {
   .margin-left-sm-10 {
     margin-left: 10px !important; }
 
+  .margin-right-sm-10 {
+    margin-right: 10px !important; }
+
   .relatedthumb {
     padding-left: 0px;
     padding-right: 0px; }
@@ -466,7 +469,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -511,7 +514,10 @@ Artheme single content
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto; }
+  object-fit: unset;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; }
 
 .img-rounded {
   border-radius: 6px; }
@@ -2092,7 +2098,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     padding: 0px; }
 
   .comment-form-web {
-    padding-right: 25px; } }
+    padding-right: 25px; }
+
+  .d-lg-no-right-padding {
+    padding-right: 0px !important; } }
 @media only screen and (min-width: 769px) {
   .no-paddin-right-lg {
     padding-right: 0px !important; }
@@ -2103,16 +2112,27 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .side-recent-item {
     padding-left: 0px !important;
     padding-right: 0px !important; } }
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+  .image_container {
+    height: 62%; } }
 @media only screen and (max-width: 989px) {
   .hidden-dm {
-    display: none; } }
+    display: none; }
+
+  .img-responsive {
+    width: 100% !important; } }
+@media only screen and (max-width: 320px) {
+  .post-content {
+    height: 360px !important; } }
+@media only screen and (min-width: 320px) and (max-width: 405px) {
+  .post-content {
+    height: 376px !important; } }
+@media only screen and (min-width: 406px) and (max-width: 989px) {
+  .post-content {
+    height: 415px !important; } }
 @media only screen and (min-width: 360px) and (max-width: 989px) {
   .thumb-link img {
-    width: 100%;
-    height: 250px; }
-
-  .post-content {
-    height: 435px !important; }
+    width: 100%; }
 
   .post-title {
     margin-top: 10px !important;
@@ -2225,7 +2245,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-sm-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .d-lg-none {
     display: none !important; }
 
@@ -2648,14 +2668,15 @@ Artheme author widget
       text-decoration: none; }
 
 .post-content {
-  height: 387px; }
+  height: 386px; }
 
 .post-category-content {
   margin-bottom: 24px;
   min-height: 270px; }
 
 .image_container {
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  overflow: hidden; }
 
 .post-title {
   line-height: 1;
@@ -2836,7 +2857,7 @@ Sidebar
     height: 86px;
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 

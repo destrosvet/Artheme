@@ -1,5 +1,5 @@
 <?php if ( $featured = artalk_get_featured_posts() ) : $i=0; ?>
-      <div class="col-md-6 nopadding nomargin" id="featured">
+      <div class="col-md-6 col-sm-12 col-xs-12 nopadding nomargin" id="featured">
 
         <?php foreach ( $featured as $post ) : setup_postdata( $post ); $i++; ?>
         <?php if ( $has_thumbnail = has_post_thumbnail() ) : ?>

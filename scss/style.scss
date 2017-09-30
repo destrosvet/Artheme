@@ -458,7 +458,10 @@ Artheme single content
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  object-fit: unset;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .img-rounded {
@@ -2317,7 +2320,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px;
 }
 
-
 @media only screen and (max-width: 990px) {
   .no-padding-lg {
     padding: 0px ;
@@ -2325,7 +2327,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .comment-form-web{
     padding-right: 25px;
   }
+  .d-lg-no-right-padding{
+    padding-right: 0px !important;
+  }
 }
+
 @media only screen and (min-width: 769px) {
   .no-paddin-right-lg {
     padding-right: 0px !important; ;
@@ -2333,7 +2339,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .no-paddin-right-lg {
     padding-right: 0px !important; ;
   }
-
 }
 
 @media only screen and (min-width: 767px) {
@@ -2342,21 +2347,45 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     padding-right: 0px !important; ;
   }
 }
+@media only screen and (max-width: 768px){
+
+}
+@media only screen and (min-width: 420px) and (max-width: 768px){
+  .image_container{
+    height: 62%;
+  }
+}
 
 @media only screen and (max-width: 989px) {
   .hidden-dm {
     display: none;
+  }
+  .img-responsive{
+    width: 100% !important;
+  }
+}
 
+@media only screen and (max-width: 320px) {
+  .post-content{
+    height: 360px !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 405px) {
+  .post-content{
+    height: 376px !important;
+  }
+}
+
+@media only screen and (min-width: 406px) and (max-width: 989px) {
+  .post-content{
+    height: 415px !important;
   }
 }
 
 @media only screen and (min-width: 360px) and (max-width: 989px) {
   .thumb-link img {
     width: 100%;
-    height: 250px
-  }
-  .post-content{
-    height: 435px !important;
   }
   .post-title{
     margin-top: 10px !important;
@@ -2378,7 +2407,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .padding-right-md-20{
     padding-right: 45px !important;
   }
-
 }
 
 @media only screen and(min-width: 800px) and (max-width: 2000px){
@@ -2505,7 +2533,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 
-@media (max-width: 992px) {
+@media only screen and(max-width: 992px) {
+
   .d-lg-none {
     display: none !important;
   }
@@ -2955,7 +2984,6 @@ Artheme author widget
 .post-container {
   background-color: $ArtInnerColor;
   margin-bottom: 10px;
-
 }
 
 @media only screen and(max-width: 990px){
@@ -2983,7 +3011,6 @@ Artheme author widget
       text-decoration: none;
     }
   }
-
 }
 .post-meta-single-category {
   text-transform: uppercase;
@@ -3004,9 +3031,6 @@ Artheme author widget
         text-decoration: none;
       }
     }
-
-
-
   }
   time{
     margin-left: 5px;
@@ -3045,8 +3069,9 @@ Artheme author widget
     }
   }
 }
+
 .post-content {
-  height: 387px;
+  height: 386px;
 }
 
 .post-category-content {
@@ -3055,6 +3080,7 @@ Artheme author widget
 }
 .image_container{
   padding-bottom: 10px;
+  overflow: hidden;
 }
 
 
