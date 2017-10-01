@@ -365,15 +365,23 @@ function wpdocs_theme_name_scripts() {
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
 
-//function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
-//	//Calculate Image Sizes by type and breakpoint
-//	//Header Images
-//	if ($size === 'header-thumb') {
-//		$attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
-//		//Blog Thumbnails
-//	} else if ($size === 'blog-thumb') {
-//		$attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
-//	}
-//	return $attr;
-//}
-//add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_attr', 10 , 3);
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+function wpdocs_custom_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+	return '';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

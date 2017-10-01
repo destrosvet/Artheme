@@ -16,12 +16,49 @@
   .site-logo{
     margin: 0 auto !important;
   }
-
 }
+
+@media only screen and(max-width: 420px) {
+  .submit{
+    width: 50%;
+  }
+}
+
 @media only screen and(max-width: 765px) {
   #myNavbar {
-    text-align: center;  }
+    text-align: center;
+  }
 }
+
+@media only screen and (max-width: 320px) {
+  .post-content{
+    height: 360px !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 405px) {
+  .post-content{
+    height: 376px !important;
+  }
+}
+
+@media only screen and (min-width: 406px) and (max-width: 989px) {
+  .post-content{
+    height: 415px !important;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 989px) {
+  .thumb-link img {
+    width: 100%;
+    height: 100%;
+  }
+  .post-title{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
 
 .collapse {
   display: none;
@@ -80,6 +117,10 @@ tbody.collapse.show {
   }
 }
 @media only screen and (max-width: 768px) {
+  .further-content{
+    margin-right: 15px;
+  }
+
   .no-padding-sm {
     padding: 0 !important;
   }

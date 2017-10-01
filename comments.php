@@ -31,7 +31,7 @@ function add_comment() {
         'email'  => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 comment-form-email">
 		            <input id="email" class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10 comment-input-email" name="email" type="text"  placeholder="email" ' . esc_attr(  $commenter['comment_author_email'] )  . $aria_req . ' /></p>',
 
-			'web_field'    => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 comment-form-web">' .
+			'web_field'    => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 no-paddin-right-lg comment-form-web">' .
 			                  '<input id="url" class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10 comment-form-web-input" name="url" type="text" placeholder="Web"  /></p>',
 
 	);

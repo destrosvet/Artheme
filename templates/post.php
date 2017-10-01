@@ -20,7 +20,7 @@
                 <?php endif; ?>
 
             <div class="content excerpt">
-                <?php the_excerpt(); ?>
+                <?php echo the_excerpt();  ?>
             </div>
             <footer>
                 <?php get_template_part('templates/post-meta'); ?>

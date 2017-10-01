@@ -7,7 +7,7 @@
 
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 nopadding-i"><h1><?php the_title(); ?></h1>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-md-20 padding-right-lg-45">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-sm-45 no-padding-left padding-right-45-lg">
                     <?php get_template_part('templates/social-icon') ?>
                 </div>
                 <div class="post-meta-single padding-left-sm-10 ">
@@ -18,7 +18,7 @@
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4 noleftpadding padding-right-md-20 padding-right-lg-45 float-right">
+                <div class="col-md-4 col-sm-4 col-xs-4 noleftpadding padding-right-sm-45 no-padding-left padding-right-45-lg float-right">
                     <div class="single-tags-container">
 			            <?php
 

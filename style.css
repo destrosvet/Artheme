@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, red, blue, magazine
-* Version:          0.7.0
-* Template Version: 0.7.0
+* Version:          0.7.1
+* Template Version: 0.7.1
 * GitHub Theme URL: https://github.com/glmcz/Artheme
 /*
 
@@ -52,9 +52,29 @@ and open the template in the editor.
 
   .site-logo {
     margin: 0 auto !important; } }
+@media only screen and (max-width: 420px) {
+  .submit {
+    width: 50%; } }
 @media only screen and (max-width: 765px) {
   #myNavbar {
     text-align: center; } }
+@media only screen and (max-width: 320px) {
+  .post-content {
+    height: 360px !important; } }
+@media only screen and (min-width: 320px) and (max-width: 405px) {
+  .post-content {
+    height: 376px !important; } }
+@media only screen and (min-width: 406px) and (max-width: 989px) {
+  .post-content {
+    height: 415px !important; } }
+@media only screen and (min-width: 360px) and (max-width: 989px) {
+  .thumb-link img {
+    width: 100%;
+    height: 100%; }
+
+  .post-title {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important; } }
 .collapse {
   display: none; }
 
@@ -103,6 +123,9 @@ tbody.collapse.show {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
 @media only screen and (max-width: 768px) {
+  .further-content {
+    margin-right: 15px; }
+
   .no-padding-sm {
     padding: 0 !important; }
 
@@ -514,7 +537,7 @@ Artheme single content
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  object-fit: unset;
+  object-fit: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain; }
@@ -2094,7 +2117,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 60px; }
 
 @media only screen and (max-width: 990px) {
-  .no-padding-lg {
+  .no-padding-md {
     padding: 0px; }
 
   .comment-form-web {
@@ -2103,9 +2126,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .d-lg-no-right-padding {
     padding-right: 0px !important; } }
 @media only screen and (min-width: 769px) {
-  .no-paddin-right-lg {
-    padding-right: 0px !important; }
-
   .no-paddin-right-lg {
     padding-right: 0px !important; } }
 @media only screen and (min-width: 767px) {
@@ -2121,31 +2141,14 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
   .img-responsive {
     width: 100% !important; } }
-@media only screen and (max-width: 320px) {
-  .post-content {
-    height: 360px !important; } }
-@media only screen and (min-width: 320px) and (max-width: 405px) {
-  .post-content {
-    height: 376px !important; } }
-@media only screen and (min-width: 406px) and (max-width: 989px) {
-  .post-content {
-    height: 415px !important; } }
-@media only screen and (min-width: 360px) and (max-width: 989px) {
-  .thumb-link img {
-    width: 100%; }
-
-  .post-title {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important; } }
 @media only screen and (min-width: 360px) and (max-width: 1800px) {
-  .padding-right-lg-45 {
-    padding-right: 45px !important;
-    padding-left: 0px; } }
+  .padding-right-45-lg {
+    padding-right: 45px !important; } }
 @media only screen and (max-width: 767px) {
   .search-margin-top-xs {
     margin-top: 0px !important; }
 
-  .padding-right-md-20 {
+  .padding-right-sm-45 {
     padding-right: 45px !important; } }
 @media only screen and (min-width: 800px) and (max-width: 2000px) {
   .search-margin-top-lg {
@@ -2427,8 +2430,8 @@ Artheme social button
 .form-submit .submit {
   border: 0;
   text-align: left;
-  width: 230px;
-  height: 34px;
+  width: 31%;
+  height: 30px;
   background-color: #BCBCBC; }
   .form-submit .submit:hover {
     color: #FFF; }
