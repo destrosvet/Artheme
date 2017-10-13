@@ -7,14 +7,7 @@
                 <?php if ( has_post_thumbnail() ) : ?>
                     <div class="image_container">
                         <a class="thumb-link" href="<?php the_permalink(); ?>">
-<!--                            work only with support of featured images plugin which make them from first posted images in posts -->
-                            <?php // echo fly_get_attachment_image( get_post_thumbnail_id(), array( 350, 200 ), true ); ?>
-<!--                            - css resize of featured thumbnails from posts
-                                -><?php //$url = get_the_post_thumbnail_url($post)?>
-<!--                            --><?php //echo '<div class="thumb" style="background: url('.$url.')">'?>
-<!--                            --><?php //echo '</div>'; ?>
-<!--                            old version without resize -->
-<!--                         --><?php echo get_the_post_thumbnail($post, 'post-thumbnail',array('class' => 'img-responsive')); ?>
+                        <?php echo get_the_post_thumbnail($post, 'post-thumbnail',array('class' => 'img-responsive')); ?>
                         </a>
                     </div>
                 <?php endif; ?>
@@ -22,7 +15,7 @@
             <div class="content excerpt">
                 <?php echo the_excerpt();  ?>
             </div>
-            <footer>
+            <footer class="post-meta">
                 <?php get_template_part('templates/post-meta'); ?>
             </footer>
         </div>

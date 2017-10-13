@@ -138,6 +138,49 @@ function recent_track_posts($post_id) {
 }
 add_action('wp_head', 'recent_track_posts');
 
+
+/**
+ * Test whether current post is in artservis category or descendant
+ */
+function artalk_in_artservis() {
+    //@TODO set and get cat dynamically
+    $servis_category = 'artservis';
+    if ( is_category() ) {
+        $curent_category = artalk_get_current_category();
+        return $servis_category == $curent_category || artalk_term_is_descendant( $curent_category, $servis_category );
+    }
+    if ( is_single() ) {
+        $post_categories = wp_get_object_terms( get_the_ID(), 'category', array('fields'=>'slugs') );
+        return in_array($servis_category, $post_categories) || artalk_term_is_descendant( $post_categories, $servis_category );
+    }
+    return false;
+}
+/**
+ * Test whether any of the terms is a descendant of the ancestor term
+ *
+ * @param (string|array) $terms Term slug or an array of slugs to check
+ * @param (string) $ancestor Term slug of the ancestor
+ * @param (string) $taxonomy Taxonomy to check
+ *
+ * @return (bool)
+ */
+function artalk_term_is_descendant( $terms=array(), $ancestor='', $taxonomy='category' ) {
+    if ( empty($terms) || empty($ancestor) )
+        return false;
+    if ( ! $ancestor = get_term_by( 'slug', $ancestor, $taxonomy ) )
+        return false;
+    $descendants = get_term_children( $ancestor->term_id, $taxonomy );
+    if ( empty($descendants) || is_wp_error($descendants) )
+        return false;
+    foreach ( (array) $terms as $term ) {
+        if ( ! $term = get_term_by( 'slug', $term, $taxonomy ) )
+            continue;
+        if ( in_array($term->term_id, $descendants) )
+            return true;
+    }
+    return false;
+}
+
 function template_part( $atts, $content = null ){
     $tp_atts = shortcode_atts(array(
         'path' =>  null,
@@ -195,83 +238,6 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 }
 add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
-function the_contents(){
-	$html = "";
-	// Create DOM from string
-	$html = str_get_html(get_the_content_without_citate());
-	//global
-	$arr_citate_under_text = array();
-	$arr_citate_anchors    = array();
-	$arr_citate_replace    = array();
-	$cont                  = "";
-
-
-	if($html->find(' * [href^=#_ftnref] ')){
-	//	                    find citation text under post
-		foreach ( $html->find( 'p a[href*=ref]' ) as $e ) {
-			$arr_citate_under_text[] = $e->parent();
-		}
-
-//		find citation anchors from text
-		foreach ( $html->find( 'p a[href*=_ftn]' ) as $el ) {
-			$arr_citate_anchors[] = $el;
-
-		}
-		$len = count($arr_citate_anchors);
-		$firsthalf = array_slice($arr_citate_anchors, 0, $len / 2);
-
-//						anchors from text content
-	    for ( $i = 0; $i < count( $arr_citate_under_text ); $i ++ ) {
-		    $arr_citate_replace[ $i ] = $firsthalf[ $i ] . '<div class="citate-left">' . $arr_citate_under_text[ $i ] . '</div>';
-		    //						deleted matched citate text under post
-		    $cont = get_the_content_without_citate( $arr_citate_under_text[ $i ], $cont, "", "", "" );
-		    //						moved citate text under post behind anchors in text
-		    $cont = get_the_content_with_formatting_replace( $firsthalf[ $i ], $arr_citate_replace[ $i ], $cont, "", "", "" );
-	    }
-	    echo $cont;
-	}else {
-		the_content();
-	}
-}
-
-function get_the_content_without_citate ($citate='', $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
-	if($ref_content == ''){
-		$content = get_the_content($more_link_text, $stripteaser, $more_file);
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		$content = str_replace($citate, '' ,$content);
-		return $content;
-	}
-	else {
-		$content = $ref_content;
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		$content = str_replace($citate, '' ,$content);
-		return $content;
-	}
-}
-function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
-	if($ref_content == ''){
-		$content = get_the_content($more_link_text, $stripteaser, $more_file);
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		$content = str_replace($citate, $replace ,$content);
-		return $content;
-	}
-	else {
-		$content = $ref_content;
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		$content = str_replace($citate, $replace ,$content);
-		return $content;
-	}
-}
-function getRegistredImageSize () {
-    global $_wp_additional_image_sizes;
-    print '<pre>';
-    print_r( $_wp_additional_image_sizes );
-    print '</pre>';
-}
 
 //function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
 //	$content = get_the_content($more_link_text, $stripteaser, $more_file);

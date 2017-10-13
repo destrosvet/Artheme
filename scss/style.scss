@@ -2648,7 +2648,12 @@ Artheme social button
   padding-left: 0px;
 
   a {
-    text-decoration: underline;
+    //text-decoration: underline;
+    border-bottom: 2px solid $ArtBlack;
+    &:hover {
+      text-decoration: none;
+      border-bottom: 2px solid $ArtPink;
+    }
   }
 
 }
@@ -2743,6 +2748,8 @@ Artheme social button
   width: 31%;
   height: 30px;
   background-color: #BCBCBC;
+  font-weight: 600;
+  font-size: 13px;
   &:hover {
     color: $ArtInnerColor;
   }
@@ -2802,7 +2809,7 @@ Artheme social button
 }
 
 /*
-Artheme citate collum
+Artheme single
 */
 .social-icon{
   margin-top: 15%;
@@ -2811,17 +2818,37 @@ Artheme citate collum
     text-decoration: none;
   }
 }
+
 .single-text-container {
   padding-right: 10px;
-  padding-left: 0px; }
-
+  padding-left: 0px;
+}
 .single-text-container img {
   max-height: 500px;
   width: 150%;
   padding-bottom: 0.5em;
   padding-top: 1em;
 }
+.single-fotoreport-container {
+  padding-right: 10px;
+  padding-left: 0px;
+}
 
+.single-fotoreport-container img {
+  width: 50%;
+  float: left;
+  object-fit: cover;
+  height: 210px;
+  padding: 10px 20px 10px 0;
+}
+.single-fotoreport-container img:last-child {
+  float: none;
+  clear: both;
+}
+
+/*
+ * Artheme caption
+ */
 .wp-caption {
 
   text-align: center;
@@ -2833,17 +2860,22 @@ Artheme citate collum
   padding-left: 0px;
   padding-right: 0px;
   min-height: 500px; }
-
-.wp-caption p.wp-caption-text {
-  font-size: 11px;
+.wp-caption-text {
+  font-size: 12px;
   line-height: 17px;
   padding: 0 4px 1em;
-  margin: 0;
+  margin: 0 10px 0;
+}
+.wp-caption p.wp-caption-text {
+  font-size: 8px;
+  line-height: 17px;
+  padding: 0 4px 1em;
+  margin: 0 10px 0;
 }
 
 
 /*
-Artheme citate collum
+ * Artheme citate collum
  */
 
 .float-right{
@@ -2853,11 +2885,15 @@ Artheme citate collum
   position: absolute;
   left: 100%;
   width: 191.25px;
+  a {
+    text-decoration: none;
+    border: 0;
+  }
 }
 
 
 /*
-Artheme sidebar_right_collumn
+ * Artheme sidebar_right_collumn
  */
 .sidebar_right {
   //margin-left: -25px;
@@ -2910,6 +2946,37 @@ div.tags {
   border-left: 1px solid white;
   padding-left: 1px;
 }
+.single-tags-container {
+  //background-color: #D1D1D1;
+  display: inline;
+  margin: 10px 0 10px 0;
+}
+.single-tags-tag {
+  color: $ArtBlack;
+  display: inline-block;
+  background-color: #D1D1D1;
+  border-left: 1px solid $ArtInnerColor;
+  border-bottom: 1px solid $ArtInnerColor;
+  font-size: 12px;
+  padding: 0px 6px 4px 6px;
+}
+.single-tags-tag:after {
+  content: '';
+  //position: absolute;
+  //left: 0;
+  display: inline-block;
+  //width: 100%;
+  border-bottom: 1px solid $ArtInnerColor;
+  margin-top: 16px;
+}
+.single-tags-tag a {
+  color: $ArtBlack;
+  line-height: 1em;
+}
+.single-tags-tag a:hover {
+  color: $ArtPink;
+  text-decoration: none;
+}
 /*
 Artheme author widget
 
@@ -2938,6 +3005,9 @@ Artheme author widget
   font-weight: bold;
   text-align: left;
   margin: 5px 0px 10px 0px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .author_details img {
@@ -2962,8 +3032,10 @@ Artheme author widget
     width: 255px;
   }
 }
-.post-meta {
-  height: 60px;
+footer.post-meta {
+  position: absolute;
+  bottom: 0;
+  height: 45px;
   li {
     text-transform: uppercase;
     list-style: none;
@@ -3042,8 +3114,7 @@ Artheme author widget
   height: 386px;
 }
 
-.post-category-content {
-  margin-bottom: 24px;
+.post-service-content {
   min-height: 270px;
 }
 .image_container{
@@ -3197,7 +3268,7 @@ Artheme author widget
     color: $ArtInnerColor;
     line-height: 2.1em;
     font-weight: 200;
-    padding-left: 1em;
+    padding-left: 1.6em;
     &:hover {
       color: $ArtInnerColor;
     }
@@ -3498,62 +3569,7 @@ authors-list-single-text {
   //width: 100%;
   border: 1px solid $ArtBlack;
 }
-.single-tags-container {
-  background-color: #D1D1D1;
-}
-.single-tags-tag {
-  color: $ArtBlack;
-  display: inline-block;
-  background-color: #D1D1D1;
-  border-left: 1px solid $ArtInnerColor;
-  font-size: 12px;
-  padding: 8px 6px 4px 6px;
-}
-.single-tags-tag:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  border-bottom: 1px solid $ArtInnerColor;
-  margin-top: 16px;
-}
-.single-tags-tag a {
-  color: $ArtBlack;
-  line-height: 1em;
-}
-.single-tags-tag a:hover {
-  color: $ArtPink;
-  text-decoration: none;
-}
 
-.single-tags-container {
-  background-color: #D1D1D1;
-}
-.single-tags-tag {
-  color: $ArtBlack;
-  display: inline-block;
-  background-color: #D1D1D1;
-  border-left: 1px solid $ArtInnerColor;
-  font-size: 12px;
-  padding: 8px 6px 4px 6px;
-}
-.single-tags-tag:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  border-bottom: 1px solid $ArtInnerColor;
-  margin-top: 16px;
-}
-.single-tags-tag a {
-  color: $ArtBlack;
-  line-height: 1em;
-}
-.single-tags-tag a:hover {
-  color: $ArtPink;
-}
 //Mobile menu
 
 #icona {

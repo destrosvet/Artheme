@@ -3,7 +3,7 @@
         <article>
             <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
 
-				<?php if (have_posts()) : while (have_posts()) : the_post();?>
+                <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 nopadding-i"><h1><?php the_title(); ?></h1>
                 </div>
@@ -18,18 +18,18 @@
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
                 </div>
 
-                <div class="col-lg-8 col-sm-12 col-xs-12 padding-sm-12 single-text-container">
-					<?php
-					the_contents();
-					?>
+                <div class="col-lg-12 col-sm-12 col-xs-12 padding-sm-12 single-fotoreport-container">
+                    <?php
+                        the_content();
+                    ?>
 
-					<?php endwhile; else: ?>
+                    <?php endwhile; else: ?>
 
                         <h3>Omlouváme se, nic jsme nenašli.</h3>
 
-					<?php endif;
+                    <?php endif;
 
-					?>
+                    ?>
 
                     <div class="clear"></div>
                 </div>
@@ -39,13 +39,9 @@
 
             <?php get_template_part('templates/sidebar', 'single'); ?>
 
-            <div class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
-                <div id="tags">
-                    <?php  get_post_tags($post->ID); ?>
-                </div>
-                <div id="comments">
-                    <?php  comments_template(); ?>
-                </div>
+            <div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
+                <?php  get_post_tags($post->ID); ?>
+                <?php  comments_template(); ?>
         </article>
     </div><!--//content-->
 

@@ -26,12 +26,12 @@ function add_comment() {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
 		'author' => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 comment-form-author">' .
-		            '<input id="author"  class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10" name="author" type="text"  placeholder="Jméno"' . esc_attr( $commenter['comment_author'] )  . $aria_req . ' /></p>',
+		            '<input id="author"  class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10" name="author" type="text"  placeholder="Jméno"' . esc_attr( $commenter['comment_author'] )  . $aria_req . ' required="required" /></p>',
 
         'email'  => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 comment-form-email">
-		            <input id="email" class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10 comment-input-email" name="email" type="text"  placeholder="email" ' . esc_attr(  $commenter['comment_author_email'] )  . $aria_req . ' /></p>',
+		            <input id="email" class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10 comment-input-email" name="email" type="text"  placeholder="email" ' . esc_attr(  $commenter['comment_author_email'] )  . $aria_req .' required="required" /></p>',
 
-			'web_field'    => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 no-paddin-right-lg comment-form-web">' .
+		'web_field'    => '<p class="col-md-4 col-sm-4 col-xs-12 noleftpadding-i padding-left-sm-10 padding-right-sm-10 no-paddin-right-lg comment-form-web">' .
 			                  '<input id="url" class="col-md-12 col-sm-12 col-xs-12 right-margin-sm-10 comment-form-web-input" name="url" type="text" placeholder="Web"  /></p>',
 
 	);
@@ -45,8 +45,6 @@ function add_comment() {
 }
 
 ?>
-
-<div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
 	<?php // You can start editing here -- including this comment! ?>
 	<?php if ( have_comments() ) : ?>
         <div class="comments-title">

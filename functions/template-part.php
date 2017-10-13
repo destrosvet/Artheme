@@ -158,8 +158,44 @@ function artalk_feature() {
     endwhile;
     wp_reset_query();
 }
+/*
+ * Single post by category
+ */
+add_filter('single_template', 'check_category_single_template');
+function check_category_single_template( $t )
+{
+    foreach( (array) get_the_category() as $cat )
+    {
+        if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) {
+            return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+        } //else return TEMPLATEPATH . "single.php";
+        if($cat->parent)
+        {
+            $cat = get_the_category_by_ID( $cat->parent );
+            if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+        }
+    }
+    return $t;
+}
+/*
+ *  Tags
+ */
+function get_post_tags ($postID, $echo=true)
+{
+    $terms = wp_get_post_tags($postID);
+    $tags = '';
+    foreach($terms as $term) {
+        $tags .= '<span class="single-tags-tag"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>';
+    }
 
-/* Comments template       */
+    if ( ! $echo )
+        return $tags;
+    echo $tags;
+}
+/*
+ *  Comments template
+ */
+
 if ( ! function_exists( 'fws_comment' ) ) :
 	function fws_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
@@ -314,6 +350,85 @@ function get_related_posts() {
 //        wp_reset_query();
         ?>*/
 }
+
+function the_contents(){
+    $html = "";
+    // Create DOM from string
+    $html = str_get_html(get_the_content_without_citate());
+    //global
+    $arr_citate_under_text = array();
+    $arr_citate_anchors    = array();
+    $arr_citate_replace    = array();
+    $cont                  = "";
+
+
+    if($html->find(' * [href^=#_ftnref] ')){
+        //	                    find citation text under post
+        foreach ( $html->find( 'p a[href*=ref]' ) as $e ) {
+            $arr_citate_under_text[] = $e->parent();
+        }
+
+//		find citation anchors from text
+        foreach ( $html->find( 'p a[href*=_ftn]' ) as $el ) {
+            $arr_citate_anchors[] = $el;
+
+        }
+        $len = count($arr_citate_anchors);
+        $firsthalf = array_slice($arr_citate_anchors, 0, $len / 2);
+
+//						anchors from text content
+        for ( $i = 0; $i < count( $arr_citate_under_text ); $i ++ ) {
+            $arr_citate_replace[ $i ] = $firsthalf[ $i ] . '<div class="citate-left">' . $arr_citate_under_text[ $i ] . '</div>';
+            //						deleted matched citate text under post
+            $cont = get_the_content_without_citate( $arr_citate_under_text[ $i ], $cont, "", "", "" );
+            //						moved citate text under post behind anchors in text
+            $cont = get_the_content_with_formatting_replace( $firsthalf[ $i ], $arr_citate_replace[ $i ], $cont, "", "", "" );
+        }
+        echo $cont;
+    }else {
+        the_content();
+    }
+}
+
+function get_the_content_without_citate ($citate='', $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+    if($ref_content == ''){
+        $content = get_the_content($more_link_text, $stripteaser, $more_file);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $content = str_replace($citate, '' ,$content);
+        return $content;
+    }
+    else {
+        $content = $ref_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $content = str_replace($citate, '' ,$content);
+        return $content;
+    }
+}
+function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+    if($ref_content == ''){
+        $content = get_the_content($more_link_text, $stripteaser, $more_file);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $content = str_replace($citate, $replace ,$content);
+        return $content;
+    }
+    else {
+        $content = $ref_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $content = str_replace($citate, $replace ,$content);
+        return $content;
+    }
+}
+function getRegistredImageSize () {
+    global $_wp_additional_image_sizes;
+    print '<pre>';
+    print_r( $_wp_additional_image_sizes );
+    print '</pre>';
+}
+
 
 function wp_author_info_box() {
 			global $post;

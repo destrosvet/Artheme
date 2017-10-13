@@ -34,7 +34,7 @@
 		<?php next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
 
 
-    </div>
+</div>
 
 	<?php wp_reset_query(); ?>
 	<?php wp_reset_query(); ?>
