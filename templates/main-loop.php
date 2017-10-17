@@ -4,8 +4,8 @@
         <div class="col-md-4 col-sm-6 noleftpadding">Inzerce</div>
     </div>
     <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding d-lg-no-right-padding " id="posts" >
-            <?php
-            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+     <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
             $query = new WP_Query(array(
             'ignore_sticky_posts' => true,
@@ -23,21 +23,16 @@
             'category_name' => artalk_get_current_category()
             ));
         }
-    ?>
-
+     ?>
 		<?php while ($query -> have_posts()) : $query->the_post(); ?>
 
-			<?php get_template_part('templates/post', artalk_get_current_category() ); ?>
+		<?php get_template_part('templates/post', artalk_get_current_category() ); ?>
 
 		<?php endwhile; ?>
 
-
-
         <div class="further-content">
-            <div id="more_posts" data="<?php echo artalk_get_current_category(); ?>">Load More</div>
+            <div id="more_posts" data-category="<?php echo get_category_id() ?>">Load More</div>
         </div>
-<!--		--><?php //next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
-
 
 </div>
 

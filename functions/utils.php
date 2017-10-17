@@ -321,10 +321,6 @@ add_filter ('wp_nav_menu_args', 'define_class');
 //add_image_size( 'wp-post-image', 700, 200, true );
 //add_image_size( 'img-responsive wp-post-image', 700, 200, true );
 
-
-
-
-
 /**
  * Filter the except length to 20 words.
  *
@@ -344,4 +340,75 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 function wpdocs_excerpt_more( $more ) {
 	return '';
 }
+
+// Load JS script with Ajax
+function misha_my_load_more_scripts() {
+//    global $wp_query;
+//    $published_posts = wp_count_posts()->publish;
+//    $posts_per_page = get_option('posts_per_page');
+//    $page_number_max = ceil($published_posts / $posts_per_page);
+
+    // In most cases it is already included on the page and this line can be removed
+    wp_enqueue_script('jquery');
+
+    // register our main script but do not enqueue it yet
+    wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/scripts/ajax-scripts.js', array('jquery') );
+    // now the most interesting part
+    // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+    // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+    wp_localize_script( 'my_loadmore', 'ajax', array(
+//        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+//        'query_vars' => json_encode( $wp_query->query )
+        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+//            'posts' => serialize( $wp_query->query_vars ), // everything about your loop is here
+//            'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+    ) );
+
+    wp_enqueue_script( 'my_loadmore' );
+}
+add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts' );
+
+
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+// Get Id from category name
+function get_category_id(){
+    $category = get_queried_object();
+    return $category->term_id;
+}
+
+// Output function for next page
+function more_post_ajax(){
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+    header("Content-Type: text/html");
+
+    $args = array(
+        'suppress_filters' => true,
+        'post_type' => 'post',
+        'posts_per_page' => $ppp,
+        'paged'    => $page,
+        'cat'      => $cat
+    );
+
+    query_posts( $args );
+
+    if( have_posts() ) :
+        // run the loop
+        while( have_posts() ): the_post();
+            // look into your theme code how the posts are inserted, but you can use your own HTML of course
+            // do you remember? - my example is adapted for Twenty Seventeen theme
+//            get_template_part( 'single', get_post_format() );
+            // for the test purposes comment the line above and uncomment the below one
+            get_template_part('templates/post', artalk_in_artservis() );
+
+        endwhile;
+    endif;
+    wp_reset_postdata();
+    die();
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+

@@ -548,3 +548,4 @@ function artalk_awatar($authorID) {
     return $content;
 
 }
+

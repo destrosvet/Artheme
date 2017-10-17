@@ -162,6 +162,10 @@ function artalk_widgets_init04()
     return 'id="next-posts" class="next-posts-link"';
   }
 
+//  Ajax loading post
+
+
+
 
 /* LOGIN PAGE */
   add_action('login_head', 'artalk_login_logo');
@@ -201,3 +205,5 @@ function artalk_widgets_init04()
           .login #nav a {color:#bbb;}
       </style>';
   }
+
+
