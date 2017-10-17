@@ -89,9 +89,9 @@ add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts' );
 
 function more_post_ajax(){
 
-    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
-
+    $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
     header("Content-Type: text/html");
 
     $args = array(
@@ -99,9 +99,11 @@ function more_post_ajax(){
         'post_type' => 'post',
         'posts_per_page' => $ppp,
         'paged'    => $page,
+        'cat'      => $cat
     );
 
     query_posts( $args );
+
     if( have_posts() ) :
 
         // run the loop
@@ -111,110 +113,17 @@ function more_post_ajax(){
             // do you remember? - my example is adapted for Twenty Seventeen theme
 //            get_template_part( 'single', get_post_format() );
             // for the test purposes comment the line above and uncomment the below one
-            get_template_part('templates/post', artalk_get_current_category() );
+
+                get_template_part('templates/post', artalk_in_artservis() );
+
         endwhile;
     endif;
     wp_reset_postdata();
-    die($out);
+    die();
 }
 
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
-
-
-
-add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
-function misha_loadmore_ajax_handler(){
-    // prepare our arguments for the query
-    $args = unserialize( stripslashes( $_POST['query'] ) );
-    $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-    $args['posts_per_page'] = '10';
-    $args['post_status'] = 'publish';
-    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 1;
-
-    // it is always better to use WP_Query but not here
-    query_posts( $args );
-
-    if( have_posts() ) :
-
-        // run the loop
-        while( have_posts() ): the_post();
-
-            // look into your theme code how the posts are inserted, but you can use your own HTML of course
-            // do you remember? - my example is adapted for Twenty Seventeen theme
-//            get_template_part( 'single', get_post_format() );
-            // for the test purposes comment the line above and uncomment the below one
-             get_template_part('templates/post', artalk_get_current_category() );
-            endwhile;
-
-
-             ?>   <div class="further-content">
-        <div id="more_posts"><?php esc_html_e('Load More', 'twentysixteen') ?></div>
-
-
-            </div>
-        <?php
-
-    endif;
-    die; // here we exit the script and even no wp_reset_query() required!
-
-}
-
-
-
-
-
-
-
-//add_action( 'wp_ajax_nopriv_ajax_pagination', 'my_ajax_pagination' );
-//add_action( 'wp_ajax_ajax_pagination', 'my_ajax_pagination' );
-
-//function my_ajax_pagination() {
-//    echo "NEEEEEEEEEEEEEEEEEEEEEEEEE";
-//    $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
-//
-//    $query_vars['paged'] = $_POST['page'];
-//
-//
-//    $posts = new WP_Query( $query_vars );
-//    $GLOBALS['wp_query'] = $posts;
-//
-//
-//    add_filter( 'editor_max_image_size', 'my_image_size_override' );
-//
-//    if( ! $posts->have_posts() ) {
-//        get_template_part( 'single', 'none' );
-//    }
-//    else {
-//        while ( $posts->have_posts() ) {
-//            $posts->the_post();
-//            get_template_part( 'single', get_post_format() );
-//        }
-//    }
-//    remove_filter( 'editor_max_image_size', 'my_image_size_override' );
-//
-//    the_posts_pagination( array(
-//        'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-//        'next_text'          => __( 'Next page', 'twentyfifteen' ),
-//        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-//    ) );
-//
-//    die();
-//}
-//
-//function my_image_size_override() {
-//    return array( 825, 510 );
-//}
-
-
-//
-//function add_our_script() {
-//    wp_register_script( 'ajax-js', get_template_directory_uri() . '/js/ajax-scripts.js', array( 'jquery' ), '', true );
-//    wp_localize_script( 'ajax-scripts', 'ajax_params', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-//    wp_enqueue_script( 'ajax-js' );
-//}
-//add_action( 'wp_enqueue_scripts', 'add_our_script' );
 
 function artalk_theme_init() {
 

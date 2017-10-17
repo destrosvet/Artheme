@@ -1,10 +1,11 @@
-<?php get_header(); ?>
+<?php get_header(); $cat_id = get_query_var('cat');?>
+
     <div class="row main-magazine">
     <div class="bar-info">
         <div class="col-md-8 col-sm-6 col-xs-12">Nejnovější články</div>
         <div class="col-md-4 col-sm-6 noleftpadding">Inzerce</div>
     </div>
-    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding" id="posts">
+    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding" id="posts" >
         <?php
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
@@ -37,7 +38,11 @@
 
         <?php endwhile; ?>
 
-        <?php next_posts_link( '<div class="further-content">Načíst další obsah</div>' ); ?>
+        <div class="further-content">
+            <div id="more_posts" data-category="<?php echo $cat_id; ?>">Load More</div>
+                    <span id="cat-id" class="hidden" data-cat="2"></span>
+
+        </div>
 
     </div>
 
