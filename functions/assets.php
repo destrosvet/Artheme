@@ -78,6 +78,16 @@ function artalk_assets(){
 	);
 	$deps[] = 'jquery';*/
 
+    // AJAX
+//    wp_enqueue_script(
+//        'ajax-scripts',
+//        $dir.'/assets/scripts/ajax-scripts.js',
+//        array('jquery'),
+//        '1.0.0',
+//        false
+//    );
+//    $deps[] = 'ajax-scripts';
+
 	wp_enqueue_script(
 		'bootstrap4-js',
 		$dir.'/assets/scripts/bootstrap-4.js',
@@ -136,13 +146,6 @@ function artalk_assets(){
         );
         $deps[] = 'citation-positioner';
     }
-
-    wp_enqueue_style(
-        'font-awesome',
-        $dir.'/font-awesome-4.7.0/css/font-awesome.min.css',
-        array(),
-        $ver
-    );
 
 
 

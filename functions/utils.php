@@ -318,17 +318,11 @@ function define_class ($args) {/*== Set classes of menu container ==*/
 }
 add_filter ('wp_nav_menu_args', 'define_class');
 
-
-function wpdocs_theme_name_scripts() {
-	wp_enqueue_style( 'style-name', get_stylesheet_directory_uri().'/font-awesome-4.7.0/css/font-awesome.min.css' );
-
-}
-
 //add_image_size( 'wp-post-image', 700, 200, true );
 //add_image_size( 'img-responsive wp-post-image', 700, 200, true );
 
-// dulezite >
-add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+
+
 
 
 /**
