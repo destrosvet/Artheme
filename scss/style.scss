@@ -2822,6 +2822,10 @@ Artheme single
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
+  padding-top: 10px;
+}
+.single-text-container p:first-child{
+  //padding-left: 10px;
 }
 .single-text-container img {
   max-height: 500px;
@@ -3510,6 +3514,7 @@ Feature Box
   -moz-column-gap: 1em;
   -webkit-column-gap:1em;
   display: table;
+  width: 100%;
 }
 .authors-list-row p{
   margin: 10px 0;
@@ -3542,6 +3547,8 @@ Feature Box
 .authors-list-single {
   color: $ArtBlack;
   border-bottom: 1px solid $ArtBlack;
+  overflow: hidden;
+  padding-bottom: 8px;
   /*padding-left: 10px;*/
 }
 authors-list-single-text {

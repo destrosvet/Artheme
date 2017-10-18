@@ -501,7 +501,7 @@ function artalk_get_authors( $args = '', $letter = '') {
         'fields'        => 'all',
         'hide_empty'    => false,
     );
-
+    //get_the_author_meta('description', $author->ID)
     $args = wp_parse_args( $args, $defaults );
     $query_args = wp_array_slice_assoc( $args, array( 'orderby', 'number', 'exclude', 'include', 'fields' ) );
     if ( ! $authors = get_users( $query_args ) )

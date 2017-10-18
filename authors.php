@@ -21,13 +21,12 @@ get_header();
 
             $counter = 0;
             $authorCol = 0;
-            $authorCount = count(artalk_get_authors());
+            $authorCount = count(artalk_get_authors('hide_empty=true'));
 
-            $authorPerCol = ($authorCount > 1 ? floor($authorCount/3):0);
+            $authorPerCol = ($authorCount > 0 ? floor($authorCount/3):0);
 
-
-            if ($authorCount > 1) {
-                foreach (artalk_get_authors() as $author) :
+            if ($authorCount > 0) {
+                foreach (artalk_get_authors('hide_empty=true') as $author) :
                     $counter++;
                     if (((($counter ) % $authorPerCol) == 0 && $counter != 1 && $authorCol < 3  )) echo '</div>';
                     if (((($counter ) % $authorPerCol) == 0 || $counter == 1) && $authorCol < 3  ) {
@@ -56,7 +55,7 @@ get_header();
                 <?php endforeach;
             }
             else {
-                echo "<p>Je nám líto, ale žádný autor nebyl nenalezen.</p>";
+                echo "<div> <p>Je nám líto, ale žádný autor nebyl nenalezen.</p></div>";
             } ?>
 
 		</div>
