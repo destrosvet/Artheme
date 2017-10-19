@@ -21,12 +21,13 @@ get_header();
 
             $counter = 0;
             $authorCol = 0;
-            $authorCount = count(artalk_get_authors('hide_empty=true'));
+            $authors = artalk_get_authors('hide_empty=true');
+            $authorCount = count($authors);
 
-            $authorPerCol = ($authorCount > 0 ? floor($authorCount/3):0);
-
+            $authorPerCol = ($authorCount > 0 ? ceil($authorCount/3):0);
+            //var_dump($authorPerCol);
             if ($authorCount > 0) {
-                foreach (artalk_get_authors('hide_empty=true') as $author) :
+                foreach ($authors as $author) :
                     $counter++;
                     if (((($counter ) % $authorPerCol) == 0 && $counter != 1 && $authorCol < 3  )) echo '</div>';
                     if (((($counter ) % $authorPerCol) == 0 || $counter == 1) && $authorCol < 3  ) {
@@ -34,9 +35,9 @@ get_header();
                         echo '<div class="authors-list-col">';
                     }
 
-
                     if ($bio = get_the_author_meta('description', $author->ID)) : ?>
                         <div class="authors-list-single">
+                            <?php //var_dump($counter); ?>
                             <div class="authors-list-single-text">
                                 <h1><a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>"><?php esc_html_e($author->data->display_name); ?></a></h1>
                                 <div class="content bio">
@@ -59,9 +60,6 @@ get_header();
             } ?>
 
 		</div>
-
-
-	<?php /*get_template_part('templates/sidebar', 'authors'); */?>
 
 
 <?php get_footer(); ?>

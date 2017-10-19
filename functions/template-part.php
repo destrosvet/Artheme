@@ -516,10 +516,16 @@ function artalk_get_authors( $args = '', $letter = '') {
     foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author" ) as $row ) {
         $author_count[$row->post_author] = $row->count;
     }
+
     foreach ( $authors as $author_index => $author ) {
+       // var_dump(get_the_author_meta('description', $author_index));
         $posts = isset( $author_count[$author->ID] ) ? $author_count[$author->ID] : 0;
         if ( ! $posts && $args['hide_empty'] ) {
             unset($authors[$author_index]);
+        }
+        //var_dump(strlen(get_the_author_meta('description', $author->ID))>0);
+        if (strlen(get_the_author_meta('description', $author->ID)) == 0 ){
+           unset($authors[$author_index]);
         }
     }
     // sort by last name
@@ -527,10 +533,15 @@ function artalk_get_authors( $args = '', $letter = '') {
     //echo $authors->data->display_name;
 
     //echo $filtered = array_filter($array, create_function('$a', 'return $a[0] == "' . $letter . '";'));
-    $authors= array_filter($authors, create_function('$a', 'return remove_accents(end((explode(\' \',$a->data->display_name))))[0] == "' . $letter . '";'));
+    $authors = array_filter($authors, create_function('$a', 'return remove_accents(end((explode(\' \',$a->data->display_name))))[0] == "' . $letter . '";'));
+    //foreach ( $authors as $author ) {
+        //var_dump($author);
+        //var_dump(get_the_author_meta('description', $author->ID));
+    //}
     //array_filter($authors, 'GetNamesByLetter use($that)');
-    return $authors;
     //var_dump($authors);
+    return $authors;
+
 }
 
 
