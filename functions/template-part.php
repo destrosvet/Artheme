@@ -428,7 +428,13 @@ function getRegistredImageSize () {
     print_r( $_wp_additional_image_sizes );
     print '</pre>';
 }
-
+function getFurtherContentButton () {
+    $content ="<div class=\"further-content\">";
+    $content .="<div id=\"more-posts\" data-category=". (is_home()?3862:get_category_id())  .">Načíst další obsah</div>";
+    $content .="</div>";
+    echo  $content;
+    //get_category_id()
+}
 
 function wp_author_info_box() {
 			global $post;

@@ -37,10 +37,7 @@
             }?>
 
             <?php endwhile; ?>
-
-        <div class="further-content">
-            <div id="more_posts" data-category="<?php echo get_category_id() ?>">Načíst další obsah</div>
-        </div>
+            <?php getFurtherContentButton(); ?>
 
     </div>
 
