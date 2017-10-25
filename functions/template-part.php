@@ -41,6 +41,7 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
         }
 
         $cats_out = '<ul class="post-categories">'.join($args['separator'], $cats_out).'</ul>';
+        //var_dump($cats_out);
      } else
     {
         $cats_out = '';
@@ -217,7 +218,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
                         <header class="col-md-3 noleftpadding">
 							<?php
 							// user name, email and web page
-                            echo '<ul class="comment_author_bio">';
+                            echo '<ul class="comment-author-bio">';
 
 							printf( '<li class="">%1$s %2$s</li>',
 								'<a href="mailto:'.get_comment_author_email().'">'.get_comment_author().'</a>'
@@ -278,15 +279,18 @@ function get_related_author_posts() {
 }
 
 function get_related_posts() {
-    global $authordata, $post;
+    $related_posts = artalk_get_related_posts();
 
-    $authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5 ) );
+
+    //global $authordata, $post;
+
+    //$authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5 ) );
 
     $output = "";
     $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
     $output .= "<ul>";
-    foreach ( $authors_posts as $authors_post ) {
-        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a></li>';
+    foreach ( $related_posts as $post ) {
+        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . apply_filters( 'the_title', $post->post_title, $post->ID ) . '</a></li>';
     }
     $output .= "</ul>";
     $output .= "</div>";

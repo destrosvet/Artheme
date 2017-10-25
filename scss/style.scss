@@ -2710,10 +2710,12 @@ Artheme social button
 }
 
 
-.comment_author_bio{
+.comment-author-bio{
   list-style-type: none;
   padding-left: 15px;
-
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 #email-notes{
@@ -2803,6 +2805,10 @@ Artheme social button
   list-style-type: none;
   margin-top: 20px;
   border-bottom: 1px solid black;
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 .commented-list:last-child{
   border-bottom: none;
@@ -2936,6 +2942,9 @@ Artheme single
 /*
 Artheme tags
  */
+#tags {
+ margin-bottom: 10px;
+}
 
 div.tags {
   margin: 0;
@@ -3046,6 +3055,7 @@ footer.post-meta {
   }
   .post-categories {
     padding-left: 0;
+    display: inline;
   }
   a {
     color: $ArtBlack;
@@ -3085,9 +3095,11 @@ footer.post-meta {
   li {
     text-transform: uppercase;
     list-style: none;
+    display: inline;
   }
   .post-categories {
     padding-left: 0;
+    display: inline;
   }
 }
 
@@ -3293,6 +3305,7 @@ footer.post-meta {
     }
     a:hover {
       color: $ArtPink;
+      text-decoration: none;
     }
   }
   li.double {
@@ -3405,7 +3418,7 @@ Sidebar
 }
 /* Media artalk service part */
 .media_li a{
-  padding: 10px 10px 10px 0px;
+  //padding: 10px 10px 10px 0px;
 
 }
 
@@ -3542,6 +3555,7 @@ Feature Box
 }
 .authors-letter-line a:hover {
   color: $ArtPink;
+  text-decoration: none;
 }
 
 .authors-list-single {
@@ -3560,6 +3574,7 @@ authors-list-single-text {
 }
 .authors-list-single-text a:hover {
   color: $ArtPink;
+  text-decoration: none;
 }
 .authors-list-single-text H1{
   font-size: 1.6em;

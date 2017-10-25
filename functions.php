@@ -59,7 +59,7 @@ function artalk_theme_init() {
 	//include_once('functions/featured.php');
 
 	/* RELATED POSTS */
-	//include_once('functions/related_posts.php');
+	include_once('functions/related-posts.php');
 
 	/* AJAX LOADER */
 	//include_once('functions/ajax_loader.php');

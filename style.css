@@ -2403,9 +2403,11 @@ Artheme social button
   width: 100%;
   margin-right: 5px; }
 
-.comment_author_bio {
+.comment-author-bio {
   list-style-type: none;
   padding-left: 15px; }
+  .comment-author-bio a:hover {
+    text-decoration: none; }
 
 #email-notes {
   display: none; }
@@ -2480,6 +2482,8 @@ Artheme social button
   list-style-type: none;
   margin-top: 20px;
   border-bottom: 1px solid black; }
+  .commented-list a:hover {
+    text-decoration: none; }
 
 .commented-list:last-child {
   border-bottom: none; }
@@ -2593,6 +2597,9 @@ Artheme single
 /*
 Artheme tags
  */
+#tags {
+  margin-bottom: 10px; }
+
 div.tags {
   margin: 0;
   padding: 0;
@@ -2684,7 +2691,8 @@ footer.post-meta {
     text-transform: uppercase;
     list-style: none; }
   footer.post-meta .post-categories {
-    padding-left: 0; }
+    padding-left: 0;
+    display: inline; }
   footer.post-meta a {
     color: #212121;
     text-decoration: none; }
@@ -2716,9 +2724,11 @@ footer.post-meta {
     margin-right: 5px; }
   .post-meta-single li {
     text-transform: uppercase;
-    list-style: none; }
+    list-style: none;
+    display: inline; }
   .post-meta-single .post-categories {
-    padding-left: 0; }
+    padding-left: 0;
+    display: inline; }
 
 .post, .post-category {
   border-bottom: 1px solid #212121; }
@@ -2858,7 +2868,8 @@ footer.post-meta {
     display: block;
     color: #212121; }
   .service-b-tz li a:hover, .service-b-dp li a:hover, .service-b-mm li a:hover, .service-b-top li a:hover {
-    color: #fb026a; }
+    color: #fb026a;
+    text-decoration: none; }
 .service-b-tz li.double, .service-b-dp li.double, .service-b-mm li.double, .service-b-top li.double {
   width: 50%;
   float: left; }
@@ -2934,9 +2945,6 @@ Sidebar
   display: inline; }
 
 /* Media artalk service part */
-.media_li a {
-  padding: 10px 10px 10px 0px; }
-
 /*
 Utils
 */
@@ -3047,7 +3055,8 @@ Feature Box
   /*padding-left: 10px;*/ }
 
 .authors-letter-line a:hover {
-  color: #fb026a; }
+  color: #fb026a;
+  text-decoration: none; }
 
 .authors-list-single {
   color: #212121;
@@ -3064,7 +3073,8 @@ authors-list-single-text {
   color: #212121; }
 
 .authors-list-single-text a:hover {
-  color: #fb026a; }
+  color: #fb026a;
+  text-decoration: none; }
 
 .authors-list-single-text H1 {
   font-size: 1.6em;

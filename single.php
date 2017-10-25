@@ -12,7 +12,7 @@
                     <div class="post-meta-single padding-left-sm-10 ">
                         <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
                         <span class="post-meta-single-category"> |
-                            <?php do_action('artalk_post_cats','',array('separator' => ' ','main-category' => true),true); ?>
+                            <?php do_action('artalk_post_cats','',array('separator' => ' | ','main-category' => false),true); ?>
                         </span>
                         <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
                     </div>
