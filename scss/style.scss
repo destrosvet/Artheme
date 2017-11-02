@@ -436,6 +436,11 @@ img {
 /*
 Artheme single content
  */
+.article-single-title {
+  h1 {
+    font-size: 25px;
+  }
+}
 .cont p {
   margin-right: 33.3333%;
 }
@@ -2644,6 +2649,7 @@ Artheme social button
 }
 
 .single-text-container{
+  font-size: 17px;
   padding-right: 10px;
   padding-left: 0px;
 
@@ -2682,12 +2688,19 @@ Artheme social button
 
 
 /* Artheme comments */
-
+.comment-article {
+  time{
+    color: $ArtBlack;
+    font-weight: 600;
+  }
+}
 .links time{
-  color: black;
+  color: $ArtBlack;
+  font-weight: 600;
 }
 .comment-reply-link{
-  color: black;
+  color: $ArtBlack;
+  font-weight: 600;
 }
 //#respond {
 //  background: #ececec;
@@ -2713,6 +2726,7 @@ Artheme social button
 .comment-author-bio{
   list-style-type: none;
   padding-left: 15px;
+  font-weight: 600;
   a:hover {
     text-decoration: none;
   }
@@ -2835,7 +2849,7 @@ Artheme single
 }
 .single-text-container img {
   max-height: 500px;
-  width: 150%;
+  width: 136%;
   padding-bottom: 0.5em;
   padding-top: 1em;
 }
@@ -2870,11 +2884,13 @@ Artheme single
   padding-left: 0px;
   padding-right: 0px;
   min-height: 500px; }
+
 .wp-caption-text {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 17px;
-  padding: 0 4px 1em;
-  margin: 0 10px 0;
+  padding: 0 0 1em;
+  text-align: left;
+  //margin: 0 10px 0;
 }
 .wp-caption p.wp-caption-text {
   font-size: 8px;
@@ -2892,12 +2908,17 @@ Artheme single
  float: right;
 }
 .citate-left{
+  font-size: 13px;
   position: absolute;
   left: 100%;
   width: 191.25px;
+  padding-left: 10px;
   a {
     text-decoration: none;
     border: 0;
+    &:hover {
+      border: none;
+    }
   }
 }
 
@@ -2943,7 +2964,7 @@ Artheme single
 Artheme tags
  */
 #tags {
- margin-bottom: 10px;
+ margin-bottom: 15px;
 }
 
 div.tags {
@@ -3014,12 +3035,16 @@ Artheme author widget
 
 
 .author-heading{
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   text-align: left;
-  margin: 5px 0px 10px 0px;
+  margin: 20px 0px 10px 0px;
   a {
     text-decoration: none;
+  }
+  h2 {
+    font-size: 24px;
+    margin-top: 0px;
   }
 }
 
@@ -3031,6 +3056,7 @@ Artheme author widget
 }
 .author_details{
   text-align: initial;
+  padding-bottom: 10px;
 }
 .post-container {
   background-color: $ArtInnerColor;
@@ -3052,6 +3078,7 @@ footer.post-meta {
   li {
     text-transform: uppercase;
     list-style: none;
+    display: inline;
   }
   .post-categories {
     padding-left: 0;
@@ -3469,10 +3496,10 @@ Feature Box
     text-decoration: none;
   }
   ul {
-    display: inline-block;
+    display: inline;
     padding-left: 5px;
     li {
-
+      display: inline;
       text-transform: uppercase;
       list-style: none;
     }

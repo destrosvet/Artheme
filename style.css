@@ -518,6 +518,9 @@ img {
 /*
 Artheme single content
  */
+.article-single-title h1 {
+  font-size: 25px; }
+
 .cont p {
   margin-right: 33.3333%; }
 
@@ -2358,6 +2361,7 @@ Artheme social button
   overflow: hidden; }
 
 .single-text-container {
+  font-size: 17px;
   padding-right: 10px;
   padding-left: 0px; }
   .single-text-container a {
@@ -2384,11 +2388,17 @@ Artheme social button
   padding-right: 0px; }
 
 /* Artheme comments */
+.comment-article time {
+  color: #212121;
+  font-weight: 600; }
+
 .links time {
-  color: black; }
+  color: #212121;
+  font-weight: 600; }
 
 .comment-reply-link {
-  color: black; }
+  color: #212121;
+  font-weight: 600; }
 
 /* Highlight active form field */
 #respond input[type=text], textarea {
@@ -2405,7 +2415,8 @@ Artheme social button
 
 .comment-author-bio {
   list-style-type: none;
-  padding-left: 15px; }
+  padding-left: 15px;
+  font-weight: 600; }
   .comment-author-bio a:hover {
     text-decoration: none; }
 
@@ -2504,7 +2515,7 @@ Artheme single
 
 .single-text-container img {
   max-height: 500px;
-  width: 150%;
+  width: 136%;
   padding-bottom: 0.5em;
   padding-top: 1em; }
 
@@ -2538,10 +2549,10 @@ Artheme single
   min-height: 500px; }
 
 .wp-caption-text {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 17px;
-  padding: 0 4px 1em;
-  margin: 0 10px 0; }
+  padding: 0 0 1em;
+  text-align: left; }
 
 .wp-caption p.wp-caption-text {
   font-size: 8px;
@@ -2556,12 +2567,16 @@ Artheme single
   float: right; }
 
 .citate-left {
+  font-size: 13px;
   position: absolute;
   left: 100%;
-  width: 191.25px; }
+  width: 191.25px;
+  padding-left: 10px; }
   .citate-left a {
     text-decoration: none;
     border: 0; }
+    .citate-left a:hover {
+      border: none; }
 
 /*
  * Artheme sidebar_right_collumn
@@ -2598,7 +2613,7 @@ Artheme single
 Artheme tags
  */
 #tags {
-  margin-bottom: 10px; }
+  margin-bottom: 15px; }
 
 div.tags {
   margin: 0;
@@ -2659,19 +2674,23 @@ Artheme author widget
   text-align: left; }
 
 .author-heading {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   text-align: left;
-  margin: 5px 0px 10px 0px; }
+  margin: 20px 0px 10px 0px; }
   .author-heading a {
     text-decoration: none; }
+  .author-heading h2 {
+    font-size: 24px;
+    margin-top: 0px; }
 
 .author_details img {
   float: left;
   margin: 0 15px 10px 0; }
 
 .author_details {
-  text-align: initial; }
+  text-align: initial;
+  padding-bottom: 10px; }
 
 .post-container {
   background-color: #FFF;
@@ -2689,7 +2708,8 @@ footer.post-meta {
   height: 45px; }
   footer.post-meta li {
     text-transform: uppercase;
-    list-style: none; }
+    list-style: none;
+    display: inline; }
   footer.post-meta .post-categories {
     padding-left: 0;
     display: inline; }
@@ -2983,9 +3003,10 @@ Feature Box
     color: #fb026a;
     text-decoration: none; }
   .featured ul {
-    display: inline-block;
+    display: inline;
     padding-left: 5px; }
     .featured ul li {
+      display: inline;
       text-transform: uppercase;
       list-style: none; }
 

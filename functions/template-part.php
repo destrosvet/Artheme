@@ -22,42 +22,78 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
 
     $defaults = array(
         'separator' => ' ',
-        'main-category' => false
+        'main-category' => false,
+        'sub-category' => true
     );
     $args = wp_parse_args( $args, $defaults );
     $cats = wp_get_object_terms($post_id, 'category', $args);
     if ( empty($cats) )
         return false;
 
-    if (!$args['main-category'])
+    if ($args['sub-category'])
     {
-        $cats_out = array();
-        foreach ( $cats as $key => $cat ) {
-            if ( 'E-mail newsletter' == $cat->name )
-                continue;
-            $pre = '';
+        if ($args['main-category'])
+        {
+            $cats_out = array();
+            foreach ($cats as $key => $cat) {
+                if ('E-mail newsletter' == $cat->name)
+                    continue;
+                $pre = '';
+                $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
+                if ($parent != 'artservis' && $parent != 'arena') {
+                    $cats_tree = get_category_parents($cat->parent, 'true', '||', ' &raquo; ');
 
-            $cats_out[] = '<li>'.$pre.'<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a></li>';
-        }
+                    $cats_Arr = explode('||', $cats_tree);
+                    //$cats_out = $cats_Arr[1];
+                    $cats_out[] = '<li>' . $cats_Arr[1] . '</li>';
 
-        $cats_out = '<ul class="post-categories">'.join($args['separator'], $cats_out).'</ul>';
-        //var_dump($cats_out);
-     } else
-    {
-        $cats_out = '';
-        foreach ( $cats as $key => $cat ) {
-            if ( 'E-mail newsletter' == $cat->name )
-                continue;
-            $parent = get_category_parents($cat->parent,'false',false,' &raquo; ');
-            if ( $parent != 'artservis' && $parent != 'arena' ) {
-                $cats_tree = get_category_parents($cat->parent,'true','||',' &raquo; ');
+                } else {
+                    $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $cat->name . '</a></li>';
+                }
 
-                $cats_Arr = explode('||',$cats_tree);
-                $cats_out = $cats_Arr[1];
-
-            } else {
-                $cats_out = '<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a>';
             }
+
+            $cats_out = '<ul class="post-categories">' . join($args['separator'], $cats_out) . '</ul>';
+            //var_dump($cats_out);
+        }
+        else
+        {
+            $cats_out = array();
+            foreach ($cats as $key => $cat) {
+                if ('E-mail newsletter' == $cat->name)
+                    continue;
+                $pre = '';
+
+                $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $cat->name . '</a></li>';
+            }
+
+            $cats_out = '<ul class="post-categories">' . join($args['separator'], $cats_out) . '</ul>';
+        }
+    }
+    else
+    {
+        if ($args['main-category'])
+        {
+            $cats_out = '';
+            foreach ( $cats as $key => $cat )
+            {
+                if ('E-mail newsletter' == $cat->name)
+                    continue;
+                $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
+                if ($parent != 'artservis' && $parent != 'arena') {
+                    $cats_tree = get_category_parents($cat->parent, 'true', '||', ' &raquo; ');
+
+                    $cats_Arr = explode('||', $cats_tree);
+                    $cats_out = $cats_Arr[1];
+
+                } else {
+                    $cats_out = '<a href="' . esc_url(get_term_link($cat)) . '">' . $cat->name . '</a>';
+                }
+            }
+        }
+        else
+        {
+            $cats_out = 'subcategory not implemented';
         }
     }
 
@@ -145,15 +181,14 @@ function artalk_feature() {
         $featured .='</div>';
         $featured .='<footer class="margin-left-sm-10 margin-right-sm-10">';
         $featured .= '<span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'</time> | ';
-        $featured .= '<span class="post-meta-single-category">'.artalk_post_cats(get_the_ID(), array('separator' => '' ,'main-category' => true), false).'</span>';
+        $featured .= '<span class="post-meta-single-category">'.artalk_post_cats(get_the_ID(), array('separator' => ' | ' ,'main-category' => true), false).'</span>';
         $featured .='</footer>';
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img margin-left-sm-10 margin-right-sm-10"><a href="'. get_permalink() .'" />';
             $featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
-            //$featured .= fly_get_attachment_image( get_post_thumbnail_id(), array( 585, 416 ), true );
             $featured .= '</a></div>';
         }else{
-            $featured .='neni nahled';
+            $featured .='Náhled nebyl nalezen.';
         }
         echo $featured;
     endwhile;
@@ -214,7 +249,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
 				global $post;
 				?>
                 <li class="commented-list padding-left-sm-10" id="li-comment-<?php comment_ID(); ?>">
-                    <article id="comment-<?php comment_ID(); ?>" class="row">
+                    <article id="comment-<?php comment_ID(); ?>" class="comment-article row">
                         <header class="col-md-3 noleftpadding">
 							<?php
 							// user name, email and web page
@@ -237,7 +272,8 @@ if ( ! function_exists( 'fws_comment' ) ) :
 
                         <section class="col-md-6">
 							<?php
-							printf( '<a class="links"href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+                            //<a class="links"href="%1$s"></a>
+							printf( '<time datetime="%2$s">%3$s</time>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
@@ -464,7 +500,7 @@ function wp_author_info_box() {
 				$user_posts = get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) );
 
 				if ( ! empty( $display_name ) ) {
-					$author_details = '<p class="author-heading">Autor</p><h2 class="author-heading"><a href="'.esc_url(get_author_posts_url(get_the_author_meta( 'ID', $post->post_author ))).'">' . $display_name . '</a></h2>';
+					$author_details = '<div class="author-heading"><p>Autor</p><h2><a href="'.esc_url(get_author_posts_url(get_the_author_meta( 'ID', $post->post_author ))).'">' . $display_name . '</a></h2></div>';
 				}
 
 				if ( ! empty( $user_description ) ) // Author avatar and bio
