@@ -34,7 +34,7 @@
 </div>
 
 	<?php wp_reset_query(); ?>
-	<?php wp_reset_query(); ?>
+	<?php wp_reset_postdata(); ?>
 
 	<?php get_template_part('templates/sidebar'); ?>
 

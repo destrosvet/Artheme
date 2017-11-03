@@ -27,8 +27,6 @@
 
             <?php while ($query -> have_posts()) : $query->the_post(); ?>
 
-
-
             <?php
                 if(!artalk_in_artservis() || artalk_get_current_category() == 'foto-report') {
                     get_template_part('templates/post', artalk_get_current_category() );

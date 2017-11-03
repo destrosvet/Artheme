@@ -14,5 +14,5 @@
 <div class="relatedthumb">
     <?php echo get_related_posts() ?>
 </div>
-</div>
+
 

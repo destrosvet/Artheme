@@ -227,6 +227,16 @@ function short_title_text($text, $after = '', $length) {
 	}
 	return $mytitle;
 }
+function short_title_text_letter($text,$after = '',$letters) {
+
+    $myTitle=$text;
+    if (preg_match('/^.{1,'.$letters.'}\b/s', $text, $match))
+    {
+        $myTitle = $match[0]. $after;
+    }
+    return $myTitle;
+}
+
 
 function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 {
@@ -381,32 +391,36 @@ function get_category_id(){
 function more_post_ajax(){
     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
-    $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+    $cat = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+    $author_id = (isset($_POST['author_id'])) ? $_POST['author_id'] : 0;
     header("Content-Type: text/html");
 
     $args = array(
         'suppress_filters' => true,
         'post_type' => 'post',
         'posts_per_page' => $ppp,
-        'paged'    => $page,
-        'cat'      => $cat
+        'paged' => $page,
+        'author'=>$author_id,
+        'cat' => $cat
     );
 
-    query_posts( $args );
-
-    if( have_posts() ) :
+    $query = new WP_Query($args);
+    while ($query -> have_posts()) : $query->the_post();
+        get_template_part('templates/post', artalk_in_artservis() );
+    endwhile;
+    //if( have_posts() ) :
         // run the loop
-        while( have_posts() ): the_post();
+    //    while( have_posts() ): the_post();
             // look into your theme code how the posts are inserted, but you can use your own HTML of course
             // do you remember? - my example is adapted for Twenty Seventeen theme
 //            get_template_part( 'single', get_post_format() );
             // for the test purposes comment the line above and uncomment the below one
-            get_template_part('templates/post', artalk_in_artservis() );
+     //       get_template_part('templates/post', artalk_in_artservis() );
 
-        endwhile;
-    endif;
-    wp_reset_postdata();
-    die();
+    //  endwhile;
+    //endif;
+    //wp_reset_postdata();
+    //die();
 }
 
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');

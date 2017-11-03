@@ -15,14 +15,14 @@
             <ul>
             <?php
             $QArgsActual = array( 'category_name' => 'aktuality','posts_per_page' => 6 );
-            query_posts($QArgsActual);
-            while ( have_posts() ) : the_post();
+            $ActualQuery = new WP_Query($QArgsActual);
+            //query_posts($QArgsActual);
+            while ($ActualQuery -> have_posts()) : $ActualQuery->the_post();
                 echo '<li>';
                 echo '<a href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; ';
                 the_date('d.m.Y','<time>','</time><br />');
                 $Actualtitle = get_the_title();
                 echo artalk_get_the_excerpt( $post->ID, $num_words = 8, $more = '… ',$allowed_tags = '<a>');
-                //echo wp_trim_words( $Actualtitle, $num_words = 8, $more = '… ');
                 echo '</a></li>';
             endwhile;
 

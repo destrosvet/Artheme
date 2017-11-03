@@ -1,7 +1,8 @@
 jQuery(document).ready( function($) {
     var ppp = 10; // Post per page
-    var pageNumber = 2;
+    var pageNumber = 1;
     var cat = $('#more-posts').data('category');
+    var author = $('#more-posts').data('author');
 
     function load_posts() {
         pageNumber++;
@@ -11,6 +12,7 @@ jQuery(document).ready( function($) {
             url: ajax.ajaxurl,
             data: {
                 'cat': cat,
+                'author_id':author,
                 'ppp': ppp,
                 'pageNumber': pageNumber,
                 'action': 'more_post_ajax'
@@ -18,13 +20,12 @@ jQuery(document).ready( function($) {
             beforeSend: function (xhr) {
                 // $('#posts').find('article').remove();
                 $("#more-posts").text('Načítá se obsah, prosím čekejte ...');
-                //$("#posts").append('<h4 id="loading"> Příspěvky se načítají, prosím čekejte ... </h4>');
                 $(window).scrollTop($("#more-posts").offset().top);
             },
             success: function (data) {
                 var $data = $(data);
-
-                if (data.length) {
+                console.log(data.length);
+                if (data.length > 1) {
                     //$("#loading").remove();
 
                     $("#posts").append($data);
@@ -33,6 +34,7 @@ jQuery(document).ready( function($) {
                     $("#posts").append($(".further-content"));
                 } else {
                     $("#more-posts").attr("disabled", true);
+                    $(".further-content").remove();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

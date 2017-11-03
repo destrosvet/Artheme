@@ -8,7 +8,7 @@ add_theme_support('post-thumbnails');
 add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 
 $sizes = array(
-    'thumbnail' => array(350, 220, true),    // grid thumbnails, gallery thumbs, footer feat, b-square feat
+    'thumbnail' => array(350, 200, true),    // grid thumbnails, gallery thumbs, footer feat, b-square feat
     'medium'    => array(470, 440, false),   // photoreport feat, comics
     'large'     => array(1060, 1060, false), // fullsize in post, gallery lightbox
     'avatar'    => array(90, 90, true),      // profile picture
