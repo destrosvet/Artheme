@@ -22,7 +22,7 @@
                 echo '<a href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; ';
                 the_date('d.m.Y','<time>','</time><br />');
                 $Actualtitle = get_the_title();
-                echo artalk_get_the_excerpt( $post->ID, $num_words = 8, $more = '… ',$allowed_tags = '<a>');
+                echo artalk_get_the_excerpt( $post->ID, $num_words = 8, $more = '… ',$allowed_tags = '<a>',70);
                 echo '</a></li>';
             endwhile;
 

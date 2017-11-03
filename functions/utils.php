@@ -88,7 +88,7 @@
         array_pop($words);
         $text = implode(' ', $words);
         if ($trimChar && $trimChar < strlen ( $text )){
-            $text = mb_substr($text,0,$trimChar);
+            $text = short_title_text_letter ($text,'',$trimChar);
         }
 
         $text = $text . $excerpt_more;

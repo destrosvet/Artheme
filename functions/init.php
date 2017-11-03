@@ -1,4 +1,12 @@
 <?php
+/* GIT HUB UPDATER */
+add_filter( 'github_updater_set_options',
+function () {
+    return array(
+        'my-private-theme'    => 'Artheme',
+        'github_access_token' => '2896db9a8891cba905903494f4e75b856f892c6a',
+    );
+} );
 
 /* L10N */
   load_theme_textdomain( 'artalk', get_stylesheet_directory() . '/languages' );
