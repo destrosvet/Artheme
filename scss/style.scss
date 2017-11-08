@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, black, white, art magazine
-* Version:          0.8.2
-* Template Version: 0.8.2
+* Version:          0.8.3
+* Template Version: 0.8.3
 * GitHub Theme URL: https://github.com/glmcz/Artheme.git
 /*
 
@@ -28,6 +28,7 @@ and open the template in the editor.
 */
 @import "vars";
 @import "mobile-display";
+@import "simplelightbox";
 
 
 html {
@@ -2847,25 +2848,46 @@ Artheme single
 .single-text-container p:first-child{
   //padding-left: 10px;
 }
-.single-text-container img {
-  max-height: 500px;
+.single-text-container .full-width {
   width: 136%;
   padding-bottom: 0.5em;
   padding-top: 1em;
+
+}
+.single-text-container .full-width img{
+  width: 100%;
+  height: auto;
+
+}
+
+.single-text-container img {
+  //max-height: 500px;
+  //width: 136%;
+  //padding-bottom: 0.5em;
+  //padding-top: 1em;
 }
 .single-fotoreport-container {
   padding-right: 10px;
   padding-left: 0px;
 }
-
-.single-fotoreport-container img {
+.single-fotoreport-container figure {
   width: 50%;
   float: left;
   object-fit: cover;
-  height: 210px;
   padding: 10px 20px 10px 0;
 }
-.single-fotoreport-container img:last-child {
+.single-fotoreport-container img {
+
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+.single-fotoreport-container figure:last-child {
+  float: none;
+  clear: both;
+}
+
+.single-fotoreport-container hr {
   float: none;
   clear: both;
 }
@@ -3250,7 +3272,7 @@ footer.post-meta {
   }
   h3 {
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 48px;
   }
   a:hover {
     text-decoration: none;
@@ -3262,7 +3284,8 @@ footer.post-meta {
   border-left: 1px solid black;
   border-right: 1px solid black;
   .s-news-content {
-    padding: 10px;
+    padding: 10px 10px 3px 10px;
+
   }
 
   li {
@@ -3279,6 +3302,9 @@ footer.post-meta {
     a:hover {
       color: $ArtPink;
     }
+    p {
+      margin: 0 0 8x;
+    }
   }
   li:hover,
   li:focus {
@@ -3289,6 +3315,7 @@ footer.post-meta {
     //list-style-position:inside;
     padding-left: 0px;
     margin-left: 0px;
+    margin-bottom: 0px;
 
   }
 }
@@ -3348,7 +3375,12 @@ footer.post-meta {
   height: 100%;
   //border-left: 1px solid black;
   .s-photoreport-content {
-    padding: 10px 0px 10px 10px;
+    padding: 10px 0px 0px 10px;
+
+    .photo-article:last-child {
+      margin-bottom: 10px !important;
+    }
+
     .photo-article {
       margin-bottom: 20px;
       height: 225px;
@@ -3371,6 +3403,7 @@ footer.post-meta {
       }
     }
   }
+
 }
 
 @media only screen and (max-width: 765px) {

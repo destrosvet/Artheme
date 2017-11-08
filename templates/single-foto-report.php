@@ -44,7 +44,6 @@
                 <?php  comments_template(); ?>
         </article>
     </div><!--//content-->
-
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

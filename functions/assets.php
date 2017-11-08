@@ -42,41 +42,42 @@ if (!is_admin()) {
 
 /* */
 /* SCRIPTS */
-function artalk_assets(){
-	global $wp_query;
-	$dir = get_stylesheet_directory_uri();
-	$ver = '1.0.23';
-	$deps = array();
+function artalk_assets()
+{
+    global $wp_query;
+    $dir = get_stylesheet_directory_uri();
+    $ver = '1.0.23';
+    $deps = array();
 
     // JQuery
     wp_deregister_script('jquery');
     wp_enqueue_script(
         'jquery',
-        $dir.'/assets/scripts/jquery-2.2.0.min.js',
+        $dir . '/assets/scripts/jquery-2.2.0.min.js',
         array(),
         '2.2.0',
         false
     );
     $deps[] = 'jquery';
 
-	// modernizr
-	/*wp_enqueue_script(
-		'modernizr',
-		$dir.'/bower_components/foundation/js/vendor/modernizr.js',
-		array(),
-		$ver,
-		false
-	);
-	$deps[] = 'modernizr';*/
-	// webfontloader
-/*	wp_enqueue_script(
-		'jquery',
-		$dir.'/assets/scripts/jquery-2.2.0.min.js',
-		array(),
-		'2.2.0',
-		false
-	);
-	$deps[] = 'jquery';*/
+    // modernizr
+    /*wp_enqueue_script(
+        'modernizr',
+        $dir.'/bower_components/foundation/js/vendor/modernizr.js',
+        array(),
+        $ver,
+        false
+    );
+    $deps[] = 'modernizr';*/
+    // webfontloader
+    /*	wp_enqueue_script(
+            'jquery',
+            $dir.'/assets/scripts/jquery-2.2.0.min.js',
+            array(),
+            '2.2.0',
+            false
+        );
+        $deps[] = 'jquery';*/
 
     // AJAX
 //    wp_enqueue_script(
@@ -88,42 +89,61 @@ function artalk_assets(){
 //    );
 //    $deps[] = 'ajax-scripts';
 
-	wp_enqueue_script(
-		'bootstrap4-js',
-		$dir.'/assets/scripts/bootstrap-4.js',
-		array('jquery'),
-		$ver,
-		false
-	);
-	$deps[] = 'bootstrap4-js';
-        
-	// webfontloader
-	wp_enqueue_script(
-		'webfontloader',
-		$dir.'/assets/scripts/webfontloader/webfont.js',
-		array(),
-		$ver,
-		false
-	);
-	$deps[] = 'webfontloader';
-        
-        // scripts for home
-/*        if ( is_home() || is_category( array('artservis','arena','magazine') ) || is_single() ) {
-                    $theme_scripts = array(
-                        'slick.min',
-                    'artalk.featured'
-            );
-            foreach ( $theme_scripts as $script_handle ) {
-                    wp_enqueue_script(
-                            $script_handle,
-                            $dir.'/assets/scripts/'.$script_handle.'.js',
-                            $deps,
-                            $ver,
-                            true
-                    );
-                    $deps[] = $script_handle;
-            }
-        }*/
+    wp_enqueue_script(
+        'bootstrap4-js',
+        $dir . '/assets/scripts/bootstrap-4.js',
+        array('jquery'),
+        $ver,
+        false
+    );
+    $deps[] = 'bootstrap4-js';
+
+    // webfontloader
+    wp_enqueue_script(
+        'webfontloader',
+        $dir . '/assets/scripts/webfontloader/webfont.js',
+        array(),
+        $ver,
+        false
+    );
+    $deps[] = 'webfontloader';
+
+    // scripts for home
+    /*        if ( is_home() || is_category( array('artservis','arena','magazine') ) || is_single() ) {
+                        $theme_scripts = array(
+                            'slick.min',
+                        'artalk.featured'
+                );
+                foreach ( $theme_scripts as $script_handle ) {
+                        wp_enqueue_script(
+                                $script_handle,
+                                $dir.'/assets/scripts/'.$script_handle.'.js',
+                                $deps,
+                                $ver,
+                                true
+                        );
+                        $deps[] = $script_handle;
+                }
+            }*/
+    if (in_category('foto-report')) {
+       wp_enqueue_script(
+            'lightbox',
+            $dir . '/assets/scripts/lightbox/simple-lightbox.min.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'jquery';
+
+        wp_enqueue_script(
+            'lightbox-init',
+            $dir . '/assets/scripts/artalk.gallery.js',
+            array(),
+            $ver,
+            true
+        );
+        $deps[] = 'jquery';
+    }
 
     if (is_single()) {
         // jQuery-Collision

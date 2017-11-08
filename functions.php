@@ -43,11 +43,12 @@ function artalk_theme_init() {
     /* RECENT ITEMS */
     include_once('functions/recent-items.php');
 
+    /* MEDIA */
+    include_once('functions/media.php');
+
 	/* CITACE  */
 	include_once ('functions/simple_html_dom.php');
 
-	/* MEDIA */
-	include_once('functions/media.php');
 
 	/* TEMPLATE TAGS */
 	//include_once('functions/template_tags.php');

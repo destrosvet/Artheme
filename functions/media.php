@@ -33,21 +33,30 @@ if ( $set_post_thumbnail_size ) {
 }
 
 
-// Remove paragraphs from around the images and image links inserted into post content
-// @see http://wordpress.stackexchange.com/a/8356/2110
-add_filter('the_content', 'artalk_unautop_images');
-function artalk_unautop_images($content) {
-
+// Setup images of theme
+// wrap img with figure
+// handle images with captions
+// handle fotoreport
+add_filter('the_content', 'artalk_setup_images',90);
+function artalk_setup_images($content) {
+     ini_set("xdebug.var_display_max_data", -1);
     // do a regular expression replace:
     // find all p tags that have just
     // <p>, maybe white space, maybe link, <imgResize all stuff up to >, maybe link end, maybe whitespace </p>
     // replace it with just the image tag...
     // wrap in div
-    $content = preg_replace('/<p>\s*(<a .*>)?\s*(<imgResize .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="full-width">'.'\1\2\3'.'</div>', $content);
 
-    // Add class to the image link
-    // Replaced with the div wrap above
-    // $content = preg_replace('/<a (.*)>\s*<imgResize/iU', '<a class="full-width" '.'\1'.'><imgResize', $content);
+    if (in_category('foto-report')) {
+        $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="gallery">'.'\1\2\3'.'</div>', $content);
+
+        $content = preg_replace('/(<img s*(.*?)src=(\'.*?\'|\".*?\"|[^\\s]+)\s.*?\>)/','<figure><a href='.'\3'.'>'.'\1'.'</a></figure>', $content);
+
+        //$content = preg_replace('/(<img .*?\>)/', '<figure><a href="\wp-content/uploads/2017/08/AS0_6123-u-1060x708.jpg"\>'.'\1'.'</a></figure>', $content);
+    } else {
+        $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<figure class="full-width">'.'\1\2\3'.'</figure>', $content);
+    }
+
+    $content = preg_replace('/<figure (.*)?\>?\s*(<.*>)?\s*<\/figure>/iU', '<figure class="full-width">'.'\2'.'</figure>', $content);
 
     return $content;
 }

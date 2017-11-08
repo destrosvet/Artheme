@@ -326,7 +326,7 @@ function get_related_posts() {
     $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
     $output .= "<ul>";
     foreach ( $related_posts as $post ) {
-        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'',60) . '</a></li>';
+        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'',59) . '</a></li>';
     }
     $output .= "</ul>";
     $output .= "</div>";
@@ -391,16 +391,16 @@ function get_related_posts() {
         ?>*/
 }
 
-function the_contents(){
+function artalk_content_format() {
     $html = "";
     // Create DOM from string
     $html = str_get_html(get_the_content_without_citate());
+    //$html = str_get_html($content);
     //global
     $arr_citate_under_text = array();
     $arr_citate_anchors    = array();
     $arr_citate_replace    = array();
     $cont                  = "";
-
 
     if($html->find(' * [href^=#_ftnref] ')){
         //	                    find citation text under post
@@ -430,12 +430,13 @@ function the_contents(){
     }
 }
 
-function get_the_content_without_citate ($citate='', $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+function get_the_content_without_citate ($citate='', $ref_content='', $more_link_text = '(více...)', $stripteaser = 0, $more_file = '') {
     if($ref_content == ''){
         $content = get_the_content($more_link_text, $stripteaser, $more_file);
         $content = apply_filters('the_content', $content);
         $content = str_replace(']]>', ']]&gt;', $content);
         $content = str_replace($citate, '' ,$content);
+        //$content = preg_replace('/<p>\s*(<a .*>)?\s*(<imgResize .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="full-width">'.'\1\2\3'.'</div>', $content);
         return $content;
     }
     else {
@@ -446,7 +447,7 @@ function get_the_content_without_citate ($citate='', $ref_content='', $more_link
         return $content;
     }
 }
-function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_content='', $more_link_text = '(více...)', $stripteaser = 0, $more_file = '') {
     if($ref_content == ''){
         $content = get_the_content($more_link_text, $stripteaser, $more_file);
         $content = apply_filters('the_content', $content);
