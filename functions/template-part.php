@@ -200,6 +200,7 @@ function artalk_feature() {
 add_filter('single_template', 'check_category_single_template');
 function check_category_single_template( $t )
 {
+
     foreach( (array) get_the_category() as $cat )
     {
         if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) {
@@ -207,8 +208,10 @@ function check_category_single_template( $t )
         } //else return TEMPLATEPATH . "single.php";
         if($cat->parent)
         {
-            $cat = get_the_category_by_ID( $cat->parent );
-            if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+
+            //$cat = get_the_category_by_ID( $cat->parent );
+            //var_dump($cat);
+            //if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
         }
     }
     return $t;
