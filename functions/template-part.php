@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by Teapot.
+ * based on Mau
  * User: Filip Uhlir
  * Date: 06.02.2017
  * Time: 15:47
@@ -9,6 +10,40 @@
 add_action( 'artalk_logo', 'artalk_logo' );
 function artalk_logo() {
     echo '<img class="site-logo" src="'.get_stylesheet_directory_uri().'/assets/images/artalk-logo-sm.png" alt="Artalk Logo" />';
+}
+
+
+/* FAVICON */
+
+add_action( 'artalk_favicons', 'artalk_favicons' );
+function artalk_favicons() {
+    $v    = 'GvvJlrO725';
+    $uri  = get_stylesheet_directory_uri().'/assets/favicons';
+    $col  = '#ff3e6c';
+    $out  = '';
+    $out .= '<link rel="apple-touch-icon" sizes="57x57" href="'.$uri.'/apple-touch-icon-57x57.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="60x60" href="'.$uri.'/apple-touch-icon-60x60.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="72x72" href="'.$uri.'/apple-touch-icon-72x72.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="76x76" href="'.$uri.'/apple-touch-icon-76x76.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="114x114" href="'.$uri.'/apple-touch-icon-114x114.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="120x120" href="'.$uri.'/apple-touch-icon-120x120.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="144x144" href="'.$uri.'/apple-touch-icon-144x144.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="152x152" href="'.$uri.'/apple-touch-icon-152x152.png?v='.$v.'">';
+    $out .= '<link rel="apple-touch-icon" sizes="180x180" href="'.$uri.'/apple-touch-icon-180x180.png?v='.$v.'">';
+    $out .= '<link rel="icon" type="image/png" href="'.$uri.'/favicon-32x32.png?v='.$v.'" sizes="32x32">';
+    $out .= '<link rel="icon" type="image/png" href="'.$uri.'/favicon-194x194.png?v='.$v.'" sizes="194x194">';
+    $out .= '<link rel="icon" type="image/png" href="'.$uri.'/favicon-96x96.png?v='.$v.'" sizes="96x96">';
+    $out .= '<link rel="icon" type="image/png" href="'.$uri.'/android-chrome-192x192.png?v='.$v.'" sizes="192x192">';
+    $out .= '<link rel="icon" type="image/png" href="'.$uri.'/favicon-16x16.png?v='.$v.'" sizes="16x16">';
+    $out .= '<link rel="manifest" href="'.$uri.'/manifest.json?v='.$v.'">';
+    $out .= '<link rel="shortcut icon" href="'.$uri.'/favicon.ico?v='.$v.'">';
+    $out .= '<meta name="apple-mobile-web-app-title" content="Artalk.cz">';
+    $out .= '<meta name="application-name" content="Artalk.cz">';
+    $out .= '<meta name="msapplication-TileColor" content="'.$col.'">';
+    $out .= '<meta name="msapplication-TileImage" content="'.$uri.'/mstile-144x144.png?v='.$v.'">';
+    $out .= '<meta name="msapplication-config" content="'.$uri.'/browserconfig.xml?v='.$v.'">';
+    $out .= '<meta name="theme-color" content="'.$col.'">';
+    echo $out;
 }
 
 /* CATEGORIES */
@@ -238,16 +273,7 @@ function get_post_tags ($postID, $echo=true)
 if ( ! function_exists( 'fws_comment' ) ) :
 	function fws_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
-//		switch ( $comment->comment_type ) :
-//			case 'pingback' :
-//			case 'trackback' :
-//				// Display trackbacks differently than normal comments.
-//				?>
-<!--                <li --><?php //comment_class(); ?><!-- id="comment---><?php //comment_ID(); ?><!--">-->
-<!--                <p>--><?php //_e( 'Pingback:', 'fws' ); ?><!----><?php //comment_author_link(); ?><!----><?php //edit_comment_link( __( '(Edit)', 'fws' ), '<span class="edit-link">', '</span>' ); ?><!--</p>-->
-<!--				--><?php
-//				break;
-//			default :
+
 				// Proceed with normal comments.
 				global $post;
 				?>
@@ -259,10 +285,10 @@ if ( ! function_exists( 'fws_comment' ) ) :
                             echo '<ul class="comment-author-bio">';
 
 							printf( '<li class="">%1$s %2$s</li>',
-								'<a href="mailto:'.get_comment_author_email().'">'.get_comment_author().'</a>'
-                                ,comment_author_url(),
+								'<a href="mailto:'.get_comment_author_email().'">'.short_title_text_letter(get_comment_author(),'',20).'</a>'
+                                ,'<a href="'.get_comment_author_url().'">'.short_title_text_letter(get_comment_author_url(),'',40).'</a>',
 								// If current post author is also comment author, make it known visually.
-								( $comment->user_id === $post->post_author ) ? '<span> ' . __( '(Post author) ', 'fws' ) . '</span>' : ''
+								( $comment->user_id === $post->post_author ) ? '<span> ' . __( '(Autor příspěvku) ', 'fws' ) . '</span>' : ''
 							);
 							echo '</ul>';
 
@@ -472,35 +498,110 @@ function getRegistredImageSize () {
     print_r( $_wp_additional_image_sizes );
     print '</pre>';
 }
-function getFurtherContentButton ($author=0) {
+// Further Button for AJAX posts
+function getFurtherContentButton ($taxonomy='',$terms=0,$author=0) {
     $content ="<div class=\"further-content\">";
-    $content .="<div id=\"more-posts\" data-author=". $author ." data-category=". (is_home()?3862:get_category_id()) .">Načíst další obsah</div>";
+    $content .="<div id=\"more-posts\" data-taxonomy=".$taxonomy." data-terms=".$terms." data-author=". $author ." data-category=". (is_home()?3862:get_category_id()) .">Načíst další obsah</div>";
     $content .="</div>";
     echo  $content;
     //get_category_id()
 }
 
+/**
+ * Get more posts AJAX
+ *
+ * @see ajax_load_posts
+ * @param none
+ * @return posts in template
+ */
+function more_post_ajax(){
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $cat = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+    $taxonomy = (isset($_POST['taxonomy'])) ? $_POST['taxonomy'] : 0;
+    $terms = (isset($_POST['terms'])) ? $_POST['terms'] : 0;
+    $author_id = (isset($_POST['author_id'])) ? $_POST['author_id'] : 0;
+    header("Content-Type: text/html");
+
+    if ($author_id) {
+        $args = array(
+            'suppress_filters' => true,
+            'post_type' => 'post',
+            'posts_per_page' => $ppp,
+            'paged' => $page,
+            'author'=>$author_id,
+            'cat' => $cat
+        );
+    }
+    else
+    {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 10,
+            'paged' => $page,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $taxonomy,
+                    'field' => 'id',
+                    'terms' => $terms,
+                    //    using a slug is also possible
+                    //    'field' => 'slug',
+                    //    'terms' => $qobj->name
+                )
+            )
+        );
+    }
+    $query = new WP_Query($args);
+
+    while ($query -> have_posts()) : $query->the_post();
+    var_dump($taxonomy);
+        if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id)) {
+                get_template_part('/templates/post-artservis');
+            } else {
+                get_template_part('/templates/post');
+            }
+    endwhile;
+    //if( have_posts() ) :
+
+    //    while( have_posts() ): the_post();
+
+
+
+
+    //       get_template_part('templates/post', artalk_in_artservis() );
+
+    //  endwhile;
+    //endif;
+    wp_reset_postdata();
+    //die();
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+
+
+
 function wp_author_info_box() {
 			global $post;
 
-// Detect if it is a single post with a post author
+            // Detect if it is a single post with a post author
 			if ( (is_single() || is_author()) && isset( $post->post_author ) ) {
 
-// Get author's display name
+            // Get author's display name
 				$display_name = get_the_author_meta( 'display_name', $post->post_author );
 
-// If display name is not available then use nickname as display name
-				if ( empty( $display_name ) ) {
+                // If display name is not available then use nickname as display name
+			    if ( empty( $display_name ) ) {
 					$display_name = get_the_author_meta( 'nickname', $post->post_author );
 				}
 
-// Get author's biographical information or description
+                // Get author's biographical information or description
 				$user_description = get_the_author_meta( 'user_description', $post->post_author );
 
-// Get author's website URL
+                // Get author's website URL
 				$user_website = get_the_author_meta( 'url', $post->post_author );
 
-// Get link to the author archive page
+                // Get link to the author archive page
 				$user_posts = get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) );
 
 				if ( ! empty( $display_name ) ) {
@@ -513,20 +614,20 @@ function wp_author_info_box() {
 					$author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta( 'user_email' ), 200 ,'403',null, array('class' => array('img-responsive', 'img-rounded') )) . nl2br( $user_description ) . '</p>';
 				}
 
-//        $author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';
+                // $author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';
 
-// Check if author has a website in their profile
+                // Check if author has a website in their profile
 				if ( ! empty( $user_website ) ) {
 
-// Display author website link
+                // Display author website link
 					$author_details .= ' | <a href="' . $user_website . '" target="_blank" rel="nofollow">Website</a></p>';
 
 				} else {
-// if there is no author website then just close the paragraph
+                // if there is no author website then just close the paragraph
 					$author_details .= '</p>';
 				}
 
-// Pass all this info to post content
+                // Pass all this info to post content
 
 				echo ' <div class="author-bio-section" >' . $author_details . '</div>';
 

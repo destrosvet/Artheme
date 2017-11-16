@@ -3,6 +3,8 @@ jQuery(document).ready( function($) {
     var pageNumber = 1;
     var cat = $('#more-posts').data('category');
     var author = $('#more-posts').data('author');
+    var taxonomy = $('#more-posts').data('taxonomy');
+    var terms = $('#more-posts').data('terms');
 
     function load_posts() {
         pageNumber++;
@@ -12,6 +14,8 @@ jQuery(document).ready( function($) {
             url: ajax.ajaxurl,
             data: {
                 'cat': cat,
+                'taxonomy': taxonomy,
+                'terms': terms,
                 'author_id':author,
                 'ppp': ppp,
                 'pageNumber': pageNumber,

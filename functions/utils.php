@@ -142,18 +142,27 @@ add_action('wp_head', 'recent_track_posts');
 /**
  * Test whether current post is in artservis category or descendant
  */
-function artalk_in_artservis() {
+function artalk_in_artservis($categoryID=0 , $args='') {
     //@TODO set and get cat dynamically
     $servis_category = 'artservis';
-    if ( is_category() ) {
-        $curent_category = artalk_get_current_category();
-        return $servis_category == $curent_category || artalk_term_is_descendant( $curent_category, $servis_category );
+    if (!$categoryID)
+    {
+
+        if ( is_category() ) {
+            $curent_category = artalk_get_current_category();
+            return $servis_category == $curent_category || artalk_term_is_descendant( $curent_category, $servis_category );
+        }
+        if ( is_single() ) {
+            $post_categories = wp_get_object_terms( get_the_ID(), 'category', array('fields'=>'slugs') );
+            return in_array($servis_category, $post_categories) || artalk_term_is_descendant( $post_categories, $servis_category );
+        }
+        return false;
     }
-    if ( is_single() ) {
-        $post_categories = wp_get_object_terms( get_the_ID(), 'category', array('fields'=>'slugs') );
-        return in_array($servis_category, $post_categories) || artalk_term_is_descendant( $post_categories, $servis_category );
+    else
+    {
+        $servisID = get_cat_ID('Service');
+        return cat_is_ancestor_of($servisID,$categoryID);
     }
-    return false;
 }
 /**
  * Test whether any of the terms is a descendant of the ancestor term
@@ -218,7 +227,7 @@ function short_title($after = '', $length) {
 }
 function short_title_text($text, $after = '', $length) {
 	$mytitle = explode(' ', $text, $length);
-//	$title = explode(' ', get_the_title(), $length);
+
 	if (count($mytitle)>=$length) {
 		array_pop($mytitle);
 		$mytitle = implode(" ",$mytitle). $after;
@@ -227,15 +236,73 @@ function short_title_text($text, $after = '', $length) {
 	}
 	return $mytitle;
 }
-function short_title_text_letter($text,$after = '',$letters) {
+/**
+ * Shortens an UTF-8 encoded string without breaking words.
+ * based on https://wordpress.stackexchange.com/questions/11085/truncating-custom-fields/11089#11089
+ * @param  string $string     string to shorten
+ * @param  int    $max_chars  maximal length in characters
+ * @param  string $append     replacement for truncated words.
+ * @return string
+ */
+function short_title_text_letter($text,$after = '',$max_chars = 100) {
 
-    $myTitle=$text;
+
+        $text = strip_tags( $text );
+        $text = html_entity_decode( $text, ENT_QUOTES, 'utf-8' );
+        // \xC2\xA0 is the no-break space
+        $text = trim( $text, "\n\r\t .-;–,—\xC2\xA0" );
+        $length = strlen( utf8_decode( $text ) );
+
+        // Nothing to do.
+        if ( $length < $max_chars )
+        {
+            return $text;
+        }
+
+        // mb_substr() is in /wp-includes/compat.php as a fallback if
+        // your the current PHP installation doesn’t have it.
+        $text = mb_substr( $text, 0, $max_chars, 'utf-8' );
+
+        // No white space. One long word or chinese/korean/japanese text.
+        if ( FALSE === strpos( $text, ' ' ) )
+        {
+            return $text . $after;
+        }
+
+        // Avoid breaks within words. Find the last white space.
+        if ( extension_loaded( 'mbstring' ) )
+        {
+            $pos   = mb_strrpos( $text, ' ', 'utf-8' );
+            $short = mb_substr( $text, 0, $pos, 'utf-8' );
+        }
+        else
+        {
+            // Workaround. May be slow on long strings.
+            $words = explode( ' ', $text );
+            // Drop the last word.
+            array_pop( $words );
+            $short = implode( ' ', $words );
+        }
+
+        return $short . $after;
+
+/*    $text = preg_replace(" (\[.*?\])",'',$text);
+    $text = strip_shortcodes($text);
+    $text = strip_tags($text);
+    $text = mb_substr($text, 0, $letters);
+
+    $text = mb_substr($text, 0, mb_strripos($text, " "));
+    var_dump($text);
+    $text = trim(preg_replace( '/\s+/', ' ', $text));*/
+    //$text .= $after;
+/*    $myTitle=$text;
     if (preg_match('/^.{1,'.$letters.'}\b/s', $text, $match))
     {
         $myTitle = $match[0]. $after;
-    }
-    return $myTitle;
+    }*/
+    //return $text;
 }
+
 
 
 function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
@@ -386,43 +453,3 @@ function get_category_id(){
     $category = get_queried_object();
     return $category->term_id;
 }
-
-// Output function for next page
-function more_post_ajax(){
-    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
-    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
-    $cat = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
-    $author_id = (isset($_POST['author_id'])) ? $_POST['author_id'] : 0;
-    header("Content-Type: text/html");
-
-    $args = array(
-        'suppress_filters' => true,
-        'post_type' => 'post',
-        'posts_per_page' => $ppp,
-        'paged' => $page,
-        'author'=>$author_id,
-        'cat' => $cat
-    );
-
-    $query = new WP_Query($args);
-    while ($query -> have_posts()) : $query->the_post();
-        get_template_part('templates/post', artalk_in_artservis() );
-    endwhile;
-    //if( have_posts() ) :
-        // run the loop
-    //    while( have_posts() ): the_post();
-            // look into your theme code how the posts are inserted, but you can use your own HTML of course
-            // do you remember? - my example is adapted for Twenty Seventeen theme
-//            get_template_part( 'single', get_post_format() );
-            // for the test purposes comment the line above and uncomment the below one
-     //       get_template_part('templates/post', artalk_in_artservis() );
-
-    //  endwhile;
-    //endif;
-    //wp_reset_postdata();
-    //die();
-}
-
-add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
-add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
-

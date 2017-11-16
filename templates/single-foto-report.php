@@ -5,7 +5,8 @@
 
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 nopadding-i"><h1><?php the_title(); ?></h1>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title nopadding-i">
+                    <h1><?php the_title(); ?></h1>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-sm-45 no-padding-left padding-right-45-lg">
                     <?php get_template_part('templates/social-icon') ?>

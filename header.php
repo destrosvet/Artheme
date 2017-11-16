@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+    <title><?php wp_title('&laquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <?php do_action('artalk_favicons'); ?>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="no title" charset="utf-8"/>
 
     <script>document.documentElement.className = 'doc-not-ready';</script>

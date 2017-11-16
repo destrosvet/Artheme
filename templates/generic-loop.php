@@ -13,6 +13,7 @@
         </div>
         <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding" id="posts" >
             <?php
+
             if (is_tax() || is_category() || is_tag() ) {
 
                 $qobj = get_queried_object();
@@ -53,7 +54,7 @@
             }?>
 
             <?php endwhile; ?>
-            <?php getFurtherContentButton(); ?>
+            <?php getFurtherContentButton($qobj->taxonomy,$qobj->term_id); ?>
             <?php endif; ?>
 
         </div>

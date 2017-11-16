@@ -31,7 +31,7 @@
             <?php get_template_part('templates/post-artservis', artalk_get_current_category() ); ?>
 
         <?php endwhile; ?>
-        <?php getFurtherContentButton($author_id); ?>
+        <?php getFurtherContentButton(0,0,$author_id); ?>
 
     </div>
 

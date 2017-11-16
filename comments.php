@@ -1,7 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Programator
+ * Created by Teapot
+ * User: Martin Durak
  * Date: 18.07.2017
  * Time: 16:20
  */
@@ -13,15 +13,8 @@
 
 //Get only the approved comments
 function add_comment() {
-//	$fields =  array(
-//		'author' => '<p class="comment-form-author">' . ( $req ? '<span class="required">*</span>' : '' ) .
-//		            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-//		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-//		            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-//		'url'    => '<p class="comment-form-url">' .
-//		            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-//	)
-	;$commenter = wp_get_current_commenter();
+
+	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(

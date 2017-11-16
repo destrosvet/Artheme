@@ -2744,6 +2744,10 @@ Artheme single
   object-fit: cover; }
 
 .single-fotoreport-container figure:last-child {
+  /*  float: none;
+    clear: both;*/ }
+
+.single-fotoreport-container p:last-child {
   float: none;
   clear: both; }
 
@@ -3005,6 +3009,7 @@ footer.post-meta {
       color: #fb026a; }
 
 .further-content {
+  cursor: pointer;
   margin-bottom: 5px;
   margin-left: 15px;
   clear: both;
