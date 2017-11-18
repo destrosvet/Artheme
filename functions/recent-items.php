@@ -24,7 +24,7 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
     echo $comm;
 }
 
-function bg_popular_post($no_posts = 4, $comment_len = 30) {
+function bg_popular_post($no_posts = 4) {
     $ppost ='';
     //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
     $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
@@ -49,7 +49,7 @@ function bg_popular_post($no_posts = 4, $comment_len = 30) {
     //var_dump($popular);
     $ppost.='<ul class="">';
     foreach ( $popular as $post ) : setup_postdata( $post );
-        $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; '.$post->post_title.'</a></li>';
+        $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink($post).'" title="'.get_the_title($post).'">&#9679; '.$post->post_title.'</a></li>';
 
     endforeach;
     $ppost.='</ul>';

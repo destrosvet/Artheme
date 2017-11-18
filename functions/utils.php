@@ -285,22 +285,6 @@ function short_title_text_letter($text,$after = '',$max_chars = 100) {
         }
 
         return $short . $after;
-
-/*    $text = preg_replace(" (\[.*?\])",'',$text);
-    $text = strip_shortcodes($text);
-    $text = strip_tags($text);
-    $text = mb_substr($text, 0, $letters);
-
-    $text = mb_substr($text, 0, mb_strripos($text, " "));
-    var_dump($text);
-    $text = trim(preg_replace( '/\s+/', ' ', $text));*/
-    //$text .= $after;
-/*    $myTitle=$text;
-    if (preg_match('/^.{1,'.$letters.'}\b/s', $text, $match))
-    {
-        $myTitle = $match[0]. $after;
-    }*/
-    //return $text;
 }
 
 

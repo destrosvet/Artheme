@@ -38,30 +38,58 @@ if ( $set_post_thumbnail_size ) {
 // handle images with captions
 // handle fotoreport
 add_filter('the_content', 'artalk_setup_images',90);
-function artalk_setup_images($content) {
-     ini_set("xdebug.var_display_max_data", -1);
-    // do a regular expression replace:
-    // find all p tags that have just
-    // <p>, maybe white space, maybe link, <imgResize all stuff up to >, maybe link end, maybe whitespace </p>
-    // replace it with just the image tag...
-    // wrap in div
+function artalk_setup_images($content)
+{
+    ini_set("xdebug.var_display_max_data", -1);
 
     if (in_category('foto-report')) {
-        $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="gallery">'.'\1\2\3'.'</div>', $content);
+        $dom = str_get_html($content);
+        // figure with captions
+        if ($dom->find("figcaption")) {
+            foreach ($dom->find("figure") as $key=>$figure) {
+                //var_dump($key);
+                $figure->removeAttribute ( 'class' );
+                $figure->removeAttribute ( 'style' );
+                $captionText = $figure->find("figcaption")[0]->innertext;
+                $figure -> find('img')[0]->title=$captionText;
+                $figure->find("figcaption")[0]->outertext='';
+                $img = $figure-> find('img')[0];
+                $img->outertext = '<a href="'.$img->src.'">'.$img.'</a>';
+            }
+            // Wrap all figure to gallery
+            $figuresFirst = $dom->find("figure",0);
+            $figuresLast = $dom->find("figure",-1);
+            $dom->find("figure",0)->outertext = '<div class="gallery">' . $figuresFirst->outertext;
+            $dom->find("figure",-1)->outertext = $figuresLast->outertext.'</div>';
+        }
+        // img in p tag
+        if ($dom->find("p img",0)) {
+            $dom->find("p img",0)->parent->class='gallery';
+            $dom->find('.gallery',0)->tag='div';
 
-        $content = preg_replace('/(<img s*(.*?)src=(\'.*?\'|\".*?\"|[^\\s]+)\s.*?\>)/','<figure><a href='.'\3'.'>'.'\1'.'</a></figure>', $content);
+            foreach ($dom->find("img") as $image) {
 
-        //$content = preg_replace('/(<img .*?\>)/', '<figure><a href="\wp-content/uploads/2017/08/AS0_6123-u-1060x708.jpg"\>'.'\1'.'</a></figure>', $content);
+                //$img = $figure-> find('img')[0];
+                $image->outertext = '<figure><a href="'.$image->src.'">'.$image.'</a></figure>';
+            }
+        }
+
+        $content = $dom->save();
+        //$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="gallery">'.'\1\2\3'.'</div>', $content);
+        //$content = preg_replace('/(<img s*(.*?)src=(\'.*?\'|\".*?\"|[^\\s]+)\s.*?\>)/','<figure><a href='.'\3'.'>'.'\1'.'</a></figure>', $content);
+
     } else {
         $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<figure class="full-width">'.'\1\2\3'.'</figure>', $content);
     }
 
     $content = preg_replace('/<figure (.*)?\>?\s*(<.*>)?\s*<\/figure>/iU', '<figure class="full-width">'.'\2'.'</figure>', $content);
 
+    // create SimpleDom
+
     return $content;
+
+
 }
-
-
 
 
 /* Featured image fallback */

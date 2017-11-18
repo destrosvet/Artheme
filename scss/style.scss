@@ -2675,7 +2675,7 @@ Artheme social button
     width: 100%;
     display: inline-block;
     //border-bottom: 1px solid black;
-    padding: 5px 5px 5px 10px;
+    padding: 5px 5px 5px 0px;
     color: $ArtBlack;
   }
 }
@@ -2916,7 +2916,7 @@ Artheme single
   font-size: 13px;
   line-height: 17px;
   padding: 0 0 1em;
-  text-align: left;
+  text-align: center;
   //margin: 0 10px 0;
 }
 .wp-caption p.wp-caption-text {
@@ -3344,7 +3344,7 @@ footer.post-meta {
     color: $ArtInnerColor;
     line-height: 2.1em;
     font-weight: 200;
-    padding-left: 1.6em;
+    padding-left: 0.9em;
     &:hover {
       color: $ArtInnerColor;
     }
@@ -3465,6 +3465,7 @@ Sidebar
   li {
     height: $liHeight;
     padding-bottom: 5px;
+    padding-left: 0.9em;
   }
   .twice-sm {
     height: $liHeight / 1.5;

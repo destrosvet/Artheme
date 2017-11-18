@@ -2584,7 +2584,7 @@ Artheme social button
   .relatedthumb .related-link {
     width: 100%;
     display: inline-block;
-    padding: 5px 5px 5px 10px;
+    padding: 5px 5px 5px 0px;
     color: #212121; }
 
 .no-padding-left {
@@ -2773,7 +2773,7 @@ Artheme single
   font-size: 13px;
   line-height: 17px;
   padding: 0 0 1em;
-  text-align: left; }
+  text-align: center; }
 
 .wp-caption p.wp-caption-text {
   font-size: 8px;
@@ -3098,7 +3098,7 @@ footer.post-meta {
   color: #FFF;
   line-height: 2.1em;
   font-weight: 200;
-  padding-left: 1.6em; }
+  padding-left: 0.9em; }
   .service-b-tz h5:hover, .service-b-dp h5:hover, .service-b-mm h5:hover, .service-b-top h5:hover {
     color: #FFF; }
 .service-b-tz ul, .service-b-dp ul, .service-b-mm ul, .service-b-top ul {
@@ -3179,7 +3179,8 @@ Sidebar
     padding-left: 0px; }
   .side-recent-item li {
     height: 86px;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    padding-left: 0.9em; }
   .side-recent-item .twice-sm {
     height: 57.33333px; }
   .side-recent-item .triple-sm {
