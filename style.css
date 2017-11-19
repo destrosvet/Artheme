@@ -2706,6 +2706,55 @@ Artheme social button
   border-bottom: none; }
 
 /*
+* Artheme sidebar search
+ */
+.advanced-search {
+  display: block;
+  padding: 15px 0 15px 0;
+  text-align: left; }
+  .advanced-search p {
+    font-weight: 600;
+    padding-left: 15px; }
+  .advanced-search .form-element {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding-left: 15px;
+    margin-bottom: 10px; }
+  .advanced-search label {
+    padding-top: 5px;
+    width: 40%;
+    float: left; }
+  .advanced-search input[type="text"], .advanced-search input[type="month"] {
+    border: 0;
+    border-bottom: 1px solid #212121;
+    color: #212121;
+    background-color: transparent;
+    margin: auto;
+    padding: 5px;
+    width: 60%; }
+  .advanced-search select {
+    border: 0;
+    border: 1px solid #212121;
+    color: #212121;
+    background-color: transparent;
+    margin: auto;
+    padding: 5px;
+    width: 60%; }
+  .advanced-search input[type="submit"] {
+    display: block;
+    font-size: 1.2em;
+    border: none;
+    color: #FFF;
+    border-radius: 0px;
+    background-color: #212121;
+    margin: auto;
+    padding: 5px 13px 5px 13px;
+    width: 100%; }
+    .advanced-search input[type="submit"]:hover {
+      text-decoration: underline; }
+
+/*
 Artheme single
 */
 .social-icon {
