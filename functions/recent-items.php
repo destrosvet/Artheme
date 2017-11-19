@@ -10,10 +10,10 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
     $comments = $comments_query->query( array( 'number' => $no_comments ) );
     $comm = '<ul class="recent-comments">';
     if ( $comments ) : foreach ( $comments as $comment ) :
-        $comm .= '<li class="bott-border"><a class="recent-comments-post xs-top-margin" href="' . get_permalink( $comment->comment_post_ID ). '">&#9679; '.short_title_text_letter($comment->post_title,'',55).'</a>';
-        $comm .= ''.wp_trim_words($comment->comment_author,$num_words = 3).': ';
+        $comm .= '<li class="bott-border"><a class="recent-comments-post xs-top-margin" href="' . get_permalink( $comment->comment_post_ID ). '">&#9679; '.short_title_text_letter($comment->post_title,'...',45).'</a>';
+        $comm .= ''.short_title_text_letter($comment->comment_author,'',50).': ';
         $comm .= '<a class="recent-comments-excerpt" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
-        $comm .= wp_trim_words( $comment->comment_content , $num_words = 16, $more = '… ' ). '</a></li>';
+        $comm .= short_title_text_letter( $comment->comment_content,'...',100 ). '</a></li>';
         //$comm .= '<li><a class="author" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
         //$comm .= $comment->post_title . '</a> ';
         //$comm .= '<p>' .  wp_trim_words( $comment->comment_content , $num_words = 8, $more = '… ' ).'</p></li>';
