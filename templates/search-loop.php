@@ -10,7 +10,7 @@
 <div class="row main-magazine">
         <div class="bar-info">
             <div class="col-md-8 col-sm-6 col-xs-12">Výskedky vyhledávání: <?php echo get_search_query(); ?></div>
-            <div class="col-md-4 col-sm-6 noleftpadding">Inzerce</div>
+            <div class="col-md-4 col-sm-6">Inzerce</div>
         </div>
         <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding" id="posts" >
             <?php

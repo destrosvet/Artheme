@@ -386,6 +386,32 @@ body.hidden-scroll {
   100% {
     transform: scale(1.2);
     opacity: 0; } }
+/*
+* Pure CSS icons
+*
+*
+/*
+/*
+    Created on : 26.1.2016, 12:02:05
+    Author     : Filip Uhlir
+    Description: icons for Artheme
+*/
+/* Arrow */
+.arrow-alt a:before {
+  left: 8px;
+  border-width: 7px 0 7px 8px;
+  border-style: solid;
+  border-color: transparent #c55500;
+  margin-top: -7px;
+  background: transparent; }
+
+.arrow-alt a:after {
+  left: 0;
+  width: 8px;
+  height: 6px;
+  margin-top: -3px;
+  background: #c55500; }
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1093,6 +1119,9 @@ dd {
   position: relative;
   display: block;
   padding: 10px 15px; }
+
+.nav > li:first-child a {
+  padding-left: 10px; }
 
 .nav li:last-child a {
   padding-right: 0px !important; }
@@ -2518,7 +2547,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .site-logo {
   display: block;
   margin-bottom: 15px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-left: 5px; }
 
 /*
     Artheme post
@@ -2858,12 +2888,15 @@ Artheme single
 * Mail poet Forms
 *
  */
+form.mailpoet_form p.mailpoet_paragraph:last-child {
+  color: red; }
+
 .mailpoet_paragraph {
   float: left;
   display: block;
   margin: 0;
   line-height: 30px !important; }
-  .mailpoet_paragraph :first-child {
+  .mailpoet_paragraph:first-child {
     border-right: 1px #212121 solid; }
   .mailpoet_paragraph .mailpoet_text {
     background: transparent;
@@ -2875,6 +2908,7 @@ Artheme single
     border: 0;
     padding-bottom: 3px;
     width: 195px !important;
+    font-size: 30px;
     color: #FFF; }
     .mailpoet_paragraph .mailpoet_submit:hover {
       text-decoration: underline; }
@@ -3107,7 +3141,8 @@ footer.post-meta {
     height: 100%; }
   .magazine h3 {
     margin-top: 0px;
-    margin-bottom: 48px; }
+    margin-bottom: 48px;
+    margin-left: 10px; }
   .magazine a:hover {
     text-decoration: none; }
 
@@ -3143,6 +3178,8 @@ footer.post-meta {
     color: #FFF; }
 .service-b-tz .s-b-mm li, .service-b-tz .s-b-top li, .service-b-dp .s-b-mm li, .service-b-dp .s-b-top li, .service-b-mm .s-b-mm li, .service-b-mm .s-b-top li, .service-b-top .s-b-mm li, .service-b-top .s-b-top li {
   height: 3.0em; }
+.service-b-tz .s-b-mm li:last-child, .service-b-tz .s-b-top li:last-child, .service-b-dp .s-b-mm li:last-child, .service-b-dp .s-b-top li:last-child, .service-b-mm .s-b-mm li:last-child, .service-b-mm .s-b-top li:last-child, .service-b-top .s-b-mm li:last-child, .service-b-top .s-b-top li:last-child {
+  border: 0; }
 .service-b-tz h5, .service-b-dp h5, .service-b-mm h5, .service-b-top h5 {
   color: #FFF;
   line-height: 2.1em;
@@ -3153,7 +3190,8 @@ footer.post-meta {
 .service-b-tz ul, .service-b-dp ul, .service-b-mm ul, .service-b-top ul {
   list-style: none;
   padding-left: 0px;
-  margin-left: 0px; }
+  margin-left: 0px;
+  margin-bottom: 0px !important; }
 .service-b-tz li, .service-b-dp li, .service-b-mm li, .service-b-top li {
   border-bottom: 1px solid black;
   padding: 10px;
@@ -3164,9 +3202,16 @@ footer.post-meta {
   .service-b-tz li a:hover, .service-b-dp li a:hover, .service-b-mm li a:hover, .service-b-top li a:hover {
     color: #fb026a;
     text-decoration: none; }
+.service-b-tz li:last-child, .service-b-dp li:last-child, .service-b-mm li:last-child, .service-b-top li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0; }
 .service-b-tz li.double, .service-b-dp li.double, .service-b-mm li.double, .service-b-top li.double {
   width: 50%;
   float: left; }
+
+.service-b-tz li:nth-last-of-type(-n+2) {
+  border-bottom: 0;
+  padding-bottom: 0; }
 
 .service-photoreport {
   height: 100%; }
@@ -3176,6 +3221,7 @@ footer.post-meta {
       margin-bottom: 10px !important; }
     .service-photoreport .s-photoreport-content .photo-article {
       margin-bottom: 20px;
+      margin-left: 10px;
       height: 225px; }
       .service-photoreport .s-photoreport-content .photo-article img {
         object-fit: cover;
@@ -3225,11 +3271,14 @@ Sidebar
     text-decoration: none; }
   .side-recent-item ul {
     list-style: none;
-    padding-left: 0px; }
+    padding-left: 0px;
+    margin-bottom: 0px; }
   .side-recent-item li {
     height: 86px;
     padding-bottom: 5px;
     padding-left: 0.9em; }
+  .side-recent-item li:last-child {
+    border: none !important; }
   .side-recent-item .twice-sm {
     height: 57.33333px; }
   .side-recent-item .triple-sm {
@@ -3269,9 +3318,13 @@ Feature Box
   height: 567px;
   overflow: hidden; }
   .featured .featured-excerpt {
-    height: 88px; }
+    height: 88px;
+    margin-left: 10px; }
+  .featured footer {
+    margin-left: 10px; }
   .featured h2 {
     margin-top: 10px;
+    margin-left: 10px;
     font-size: 24px;
     height: 66px; }
   .featured a {

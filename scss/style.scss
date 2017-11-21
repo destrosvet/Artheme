@@ -29,6 +29,7 @@ and open the template in the editor.
 @import "vars";
 @import "mobile-display";
 @import "simplelightbox";
+@import "icons";
 
 
 html {
@@ -879,6 +880,9 @@ dd {
   position: relative;
   display: block;
   padding: 10px 15px;
+}
+.nav > li:first-child a {
+  padding-left: 10px;
 }
 .nav li:last-child a{
   padding-right: 0px !important;
@@ -2576,6 +2580,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   display: block;
   margin-bottom: 15px;
   margin-top: 15px;
+  margin-left: 5px;
 }
 
 /*
@@ -3023,12 +3028,15 @@ Artheme single
 * Mail poet Forms
 *
  */
+form.mailpoet_form p.mailpoet_paragraph:last-child {
+  color: red;
+}
 .mailpoet_paragraph {
   float: left;
   display: block;
   margin: 0;
   line-height: 30px !important;
-  :first-child {
+  &:first-child {
     border-right: 1px $ArtBlack solid;
   }
   .mailpoet_text {
@@ -3037,11 +3045,13 @@ Artheme single
     border-bottom: 1px $ArtBlack solid;
     width:195px !important;
   }
+
   .mailpoet_submit {
     background: $ArtBlack;
     border: 0;
     padding-bottom: 3px;
     width:195px !important;
+    font-size: 30px;
     color: $ArtInnerColor;
     &:hover {
       text-decoration: underline;
@@ -3340,6 +3350,7 @@ footer.post-meta {
   h3 {
     margin-top: 0px;
     margin-bottom: 48px;
+    margin-left: 10px;
   }
   a:hover {
     text-decoration: none;
@@ -3400,6 +3411,9 @@ footer.post-meta {
     li {
       height: 3.0em;
     }
+    li:last-child {
+      border: 0;
+    }
   }
   h5 {
     color: $ArtInnerColor;
@@ -3414,6 +3428,7 @@ footer.post-meta {
     list-style: none;
     padding-left: 0px;
     margin-left: 0px;
+    margin-bottom: 0px !important;
 
   }
   li {
@@ -3429,6 +3444,10 @@ footer.post-meta {
       text-decoration: none;
     }
   }
+  li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
   li.double {
     width: 50%;
     float: left;
@@ -3437,7 +3456,12 @@ footer.post-meta {
   //  border-bottom: none;
   //}
 }
-
+.service-b-tz {
+  li:nth-last-of-type(-n+2) {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
 .service-photoreport {
   height: 100%;
   //border-left: 1px solid black;
@@ -3450,6 +3474,7 @@ footer.post-meta {
 
     .photo-article {
       margin-bottom: 20px;
+      margin-left: 10px;
       height: 225px;
       img {
         object-fit: cover;
@@ -3522,12 +3547,17 @@ Sidebar
   ul {
     list-style: none;
     padding-left: 0px;
+    margin-bottom: 0px;
   }
   li {
     height: $liHeight;
     padding-bottom: 5px;
     padding-left: 0.9em;
   }
+  li:last-child {
+    border: none !important;
+  }
+
   .twice-sm {
     height: $liHeight / 1.5;
   }
@@ -3582,10 +3612,14 @@ Feature Box
 
   .featured-excerpt {
     height: 88px;
+    margin-left: 10px;
   }
-
+  footer {
+    margin-left: 10px;
+  }
   h2 {
     margin-top: 10px;
+    margin-left: 10px;
     font-size: 24px;
     height: 66px;
   }
