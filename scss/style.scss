@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, black, white, art magazine
-* Version:          0.8.3
-* Template Version: 0.8.3
+* Version:          0.8.5
+* Template Version: 0.8.8
 * GitHub Theme URL: https://github.com/glmcz/Artheme.git
 /*
 
@@ -177,6 +177,10 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
+}
+input:not([type="radio"]):not([type="checkbox"]) {
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 button {
@@ -2579,8 +2583,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .site-logo {
   display: block;
   margin-bottom: 15px;
-  margin-top: 15px;
-  margin-left: 5px;
+  margin-top: 20px;
+  margin-left: 1px;
 }
 
 /*
@@ -3045,12 +3049,20 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     border-bottom: 1px $ArtBlack solid;
     width:195px !important;
   }
-
+  input[type=text] {
+    padding-left: 15px;
+  }
+  input[type=email] {
+    padding-left: 15px;
+    width: 320px !important;
+  }
   .mailpoet_submit {
-    background: $ArtBlack;
+    //background: $ArtBlack;
+    background-image: url("assets/images/newsletter-button.png");
+    background-repeat: no-repeat;
     border: 0;
     padding-bottom: 3px;
-    width:195px !important;
+    width: 70px !important;
     font-size: 30px;
     color: $ArtInnerColor;
     &:hover {
@@ -3159,7 +3171,12 @@ Artheme author widget
 .post-container {
   background-color: $ArtInnerColor;
   margin-bottom: 10px;
+  //padding-left: 0 !important;
 }
+.post-container-grid {
+  padding-left: 0 !important;
+}
+
 
 @media only screen and(max-width: 990px){
   .social-icon{
@@ -3170,6 +3187,7 @@ Artheme author widget
   }
 }
 footer.post-meta {
+  padding-left: 8px;
   position: absolute;
   bottom: 0;
   height: 45px;
@@ -3250,13 +3268,19 @@ footer.post-meta {
     }
   }
 }
-
+.content-excerpt {
+  padding-left: 8px;
+}
 .post-content {
   height: 386px;
+}
+.post-content {
+  margin-right: 25px;
 }
 
 .post-service-content {
   min-height: 270px;
+  margin-right: 22px;
 }
 .image_container{
   padding-bottom: 10px;
@@ -3265,6 +3289,7 @@ footer.post-meta {
 
 
 .post-title {
+  padding-left: 8px;
   line-height: 1;
   height: 2em;
   font-size: 1.3em;
@@ -3288,7 +3313,8 @@ footer.post-meta {
 .further-content {
   cursor: pointer;
   margin-bottom: 5px;
-  margin-left: 15px;
+  //margin-left: 15px;
+  margin-right: 16px;
   clear: both;
   //margin: 0 15px 0 15px;
   line-height: 60px;
@@ -3597,6 +3623,11 @@ Utils
 .small-side-padding {
   padding: 0px 5px 0px 5px !important;
 }
+
+.small-left-padding {
+  padding-left: 8px !important;
+}
+
 /*
 Feature Box
 */
@@ -3613,6 +3644,7 @@ Feature Box
   .featured-excerpt {
     height: 88px;
     margin-left: 10px;
+    padding-right: 10px;
   }
   footer {
     margin-left: 10px;
@@ -3620,6 +3652,7 @@ Feature Box
   h2 {
     margin-top: 10px;
     margin-left: 10px;
+    margin-right: 10px;
     font-size: 24px;
     height: 66px;
   }

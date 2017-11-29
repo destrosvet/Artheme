@@ -1,5 +1,5 @@
   </div><!--//main_container-->
-	<footer class="art-footer">
+	<footer class="row art-footer">
 		<div class="container">
 			<nav>
 				<?php wp_nav_menu(array('theme_location'=>'footer-menu','menu_class'=>'footer-menu')); ?>

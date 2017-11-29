@@ -1,9 +1,9 @@
 <div class="row main-magazine">
     <div class="bar-info d-lg-none">
-        <div class="col-md-8 col-sm-6 col-xs-12">Nejnovější články</div>
+        <div class="col-md-8 col-sm-6 col-xs-12 small-left-padding">Nejnovější články</div>
         <div class="col-md-4 col-sm-6">Inzerce</div>
     </div>
-    <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding d-lg-no-right-padding " id="posts" >
+    <div  id="posts" class="col-md-8 col-sm-12 col-xs-12 noleftpadding d-lg-no-right-padding norightpadding">
 
      <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {

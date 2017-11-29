@@ -5,7 +5,7 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, black, white, art magazine
-* Version:          0.8.3
+* Version:          0.8.5
 * Template Version: 0.8.3
 * GitHub Theme URL: https://github.com/glmcz/Artheme.git
 /*
@@ -533,6 +533,10 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit; }
+
+input:not([type="radio"]):not([type="checkbox"]) {
+  -webkit-appearance: none;
+  border-radius: 0; }
 
 button {
   overflow: visible; }
@@ -2547,8 +2551,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .site-logo {
   display: block;
   margin-bottom: 15px;
-  margin-top: 15px;
-  margin-left: 5px; }
+  margin-top: 20px;
+  margin-left: 1px; }
 
 /*
     Artheme post
@@ -2903,11 +2907,17 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     border: 0;
     border-bottom: 1px #212121 solid;
     width: 195px !important; }
+  .mailpoet_paragraph input[type=text] {
+    padding-left: 15px; }
+  .mailpoet_paragraph input[type=email] {
+    padding-left: 15px;
+    width: 320px !important; }
   .mailpoet_paragraph .mailpoet_submit {
-    background: #212121;
+    background-image: url("assets/images/newsletter-button.png");
+    background-repeat: no-repeat;
     border: 0;
     padding-bottom: 3px;
-    width: 195px !important;
+    width: 70px !important;
     font-size: 30px;
     color: #FFF; }
     .mailpoet_paragraph .mailpoet_submit:hover {
@@ -3000,6 +3010,9 @@ Artheme author widget
   background-color: #FFF;
   margin-bottom: 10px; }
 
+.post-container-grid {
+  padding-left: 0 !important; }
+
 @media only screen and (max-width: 990px) {
   .social-icon {
     margin-top: 0 !important; }
@@ -3007,6 +3020,7 @@ Artheme author widget
   .submit {
     width: 255px; } }
 footer.post-meta {
+  padding-left: 8px;
   position: absolute;
   bottom: 0;
   height: 45px; }
@@ -3068,17 +3082,25 @@ footer.post-meta {
       color: #fb026a;
       text-decoration: none; }
 
+.content-excerpt {
+  padding-left: 8px; }
+
 .post-content {
   height: 386px; }
 
+.post-content {
+  margin-right: 25px; }
+
 .post-service-content {
-  min-height: 270px; }
+  min-height: 270px;
+  margin-right: 22px; }
 
 .image_container {
   padding-bottom: 10px;
   overflow: hidden; }
 
 .post-title {
+  padding-left: 8px;
   line-height: 1;
   height: 2em;
   font-size: 1.3em;
@@ -3094,7 +3116,7 @@ footer.post-meta {
 .further-content {
   cursor: pointer;
   margin-bottom: 5px;
-  margin-left: 15px;
+  margin-right: 16px;
   clear: both;
   line-height: 60px;
   background-color: #D0D0D0;
@@ -3307,6 +3329,9 @@ Utils
 .small-side-padding {
   padding: 0px 5px 0px 5px !important; }
 
+.small-left-padding {
+  padding-left: 8px !important; }
+
 /*
 Feature Box
 */
@@ -3319,12 +3344,14 @@ Feature Box
   overflow: hidden; }
   .featured .featured-excerpt {
     height: 88px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    padding-right: 10px; }
   .featured footer {
     margin-left: 10px; }
   .featured h2 {
     margin-top: 10px;
     margin-left: 10px;
+    margin-right: 10px;
     font-size: 24px;
     height: 66px; }
   .featured a {

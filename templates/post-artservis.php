@@ -1,5 +1,5 @@
 <article>
-    <div class="col-md-6 col-sm-6 post-container">
+    <div class="col-md-6 col-sm-6 post-container-grid">
         <div class="post-category post-service-content">
             <header>
                 <h2 class="post-title">
@@ -7,7 +7,7 @@
                 </h2>
             </header>
 
-            <div class="content excerpt hidden-text">
+            <div class="content-excerpt hidden-text">
                 <?php echo artalk_get_the_excerpt(get_the_ID(),45, $more = '… ', $allowed_tags = '<a>'); ?>
             </div>
             <footer class="post-meta">
