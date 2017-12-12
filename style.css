@@ -6,7 +6,7 @@
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, black, white, art magazine
 * Version:          0.8.5
-* Template Version: 0.8.3
+* Template Version: 0.8.8
 * GitHub Theme URL: https://github.com/glmcz/Artheme.git
 /*
 
@@ -14,8 +14,8 @@
 - Normalize
 - Navigation
 
-/*! 
-    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
+/*!
+    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
 */
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -48,10 +48,7 @@ and open the template in the editor.
 */
 @media only screen and (max-width: 765px) {
   .logo-search-container {
-    display: block !important; }
-
-  .site-logo {
-    margin: 0 auto !important; } }
+    display: block !important; } }
 @media only screen and (max-width: 420px) {
   .submit {
     width: 50%; } }
@@ -728,7 +725,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2797,6 +2794,22 @@ Artheme single
   .social-icon a:hover, .social-icon a:visited, .social-icon a:active {
     text-decoration: none; }
 
+@media (min-width: 420px) and (max-width: 1200px) {
+  .social-icon {
+    display: none; }
+
+  .single-text-container .full-width {
+    width: 100%; }
+
+  article .single-text-container .full-width {
+    width: 100%; } }
+@media (min-width: 420px) and (max-width: 769px) {
+  blockquote p {
+    font-size: 13px;
+    padding-left: 20px; }
+
+  .sidebar_right .author-bio-section, .sidebar_right .relatedposts, .sidebar_right .relatedthumb {
+    display: none; } }
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
@@ -3168,12 +3181,35 @@ footer.post-meta {
   .magazine a:hover {
     text-decoration: none; }
 
+@media (min-width: 769px) and (max-width: 990px) {
+  .main-magazine #sidebar .row:nth-child(1), .main-magazine #sidebar .row:nth-child(3) {
+    width: 50%;
+    float: left;
+    display: block; }
+  .main-magazine #sidebar .row, .main-magazine #b-tz, .main-magazine #b-mm, .main-magazine #b-top {
+    display: none; }
+
+  .magazine {
+    border-bottom: none; } }
 .service-news {
   height: 100%;
   border-left: 1px solid black;
   border-right: 1px solid black; }
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
+  .service-news .s-news-content p {
+    display: block;
+    /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 40.00000004px;
+    /* Fallback for non-webkit */
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .service-news li {
     border-top: 1px solid black;
     padding: 6px 10px;
@@ -3302,7 +3338,7 @@ Sidebar
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
@@ -3343,7 +3379,7 @@ Feature Box
   height: 567px;
   overflow: hidden; }
   .featured .featured-excerpt {
-    height: 88px;
+    min-height: 88px;
     margin-left: 10px;
     padding-right: 10px; }
   .featured footer {
@@ -3485,11 +3521,18 @@ authors-list-single-text {
 
 #search-text {
   border: 0px;
-  border-bottom: 1px solid #7a7a7a;
   margin-bottom: 5px;
   float: right;
   background: transparent;
   margin-top: 30%;
-  width: 90%; }
+  width: 90%;
+  background-color: #e5e5e5; }
+
+@media (min-width: 420px) and (max-width: 768px) {
+  #myNavbar .menu-item {
+    border-top: 1px solid; }
+
+  #myNavbar .menu-item:first-child {
+    border-top: none; } }
 
 /*# sourceMappingURL=style.css.map */
