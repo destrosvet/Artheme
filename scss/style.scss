@@ -14,8 +14,8 @@
 - Normalize
 - Navigation
 
-/*! 
-    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
+/*!
+    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
 */
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -2909,7 +2909,26 @@ Artheme single
     text-decoration: none;
   }
 }
-
+@media(min-width: 420px) and (max-width: 1200px) {
+  .social-icon {
+    display: none;
+  }
+  .single-text-container .full-width{
+    width: 100%;
+  }
+  article .single-text-container .full-width {
+    width: 100%;
+  }
+}
+@media(min-width: 420px) and (max-width: 769px) {
+  blockquote p{
+    font-size: 13px;
+    padding-left:20px;
+  }
+  .sidebar_right .author-bio-section, .sidebar_right .relatedposts, .sidebar_right .relatedthumb {
+    display:none;
+  }
+}
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
@@ -3018,7 +3037,11 @@ Artheme single
     }
   }
 }
-
+@media(min-width: 420px) and (max-width: 1200px) {
+  .citate-left{
+    position: initial;
+  }
+}
 
 /*
  * Artheme sidebar_right_collumn
@@ -3314,7 +3337,6 @@ footer.post-meta {
   cursor: pointer;
   margin-bottom: 5px;
   //margin-left: 15px;
-  margin-right: 16px;
   clear: both;
   //margin: 0 15px 0 15px;
   line-height: 60px;
@@ -3382,6 +3404,34 @@ footer.post-meta {
     text-decoration: none;
   }
 }
+@media (min-width: 769px) and (max-width: 990px) {
+  .main-magazine{
+    #sidebar .row:nth-child(1), #sidebar .row:nth-child(3){
+      width: 50%;
+      float: left;
+      display: block;
+      margin: 0px 0px;
+    }
+    #sidebar{
+      padding: 0px 0px;
+    }
+    #sidebar .row, #b-tz, #b-mm, #b-top{
+      display: none;
+    }
+  }
+  .magazine{
+    border-bottom: none;
+  }
+
+}
+@media (min-width: 769px) and (max-width: 1200px){
+  .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
+      margin-right: 0px;
+      padding-right:0px;
+  }
+}
+$font-size: 14px;
+$line-height: 1.42857143;
 
 .service-news {
   height: 100%;
@@ -3389,13 +3439,29 @@ footer.post-meta {
   border-right: 1px solid black;
   .s-news-content {
     padding: 10px 10px 3px 10px;
-
   }
-
+  .s-news-content p{
+    height: $font-size*$line-height*2;
+    -webkit-line-clamp: 2;
+  }
+  .s-news-content h5{
+    height: $font-size*$line-height*1;
+    -webkit-line-clamp: 1;
+  }
+  .s-news-content p, .s-news-content h5{
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    margin: 0 auto;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   li {
     border-top: 1px solid black;
     padding: 6px 10px;
-    height: 80px;
+    height: 96px;
     overflow: hidden;
     text-overflow: ellipsis;
     //margin: 10px 0 10px 0;
@@ -3642,7 +3708,7 @@ Feature Box
   overflow: hidden;
 
   .featured-excerpt {
-    height: 88px;
+    min-height: 88px;
     margin-left: 10px;
     padding-right: 10px;
   }
@@ -3808,14 +3874,20 @@ authors-list-single-text {
 
 #search-text {
   border: 0px;
-  border-bottom: 1px solid #7a7a7a;
   margin-bottom: 5px;
   float: right;
   background: transparent;
   margin-top: 30%;
-  width: 90%
+  width: 90%;
+  background-color: #e5e5e5;
 }
 
-
+@media (min-width: 420px) and (max-width: 768px){
+  #myNavbar .menu-item{
+    border-top: 1px solid;
+  }
+  #myNavbar .menu-item:first-child{
+    border-top: none;
+  }
+}
 //End Mobile menu
-
