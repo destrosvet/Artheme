@@ -444,6 +444,7 @@ Artheme single content
  */
 .article-single-title {
   padding-left: $ArtLeftPadding !important;
+  padding-bottom: 5px;
   h1 {
     font-size: 25px;
   }
@@ -2936,15 +2937,15 @@ Artheme single
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .single-text-container p:first-child{
   //padding-left: 10px;
 }
 .single-text-container .full-width {
   width: 136%;
-  padding-bottom: 0.5em;
-  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-top: 0.5em;
 
 }
 .single-text-container .full-width img{
@@ -3008,7 +3009,7 @@ Artheme single
 .wp-caption-text {
   font-size: 13px;
   line-height: 17px;
-  padding: 5px 0 1em $ArtLeftPadding;
+  padding: 5px 0 0 $ArtLeftPadding;
   text-align: left;
   //margin: 0 10px 0;
 }
