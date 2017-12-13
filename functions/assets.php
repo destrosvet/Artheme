@@ -108,6 +108,14 @@ function artalk_assets()
     );
     $deps[] = 'webfontloader';
 
+    wp_enqueue_script(
+        'panelnotes',
+        $dir . '/assets/scripts/panel-notes.js',
+        array(),
+        $ver,
+        false
+    );
+    $deps[] = 'panelnotes';
     // scripts for home
     /*        if ( is_home() || is_category( array('artservis','arena','magazine') ) || is_single() ) {
                         $theme_scripts = array(

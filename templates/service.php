@@ -14,15 +14,16 @@
             <h3><a href="<?php echo esc_url( get_category_link(3905)); ?>" title="Aktuality">Aktuality</a></h3>
             <ul>
             <?php
-            $QArgsActual = array( 'category_name' => 'aktuality','posts_per_page' => 6 );
+            $QArgsActual = array( 'category_name' => 'aktuality','posts_per_page' => 5 );
             $ActualQuery = new WP_Query($QArgsActual);
             //query_posts($QArgsActual);
             while ($ActualQuery -> have_posts()) : $ActualQuery->the_post();
                 echo '<li>';
                 echo '<a href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; ';
-                the_date('d.m.Y','<time>','</time><br />');
+                echo "<time>".the_time( get_option( 'date_format' ) )."</time>";
                 $Actualtitle = get_the_title();
-                echo artalk_get_the_excerpt( $post->ID, $num_words = 8, $more = '… ',$allowed_tags = '<a>',70);
+                echo '<h5>'.wp_trim_words( $Actualtitle, $num_words = 10, $more = '… ' ).'</h5>';
+                echo artalk_get_the_excerpt( $post->ID, $num_words = 20, $more = '… ',$allowed_tags = '<a>',200);
                 echo '</a></li>';
             endwhile;
 
@@ -54,4 +55,3 @@
     </div>
 
 </div>
-
