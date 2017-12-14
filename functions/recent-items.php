@@ -27,7 +27,7 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
 function bg_popular_post($no_posts = 4) {
     $ppost ='';
     //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
-    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
+    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num', 'category_name' => artalk_get_current_category(), 'date_query' => array('after' => '1 month ago'), 'order' => 'DESC' );
     //$args = array('meta_key'=>'popular_posts');
 /*    $args = array(
         'posts_per_page' => 5,

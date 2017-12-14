@@ -3440,6 +3440,9 @@ Feature Box
 .easy-adverts-out-item img {
   width: 390px; }
 
+.easy-adverts-out-ads-holder {
+  margin-top: 11px; }
+
 /* Artheme author list */
 .authors-letter-line {
   background-color: #212121;
@@ -3538,13 +3541,20 @@ authors-list-single-text {
   background: transparent;
   margin-top: 30%;
   width: 90%;
-  background-color: #e5e5e5; }
+  border-bottom: 1px solid #7a7a7a; }
+
+#search-button img {
+  height: 24px; }
 
 @media (min-width: 420px) and (max-width: 768px) {
   #myNavbar .menu-item {
     border-top: 1px solid; }
 
   #myNavbar .menu-item:first-child {
-    border-top: none; } }
+    border-top: none; }
+
+  #search-text {
+    border-bottom: none;
+    background-color: #e5e5e5; } }
 
 /*# sourceMappingURL=style.css.map */
