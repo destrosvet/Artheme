@@ -30,7 +30,7 @@ and open the template in the editor.
 @import "mobile-display";
 @import "simplelightbox";
 @import "icons";
-
+@import "datepicker";
 
 html {
   font-family: Arial, Helvetica, sans-serif;
@@ -2862,7 +2862,7 @@ Artheme social button
   }
   label {
     padding-top: 5px;
-    width: 40%;
+    width: 30%;
     float: left;
   }
   input[type="text"], input[type="month"]{
@@ -2873,7 +2873,7 @@ Artheme social button
     margin: auto;
     //margin-bottom: 10px;
     padding: 5px;
-    width: 60%;
+    width: 70%;
   }
   select {
     border: 0;
@@ -2883,7 +2883,7 @@ Artheme social button
     margin: auto;
     //margin-bottom: 10px;
     padding: 5px;
-    width: 60%;
+    width: 70%;
   }
 
   input[type="submit"] {

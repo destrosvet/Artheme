@@ -20,9 +20,11 @@
             </div>
 
 
-                <p>Filtrovat výsledky dle:</p>
+            <div class="col-md-12 col-xs-12 recent-header">
+                <h5>Filtrovat výsledky podle kategorií</h5>
+            </div>
             <div class="form-element">
-                <label for="author">Autora</label>
+                <label for="author">Autor</label>
                 <input  id="author" class="" type="text" placeholder="Autor" value="" name="author"   />
             </div>
             <div class="form-element">
@@ -40,10 +42,17 @@
                     <option value="Fourth Choice">Blogy</option>
                 </select>
             </div>
-            <div class="form-element">
-                <label for="month">Data</label>
-                <input  id="month" class="" type="month" placeholder="Datum" value="" name="datum"   />
+            <div class="form-element datepicker-from">
+               <label for="month">Datum od</label>
+                <input  id="month" class="form-control" type="text" placeholder="Datum od" value="" name="datum"   />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
+            <div class="form-element datepicker-until">
+                <label for="month">Datum do</label>
+                <input  id="month" class="form-control" type="text" placeholder="Datum do" value="" name="datum"   />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+
             <div class="form-element">
                 <label for="tag">Tagu</label>
                 <input  id="tag" class="" type="text" placeholder="tag" value="" name="author"   />

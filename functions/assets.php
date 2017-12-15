@@ -152,6 +152,33 @@ function artalk_assets()
         );
         $deps[] = 'jquery';
     }
+    if (is_search()) {
+        wp_enqueue_script(
+            'datepicker',
+            $dir . '/assets/scripts/bootstrap-datepicker.min.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'jquery';
+        wp_enqueue_script(
+            'datepicker-locale',
+            $dir . '/assets/scripts/locales_bootstrap-datepicker.cs.min.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'datepicker';
+
+        wp_enqueue_script(
+            'artalk-datepicker',
+            $dir . '/assets/scripts/artalk-datepicker.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'jquery';
+    }
 
     if (is_single()) {
         // jQuery-Collision
