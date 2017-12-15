@@ -2735,7 +2735,7 @@ Artheme social button
 
 .comment-author-bio{
   list-style-type: none;
-  padding-left: 15px;
+  padding-left: 30px;
   font-weight: 600;
   a:hover {
     text-decoration: none;
@@ -2823,12 +2823,13 @@ Artheme social button
 
 }
 .comments-title p {
-  padding: 5px;
+  padding: 5px 15px;
 }
 .commented-list{
   list-style-type: none;
   margin-top: 20px;
-  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding-top: 10px;
 
   a:hover {
     text-decoration: none;
