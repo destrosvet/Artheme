@@ -48,7 +48,10 @@ and open the template in the editor.
 */
 @media only screen and (max-width: 765px) {
   .logo-search-container {
-    display: block !important; } }
+    display: block !important; }
+
+  .site-logo {
+    margin: 0 auto !important; } }
 @media only screen and (max-width: 420px) {
   .submit {
     width: 50%; } }
@@ -3169,6 +3172,14 @@ Artheme social button
   border-bottom: 1px solid black; }
   .commented-list a:hover {
     text-decoration: none; }
+
+ol.children .commented-list {
+  border: 0px; }
+
+ol.children > ol.children {
+  margin-left: 0px;
+  padding-left: 0px;
+  border-bottom: 0px; }
 
 .commented-list:last-child {
   border-bottom: none; }

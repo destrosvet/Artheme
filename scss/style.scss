@@ -2834,6 +2834,14 @@ Artheme social button
     text-decoration: none;
   }
 }
+ol.children .commented-list {
+    border: 0px;
+}
+ol.children > ol.children {
+    margin-left: 0px;
+    padding-left: 0px;
+    border-bottom: 0px;
+}
 .commented-list:last-child{
   border-bottom: none;
 }
