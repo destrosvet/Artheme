@@ -48,10 +48,7 @@ and open the template in the editor.
 */
 @media only screen and (max-width: 765px) {
   .logo-search-container {
-    display: block !important; }
-
-  .site-logo {
-    margin: 0 auto !important; } }
+    display: block !important; } }
 @media only screen and (max-width: 420px) {
   .submit {
     width: 50%; } }
@@ -728,7 +725,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -754,11 +751,8 @@ img {
 /*
 Artheme single content
  */
-.article-single-title {
-  padding-left: 8px !important;
-  padding-bottom: 5px; }
-  .article-single-title h1 {
-    font-size: 25px; }
+.article-single-title h1 {
+  font-size: 25px; }
 
 .cont p {
   margin-right: 33.3333%; }
@@ -2607,8 +2601,6 @@ Artheme social button
   font-size: 17px;
   padding-right: 10px;
   padding-left: 0px; }
-  .single-text-container p {
-    padding-left: 8px; }
   .single-text-container a {
     border-bottom: 2px solid #212121; }
     .single-text-container a:hover {
@@ -2821,12 +2813,12 @@ Artheme single
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
-  padding-top: 15px; }
+  padding-top: 10px; }
 
 .single-text-container .full-width {
   width: 136%;
-  padding-bottom: 1em;
-  padding-top: 0.5em; }
+  padding-bottom: 0.5em;
+  padding-top: 1em; }
 
 .single-text-container .full-width img {
   width: 100%;
@@ -2876,8 +2868,8 @@ Artheme single
 .wp-caption-text {
   font-size: 13px;
   line-height: 17px;
-  padding: 5px 0 0 8px;
-  text-align: left; }
+  padding: 0 0 1em;
+  text-align: center; }
 
 .wp-caption p.wp-caption-text {
   font-size: 8px;
@@ -3070,12 +3062,11 @@ footer.post-meta {
   display: block; }
 
 .post-meta-single {
-  padding-left: 8px;
   display: inline-flex;
   width: 100%; }
   .post-meta-single span {
-    margin-left: 0px;
-    margin-right: 4px; }
+    margin-left: 2px;
+    margin-right: 2px; }
     .post-meta-single span a {
       color: black;
       text-decoration: none; }
@@ -3216,10 +3207,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 40px;
+    height: 40.00000004px;
     -webkit-line-clamp: 2; }
   .service-news .s-news-content h5 {
-    height: 20px;
+    height: 20.00000002px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -3227,7 +3218,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857;
+    line-height: 1.42857143;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -3243,7 +3234,7 @@ footer.post-meta {
     .service-news li a:hover {
       color: #fb026a; }
     .service-news li p {
-      margin: 0 0 8px; }
+      margin: 0 0 8x; }
   .service-news ul {
     list-style: none;
     padding-left: 0px;
@@ -3359,7 +3350,7 @@ Sidebar
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
