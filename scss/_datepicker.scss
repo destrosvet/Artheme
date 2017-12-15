@@ -6,7 +6,7 @@
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
 .datepicker {
-  border-radius: 4px;
+  border-radius: 0px;
   direction: ltr
 }
 
@@ -98,12 +98,14 @@
   -ms-user-select: none;
   user-select: none
 }
-
+.datepicker table tr {
+  //border-bottom: 1px solid $ArtBlack;
+}
 .datepicker table tr td, .datepicker table tr th {
   text-align: center;
   width: 30px;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 0px;
   border: none
 }
 
@@ -401,14 +403,14 @@
 
 .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active:active {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74
+  background-color: $ArtPink;
+  border-color: $ArtPinkLighter;
 }
 
 .datepicker table tr td.active.active.focus, .datepicker table tr td.active.active:focus, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.highlighted.active.focus, .datepicker table tr td.active.highlighted.active:focus, .datepicker table tr td.active.highlighted.active:hover, .datepicker table tr td.active.highlighted:active.focus, .datepicker table tr td.active.highlighted:active:focus, .datepicker table tr td.active.highlighted:active:hover, .datepicker table tr td.active:active.focus, .datepicker table tr td.active:active:focus, .datepicker table tr td.active:active:hover {
   color: #fff;
-  background-color: #204d74;
-  border-color: #122b40
+  background-color: $ArtPinkDarker;
+  border-color: $ArtPinkDarker;
 }
 
 .datepicker table tr td.active.disabled.focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.highlighted.disabled.focus, .datepicker table tr td.active.highlighted.disabled:focus, .datepicker table tr td.active.highlighted.disabled:hover, .datepicker table tr td.active.highlighted[disabled].focus, .datepicker table tr td.active.highlighted[disabled]:focus, .datepicker table tr td.active.highlighted[disabled]:hover, .datepicker table tr td.active[disabled].focus, .datepicker table tr td.active[disabled]:focus, .datepicker table tr td.active[disabled]:hover, fieldset[disabled] .datepicker table tr td.active.focus, fieldset[disabled] .datepicker table tr td.active.highlighted.focus, fieldset[disabled] .datepicker table tr td.active.highlighted:focus, fieldset[disabled] .datepicker table tr td.active.highlighted:hover, fieldset[disabled] .datepicker table tr td.active:focus, fieldset[disabled] .datepicker table tr td.active:hover {
@@ -424,7 +426,7 @@
   float: left;
   margin: 1%;
   cursor: pointer;
-  border-radius: 4px
+  border-radius: 0px
 }
 
 .datepicker table tr td span.focused, .datepicker table tr td span:hover {
@@ -509,11 +511,11 @@
 }
 
 .input-daterange input:first-child {
-  border-radius: 3px 0 0 3px
+  border-radius: 0px 0 0 0px
 }
 
 .input-daterange input:last-child {
-  border-radius: 0 3px 3px 0
+  border-radius: 0 3px 0px 0
 }
 
 .input-daterange .input-group-addon {

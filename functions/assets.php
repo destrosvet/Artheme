@@ -161,6 +161,7 @@ function artalk_assets()
             false
         );
         $deps[] = 'jquery';
+
         wp_enqueue_script(
             'datepicker-locale',
             $dir . '/assets/scripts/locales_bootstrap-datepicker.cs.min.js',
@@ -171,8 +172,17 @@ function artalk_assets()
         $deps[] = 'datepicker';
 
         wp_enqueue_script(
-            'artalk-datepicker',
-            $dir . '/assets/scripts/artalk-datepicker.js',
+            'multi-select',
+            $dir . '/assets/scripts/multiple-select.js',
+            array(),
+            $ver,
+            false
+        );
+        $deps[] = 'jquery';
+
+        wp_enqueue_script(
+            'artalk-search',
+            $dir . '/assets/scripts/artalk-search.js',
             array(),
             $ver,
             false

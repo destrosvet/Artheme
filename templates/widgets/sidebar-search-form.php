@@ -30,7 +30,7 @@
             <div class="form-element">
                 <label for="category">Kategorie</label>
 
-                <select id="category" name="category">
+                <select id="category-select" name="category" class="category-select">
                     <option value="First Choice">Recenze</option>
                     <option value="Second Choice">Rozhovory</option>
                     <option value="Third Choice">Komentáře</option>
@@ -45,12 +45,10 @@
             <div class="form-element datepicker-from">
                <label for="month">Datum od</label>
                 <input  id="month" class="form-control" type="text" placeholder="Datum od" value="" name="datum"   />
-                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
             <div class="form-element datepicker-until">
                 <label for="month">Datum do</label>
                 <input  id="month" class="form-control" type="text" placeholder="Datum do" value="" name="datum"   />
-                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
 
             <div class="form-element">

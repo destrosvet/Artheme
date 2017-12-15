@@ -31,6 +31,7 @@ and open the template in the editor.
 @import "simplelightbox";
 @import "icons";
 @import "datepicker";
+@import "multiple-select";
 
 html {
   font-family: Arial, Helvetica, sans-serif;
@@ -1242,7 +1243,15 @@ dd {
     box-shadow: none;
   }
 }
-
+.dropdown-menu {
+  z-index: 1000;
+  position: absolute;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  list-style: none;
+  min-width: 160px;
+}
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
   border-top-left-radius: 0;
@@ -2880,6 +2889,10 @@ Artheme social button
     padding: 5px;
     width: 70%;
   }
+  .category-select {
+    width: 70%;
+
+  }
 
   input[type="submit"] {
     display: block;
@@ -3473,7 +3486,7 @@ $line-height: 1.42857143;
       color: $ArtPink;
     }
     p {
-      margin: 0 0 8x;
+      margin: 0 0 8px;
     }
   }
   li:hover,
