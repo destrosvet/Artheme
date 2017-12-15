@@ -443,6 +443,8 @@ img {
 Artheme single content
  */
 .article-single-title {
+  padding-left: $ArtLeftPadding !important;
+  padding-bottom: 5px;
   h1 {
     font-size: 25px;
   }
@@ -2662,6 +2664,9 @@ Artheme social button
   font-size: 17px;
   padding-right: 10px;
   padding-left: 0px;
+  p {
+    padding-left: $ArtLeftPadding;
+  }
 
   a {
     //text-decoration: underline;
@@ -2941,15 +2946,15 @@ Artheme single
 .single-text-container {
   padding-right: 10px;
   padding-left: 0px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .single-text-container p:first-child{
   //padding-left: 10px;
 }
 .single-text-container .full-width {
   width: 136%;
-  padding-bottom: 0.5em;
-  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-top: 0.5em;
 
 }
 .single-text-container .full-width img{
@@ -3013,8 +3018,8 @@ Artheme single
 .wp-caption-text {
   font-size: 13px;
   line-height: 17px;
-  padding: 0 0 1em;
-  text-align: center;
+  padding: 5px 0 0 $ArtLeftPadding;
+  text-align: left;
   //margin: 0 10px 0;
 }
 .wp-caption p.wp-caption-text {
@@ -3249,9 +3254,11 @@ footer.post-meta {
   display: block;
 }
 .post-meta-single{
+  padding-left: $ArtLeftPadding;
   span{
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 4px;
+
     a{
       color: black;
       text-decoration: none;
@@ -3482,7 +3489,7 @@ $line-height: 1.42857143;
       color: $ArtPink;
     }
     p {
-      margin: 0 0 8x;
+      margin: 0 0 8px;
     }
   }
   li:hover,
