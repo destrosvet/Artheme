@@ -27,10 +27,11 @@
                 <label for="author">Autor</label>
                 <input  id="author" class="" type="text" placeholder="Autor" value="" name="author"   />
             </div>
+            <input type="hidden" name="category">
             <div class="form-element">
                 <label for="category">Kategorie</label>
 
-                <select id="category-select" name="category" class="category-select">
+                <select id="category-select" class="category-select">
                     <option value="First Choice">Recenze</option>
                     <option value="Second Choice">Rozhovory</option>
                     <option value="Third Choice">Komentáře</option>
@@ -44,21 +45,19 @@
             </div>
             <div class="form-element datepicker-from">
                <label for="month">Datum od</label>
-                <input  id="month" class="form-control" type="text" placeholder="Datum od" value="" name="datum"   />
+                <input  id="month" class="form-control" type="text" placeholder="Datum od" value="" name="dateFrom"   />
             </div>
             <div class="form-element datepicker-until">
                 <label for="month">Datum do</label>
-                <input  id="month" class="form-control" type="text" placeholder="Datum do" value="" name="datum"   />
+                <input  id="month" class="form-control" type="text" placeholder="Datum do" value="" name="dateTo"   />
             </div>
 
             <div class="form-element">
                 <label for="tag">Tagu</label>
-                <input  id="tag" class="" type="text" placeholder="tag" value="" name="author"   />
+                <input  id="tag" class="" type="text" placeholder="tag" value="" name="tag"   />
             </div>
                 <input id="" class="" type="submit" value="Hledat">
 
         </form>
     </div>
 </div>
-
-

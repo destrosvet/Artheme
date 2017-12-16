@@ -14,41 +14,76 @@
         </div>
         <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding norightpadding" id="posts" >
             <?php
-                //
 
-/*                $qobj = get_queried_object();
-                //var_dump($qobj); // debugging only
+              //    var_dump($query_string);
+              //  $qobj = get_queried_object();
+              //  var_dump($qobj); // debugging only
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-                // concatenate the query
+
+                $str = sanitize_text_field($_GET["s"]);
+                $author = sanitize_text_field($_GET["author"]);
+                $tag = sanitize_text_field($_GET["tag"]);
+
+                $dateQuery = array('date_query' => array());
+                if($_GET["dateFrom"]!=""){
+                  $dateFrom = explode( '/', $_GET["dateFrom"]);
+                  $dateFrom =  array(
+                    'year'  => $dateFrom[2],
+                    'month' => $dateFrom[1],
+                    'day'   => $dateFrom[0],
+                  );
+                }else{
+                  $dateFrom = "";
+                }
+                if($_GET["dateTo"]!=""){
+                  $dateTo = explode( '/', $_GET["dateTo"]);
+                  $dateTo = array(
+                    'year'  => $dateTo[2],
+                    'month' => $dateTo[1],
+                    'day'   => $dateTo[0],
+                  );
+
+                }else{
+                  $dateTo = "";
+                }
+
                 $args = array(
-                    's'=>the_search_query(),
+                    's'=> $str,
                     'post_type' => 'post',
                     'posts_per_page' => 10,
                     'paged' => $paged,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => $qobj->taxonomy,
-                            'field' => 'id',
-                            'terms' => $qobj->term_id,
+                    'category_name' => $_GET["category"],
+                    'tag' => $_GET["tag"],
+                    'date_query' => array(
+                      array(
+                        'before' => $dateTo,
+                        'after' => $dateFrom,
+                      )
+                    )
+
+
+                //    'tax_query' => array(
+                  //      array(
+                        //    'taxonomy' => $qobj->taxonomy,
+                        //    'field' => 'id',
+                        //    'terms' => $qobj->term_id,
                             //    using a slug is also possible
                             //    'field' => 'slug',
                             //    'terms' => $qobj->name
-                        )
-                    )
-                );*/
-                //$search_query = wp_parse_str( $query_string );
-                //var_dump(the_search_query());
-                //$query = new WP_Query($args);
+                //  //      )
+              );
+          //      $search_query = wp_parse_str( $query_string );
+          //      var_dump(the_search_query());
+          //      $query = new WP_Query($args);
 
-            $args = array(
-                's'=>get_search_query(),
-            );
-
-            $query = new WP_Query( $query_string );
-
-
+        //    $args = array(
+        //        's'=>get_search_query(),
+        //    );
+            var_dump($args);
+            print_r($args);
+            $query = new WP_Query($args);
 
             ?>
             <?php if ($query -> have_posts()): ?>
