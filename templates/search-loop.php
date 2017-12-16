@@ -25,6 +25,10 @@
                 $str = sanitize_text_field($_GET["s"]);
                 $author = sanitize_text_field($_GET["author"]);
                 $tag = sanitize_text_field($_GET["tag"]);
+                $category = sanitize_text_field($_GET["category"]);
+                if($category == "Vše vybráno"){
+                  $category = "";
+                }
 
                 $dateQuery = array('date_query' => array());
                 if($_GET["dateFrom"]!=""){
@@ -54,7 +58,7 @@
                     'post_type' => 'post',
                     'posts_per_page' => 10,
                     'paged' => $paged,
-                    'category_name' => $_GET["category"],
+                    'category_name' => $category,
                     'tag' => $_GET["tag"],
                     'date_query' => array(
                       array(
@@ -81,8 +85,6 @@
         //    $args = array(
         //        's'=>get_search_query(),
         //    );
-            var_dump($args);
-            print_r($args);
             $query = new WP_Query($args);
 
             ?>
