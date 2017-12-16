@@ -22,8 +22,8 @@
                 echo '<a href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; ';
                 echo "<time>".the_time( get_option( 'date_format' ) )."</time>";
                 $Actualtitle = get_the_title();
-                echo '<h5>'.wp_trim_words( $Actualtitle, $num_words = 10, $more = '… ' ).'</h5>';
-                echo artalk_get_the_excerpt( $post->ID, $num_words = 20, $more = '… ',$allowed_tags = '<a>',200);
+                echo '<p>'.short_title_text_letter( $Actualtitle, '… ',100 ).'</p>';
+                //echo artalk_get_the_excerpt( $post->ID, $num_words = 20, $more = '… ',$allowed_tags = '<a>',200);
                 echo '</a></li>';
             endwhile;
 

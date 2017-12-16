@@ -32,15 +32,15 @@
                 <label for="category">Kategorie</label>
 
                 <select id="category-select" class="category-select">
-                    <option value="First Choice">Recenze</option>
-                    <option value="Second Choice">Rozhovory</option>
-                    <option value="Third Choice">Komentáře</option>
-                    <option value="Fourth Choice">Fotoreport</option>
-                    <option value="Fourth Choice">Aktuality</option>
-                    <option value="Fourth Choice">Tiskové zprávy</option>
-                    <option value="Fourth Choice">Doprovodné programy</option>
-                    <option value="Fourth Choice">Monitoring médií</option>
-                    <option value="Fourth Choice">Blogy</option>
+                    <option value="recenze">Recenze</option>
+                    <option value="rozhovory">Rozhovory</option>
+                    <option value="komentare">Komentáře</option>
+                    <option value="foto-report">Foto report</option>
+                    <option value="aktuality">Aktuality</option>
+                    <option value="tiskove-zpravy">Tiskové zprávy</option>
+                    <option value="doprovodne-programy">Doprovodné programy</option>
+                    <option value="media-monitoring">Media monitoring</option>
+                    <option value="blogy">Blogy</option>
                 </select>
             </div>
             <div class="form-element datepicker-from">

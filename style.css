@@ -3722,6 +3722,9 @@ footer.post-meta {
     padding-left: 0;
     display: inline; }
 
+#posts article:nth-last-of-type(-n+2) .post-container-grid .post {
+  border-bottom: none !important; }
+
 .post, .post-category {
   border-bottom: 1px solid #212121; }
   .post a, .post-category a {
@@ -3770,6 +3773,7 @@ footer.post-meta {
 .further-content {
   cursor: pointer;
   margin-bottom: 5px;
+  margin-right: 18px;
   clear: both;
   line-height: 60px;
   background-color: #D0D0D0;
@@ -3845,8 +3849,8 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 40px;
-    -webkit-line-clamp: 2; }
+    height: 60px;
+    -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
     height: 20px;
     -webkit-line-clamp: 1; }
