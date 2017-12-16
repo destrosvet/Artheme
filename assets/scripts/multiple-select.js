@@ -781,6 +781,3 @@
     };
 })(jQuery);
 
-$( document ).on( "change", ".ms-drop input[type='checkbox']", function() {
-  $("input[name='category']").val($("button.ms-choice > span").text()); 
-});

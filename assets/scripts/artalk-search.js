@@ -18,6 +18,10 @@
             $('#category-select').multipleSelect({
                 width: '70%'
             });
+            $('#category-select').multipleSelect("checkAll");
         });
+    });
+    $( document ).on( "change", ".ms-drop input[type='checkbox']", function() {
+        $("input[name='category']").val($("button.ms-choice > span").text());
     });
 })(jQuery, this);

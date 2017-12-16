@@ -3300,7 +3300,9 @@ footer.post-meta {
 #posts article:nth-last-of-type(-n+2) .post-container-grid .post{
   border-bottom: none !important;
 }
-
+#posts article:nth-last-of-type(-n+2) .post-container-grid .post-service-content{
+  border-bottom: none !important;
+}
 
 
 .post, .post-category{
