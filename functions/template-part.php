@@ -554,7 +554,7 @@ function more_post_ajax(){
     $query = new WP_Query($args);
 
     while ($query -> have_posts()) : $query->the_post();
-    var_dump($taxonomy);
+    //var_dump($taxonomy);
         if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id)) {
                 get_template_part('/templates/post-artservis');
             } else {
