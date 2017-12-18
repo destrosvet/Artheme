@@ -6,8 +6,6 @@
  * Time: 15:30
  */
 ?>
-
-
 <div class="row">
     <div class="col-md-12 col-xs-12 recent-header">
             <h5>Nejčtenější články</h5>

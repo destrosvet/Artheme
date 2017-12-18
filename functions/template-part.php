@@ -336,7 +336,7 @@ function get_related_author_posts() {
     $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
     $output .= "<ul>";
 	foreach ( $authors_posts as $authors_post ) {
-		$output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $authors_post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ),'',60) . '</a></li>';
+		$output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $authors_post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ),'...',50) . '</a></li>';
 	}
     $output .= "</ul>";
     $output .= "</div>";
@@ -355,7 +355,7 @@ function get_related_posts() {
     $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
     $output .= "<ul>";
     foreach ( $related_posts as $post ) {
-        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'',59) . '</a></li>';
+        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'...',50) . '</a></li>';
     }
     $output .= "</ul>";
     $output .= "</div>";

@@ -2669,25 +2669,6 @@ Artheme social button
   overflow: hidden;
 }
 
-.single-text-container{
-  font-size: 17px;
-  padding-right: 10px;
-  padding-left: 0px;
-  p {
-    padding-left: $ArtLeftPadding;
-  }
-
-  a {
-    //text-decoration: underline;
-    border-bottom: 2px solid $ArtBlack;
-    &:hover {
-      text-decoration: none;
-      border-bottom: 2px solid $ArtPink;
-    }
-  }
-
-}
-
 .relatedthumb{
   padding-left: 0px;
   padding-right: 0px;
@@ -2956,7 +2937,25 @@ Artheme single
     display:none;
   }
 }
-.single-text-container {
+.single-text-container, .single-fotoreport-container{
+  font-size: 17px;
+  padding-right: 10px;
+  padding-left: 0px;
+  p {
+    padding-left: $ArtLeftPadding;
+  }
+
+  a {
+    //text-decoration: underline;
+    border-bottom: 2px solid $ArtBlack;
+    &:hover {
+      text-decoration: none;
+      border-bottom: 2px solid $ArtPink;
+    }
+  }
+
+}
+.single-text-container,.single-fotoreport-container {
   padding-right: 10px;
   padding-left: 0px;
   padding-top: 15px;
@@ -2982,10 +2981,7 @@ Artheme single
   //padding-bottom: 0.5em;
   //padding-top: 1em;
 }
-.single-fotoreport-container {
-  padding-right: 10px;
-  padding-left: 0px;
-}
+
 .single-fotoreport-container figure {
   width: 50%;
   float: left;

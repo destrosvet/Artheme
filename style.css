@@ -3221,18 +3221,6 @@ Artheme social button
   height: 160px;
   overflow: hidden; }
 
-.single-text-container {
-  font-size: 17px;
-  padding-right: 10px;
-  padding-left: 0px; }
-  .single-text-container p {
-    padding-left: 8px; }
-  .single-text-container a {
-    border-bottom: 2px solid #212121; }
-    .single-text-container a:hover {
-      text-decoration: none;
-      border-bottom: 2px solid #fb026a; }
-
 .relatedthumb {
   padding-left: 0px;
   padding-right: 0px; }
@@ -3447,7 +3435,19 @@ Artheme single
 
   .sidebar_right .author-bio-section, .sidebar_right .relatedposts, .sidebar_right .relatedthumb {
     display: none; } }
-.single-text-container {
+.single-text-container, .single-fotoreport-container {
+  font-size: 17px;
+  padding-right: 10px;
+  padding-left: 0px; }
+  .single-text-container p, .single-fotoreport-container p {
+    padding-left: 8px; }
+  .single-text-container a, .single-fotoreport-container a {
+    border-bottom: 2px solid #212121; }
+    .single-text-container a:hover, .single-fotoreport-container a:hover {
+      text-decoration: none;
+      border-bottom: 2px solid #fb026a; }
+
+.single-text-container, .single-fotoreport-container {
   padding-right: 10px;
   padding-left: 0px;
   padding-top: 15px; }
@@ -3460,10 +3460,6 @@ Artheme single
 .single-text-container .full-width img {
   width: 100%;
   height: auto; }
-
-.single-fotoreport-container {
-  padding-right: 10px;
-  padding-left: 0px; }
 
 .single-fotoreport-container figure {
   width: 50%;
@@ -3722,12 +3718,12 @@ footer.post-meta {
     padding-left: 0;
     display: inline; }
 
-#posts article:nth-last-of-type(-n+2) .post-container-grid .post + {
+#posts article:nth-last-of-type(-n+2) .post-container-grid .post {
   border-bottom: none !important; }
 
-/*#posts article:nth-last-of-type(-n+2) .post-container-grid .post-service-content{
-  border-bottom: none !important;
-}*/
+#posts article:nth-last-of-type(-n+2) .post-container-grid .post-service-content {
+  border-bottom: none !important; }
+
 .post, .post-category {
   border-bottom: 1px solid #212121; }
   .post a, .post-category a {
