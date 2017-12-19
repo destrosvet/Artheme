@@ -6,13 +6,12 @@
  * Time: 15:30
  */
 ?>
+<div class="related-posts">
+  <div class="col-md-12 col-xs-12 recent-header nobottommargin">
+      <h5>Související články</h5>
+  </div>
 
-<div class="col-md-12 col-xs-12 recent-header nobottommargin">
-    <h5>Související články</h5>
+  <div class="relatedthumb">
+      <?php echo get_related_posts() ?>
+  </div>
 </div>
-
-<div class="relatedthumb">
-    <?php echo get_related_posts() ?>
-</div>
-
-
