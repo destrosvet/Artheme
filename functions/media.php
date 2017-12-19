@@ -37,6 +37,7 @@ if ( $set_post_thumbnail_size ) {
 // wrap img with figure
 // handle images with captions
 // handle fotoreport
+// handle top5
 add_filter('the_content', 'artalk_setup_images',90);
 function artalk_setup_images($content)
 {
@@ -78,7 +79,16 @@ function artalk_setup_images($content)
         //$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="gallery">'.'\1\2\3'.'</div>', $content);
         //$content = preg_replace('/(<img s*(.*?)src=(\'.*?\'|\".*?\"|[^\\s]+)\s.*?\>)/','<figure><a href='.'\3'.'>'.'\1'.'</a></figure>', $content);
 
-    } else {
+    } elseif (in_category('top5tydne')){
+        $dom = str_get_html($content);
+        if ($dom->find("h2")) {
+            foreach($dom->find("img") as $image){
+                $image->outertext = '<figure class="full-width">'.$image.'</figure>';
+            }
+        }
+        $content = $dom->save();
+    }
+    else {
         $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<figure class="full-width">'.'\1\2\3'.'</figure>', $content);
     }
 
