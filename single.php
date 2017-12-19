@@ -1,6 +1,6 @@
 <?php get_header();?>
     <div class="row single" xmlns="http://www.w3.org/1999/html">
-        <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
+        <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 no-margin no-padding-sm single-content">
             <article>
                     <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
