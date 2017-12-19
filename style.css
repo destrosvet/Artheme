@@ -4221,7 +4221,10 @@ authors-list-single-text {
     margin: 10px 0px !important;
     float: left; }
 
-  .logo-search-container #search-text, .logo-search-container #search-button {
+  .logo-search-container #search-text {
+    margin-top: 38px !important; }
+
+  .logo-search-container #search-button {
     margin-top: 35px !important; } }
 
 /*# sourceMappingURL=style.css.map */
