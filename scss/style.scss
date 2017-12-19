@@ -2933,6 +2933,9 @@ Artheme single
     font-size: 13px;
     padding-left:20px;
   }
+  .single .sidebar_right{
+    display: none;
+  }
   .sidebar_right .author-bio-section, .sidebar_right .relatedposts, .sidebar_right .relatedthumb {
     display:none;
   }
@@ -3436,7 +3439,7 @@ footer.post-meta {
 }
 @media (min-width: 769px) and (max-width: 990px) {
   .main-magazine{
-    #sidebar .row:nth-child(1), #sidebar .row:nth-child(3){
+    #sidebar .row:nth-child(2), #sidebar .row:nth-child(4){
       width: 50%;
       float: left;
       display: block;
@@ -3453,6 +3456,20 @@ footer.post-meta {
     border-bottom: none;
   }
 
+}
+@media (min-width: 420px) and (max-width: 768px){
+  .main-magazine{
+    #sidebar .row:nth-child(2), #sidebar .row:nth-child(4){
+      display: block;
+      margin: 0px 0px;
+    }
+    #sidebar{
+      padding: 0px 0px;
+    }
+    #sidebar .row, #b-tz, #b-mm, #b-top{
+      display: none;
+    }
+  }
 }
 @media (min-width: 769px) and (max-width: 1200px){
   .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
@@ -3928,6 +3945,22 @@ authors-list-single-text {
   #search-text {
     border-bottom: none;
     background-color: #e5e5e5;
+    width: 200px;
+  }
+  #search-button{
+      width: auto;
+      margin-right: 5px;
+  }
+  .navbar-toggle{
+    margin-right: 0px;
+  }
+  .site-logo {
+    margin: 10px 0px !important;
+    float: left;
+  }
+  .logo-search-container #search-text, .logo-search-container #search-button{
+    margin-top: 35px !important;
   }
 }
+
 //End Mobile menu
