@@ -4006,25 +4006,31 @@ authors-list-single-text {
   height: 24px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 990px){
-  .container > .navbar-collapse{
+@media screen and (min-width: 769px) and (max-width: 1200px){
+  /*.container > .navbar-collapse{
     margin-left: 0px;
     margin-right: 0px;
   }
-  .navbar-nav > li.short-menu {
-    float: none;
-    border-top: 1px solid;
-    clear:both;
-  }
-  nav .navbar-nav{
-    float: none;
-  }
-  li.short-menu{
+  */
+/*  li.short-menu{
     display: none;
   }
-  #short-menu-button a{
-    cursor: pointer;
-  }
+*/
+}
+#short-menu-button a{
+  cursor: pointer;
+}
+
+.caret{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 }
 
 @media screen and (max-width: 768px){
