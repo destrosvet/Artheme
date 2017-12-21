@@ -2,7 +2,7 @@
  * Responsive short menu for version(480px - 768px)
  */
 $(document).ready(function() {
-    if($(window).width() < 768){
+    if($(window).width() > 769 && $(window).width() < 990 ){
       if ($( "#myNavbar li" ).size() > 7){
           $("#myNavbar li:nth-child(6)").after(
             "<li id='short-menu-button'><a>Více</a></li>"
