@@ -98,6 +98,16 @@ function artalk_assets()
     );
     $deps[] = 'bootstrap4-js';
 
+    wp_enqueue_script(
+        'short-menu',
+        $dir . '/assets/scripts/short-menu.js',
+        array('jquery'),
+        $ver,
+        false
+    );
+    $deps[] = 'short-menu';
+
+
     // webfontloader
     wp_enqueue_script(
         'webfontloader',

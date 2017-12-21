@@ -964,7 +964,7 @@ dd {
   overflow-y: auto;
 }
 
-@media (min-width: 768px) {
+//@media (min-width: 768px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -986,7 +986,7 @@ dd {
     padding-right: 0;
     padding-left: 0;
   }
-}
+//}
 
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
@@ -1107,11 +1107,11 @@ dd {
   margin-top: 4px;
 }
 
-@media (min-width: 768px) {
+//@media (min-width: 768px) {
   .navbar-toggle {
     display: none;
   }
-}
+//}
 
 .navbar-nav {
   margin: 7.5px -15px;
@@ -1122,7 +1122,7 @@ dd {
   padding-bottom: 5px;
   line-height: 20px;
 }
-
+/*
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
@@ -1146,8 +1146,8 @@ dd {
     background-image: none;
   }
 }
-
-@media (min-width: 768px) {
+*/
+//@media (min-width: 768px) {
   .navbar-nav {
     float: left;
     margin: 0;
@@ -1159,7 +1159,7 @@ dd {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-}
+//}
 
 .navbar-form {
   padding: 10px 15px;
@@ -2370,7 +2370,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 
-@media only screen and (min-width: 420px) and (max-width: 768px){
+@media screen and (max-width: 768px){
   .image_container{
     height: 62%;
   }
@@ -2917,7 +2917,7 @@ Artheme single
     text-decoration: none;
   }
 }
-@media(min-width: 420px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .social-icon {
     display: none;
   }
@@ -2946,7 +2946,7 @@ Artheme single
   }
 
 }
-@media (min-width: 420px) and (max-width: 768px){
+@media screen and (max-width: 768px){
   .single{
     .related-posts{
       width: 100%;
@@ -2977,7 +2977,7 @@ Artheme single
 
 
 
-@media(min-width: 420px) and (max-width: 769px) {
+@media (max-width: 769px) {
   blockquote p{
     font-size: 13px;
     padding-left:20px;
@@ -3106,7 +3106,7 @@ Artheme single
     }
   }
 }
-@media(min-width: 420px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .citate-left{
     position: initial;
   }
@@ -3480,8 +3480,19 @@ footer.post-meta {
     text-decoration: none;
   }
 }
+@media (min-width: 991px) {
+  .main-magazine{
+    #posts{
+      padding-left: 0px;
+    }
+  }
+}
 @media (min-width: 769px) and (max-width: 990px) {
   .main-magazine{
+    #sidebar {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
     #sidebar .row:nth-child(1){
       width: 100%;
       display: block;
@@ -3493,18 +3504,21 @@ footer.post-meta {
       display: block;
       margin: 0px 0px;
     }
-    #sidebar{
-    }
     #sidebar .row, #b-tz, #b-mm, #b-top{
       display: none;
+    }
+    #posts{
+      padding-left: 0px !important;
+      padding-right: 0px !important;
     }
   }
   .magazine{
     border-bottom: none;
   }
 
+
 }
-@media (min-width: 420px) and (max-width: 768px){
+@media screen and (max-width: 768px){
   .main-magazine{
     #sidebar .row:nth-child(2), #sidebar .row:nth-child(4){
       display: block;
@@ -3514,6 +3528,17 @@ footer.post-meta {
     }
     .post-content{
       margin-right: 0px;
+    }
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+      padding-right: 5px;
+      padding-left: 10px;
+    }
+    .further-content {
+      margin-right: 5px;
+    }
+    #sidebar .row {
+      margin-left: 0px;
+      margin-right: 5px;
     }
   }
 }
@@ -3834,7 +3859,7 @@ Feature Box
 }
 
 .featured-img {
-  width: 100%;
+  width: auto;
   height: 420px;
   a {
     width: 100%;
@@ -3981,10 +4006,22 @@ authors-list-single-text {
   height: 24px;
 }
 
-@media (min-width: 420px) and (max-width: 768px){
-  #myNavbar .menu-item{
-    border-top: 1px solid;
+
+
+@media screen and (max-width: 768px){
+  .container > .navbar-collapse{
+    margin-left: 0px;
+    margin-right: 0px;
   }
+  .navbar-nav > li.short-menu {
+    float: none;
+    border-top: 1px solid;
+    clear:both;
+  }
+  nav .navbar-nav{
+    float: none;
+  }
+
   #myNavbar .menu-item:first-child{
     border-top: none;
   }
@@ -4009,6 +4046,15 @@ authors-list-single-text {
   }
   .logo-search-container #search-button{
     margin-top: 35px !important;
+  }
+  li.short-menu{
+    display: none;
+  }
+  #short-menu-button a{
+    cursor: pointer;
+  }
+  .nav > li > a {
+    padding: 10px 8px;
   }
 }
 
