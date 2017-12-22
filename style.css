@@ -3992,17 +3992,24 @@ footer.post-meta {
       .service-photoreport .s-photoreport-content .photo-article a:hover {
         color: #fb026a; }
 
-@media only screen and (max-width: 765px) {
+@media only screen and (max-width: 990px) {
   .bar-info {
+    display: none; } }
+/*@media only screen and (max-width: 765px) {
+  .bar-info{
     margin-left: 15px;
     margin-right: 5px;
-    margin-bottom: 20px !important; } }
+    margin-bottom: 20px !important;
+  }
+}
+
 .bar-info {
   line-height: 34px;
   height: 34px;
   margin-bottom: 4px;
-  border-bottom: solid 1px #212121; }
-
+  border-bottom: solid 1px $ArtBlack;
+}
+*/
 /*
 Sidebar
 */

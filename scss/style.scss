@@ -3707,8 +3707,13 @@ $line-height: 1.42857143;
   }
 
 }
+@media only screen and (max-width: 990px) {
+  .bar-info{
+    display: none;
+  }
+}
 
-@media only screen and (max-width: 765px) {
+/*@media only screen and (max-width: 765px) {
   .bar-info{
     margin-left: 15px;
     margin-right: 5px;
@@ -3722,7 +3727,7 @@ $line-height: 1.42857143;
   margin-bottom: 4px;
   border-bottom: solid 1px $ArtBlack;
 }
-
+*/
 /*
 Sidebar
 */
