@@ -3801,14 +3801,12 @@ footer.post-meta {
   color: #212121;
   text-align: center;
   font-size: 1.3em;
-  height: 60px; }
+  height: 60px;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%; }
   .further-content:hover {
     background-color: #e5e5e5; }
-
-.further-content-margin {
-  height: 10px;
-  width: 100%;
-  clear: both; }
 
 .next-posts-link:hover {
   text-decoration: none; }

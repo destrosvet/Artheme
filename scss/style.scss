@@ -3425,12 +3425,9 @@ footer.post-meta {
   &:hover {
     background-color: #e5e5e5;
   }
-}
-
-.further-content-margin{
-  height: 10px;
+  display: inline-block;
+  margin-top: 10px;
   width: 100%;
-  clear: both;
 }
 
 .next-posts-link {
