@@ -10,7 +10,7 @@
 
 <div class="row" xmlns="http://www.w3.org/1999/html">
     <div class="col-md-12 col-xs-12 recent-header">
-        <h5>Pokročilé Vyhledání</h5>
+        <h5>Pokročilé vyhledávání</h5>
     </div>
     <div id="advanced-search" class="advanced-search">
         <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url(); ?>">

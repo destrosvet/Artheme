@@ -286,7 +286,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
 
 							printf( '<li class="">%1$s %2$s</li>',
 								'<a href="mailto:'.get_comment_author_email().'">'.short_title_text_letter(get_comment_author(),'',30).'</a>'
-                                ,'<a href="'.get_comment_author_url().'">'.short_title_text_letter(get_comment_author_url(),'',40).'</a>',
+                                ,'<a href="'.get_comment_author_url().'">'.short_title_text_letter(get_comment_author_url(),'',20).'</a>',
 								// If current post author is also comment author, make it known visually.
 								( $comment->user_id === $post->post_author ) ? '<span> ' . __( '(Autor příspěvku) ', 'fws' ) . '</span>' : ''
 							);
@@ -605,7 +605,7 @@ function wp_author_info_box() {
 				$user_posts = get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) );
 
 				if ( ! empty( $display_name ) ) {
-					$author_details = '<div class="author-heading"><p>Autor</p><h2><a href="'.esc_url(get_author_posts_url(get_the_author_meta( 'ID', $post->post_author ))).'">' . $display_name . '</a></h2></div>';
+					$author_details = '<div class="author-heading"><h2><a href="'.esc_url(get_author_posts_url(get_the_author_meta( 'ID', $post->post_author ))).'">' . $display_name . '</a></h2></div>';
 				}
 
 				if ( ! empty( $user_description ) ) // Author avatar and bio

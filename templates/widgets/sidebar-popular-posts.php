@@ -8,7 +8,7 @@
 ?>
 <div class="row">
     <div class="col-md-12 col-xs-12 recent-header">
-            <h5>Nejčtenější články</h5>
+            <h5><?php echo ((is_home()) ? 'Nejčtenější články':'Nejčtenější články rubriky' ); ?></h5>
     </div>
 
     <div class="col-md-12 col-xs-12 side-recent-item">
