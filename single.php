@@ -46,7 +46,7 @@
             </div>
         </div>
 
-    </div><!--//content-->
+
 
 <?php get_sidebar(); ?>
 

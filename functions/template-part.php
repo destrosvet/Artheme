@@ -500,7 +500,7 @@ function getRegistredImageSize () {
 }
 // Further Button for AJAX posts
 function getFurtherContentButton ($taxonomy='',$terms=0,$author=0) {
-    $content ="<div class=\"further-content\">";
+    $content ="<div class=\"further-content-margin\"> </div><div class=\"further-content\">";
     $content .="<div id=\"more-posts\" data-taxonomy=".$taxonomy." data-terms=".$terms." data-author=". $author ." data-category=". (is_home()?3862:get_category_id()) .">Načíst další obsah</div>";
     $content .="</div>";
     echo  $content;
@@ -710,4 +710,3 @@ function artalk_awatar($authorID) {
     return $content;
 
 }
-

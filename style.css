@@ -3805,6 +3805,11 @@ footer.post-meta {
   .further-content:hover {
     background-color: #e5e5e5; }
 
+.further-content-margin {
+  height: 10px;
+  width: 100%;
+  clear: both; }
+
 .next-posts-link:hover {
   text-decoration: none; }
 
