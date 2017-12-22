@@ -53,6 +53,17 @@
 					//Process nav menu using our custom nav walker
 				));
 				?>
+        <?php
+        wp_nav_menu( array(
+          'theme_location' => 'short-main-menu',
+          'menu' => 'top_menu',
+          'container' => false,
+          'menu_class' => 'nav navbar-nav',
+          'container_class'   => 'collapse navbar-collapse',
+          'container_id'      => 'bs-example-navbar-collapse-1',
+          //Process nav menu using our custom nav walker
+        ));
+        ?>
             </div>
 
         </div>

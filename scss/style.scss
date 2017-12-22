@@ -4027,7 +4027,28 @@ authors-list-single-text {
   cursor: pointer;
 }
 
-.caret{
+.sub-menu{
+  display: none;
+  padding-left: 0px;
+  margin-bottom: 5px;
+}
+
+.sub-menu li{
+  list-style-type: none;
+  text-align:  center;
+  border-bottom: 1px solid;
+}
+
+#menu-main-menu-top{
+  visibility: hidden;
+}
+
+#menu-short-main-menu{
+  display: none;
+}
+
+.menu-item-has-children > a:after{
+  content: " ";
   display: inline-block;
   width: 0;
   height: 0;

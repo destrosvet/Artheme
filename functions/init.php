@@ -18,6 +18,7 @@ function () {
   // Menus
   register_nav_menus( array(
     'main-menu' => 'Main Menu',
+    'short-main-menu' => 'Short Main Menu',
     'footer-menu'          => 'Footer Menu',
   ) );
 
@@ -213,5 +214,3 @@ function artalk_widgets_init04()
           .login #nav a {color:#bbb;}
       </style>';
   }
-
-
