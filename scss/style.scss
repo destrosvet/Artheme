@@ -3707,7 +3707,7 @@ $line-height: 1.42857143;
   }
 
 }
-@media only screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .bar-info{
     display: none;
   }
@@ -3890,7 +3890,7 @@ Feature Box
 */
 .easy-adverts-out-item {
   img {
-    width: 390px;
+    width: 100%;
   }
 }
 .easy-adverts-out-ads-holder {

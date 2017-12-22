@@ -3992,7 +3992,7 @@ footer.post-meta {
       .service-photoreport .s-photoreport-content .photo-article a:hover {
         color: #fb026a; }
 
-@media only screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .bar-info {
     display: none; } }
 /*@media only screen and (max-width: 765px) {
@@ -4133,7 +4133,7 @@ Feature Box
     Easy Advert
 */
 .easy-adverts-out-item img {
-  width: 390px; }
+  width: 100%; }
 
 .easy-adverts-out-ads-holder {
   margin-top: 11px; }

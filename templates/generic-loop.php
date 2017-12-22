@@ -11,7 +11,7 @@
             <div class="col-md-8 col-sm-6 col-xs-12 small-left-padding">Nejnovější články</div>
             <div class="col-md-4 col-sm-6">Inzerce</div>
         </div>
-        <div class="col-md-8 col-sm-12 col-xs-12 noleftpadding norightpadding" id="posts" >
+        <div class="col-md-8 col-sm-12 col-xs-12" id="posts" >
             <?php
 
             if (is_tax() || is_category() || is_tag() ) {
