@@ -47,7 +47,7 @@
 					'theme_location' => 'main-menu',
 					'menu' => 'top_menu',
 					'container' => false,
-					'menu_class' => 'nav navbar-nav',
+					'menu_class' => 'main-menu nav navbar-nav',
 					'container_class'   => 'collapse navbar-collapse',
 					'container_id'      => 'bs-example-navbar-collapse-1',
 					//Process nav menu using our custom nav walker
@@ -58,7 +58,7 @@
           'theme_location' => 'short-main-menu',
           'menu' => 'top_menu',
           'container' => false,
-          'menu_class' => 'nav navbar-nav',
+          'menu_class' => 'short-main-menu nav navbar-nav',
           'container_class'   => 'collapse navbar-collapse',
           'container_id'      => 'bs-example-navbar-collapse-1',
           //Process nav menu using our custom nav walker

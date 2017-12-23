@@ -2946,6 +2946,7 @@ Artheme single
   }
 
 }
+
 @media screen and (max-width: 768px){
   .single{
     .related-posts{
@@ -3054,7 +3055,11 @@ Artheme single
   float: none;
   clear: both;
 }
-
+@media screen and (max-width: 990px){
+  .single-fotoreport-container figure{
+    width: 100%;
+  }
+}
 /*
  * Artheme caption
  */
@@ -3489,6 +3494,12 @@ footer.post-meta {
       padding-left: 0px;
     }
   }
+  #b-mm h5, #b-top h5{
+    margin-top: 0px;
+  }
+  #b-mm, #b-top{
+    margin-bottom: -20px;    
+  }
 }
 @media (min-width: 769px) and (max-width: 990px) {
   .main-magazine{
@@ -3716,24 +3727,13 @@ $line-height: 1.42857143;
   }
 }
 
-/*@media only screen and (max-width: 765px) {
-  .bar-info{
-    margin-left: 15px;
-    margin-right: 5px;
-    margin-bottom: 20px !important;
-  }
-}
-
 .bar-info {
   line-height: 34px;
   height: 34px;
   margin-bottom: 4px;
   border-bottom: solid 1px $ArtBlack;
 }
-*/
-/*
-Sidebar
-*/
+
 .recent-header {
   text-align: left;
   margin-bottom: 0.5em;
@@ -4014,17 +4014,6 @@ authors-list-single-text {
   height: 24px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1200px){
-  /*.container > .navbar-collapse{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  */
-/*  li.short-menu{
-    display: none;
-  }
-*/
-}
 #short-menu-button a{
   cursor: pointer;
 }
@@ -4033,19 +4022,29 @@ authors-list-single-text {
   display: none;
   padding-left: 0px;
   margin-bottom: 5px;
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  z-index: 10;
+  border: 1px solid;
 }
 
 .sub-menu li{
   list-style-type: none;
   text-align:  center;
   border-bottom: 1px solid;
+  padding-right: 10px !important;
 }
 
-#menu-main-menu-top{
+.sub-menu li:last-child{
+  border-bottom: 0px;
+}
+
+.main-menu{
   visibility: hidden;
 }
 
-#menu-short-main-menu{
+.short-main-menu{
   display: none;
 }
 

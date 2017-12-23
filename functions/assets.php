@@ -107,6 +107,14 @@ function artalk_assets()
     );
     $deps[] = 'short-menu';
 
+    wp_enqueue_script(
+        'comments-url',
+        $dir . '/assets/scripts/comments-url.js',
+        array('jquery'),
+        $ver,
+        false
+    );
+    $deps[] = 'comments-url.js';
 
     // webfontloader
     wp_enqueue_script(
