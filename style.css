@@ -4311,6 +4311,8 @@ authors-list-single-text {
     margin-top: 35px !important; }
 
   .logo-search-container #search-button-mobile {
-    margin-top: 40px !important; } }
+    margin-top: 40px !important;
+    position: absolute;
+    right: 32px; } }
 
 /*# sourceMappingURL=style.css.map */
