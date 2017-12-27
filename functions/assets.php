@@ -108,6 +108,14 @@ function artalk_assets()
     $deps[] = 'short-menu';
 
     wp_enqueue_script(
+        'responsive-search',
+        $dir . '/assets/scripts/responsive-search.js',
+        array('jquery'),
+        $ver,
+        false
+    );
+    $deps[] = 'responsive-search';
+    wp_enqueue_script(
         'comments-url',
         $dir . '/assets/scripts/comments-url.js',
         array('jquery'),

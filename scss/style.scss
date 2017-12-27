@@ -3498,7 +3498,7 @@ footer.post-meta {
     margin-top: 0px;
   }
   #b-mm, #b-top{
-    margin-bottom: -20px;    
+    margin-bottom: -20px;
   }
 }
 @media (min-width: 769px) and (max-width: 990px) {
@@ -3987,7 +3987,7 @@ authors-list-single-text {
 #icona {
   background-color: $ArtBlack; }
 
-#search-button {
+#search-button, #search-button-mobile {
   color: #7a7a7a;
   float: right;
   margin-top: 30%;
@@ -4060,17 +4060,21 @@ authors-list-single-text {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-
+#search-button-mobile{
+  display: none;
+}
 @media screen and (max-width: 768px){
 
   #search-text {
     border-bottom: none;
     background-color: #e5e5e5;
     width: 200px;
+    display: none;
   }
-  #search-button{
+  #search-button, #search-button-mobile{
       width: auto;
       margin-right: 5px;
+      cursor: pointer;
   }
   .navbar-toggle{
     margin-right: 0px;
@@ -4084,6 +4088,9 @@ authors-list-single-text {
   }
   .logo-search-container #search-button{
     margin-top: 35px !important;
+  }
+  .logo-search-container #search-button-mobile{
+    margin-top: 40px !important;    
   }
 }
 

@@ -30,9 +30,9 @@
    $( ".menu-item-has-children" ).click(function(event) {
      event.preventDefault();
    if($(".sub-menu").is(':visible')){
-     $(".sub-menu").hide("slow");
+     $(".sub-menu").hide();
    }else{
-     $(".sub-menu").show("slow");
+     $(".sub-menu").show();
    }
  });
  });
