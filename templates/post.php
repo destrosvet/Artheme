@@ -13,7 +13,7 @@
                 <?php endif; ?>
 
             <div class="content-excerpt">
-                <?php echo the_excerpt();  ?>
+                <?php echo short_title_text_letter(get_the_excerpt($post),'...',100);  ?>
             </div>
             <footer class="post-meta">
                 <?php get_template_part('templates/post-meta'); ?>

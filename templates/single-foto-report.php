@@ -1,8 +1,7 @@
 <?php get_header();   ?>
     <div class="row">
-        <article>
-            <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
-
+        <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
+                <article>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title nopadding-i">
@@ -34,17 +33,19 @@
 
                     <div class="clear"></div>
                 </div>
-
-            </div>
-
+            </article>
+        </div>
 
             <?php get_template_part('templates/sidebar', 'single'); ?>
 
-            <div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
-                <?php  get_post_tags($post->ID); ?>
-                <?php  comments_template(); ?>
-        </article>
-    </div><!--//content-->
+            <div class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
+                <div id="tags">
+                    <?php  get_post_tags($post->ID); ?>
+                </div>
+                <div id="comments">
+                    <?php  comments_template(); ?>
+                </div>
+            </div>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
