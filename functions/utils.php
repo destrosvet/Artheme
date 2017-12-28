@@ -377,7 +377,7 @@ function search_exc_cats( $query ) {
         return $query;
 
     if( $query->is_search ) {
-        $query->set( 'category__not_in' , array( 18071 ) ); // Cat ID
+        $query->set( 'category__not_in' , array( get_cat_ID( 'Artalk Revue' ) ) ); // Cat ID
     }
     return $query;
 }
