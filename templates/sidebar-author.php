@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 noleftpadding sidebar_right">
+<div class="author-sidebar col-lg-4 col-md-4 col-sm-12 col-xs-12 noleftpadding sidebar_right">
     <aside id="sidebar" class="col-md-12 col-sm-12 col-xs-12 no-margin norightpadding padding-right-sm-10 sidebar-wrapper d-md-block d-sm-none text-center">
 
         <?php wp_author_info_box();?>
