@@ -2941,7 +2941,7 @@ Artheme single
 }
 
 @media (min-width: 769px) and (max-width: 990px) {
-  .single, .single-foto-report{
+  .single, .single-foto-report, .author-sidebar{
     .relatedposts, .related-posts{
       width: 50%;
       float: left;
@@ -3541,6 +3541,9 @@ footer.post-meta {
         overflow: hidden;
       }
     }
+  }
+  .sidebar-author-bio-top {
+    display: none;
   }
   #b-mm h5, #b-top h5{
     margin-top: 0px;
