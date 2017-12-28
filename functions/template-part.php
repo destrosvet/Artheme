@@ -75,9 +75,9 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
                     continue;
                 $pre = '';
                 $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
-                if ($parent != 'artservis' && $parent != 'arena') {
+                if ($parent != 'artservis' && $parent != 'arena' && $parent != 'artalk-revue') {
                     $cats_tree = get_category_parents($cat->parent, 'true', '||', ' &raquo; ');
-
+                    //var_dump($cats_tree);
                     $cats_Arr = explode('||', $cats_tree);
                     //$cats_out = $cats_Arr[1];
                     $cats_out[] = '<li>' . $cats_Arr[1] . '</li>';
