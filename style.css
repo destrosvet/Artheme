@@ -4099,6 +4099,15 @@ footer.post-meta {
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
+@media (min-width: 769px) and (max-width: 990px) {
+  .bott-border .xs-top-margin {
+    margin-top: 0px; }
+
+  .twice-sm {
+    height: 86px !important; }
+
+  .triple-sm {
+    height: 86px !important; } }
 .recent-comments .recent-comments-post {
   display: block;
   font-weight: bold; }
@@ -4266,6 +4275,17 @@ authors-list-single-text {
 #icona {
   background-color: #212121; }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #search-text {
+    color: red; } }
+@media \0screen\,screen\9 {
+  .logo-search-container #searchform #search-button-mobile {
+    right: 58px !important;
+    margin-top: 38px !important; } }
+@media screen and (min-width: 0\0) {
+  .logo-search-container #searchform #search-button-mobile {
+    right: 58px !important;
+    margin-top: 38px !important; } }
 #search-button, #search-button-mobile {
   color: #7a7a7a;
   float: right;
