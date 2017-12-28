@@ -3438,9 +3438,6 @@ Artheme single
     width: 100%; }
   .single .author-bio-section, .single .easy-adverts-out-ads-holder {
     display: none; } }
-@media (min-width: 991px) {
-  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder {
-    padding: 0px 15px; } }
 @media screen and (max-width: 768px) {
   .single .related-posts {
     width: 100%;
@@ -3904,12 +3901,6 @@ footer.post-meta {
   .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
     margin-right: 0px;
     padding-right: 0px; } }
-@media (min-width: 769px) and (max-width: 990px) {
-  .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
-    padding-left: 15px; }
-
-  .post-content {
-    margin-right: 0px; } }
 .service-news {
   height: 100%;
   border-left: 1px solid black;
@@ -4226,7 +4217,7 @@ authors-list-single-text {
 #icona {
   background-color: #212121; }
 
-#search-button, #search-button-mobile {
+#search-button {
   color: #7a7a7a;
   float: right;
   margin-top: 30%;
@@ -4291,20 +4282,20 @@ authors-list-single-text {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent; }
 
-#search-button-mobile {
-  display: none; }
-
 @media screen and (max-width: 768px) {
   #search-text {
     border-bottom: none;
     background-color: #e5e5e5;
-    width: 185px;
+    width: 200px;
     display: none; }
 
-  #search-button, #search-button-mobile {
+  #search-button {
     width: auto;
     margin-right: 5px;
     cursor: pointer; }
+
+  #search-button-mobile {
+    display: none; }
 
   .navbar-toggle {
     margin-right: 0px; }
@@ -4317,11 +4308,6 @@ authors-list-single-text {
     margin-top: 38px !important; }
 
   .logo-search-container #search-button {
-    margin-top: 35px !important; }
+    margin-top: 35px !important; } }
 
-  .logo-search-container #search-button-mobile {
-    margin-top: 40px !important;
-    position: absolute;
-    right: 32px; } }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.scss.map */

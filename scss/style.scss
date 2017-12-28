@@ -2947,6 +2947,12 @@ Artheme single
 
 }
 
+@media (min-width: 991px) {
+  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder{
+    padding: 0px 15px;
+  }
+}
+
 @media screen and (max-width: 768px){
   .single{
     .related-posts{
@@ -3559,7 +3565,15 @@ footer.post-meta {
 @media (min-width: 769px) and (max-width: 1200px){
   .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
       margin-right: 0px;
-      padding-right:0px;
+      padding-right: 0px;
+  }
+}
+@media (min-width: 769px) and (max-width: 990px) {
+  .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
+    padding-left: 15px;
+  }
+  .post-content{
+    margin-right: 0px;
   }
 }
 $font-size: 14px;

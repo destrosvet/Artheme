@@ -27,7 +27,7 @@
      $(".short-main-menu").hide();
    }
 
-   $( ".menu-item-has-children" ).click(function(event) {
+   $( ".menu-item-has-children > a" ).click(function(event) {
      event.preventDefault();
    if($(".sub-menu").is(':visible')){
      $(".sub-menu").hide();

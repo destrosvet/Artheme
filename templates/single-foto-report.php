@@ -1,5 +1,5 @@
 <?php get_header();   ?>
-    <div class="row">
+    <div class="row single-foto-report">
         <article>
             <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
 
