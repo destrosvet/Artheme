@@ -3613,8 +3613,11 @@ footer.post-meta {
       margin-right: 0px;
       padding-right: 0px;
   }
-  .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
+  .main-magazine article:nth-child(2n + 2) div.post-container-grid{
     padding-left: 15px;
+  }
+  .main-magazine article:nth-child(2n + 2) .post-content{
+    margin-left: 15px;
   }
   .post-content{
     margin-right: 0px;
@@ -3966,8 +3969,8 @@ Feature Box
     //padding: 15px;
   }
 }
-.easy-adverts-out-ads-holder {
-  margin-top: 11px;
+.easy-adds-image {
+  margin: 10px 0px;
 }
 
 /* Artheme author list */

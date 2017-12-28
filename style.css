@@ -1343,7 +1343,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3948,8 +3948,11 @@ footer.post-meta {
     margin-right: 0px;
     padding-right: 0px; }
 
-  .main-magazine article:nth-child(2n + 2) div.post-container-grid, .main-magazine article:nth-child(2n + 2) .post-content {
+  .main-magazine article:nth-child(2n + 2) div.post-container-grid {
     padding-left: 15px; }
+
+  .main-magazine article:nth-child(2n + 2) .post-content {
+    margin-left: 15px; }
 
   .post-content {
     margin-right: 0px; } }
@@ -3960,10 +3963,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60px;
+    height: 60.00000006px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20px;
+    height: 20.00000002px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -3971,7 +3974,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857;
+    line-height: 1.42857143;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4098,7 +4101,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
@@ -4197,8 +4200,8 @@ Feature Box
 .easy-adverts-out-item img {
   width: 100%; }
 
-.easy-adverts-out-ads-holder {
-  margin-top: 11px; }
+.easy-adds-image {
+  margin: 10px 0px; }
 
 /* Artheme author list */
 .authors-letter-line {
