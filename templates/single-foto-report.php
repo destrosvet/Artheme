@@ -1,14 +1,7 @@
 <?php get_header();   ?>
-<<<<<<< HEAD
     <div class="row single-foto-report">
-        <article>
-            <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
-
-=======
-    <div class="row">
         <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
                 <article>
->>>>>>> 20ec6ecc9fdc3f9bf82986261242c464716c273f
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title nopadding-i">
@@ -35,7 +28,6 @@
                         <h3>Omlouváme se, nic jsme nenašli.</h3>
 
                     <?php endif;
-
                     ?>
 
                     <div class="clear"></div>
