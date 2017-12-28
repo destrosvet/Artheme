@@ -2941,7 +2941,7 @@ Artheme single
 }
 
 @media (min-width: 769px) and (max-width: 990px) {
-  .single{
+  .single, .single-foto-report{
     .relatedposts, .related-posts{
       width: 50%;
       float: left;
@@ -2955,8 +2955,26 @@ Artheme single
       display: none;
     }
   }
-
 }
+@media (max-width: 990px) {
+  .single-foto-report .single-content{
+    padding-right: 0px;
+    margin-right: 0px;
+      .col-lg-9{
+        padding-right: 0px;
+        margin-right: 0px;
+      }
+  }
+  .single .single-content{
+    padding-right: 0px;
+    margin-right: 0px;
+      .col-lg-9{
+        padding-right: 0px;
+        margin-right: 0px;
+      }
+  }
+}
+
 
 @media (min-width: 991px) {
   .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder{
@@ -2965,7 +2983,7 @@ Artheme single
 }
 
 @media screen and (max-width: 768px){
-  .single{
+  .single, .single-foto-report{
     .related-posts{
       width: 100%;
       display: block;

@@ -1,6 +1,6 @@
 <?php get_header();   ?>
     <div class="row single-foto-report">
-        <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
+        <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 no-margin no-padding-sm single-content">
                 <article>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
@@ -18,7 +18,7 @@
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
                 </div>
 
-                <div class="col-lg-12 col-sm-12 col-xs-12 padding-sm-12 single-fotoreport-container">
+                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-fotoreport-container">
                     <?php
                         the_content();
                     ?>

@@ -3445,28 +3445,42 @@ Artheme single
   article .single-text-container .full-width {
     width: 100%; } }
 @media (min-width: 769px) and (max-width: 990px) {
-  .single .relatedposts, .single .related-posts {
+  .single .relatedposts, .single .related-posts, .single-foto-report .relatedposts, .single-foto-report .related-posts {
     width: 50%;
     float: left;
     display: block;
     margin: 0px 0px; }
-  .single .sidebar_right {
+  .single .sidebar_right, .single-foto-report .sidebar_right {
     width: 100%; }
-  .single .author-bio-section, .single .easy-adverts-out-ads-holder {
+  .single .author-bio-section, .single .easy-adverts-out-ads-holder, .single-foto-report .author-bio-section, .single-foto-report .easy-adverts-out-ads-holder {
     display: none; } }
+@media (max-width: 990px) {
+  .single-foto-report .single-content {
+    padding-right: 0px;
+    margin-right: 0px; }
+    .single-foto-report .single-content .col-lg-9 {
+      padding-right: 0px;
+      margin-right: 0px; }
+
+  .single .single-content {
+    padding-right: 0px;
+    margin-right: 0px; }
+    .single .single-content .col-lg-9 {
+      padding-right: 0px;
+      margin-right: 0px; } }
 @media (min-width: 991px) {
   .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder {
     padding: 0px 15px; } }
 @media screen and (max-width: 768px) {
-  .single .related-posts {
+  .single .related-posts, .single-foto-report .related-posts {
     width: 100%;
     display: block;
     margin: 0px 0px; }
-  .single .sidebar_right {
+  .single .sidebar_right, .single-foto-report .sidebar_right {
     width: 100%; }
-  .single .bott-border {
+  .single .bott-border, .single-foto-report .bott-border {
     border: 0px; }
-  .single .author-bio-section, .single .relatedposts, .single .easy-adverts-out-ads-holder {
+  .single .author-bio-section, .single .relatedposts, .single .easy-adverts-out-ads-holder, .single-foto-report .author-bio-section, .single-foto-report .relatedposts, .single-foto-report .easy-adverts-out-ads-holder {
     display: none; } }
 .single-text-container h2, .single-fotoreport-container h2 {
   font-size: 22px;
