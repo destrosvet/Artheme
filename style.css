@@ -5,8 +5,8 @@
 * Author: Filip Uhlir
 * Author URI: http://www.teapot.cz
 * Tags: 3 column theme, black, white, art magazine
-* Version:          0.9.1
-* Template Version: 0.9.1
+* Version:          0.9.2
+* Template Version: 0.9.2
 * GitHub Theme URL: https://github.com/glmcz/Artheme.git
 /*
 
@@ -51,13 +51,19 @@ and open the template in the editor.
     display: block !important; }
 
   .site-logo {
-    margin: 0 auto !important; } }
+    margin: 0 auto !important; }
+
+  .magazine {
+    border-bottom: none !important; } }
 @media only screen and (max-width: 420px) {
   .submit {
     width: 50%; } }
 @media only screen and (max-width: 765px) {
   #myNavbar {
-    text-align: center; } }
+    text-align: center; }
+
+  .nav > li {
+    border-top: 1px solid #212121; } }
 @media only screen and (max-width: 320px) {
   .post-content {
     height: 360px !important; } }
@@ -1337,7 +1343,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1727,6 +1733,16 @@ dd {
   margin-bottom: 0;
   list-style: none; }
 
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  /* assumes you only want one row */
+  width: 100%; }
+
 .nav > li {
   position: relative;
   display: block; }
@@ -1734,13 +1750,10 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px; }
+  padding: 10px 15.2px; }
 
 .nav > li:first-child a {
   padding-left: 10px; }
-
-.nav li:last-child a {
-  padding-right: 0px !important; }
 
 .nav > li.disabled > a {
   color: #777; }
@@ -2995,6 +3008,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .side-recent-item {
     padding-left: 0px !important;
     padding-right: 0px !important; } }
+@media (min-width: 992px) {
+  .side-recent-item li, .side-recent-item .triple-sm {
+    height: auto !important; } }
 @media screen and (max-width: 768px) {
   .image_container {
     height: 62%; } }
@@ -3600,12 +3616,15 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     .mailpoet_paragraph .mailpoet_submit:hover {
       text-decoration: underline; }
 
+@media (min-width: 992px) {
+  .mailpoet_text {
+    width: 320px !important; } }
 /*
 Artheme tags
  */
 #tags {
   margin-bottom: 15px;
-  margin-top: 10px; }
+  margin-top: 15px; }
 
 div.tags {
   margin: 0;
@@ -3669,7 +3688,7 @@ Artheme author widget
   font-size: 24px;
   font-weight: bold;
   text-align: left;
-  margin: 21px 0px 10px 0px; }
+  margin: 20px 0px 10px 0px; }
   .author-heading a {
     text-decoration: none; }
   .author-heading h2 {
@@ -3767,7 +3786,7 @@ footer.post-meta {
       color: #fb026a;
       text-decoration: none; }
 
-.content-excerpt {
+.content-excerpt, .content-service-excerpt {
   padding-left: 8px; }
 
 .post-content {
@@ -3858,6 +3877,12 @@ footer.post-meta {
 @media (min-width: 991px) {
   .main-magazine #posts {
     padding-left: 0px; }
+    .main-magazine #posts .content-excerpt {
+      height: 4.1em;
+      overflow: hidden; }
+    .main-magazine #posts content-service-excerpt {
+      height: 6.1em;
+      overflow: hidden; }
 
   #b-mm h5, #b-top h5 {
     margin-top: 0px; }
@@ -3884,7 +3909,8 @@ footer.post-meta {
     padding-right: 0px !important; }
 
   .magazine {
-    border-bottom: none; } }
+    border-bottom: none;
+    margin-bottom: 10px; } }
 @media screen and (max-width: 768px) {
   .main-magazine #sidebar .row:nth-child(2), .main-magazine #sidebar .row:nth-child(4) {
     display: block; }
@@ -3917,10 +3943,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60.00000006px;
+    height: 60px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20.00000002px;
+    height: 20px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -3928,7 +3954,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 1.42857;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4055,7 +4081,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.3333333333px; }
+    height: 57.33333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
@@ -4268,7 +4294,9 @@ authors-list-single-text {
   list-style-type: none;
   text-align: center;
   border-bottom: 1px solid;
-  padding-right: 10px !important; }
+  padding-right: 10px !important;
+  padding-top: 4px;
+  padding-bottom: 4px; }
 
 .sub-menu li:last-child {
   border-bottom: 0px; }

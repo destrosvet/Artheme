@@ -1,8 +1,14 @@
 <?php get_header();   ?>
+<<<<<<< HEAD
     <div class="row single-foto-report">
         <article>
             <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
 
+=======
+    <div class="row">
+        <div class="col-lg-8 col-md-8  col-sm-8 col-xs-12 no-margin no-padding-sm single-content">
+                <article>
+>>>>>>> 20ec6ecc9fdc3f9bf82986261242c464716c273f
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title nopadding-i">
@@ -34,17 +40,19 @@
 
                     <div class="clear"></div>
                 </div>
-
-            </div>
-
+            </article>
+        </div>
 
             <?php get_template_part('templates/sidebar', 'single'); ?>
 
-            <div id="comments" class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
-                <?php  get_post_tags($post->ID); ?>
-                <?php  comments_template(); ?>
-        </article>
-    </div><!--//content-->
+            <div class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
+                <div id="tags">
+                    <?php  get_post_tags($post->ID); ?>
+                </div>
+                <div id="comments">
+                    <?php  comments_template(); ?>
+                </div>
+            </div>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
