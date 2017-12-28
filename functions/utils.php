@@ -71,7 +71,7 @@
   		return false;
 
     if ( ! $excerpt_length = absint($excerpt_length) )
-      $excerpt_length = apply_filters('excerpt_length', 55);
+      $excerpt_length = apply_filters('excerpt_length', 70);
 
     if ( ! is_string($excerpt_more) )
       $excerpt_more = apply_filters('excerpt_more', ' ...');

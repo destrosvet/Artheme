@@ -29,7 +29,7 @@
             </div>
             <input type="hidden" name="category">
             <div class="form-element">
-                <label for="category">Kategorie</label>
+                <label for="category">Rubrika</label>
 
                 <select id="category-select" class="category-select">
                     <option value="recenze">Recenze</option>

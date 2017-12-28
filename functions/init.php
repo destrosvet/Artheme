@@ -159,7 +159,7 @@ function artalk_widgets_init04()
   add_filter( 'excerpt_length', 'artalk_excerpt_length', 99 );
   add_filter( 'excerpt_more', 'artalk_excerpt_more' );
   function artalk_excerpt_length() {
-    return 17;
+    return 50;
   }
   function artalk_excerpt_more() {
     return ' ...';

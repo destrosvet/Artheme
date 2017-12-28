@@ -1733,6 +1733,16 @@ dd {
   margin-bottom: 0;
   list-style: none; }
 
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  /* assumes you only want one row */
+  width: 100%; }
+
 .nav > li {
   position: relative;
   display: block; }
@@ -1740,7 +1750,7 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 16px; }
+  padding: 10px 15.2px; }
 
 .nav > li:first-child a {
   padding-left: 10px; }
@@ -3773,7 +3783,7 @@ footer.post-meta {
       color: #fb026a;
       text-decoration: none; }
 
-.content-excerpt {
+.content-excerpt, .content-service-excerpt {
   padding-left: 8px; }
 
 .post-content {
@@ -3866,6 +3876,9 @@ footer.post-meta {
     padding-left: 0px; }
     .main-magazine #posts .content-excerpt {
       height: 4.1em;
+      overflow: hidden; }
+    .main-magazine #posts content-service-excerpt {
+      height: 6.1em;
       overflow: hidden; }
 
   #b-mm h5, #b-top h5 {
