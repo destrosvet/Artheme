@@ -3008,7 +3008,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .side-recent-item {
     padding-left: 0px !important;
     padding-right: 0px !important; } }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .side-recent-item li, .side-recent-item .triple-sm {
     height: auto !important; } }
 @media screen and (max-width: 768px) {
