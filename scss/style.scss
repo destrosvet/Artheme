@@ -3553,6 +3553,12 @@ footer.post-meta {
   }
 }
 @media (min-width: 769px) and (max-width: 990px) {
+  .easy-adds-image
+  {
+    width: 60%;
+    display: block;
+    margin: 0 auto !important;
+  }
   .main-magazine{
     #sidebar {
       padding-right: 0px;
