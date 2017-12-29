@@ -2977,7 +2977,7 @@ Artheme single
 
 
 @media (min-width: 991px) {
-  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder{
+  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder , .author-archive .easy-adverts-out-ads-holder{
     padding: 0px 15px;
   }
 }
@@ -2988,6 +2988,9 @@ Artheme single
       width: 100%;
       display: block;
       margin: 0px 0px;
+    }
+    .side-recent-item li {
+      padding-left: 0px;
     }
     .sidebar_right{
       width:100%;
@@ -3149,6 +3152,7 @@ Artheme single
 @media (max-width: 1200px) {
   .citate-left{
     position: initial;
+    width: 100%;
   }
 }
 
@@ -3553,6 +3557,12 @@ footer.post-meta {
   }
 }
 @media (min-width: 769px) and (max-width: 990px) {
+  .easy-adds-image
+  {
+    width: 60%;
+    display: block;
+    margin: 0 auto !important;
+  }
   .main-magazine{
     #sidebar {
       padding-right: 0px;
@@ -4120,13 +4130,14 @@ authors-list-single-text {
   background-color: white;
   z-index: 10;
   border: 1px solid;
+  left: -60px;
 }
 
 .sub-menu li{
   list-style-type: none;
   text-align:  center;
   border-bottom: 1px solid;
-  padding-right: 10px !important;
+  padding-right: 0px !important;
   padding-top: 4px;
   padding-bottom: 4px;
 }

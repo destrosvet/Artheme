@@ -6,6 +6,7 @@
         <?php get_template_part('templates/widgets/sidebar-author-related-posts'); ?>
         <?php get_template_part('templates/widgets/sidebar-related-posts'); ?>
         <?php get_template_part('templates/widgets/dynamic'); ?>
+        <?php get_template_part('templates/widgets/social') ?>
         <?php get_template_part('templates/widgets/dynamic2'); ?>
     </aside>
 

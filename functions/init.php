@@ -75,6 +75,20 @@ function artalk_widgets_init04()
     ));
 }
 
+add_action( 'widgets_init', 'artalk_widgets_init05' );
+function artalk_widgets_init05()
+{
+    register_sidebar(array(
+        'name' => __('Sidebar social part', 'artalk'),
+        'id' => 'sidebar-4',
+        'description' => __('Widgets for social features', 'artalk'),
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+    ));
+}
+
 //add_action('init', 'modify_jquery_version');
 
 

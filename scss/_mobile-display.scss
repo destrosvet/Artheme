@@ -46,7 +46,11 @@
   .post-content{
     height: 376px !important;
   }
+  .image_container {
+    height: auto !important;
+  }
 }
+
 
 @media only screen and (min-width: 406px) and (max-width: 989px) {
   .post-content{
@@ -60,8 +64,8 @@
     height: 100%;
   }
   .post-title{
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
   }
 }
 

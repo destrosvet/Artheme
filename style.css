@@ -69,7 +69,10 @@ and open the template in the editor.
     height: 360px !important; } }
 @media only screen and (min-width: 320px) and (max-width: 405px) {
   .post-content {
-    height: 376px !important; } }
+    height: 376px !important; }
+
+  .image_container {
+    height: auto !important; } }
 @media only screen and (min-width: 406px) and (max-width: 989px) {
   .post-content {
     height: 415px !important; } }
@@ -79,8 +82,8 @@ and open the template in the editor.
     height: 100%; }
 
   .post-title {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important; } }
+    margin-top: 20px !important;
+    margin-bottom: 20px !important; } }
 .collapse {
   display: none; }
 
@@ -1343,7 +1346,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3469,13 +3472,15 @@ Artheme single
       padding-right: 0px;
       margin-right: 0px; } }
 @media (min-width: 991px) {
-  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder {
+  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder, .author-archive .easy-adverts-out-ads-holder {
     padding: 0px 15px; } }
 @media screen and (max-width: 768px) {
   .single .related-posts, .single-foto-report .related-posts {
     width: 100%;
     display: block;
     margin: 0px 0px; }
+  .single .side-recent-item li, .single-foto-report .side-recent-item li {
+    padding-left: 0px; }
   .single .sidebar_right, .single-foto-report .sidebar_right {
     width: 100%; }
   .single .bott-border, .single-foto-report .bott-border {
@@ -3588,7 +3593,8 @@ Artheme single
 
 @media (max-width: 1200px) {
   .citate-left {
-    position: initial; } }
+    position: initial;
+    width: 100%; } }
 /*
  * Artheme sidebar_right_collumn
  */
@@ -3907,6 +3913,11 @@ footer.post-meta {
   #b-mm, #b-top {
     margin-bottom: -20px; } }
 @media (min-width: 769px) and (max-width: 990px) {
+  .easy-adds-image {
+    width: 60%;
+    display: block;
+    margin: 0 auto !important; }
+
   .main-magazine #sidebar {
     padding-right: 0px;
     padding-left: 0px; }
@@ -3963,10 +3974,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60.00000006px;
+    height: 60px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20.00000002px;
+    height: 20px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -3974,7 +3985,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 1.42857;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4101,7 +4112,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.3333333333px; }
+    height: 57.33333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
@@ -4328,13 +4339,14 @@ authors-list-single-text {
   width: 200px;
   background-color: white;
   z-index: 10;
-  border: 1px solid; }
+  border: 1px solid;
+  left: -60px; }
 
 .sub-menu li {
   list-style-type: none;
   text-align: center;
   border-bottom: 1px solid;
-  padding-right: 10px !important;
+  padding-right: 0px !important;
   padding-top: 4px;
   padding-bottom: 4px; }
 
