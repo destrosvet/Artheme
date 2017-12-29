@@ -3507,6 +3507,9 @@ Artheme single
       text-decoration: none;
       border-bottom: 2px solid #fb026a; }
 
+.single-fotoreport-container p:last-of-type {
+  clear: both; }
+
 .single-text-container, .single-fotoreport-container {
   padding-right: 10px;
   padding-left: 0px;
