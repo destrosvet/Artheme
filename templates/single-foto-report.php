@@ -18,7 +18,7 @@
                     <span><?php edit_post_link( 'edit', ' | ' ); ?></span>
                 </div>
 
-                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-fotoreport-container">
+                <div class="col-lg-12 col-sm-12 col-xs-12 padding-sm-12 single-fotoreport-container">
                     <?php
                         the_content();
                     ?>
