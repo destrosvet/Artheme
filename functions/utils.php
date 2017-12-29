@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
     Created on : 5.2.2016, 12:02:05
     Author     : Filip Uhlir
     Description: Utils for Artheme
@@ -34,7 +34,7 @@
   /**
    * Featured posts by Mau
    */
-  
+
   function artalk_get_featured_posts($args='') {
 
   $defaults = array(
@@ -450,5 +450,10 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 // Get Id from category name
 function get_category_id(){
     $category = get_queried_object();
-    return $category->term_id;
+    if($category == null){
+      $output="";
+    }else{
+      $output=$category->term_id;
+    }
+    return $output;
 }

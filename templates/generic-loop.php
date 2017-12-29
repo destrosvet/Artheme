@@ -17,7 +17,6 @@
             if (is_tax() || is_category() || is_tag() ) {
 
                 $qobj = get_queried_object();
-                //var_dump($qobj); // debugging only
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 

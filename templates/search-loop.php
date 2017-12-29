@@ -21,18 +21,50 @@
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-
-                $str = sanitize_text_field($_GET["s"]);
-                $author = sanitize_text_field($_GET["author"]);
-                $tag = sanitize_text_field($_GET["tag"]);
-                $category = sanitize_text_field($_GET["category"]);
+                if(isset($_GET["s"])){
+                  $str = sanitize_text_field($_GET["s"]);
+                }else{
+                  $str = "";
+                }
+                if(isset($_GET["author"])){
+                  if($_GET["author"]==""){
+                    $author = "";
+                  }else{
+                    $author = sanitize_text_field($_GET["author"]);
+                    global $wpdb;
+                    $authorLoop = $wpdb->get_results("SELECT id FROM $wpdb->users WHERE display_name = '".$author."'");
+                    $author = $authorLoop[0]->id;
+                  }
+                }else{
+                  $author = "";
+                }
+                if(isset($_GET["tag"])){
+                  $tag = sanitize_text_field($_GET["tag"]);
+                }else{
+                  $tag = "";
+                }
+                if(isset($_GET["category"])){
+                  $category = sanitize_text_field($_GET["category"]);
+                }else{
+                  $category = "";
+                }
+                if(isset($_GET["dateFrom"])){
+                  $dateFromStr = sanitize_text_field($_GET["dateFrom"]);
+                }else{
+                  $dateFromStr = "";
+                }
+                if(isset($_GET["dateTo"])){
+                  $dateToStr = sanitize_text_field($_GET["dateTo"]);
+                }else{
+                  $dateToStr = "";
+                }
                 if($category == "Vše vybráno"){
                   $category = "";
                 }
 
-                $dateQuery = array('date_query' => array());
-                if($_GET["dateFrom"]!=""){
-                  $dateFrom = explode( '/', $_GET["dateFrom"]);
+
+                if($dateFromStr!=""){
+                  $dateFrom = explode( '/', $dateFromStr);
                   $dateFrom =  array(
                     'year'  => $dateFrom[2],
                     'month' => $dateFrom[1],
@@ -41,8 +73,8 @@
                 }else{
                   $dateFrom = "";
                 }
-                if($_GET["dateTo"]!=""){
-                  $dateTo = explode( '/', $_GET["dateTo"]);
+                if($dateToStr!=""){
+                  $dateTo = explode( '/', $dateToStr);
                   $dateTo = array(
                     'year'  => $dateTo[2],
                     'month' => $dateTo[1],
@@ -53,13 +85,15 @@
                   $dateTo = "";
                 }
 
+
                 $args = array(
                     's'=> $str,
                     'post_type' => 'post',
                     'posts_per_page' => 10,
                     'paged' => $paged,
                     'category_name' => $category,
-                    'tag' => $_GET["tag"],
+                    'tag' => $tag,
+                    'author' => $author,
                     'date_query' => array(
                       array(
                         'before' => $dateTo,
@@ -96,7 +130,7 @@
             ?>
 
             <?php endwhile; ?>
-            <?php getFurtherContentButton($qobj->taxonomy,$qobj->term_id); ?>
+            <?php getFurtherContentButton(null , null, $author, $str, $category, $tag, $dateToStr, $dateFromStr); ?>
             <?php endif; ?>
 
         </div>

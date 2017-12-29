@@ -6,7 +6,7 @@
      $(".main-menu").css('visibility','hidden');
      $(".main-menu").show();
      $(".short-main-menu").hide();
-     if($("#myNavbar").height() > 40 && $("#myNavbar").height() < 100 ){
+     if($("#myNavbar").height() > 40 && $("#myNavbar").height() < 100 && $('.navbar-toggle').is(":hidden")){
        $(".main-menu").hide();
        $(".short-main-menu").show();
      }else{
@@ -18,7 +18,7 @@
    $(".main-menu").css('visibility','hidden');
    $(".main-menu").show();
    $(".short-main-menu").hide();
-   if($("#myNavbar").height() > 40 && $("#myNavbar").height() < 100 ){
+   if($("#myNavbar").height() > 40 && $("#myNavbar").height() < 100  && $('.navbar-toggle').is(":hidden") ){
      $(".main-menu").hide();
      $(".short-main-menu").show();
    }else{

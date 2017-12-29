@@ -499,9 +499,9 @@ function getRegistredImageSize () {
     print '</pre>';
 }
 // Further Button for AJAX posts
-function getFurtherContentButton ($taxonomy='',$terms=0,$author=0) {
+function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_string=0, $search_category=0, $search_tag=0, $search_dateTo=0, $search_dateFrom=0 ) {
     $content ="<div class=\"further-content-margin\"> </div><div class=\"further-content\">";
-    $content .="<div id=\"more-posts\" data-taxonomy=".$taxonomy." data-terms=".$terms." data-author=". $author ." data-category=". (is_home()?3862:get_category_id()) .">Načíst další obsah</div>";
+    $content .="<div id=\"more-posts\" data-taxonomy=\"category\" data-terms=\"".$terms."\" data-author=\"". $author ."\" data-category=\"". (is_home()?3862:get_category_id()) ."\" data-search_string=\"".$search_string."\" data-search_category=\"".$search_category."\" data-search_tag=\"".$search_tag."\" data-dateTo=\"".$search_dateTo."\" data-dateFrom=\"".$search_dateFrom."\">Načíst další obsah</div>";
     $content .="</div>";
     echo  $content;
     //get_category_id()
@@ -514,70 +514,111 @@ function getFurtherContentButton ($taxonomy='',$terms=0,$author=0) {
  * @param none
  * @return posts in template
  */
-function more_post_ajax(){
-    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
-    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
-    $cat = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
-    $taxonomy = (isset($_POST['taxonomy'])) ? $_POST['taxonomy'] : 0;
-    $terms = (isset($_POST['terms'])) ? $_POST['terms'] : 0;
-    $author_id = (isset($_POST['author_id'])) ? $_POST['author_id'] : 0;
-    header("Content-Type: text/html");
+ function more_post_ajax(){
+     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
+     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+     $cat = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+     $taxonomy = (isset($_POST['taxonomy'])) ? $_POST['taxonomy'] : 0;
+     $terms = (isset($_POST['terms'])) ? $_POST['terms'] : 0;
+     $author_id = (isset($_POST['author_id'])) ? $_POST['author_id'] : 0;
+     $search_string = (isset($_POST['search_string'])) ? $_POST['search_string'] : 0;
+     $search_category = (isset($_POST['search_category'])) ? $_POST['search_category'] : 0;
+     $search_tag = (isset($_POST['search_tag'])) ? $_POST['search_tag'] : 0;
+     $search_dateTo = (isset($_POST['search_dateTo'])) ? $_POST['search_dateTo'] : 0;
+     $search_dateFrom = (isset($_POST['search_dateFrom'])) ? $_POST['search_dateFrom'] : 0;
+     header("Content-Type: text/html");
 
-    if ($author_id) {
-        $args = array(
-            'suppress_filters' => true,
-            'post_type' => 'post',
-            'posts_per_page' => $ppp,
-            'paged' => $page,
-            'author'=>$author_id,
-            'cat' => $cat
+     if($search_dateFrom!=""){
+       $search_dateFrom = explode( '/', $search_dateFrom);
+       $search_dateFrom =  array(
+         'year'  => $search_dateFrom[2],
+         'month' => $search_dateFrom[1],
+         'day'   => $search_dateFrom[0],
+       );
+     }else{
+       $search_dateFrom = "";
+     }
+     if($search_dateTo!=""){
+       $search_dateTo = explode( '/', $search_dateTo);
+       $search_dateTo = array(
+         'year'  => $search_dateTo[2],
+         'month' => $search_dateTo[1],
+         'day'   => $search_dateTo[0],
+       );
+
+     }else{
+       $search_dateTo = "";
+     }
+
+     if ($terms!=0){
+       if ($author_id) {
+           $args = array(
+               'suppress_filters' => true,
+               'post_type' => 'post',
+               'posts_per_page' => $ppp,
+               'paged' => $page,
+               'author'=>$author_id,
+               'cat' => $cat,
+           );
+
+       }
+       else
+       {
+           $args = array(
+               'post_type' => 'post',
+               'posts_per_page' => 10,
+               'paged' => $page,
+               'tax_query' => array(
+                   array(
+                       'taxonomy' => $taxonomy,
+                       'field' => 'id',
+                       'terms' => $terms,
+                       //    using a slug is also possible
+                       //    'field' => 'slug',
+                       //    'terms' => $qobj->name
+                   )
+               )
+           );
+
+       }
+     }else{
+       $args = array(
+           's'=> $search_string,
+           'post_type' => 'post',
+           'posts_per_page' => 10,
+           'paged' => $page,
+           'category_name' => $search_category,
+           'tag' => $search_tag,
+           'author' => $author,
+           'date_query' => array(
+             array(
+               'before' => $search_dateTo,
+               'after' => $search_dateFrom,
+             )
+           )
+
         );
-    }
-    else
-    {
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 10,
-            'paged' => $page,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => $taxonomy,
-                    'field' => 'id',
-                    'terms' => $terms,
-                    //    using a slug is also possible
-                    //    'field' => 'slug',
-                    //    'terms' => $qobj->name
-                )
-            )
-        );
-    }
-    $query = new WP_Query($args);
 
-    while ($query -> have_posts()) : $query->the_post();
-    //var_dump($taxonomy);
-        if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id)) {
-                get_template_part('/templates/post-artservis');
-            } else {
-                get_template_part('/templates/post');
-            }
-    endwhile;
-    //if( have_posts() ) :
-
-    //    while( have_posts() ): the_post();
-
-
-
-
-    //       get_template_part('templates/post', artalk_in_artservis() );
-
-    //  endwhile;
-    //endif;
-    wp_reset_postdata();
-    //die();
-}
-
-add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
-add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+     }
+     $query = new WP_Query($args);
+     while ($query -> have_posts()) : $query->the_post();
+     //var_dump($taxonomy);
+         if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id)) {
+                 get_template_part('/templates/post-artservis');
+             } else {
+                 get_template_part('/templates/post');
+             }
+     endwhile;
+     //if( have_posts() ) :
+     //    while( have_posts() ): the_post();
+     //       get_template_part('templates/post', artalk_in_artservis() );
+     //  endwhile;
+     //endif;
+     wp_reset_postdata();
+     //die();
+ }
+ add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+ add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
 
 

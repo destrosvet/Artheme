@@ -4159,7 +4159,14 @@ authors-list-single-text {
   display: none;
 }
 @media screen and (max-width: 768px){
-
+  .main-menu li{
+    float: none;
+    text-align: center;
+  }
+  ul.main-menu{
+    display: block !important;
+    margin: 0px 0px;
+  }
   #search-text {
     border-bottom: none;
     background-color: #e5e5e5;

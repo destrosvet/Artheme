@@ -5,6 +5,11 @@ jQuery(document).ready( function($) {
     var author = $('#more-posts').data('author');
     var taxonomy = $('#more-posts').data('taxonomy');
     var terms = $('#more-posts').data('terms');
+    var search_string = $('#more-posts').data('search_string');
+    var search_category = $('#more-posts').data('search_category');
+    var search_tag = $('#more-posts').data('search_tag');
+    var search_dateTo = $('#more-posts').data('search_dateTo');
+    var search_dateFrom = $('#more-posts').data('search_dateFrom');
 
     function load_posts() {
         pageNumber++;
@@ -19,6 +24,11 @@ jQuery(document).ready( function($) {
                 'author_id':author,
                 'ppp': ppp,
                 'pageNumber': pageNumber,
+                'search_string' : search_string,
+                'search_category' : search_category,
+                'search_tag' : search_tag,
+                'search_dateTo' : search_dateTo,
+                'search_dateFrom' : search_dateFrom,
                 'action': 'more_post_ajax'
             },
             beforeSend: function (xhr) {
