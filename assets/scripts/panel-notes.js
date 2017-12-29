@@ -1,6 +1,7 @@
 /**
  * Responsice panel notes
  */
+/*
 $(document).ready(function() {
   $( '.citate-left' ).each(function() {
     if ($(window).width() < 1200) {
@@ -9,3 +10,4 @@ $(document).ready(function() {
     }
   });
 });
+*/

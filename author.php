@@ -7,7 +7,7 @@
  */
 ?>
 <?php get_header();?>
-    <div class="row main-magazine">
+    <div class="row main-magazine author-archive">
     <div class="bar-info">
         <div class="col-md-8 col-sm-6 col-xs-12 small-left-padding">Nejnovější články</div>
         <div class="col-md-4 col-sm-6"></div>

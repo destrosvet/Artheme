@@ -3472,13 +3472,15 @@ Artheme single
       padding-right: 0px;
       margin-right: 0px; } }
 @media (min-width: 991px) {
-  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder {
+  .single .easy-adverts-out-ads-holder, .single-foto-report .easy-adverts-out-ads-holder, .author-archive .easy-adverts-out-ads-holder {
     padding: 0px 15px; } }
 @media screen and (max-width: 768px) {
   .single .related-posts, .single-foto-report .related-posts {
     width: 100%;
     display: block;
     margin: 0px 0px; }
+  .single .side-recent-item li, .single-foto-report .side-recent-item li {
+    padding-left: 0px; }
   .single .sidebar_right, .single-foto-report .sidebar_right {
     width: 100%; }
   .single .bott-border, .single-foto-report .bott-border {
@@ -3591,7 +3593,8 @@ Artheme single
 
 @media (max-width: 1200px) {
   .citate-left {
-    position: initial; } }
+    position: initial;
+    width: 100%; } }
 /*
  * Artheme sidebar_right_collumn
  */

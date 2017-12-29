@@ -1,4 +1,4 @@
-<aside id="sidebar" class="col-md-4 col-xs-12 sidebar-wrapper d-md-block d-sm-none text-center">
+<aside id="sidebar" class="author-sidebar col-md-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 noleftpadding sidebar_right text-center">
 
     <?php wp_author_info_box();?>
 
@@ -19,3 +19,4 @@
     <?php get_template_part('templates/widgets/dynamic2'); ?>
     <?php get_template_part('templates/widgets/dynamic3'); ?>
 </aside>
+<div class="clear"></div>
