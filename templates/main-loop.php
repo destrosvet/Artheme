@@ -4,42 +4,44 @@
         <div class="col-md-4 col-sm-6">Inzerce</div>
     </div>
 
-    <div  id="posts" class="col-md-8 col-sm-12 col-xs-12">
-    <?php $firstSticky = true; ?>
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <div id="posts">
+        <?php $firstSticky = true; ?>
 
-     <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-        if ( is_home() ) {
-            $query = new WP_Query(array(
-            'paged' => $paged,
-            'posts_per_page' => 10,
-            'category_name' => 'arena',
+         <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+            if ( is_home() ) {
+                $query = new WP_Query(array(
+                'paged' => $paged,
+                'posts_per_page' => 10,
+                'category_name' => 'arena',
 
-            ));
-        } else
-        {
-            $query = new WP_Query(array(
-            'post_type' => 'post',
-            'ignore_sticky_posts' => true,
-            'paged' => $paged,
-            'posts_per_page' => 14,
-            'category_name' => artalk_get_current_category()
-            ));
-        }
-     ?>
-		<?php while ($query -> have_posts()) : $query->the_post(); ?>
-        <?php
-            if (is_sticky() && $firstSticky)
+                ));
+            } else
             {
-                $firstSticky == false;
-            //    continue;
+                $query = new WP_Query(array(
+                'post_type' => 'post',
+                'ignore_sticky_posts' => true,
+                'paged' => $paged,
+                'posts_per_page' => 14,
+                'category_name' => artalk_get_current_category()
+                ));
             }
-            get_template_part('templates/post', artalk_get_current_category() );
-        ?>
+         ?>
+    		<?php while ($query -> have_posts()) : $query->the_post(); ?>
+            <?php
+                if (is_sticky() && $firstSticky)
+                {
+                    $firstSticky == false;
+                //    continue;
+                }
+                get_template_part('templates/post', artalk_get_current_category() );
+            ?>
 
-		<?php endwhile; ?>
-        <?php getFurtherContentButton($taxonomy='category',$terms=get_category_by_slug( 'arena' )->cat_ID,$author=0); ?>
-	<?php  get_template_part('templates/magazine-bottom'); ?>
-</div>
+    		<?php endwhile; ?>
+            <?php getFurtherContentButton($taxonomy='category',$terms=get_category_by_slug( 'arena' )->cat_ID,$author=0); ?>
+      </div>
+      	<?php  get_template_part('templates/magazine-bottom'); ?>
+    </div>
 
 	<?php wp_reset_query(); ?>
 	<?php wp_reset_postdata(); ?>
