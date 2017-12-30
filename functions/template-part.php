@@ -581,6 +581,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'paged' => $page,
                'author'=>$author_id,
                'cat' => $cat,
+               'post__not_in' => get_option( 'sticky_posts' ),
            );
 
        }
@@ -590,6 +591,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'post_type' => 'post',
                'posts_per_page' => 10,
                'paged' => $page,
+               'post__not_in' => get_option( 'sticky_posts' ),
                'tax_query' => array(
                    array(
                        'taxonomy' => $taxonomy,

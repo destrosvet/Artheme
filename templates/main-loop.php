@@ -9,10 +9,11 @@
      <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
             $query = new WP_Query(array(
-            'ignore_sticky_posts' => true,
+        //    'ignore_sticky_posts' => true,
             'paged' => $paged,
-            'posts_per_page' => 11,
+            'posts_per_page' => 10,
              'category_name' => 'arena',
+              'post__not_in' => get_option( 'sticky_posts' ),
             ));
         } else
         {
