@@ -3178,7 +3178,8 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
   float: left;
   display: block;
   margin: 0;
-  line-height: 30px !important;
+  width: 50%;
+  line-height: 31px !important;
   &:first-child {
     border-right: 1px $ArtBlack solid;
   }
@@ -3186,7 +3187,7 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     background: transparent;
     border: 0;
     border-bottom: 1px $ArtBlack solid;
-    width:195px !important;
+    width: 100% !important;
   }
   input[type=text] {
     padding-left: 15px;
@@ -3200,6 +3201,7 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     background-image: url("assets/images/newsletter-button.png");
     background-repeat: no-repeat;
     border: 0;
+    float: right;
     padding-bottom: 3px;
     width: 70px !important;
     font-size: 30px;
