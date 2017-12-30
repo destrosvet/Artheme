@@ -135,6 +135,9 @@ tbody.collapse.show {
   .further-content {
     margin-right: 15px; }
 
+  .single-fotoreport-container figure {
+    padding: 10px 8px 10px 8px !important; }
+
   .no-padding-sm {
     padding: 0 !important; }
 
@@ -3507,6 +3510,9 @@ Artheme single
       text-decoration: none;
       border-bottom: 2px solid #fb026a; }
 
+.single-fotoreport-container p:last-of-type {
+  clear: both; }
+
 .single-text-container, .single-fotoreport-container {
   padding-right: 10px;
   padding-left: 0px;
@@ -3612,14 +3618,15 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
   float: left;
   display: block;
   margin: 0;
-  line-height: 30px !important; }
+  width: 50%;
+  line-height: 31px !important; }
   .mailpoet_paragraph:first-child {
     border-right: 1px #212121 solid; }
   .mailpoet_paragraph .mailpoet_text {
     background: transparent;
     border: 0;
     border-bottom: 1px #212121 solid;
-    width: 195px !important; }
+    width: 100% !important; }
   .mailpoet_paragraph input[type=text] {
     padding-left: 15px; }
   .mailpoet_paragraph input[type=email] {
@@ -3629,6 +3636,7 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     background-image: url("assets/images/newsletter-button.png");
     background-repeat: no-repeat;
     border: 0;
+    float: right;
     padding-bottom: 3px;
     width: 70px !important;
     font-size: 30px;
