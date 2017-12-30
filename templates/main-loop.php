@@ -5,21 +5,15 @@
     </div>
 
     <div  id="posts" class="col-md-8 col-sm-12 col-xs-12">
-    <?php //$firstSticky = true; ?>
-    <?php
-/*      $sticky =  get_option( 'sticky_posts' );
-      rsort($sticky);
-    var_dump($sticky);*/
-    $FeatureArgs = array('posts_per_page' => 1,'post__in'  => get_option( 'sticky_posts' ),'ignore_sticky_posts' => 1 );
-    $FeaturePost = new WP_Query($FeatureArgs);
-    ?>
+    <?php $firstSticky = true; ?>
+
      <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
             $query = new WP_Query(array(
             'paged' => $paged,
-            'posts_per_page' => 8,
+            'posts_per_page' => 10,
             'category_name' => 'arena',
-            'post__not_in' => array($FeaturePost->post->ID),
+
             ));
         } else
         {
@@ -34,22 +28,20 @@
      ?>
 		<?php while ($query -> have_posts()) : $query->the_post(); ?>
         <?php
-/*            if (is_sticky() && $firstSticky)
+            if (is_sticky() && $firstSticky)
             {
                 $firstSticky == false;
             //    continue;
-            }*/
+            }
             get_template_part('templates/post', artalk_get_current_category() );
         ?>
 
 		<?php endwhile; ?>
         <?php getFurtherContentButton($taxonomy='category',$terms=get_category_by_slug( 'arena' )->cat_ID,$author=0); ?>
-
+	<?php  get_template_part('templates/magazine-bottom'); ?>
 </div>
 
 	<?php wp_reset_query(); ?>
 	<?php wp_reset_postdata(); ?>
 
 	<?php get_template_part('templates/sidebar'); ?>
-
-	<?php  get_template_part('templates/magazine-bottom'); ?>

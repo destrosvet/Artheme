@@ -6,7 +6,7 @@
  * Time: 10:36
  */
 ?>
-<div class="col-md-8 col-sm-12 no-padding-md noleftpadding">
+<div class="col-md-12 col-sm-12 no-padding-md noleftpadding norightpadding">
     <?php  get_template_part('templates/tz-dp'); ?>
     <?php  get_template_part('templates/mon-top'); ?>
 </div>
