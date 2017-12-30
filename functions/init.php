@@ -4,9 +4,22 @@ add_filter( 'github_updater_set_options',
 function () {
     return array(
         'my-private-theme'    => 'Artheme',
-        'github_access_token' => '2896db9a8891cba905903494f4e75b856f892c6a',
+        'github_access_token' => '0b34f319c311a87bad3032e27842b73ec49fdba2',
     );
 } );
+
+add_action( 'admin_init', 'Artalk_handle_github_update');
+if ( ! function_exists('Artalk_handle_github_update') ) {
+    /**
+     * Handles github theme update by using
+     * github updater class from wp-github-updater plugin.
+     */
+    function Artalk_handle_github_update() {
+        if ( class_exists( 'GitHubUpdater' ) ) {
+            new GitHubUpdater( 'theme', __DIR__ );
+        }
+    }
+}
 
 /* L10N */
   load_theme_textdomain( 'artalk', get_stylesheet_directory() . '/languages' );
