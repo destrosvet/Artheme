@@ -505,7 +505,7 @@ function getRegistredImageSize () {
 // Further Button for AJAX posts
 function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_string=0, $search_category=0, $search_tag=0, $search_dateTo=0, $search_dateFrom=0 ) {
     $content ="<div class=\"further-content-margin\"> </div><div class=\"further-content\">";
-    $content .="<div id=\"more-posts\" data-taxonomy=\"category\" data-terms=\"".$terms."\" data-author=\"". $author ."\" data-category=\"". (is_home()?3862:get_category_id()) ."\" data-search_string=\"".$search_string."\" data-search_category=\"".$search_category."\" data-search_tag=\"".$search_tag."\" data-dateTo=\"".$search_dateTo."\" data-dateFrom=\"".$search_dateFrom."\">Načíst další obsah</div>";
+    $content .="<div id=\"more-posts\" data-taxonomy=\"".$taxonomy."\" data-terms=\"".$terms."\" data-author=\"". $author ."\" data-category=\"". (is_home()?3862:get_category_id()) ."\" data-search_string=\"".$search_string."\" data-search_category=\"".$search_category."\" data-search_tag=\"".$search_tag."\" data-dateTo=\"".$search_dateTo."\" data-dateFrom=\"".$search_dateFrom."\">Načíst další obsah</div>";
     $content .="</div>";
     echo  $content;
     //get_category_id()
