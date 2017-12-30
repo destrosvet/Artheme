@@ -609,7 +609,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      $query = new WP_Query($args);
      while ($query -> have_posts()) : $query->the_post();
      //var_dump($taxonomy);
-         if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id)) {
+         if((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id) or ($search_string or $search_category or $search_tag or $search_dateTo or $search_dateFrom)) {
                  get_template_part('/templates/post-artservis');
              } else {
                  get_template_part('/templates/post');
