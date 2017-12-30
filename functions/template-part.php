@@ -514,6 +514,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
  * @param none
  * @return posts in template
  */
+
  function more_post_ajax(){
      $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 10;
      $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
@@ -550,7 +551,24 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
        $search_dateTo = "";
      }
 
-     if ($terms!=0){
+    if ($search_string or $search_category or $search_tag or $search_dateTo or $search_dateFrom){
+       $args = array(
+           's'=> $search_string,
+           'post_type' => 'post',
+           'posts_per_page' => 10,
+           'paged' => $page,
+           'category_name' => $search_category,
+           'tag' => $search_tag,
+           'author' => $author,
+           'date_query' => array(
+             array(
+               'before' => $search_dateTo,
+               'after' => $search_dateFrom,
+             )
+           )
+
+        );
+     }else{
        if ($author_id) {
            $args = array(
                'suppress_filters' => true,
@@ -581,23 +599,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
            );
 
        }
-     }else{
-       $args = array(
-           's'=> $search_string,
-           'post_type' => 'post',
-           'posts_per_page' => 10,
-           'paged' => $page,
-           'category_name' => $search_category,
-           'tag' => $search_tag,
-           'author' => $author,
-           'date_query' => array(
-             array(
-               'before' => $search_dateTo,
-               'after' => $search_dateFrom,
-             )
-           )
 
-        );
 
      }
      $query = new WP_Query($args);
