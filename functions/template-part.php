@@ -533,6 +533,11 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      $search_dateFrom = (isset($_POST['search_dateFrom'])) ? $_POST['search_dateFrom'] : 0;
      header("Content-Type: text/html");
 
+     $sticky =  get_option( 'sticky_posts' );
+     rsort($sticky);
+
+
+
      if($search_dateFrom!=""){
        $search_dateFrom = explode( '/', $search_dateFrom);
        $search_dateFrom =  array(
@@ -581,7 +586,8 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'paged' => $page,
                'author'=>$author_id,
                'cat' => $cat,
-               'post__not_in' => get_option( 'sticky_posts' ),
+               'post__not_in' => array($sticky[0]),
+               'ignore_sticky_posts' => 1,
            );
 
        }
@@ -591,7 +597,8 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'post_type' => 'post',
                'posts_per_page' => 10,
                'paged' => $page,
-               'post__not_in' => get_option( 'sticky_posts' ),
+               'post__not_in' => array($sticky[0]),
+               'ignore_sticky_posts' => 1,
                'tax_query' => array(
                    array(
                        'taxonomy' => $taxonomy,

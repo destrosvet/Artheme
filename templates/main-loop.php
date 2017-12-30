@@ -6,14 +6,17 @@
 
     <div  id="posts" class="col-md-8 col-sm-12 col-xs-12">
     <?php $firstSticky = true; ?>
+    <?php
+      $sticky =  get_option( 'sticky_posts' );
+      rsort($sticky);
+    ?>
      <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         if ( is_home() ) {
             $query = new WP_Query(array(
-        //    'ignore_sticky_posts' => true,
             'paged' => $paged,
             'posts_per_page' => 10,
-             'category_name' => 'arena',
-              'post__not_in' => get_option( 'sticky_posts' ),
+            'category_name' => 'arena',
+            'post__not_in' => array($sticky[0]),
             ));
         } else
         {
@@ -31,7 +34,7 @@
             if (is_sticky() && $firstSticky)
             {
                 $firstSticky == false;
-                continue;
+            //    continue;
             }
             get_template_part('templates/post', artalk_get_current_category() );
         ?>
