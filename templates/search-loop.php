@@ -9,7 +9,7 @@
 <?php global $query_string; ?>
 <div class="row main-magazine">
         <div class="bar-info">
-            <div class="col-md-8 col-sm-6 col-xs-12 small-left-padding">Výskedky vyhledávání</div>
+            <div class="col-md-8 col-sm-6 col-xs-12 small-left-padding">Výsledky vyhledávání</div>
             <div class="col-md-4 col-sm-6"></div>
         </div>
         <div class="col-md-8 col-sm-12 col-xs-12" id="posts" >
