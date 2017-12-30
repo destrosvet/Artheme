@@ -32,11 +32,7 @@
                     <div class="clear"></div>
                 </div>
             </article>
-        </div>
-
-            <?php get_template_part('templates/sidebar', 'single'); ?>
-
-            <div class="col-lg-8 col-md-8 col-xs-12 noleftpadding no-padding-right-md">
+            <div class="col-lg-8 col-md-8 col-xs-12 norightpadding noleftpadding no-padding-right-md">
                 <div id="tags">
                     <?php  get_post_tags($post->ID); ?>
                 </div>
@@ -44,6 +40,10 @@
                     <?php  comments_template(); ?>
                 </div>
             </div>
+        </div>
+
+            <?php get_template_part('templates/sidebar', 'single'); ?>
+
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

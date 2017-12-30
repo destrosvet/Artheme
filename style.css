@@ -3550,7 +3550,7 @@ Artheme single
   float: none;
   clear: both; }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 768px) {
   .single-fotoreport-container figure {
     width: 100%; } }
 /*
