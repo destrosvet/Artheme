@@ -8,6 +8,19 @@ function () {
     );
 } );
 
+add_action( 'admin_init', 'Artalk_handle_github_update');
+if ( ! function_exists('Artalk_handle_github_update') ) {
+    /**
+     * Handles github theme update by using
+     * github updater class from wp-github-updater plugin.
+     */
+    function Artalk_handle_github_update() {
+        if ( class_exists( 'GitHubUpdater' ) ) {
+            new GitHubUpdater( 'theme', __DIR__ );
+        }
+    }
+}
+
 /* L10N */
   load_theme_textdomain( 'artalk', get_stylesheet_directory() . '/languages' );
 
