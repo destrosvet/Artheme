@@ -533,8 +533,8 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      $search_dateFrom = (isset($_POST['search_dateFrom'])) ? $_POST['search_dateFrom'] : 0;
      header("Content-Type: text/html");
 
-     $sticky =  get_option( 'sticky_posts' );
-     rsort($sticky);
+     //$sticky =  get_option( 'sticky_posts' );
+     //rsort($sticky);
 
 
 
@@ -586,7 +586,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'paged' => $page,
                'author'=>$author_id,
                'cat' => $cat,
-               'post__not_in' => array($sticky[0]),
+               //'post__not_in' => array($sticky[0]),
                'ignore_sticky_posts' => 1,
            );
 
