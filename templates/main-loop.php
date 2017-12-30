@@ -17,7 +17,7 @@
         if ( is_home() ) {
             $query = new WP_Query(array(
             'paged' => $paged,
-            'posts_per_page' => 10,
+            'posts_per_page' => 8,
             'category_name' => 'arena',
             'post__not_in' => array($FeaturePost->post->ID),
             ));
