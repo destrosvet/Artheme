@@ -3577,9 +3577,19 @@ footer.post-meta {
       width: 100%;
       display: block;
       margin: 0px 0px;
+      order: 2;
     }
-    #sidebar .row:nth-child(2), #sidebar .row:nth-child(4){
+    #sidebar .row:nth-child(2){
+      order: 1;
+    }
+    #sidebar .row:nth-child(2), #sidebar .row:nth-child(5){
       width: 50%;
+      float: left;
+      display: block;
+      margin: 0px 0px;
+    }
+    #sidebar .row:nth-child(6){
+      width: 100%;
       float: left;
       display: block;
       margin: 0px 0px;
