@@ -1,12 +1,5 @@
 <?php
 /* GIT HUB UPDATER */
-add_filter( 'github_updater_set_options',
-function () {
-    return array(
-        'my-private-theme'    => 'Artheme',
-        'github_access_token' => '0b34f319c311a87bad3032e27842b73ec49fdba2',
-    );
-} );
 
 add_action( 'admin_init', 'Artalk_handle_github_update');
 if ( ! function_exists('Artalk_handle_github_update') ) {
