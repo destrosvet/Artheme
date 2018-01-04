@@ -21,8 +21,6 @@
 //    $more = 0;
 //}
 //add_filter( 'img_caption_shortcode', 'cleaner_caption', 10, 3 );
-
-
 //add_image_size('lrg-hdr', 1170, 544, true);
 //add_image_size('med-hdr', 750, 400, true);
 //add_image_size('sml-hdr', 500, 325, true);

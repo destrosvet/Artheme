@@ -17,7 +17,8 @@
             if (is_tax() || is_category() || is_tag() ) {
 
                 $qobj = get_queried_object();
-                //var_dump($qobj); // debugging only
+//                var_dump($qobj); // debugging only
+
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -44,17 +45,40 @@
 
             ?>
             <?php if ($query -> have_posts()): ?>
+	            <?php
+//                artalk_feature_revue();
+//	            get_template_part('templates/post_revue');
+//	            get_template_part('single-artalkr', get_post_format());
+	            ?>
             <?php while ($query -> have_posts()) : $query->the_post(); ?>
 
             <?php
-            if((!artalk_in_artservis() || artalk_get_current_category() == 'foto-report') && !is_tag()) {
-                get_template_part('templates/post', artalk_get_current_category() );
-            } else {
-                get_template_part('templates/post-artservis', artalk_get_current_category() );
-            }?>
+//                    var_dump($wp_query->query);
+//                    foreach ($wp_query->query as $obj){
+////                        echo $obj;
+//                        $wp_query->query->category_name;
+//                    }
+//            echo $wp_query->get_queried_object()->slug;
+                    echo preg_match('/artservis/',$wp_query->get_queried_object()->slug) == 1;
+                    if ((artalk_get_current_category() === 'foto-report'  ) && !is_tag() ) {
+                            get_template_part('templates/post', artalk_get_current_category());
+                        }
+                    if(preg_match('/artalkr/',$wp_query->get_queried_object()->slug) == 1) {
+	                    get_template_part('templates/post_revue',artalk_get_current_category());
+//	                    get_template_part('single-artalkr', get_post_format());
 
+                    }
+                    if(!preg_match('/artservis/',$wp_query->get_queried_object()->slug) == 0) {
+                        get_template_part('templates/post-artservis', artalk_get_current_category());
+
+                    }
+            ?>
             <?php endwhile; ?>
-            <?php getFurtherContentButton($qobj->taxonomy,$qobj->term_id); ?>
+            <?php
+                    if(preg_match('/artalk-revue/',$wp_query->get_queried_object()->slug) == 1){
+                            getFurtherContentButton($qobj->taxonomy,$qobj->term_id);
+                        }
+            ?>
             <?php endif; ?>
 
         </div>

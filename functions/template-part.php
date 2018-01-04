@@ -202,52 +202,67 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
 
 
 /* FEATURE POST big picture on home page*/
-add_action( 'artalk_feature', 'artalk_feature' );
-function artalk_feature() {
-    $args = array('posts_per_page' => 1,'post__in'  => get_option( 'sticky_posts' ),'ignore_sticky_posts' => 1 );
+add_action( 'artalk_feature_revue', 'artalk_feature_revue' );
+function artalk_feature_revue($input_obj=null) {
+
     $featured='';
     //$featuredPost = get_posts ($args);
-    query_posts($args);
-    while ( have_posts() ) : the_post();
-        $featured .='<header><h2 class="margin-left-sm-10 margin-right-sm-10">';
+     $qobj = get_queried_object();
+    var_dump($input_obj); // debugging only
+
+        echo "1;";
+        $featured .='<header><h2 class="">';
         $featured .='<a href="'.get_permalink().'" title="'.get_the_title(false).'">'.get_the_title().'</a></h2></header>';
-        $featured .='<div class="featured-excerpt margin-left-sm-10 margin-right-sm-10">';
-        $featured .= artalk_get_the_excerpt( get_the_ID(), $num_words = 30, $more = '… ',$allowed_tags = '<a>');
-        $featured .='</div>';
-        $featured .='<footer class="margin-left-sm-10 margin-right-sm-10">';
+        $featured .='<footer class="">';
         $featured .= '<span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'</time> | ';
         $featured .= '<span class="post-meta-single-category">'.artalk_post_cats(get_the_ID(), array('separator' => ' | ' ,'main-category' => true), false).'</span>';
         $featured .='</footer>';
         if( has_post_thumbnail() ){
-            $featured .= '<div class="featured-img margin-left-sm-10 margin-right-sm-10"><a href="'. get_permalink() .'" />';
+            $featured .= '<div class="col-lg-6 col-md-6"><a href="'. get_permalink() .'" />';
             $featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
             $featured .= '</a></div>';
         }else{
             $featured .='Náhled nebyl nalezen.';
         }
+        $featured .='<div class="col-lg-6 col-md-6 ">';
+        $featured .= artalk_get_the_excerpt( get_the_ID(), $num_words = 30, $more = '… ',$allowed_tags = '<a>');
+        $featured .='</div>';
         echo $featured;
-    endwhile;
-    wp_reset_query();
+
+
 }
+
+//add_filter('single_template', 'my_single_template_by_post_id');
+//function my_single_template_by_post_id( $located_template ) {
+//	return locate_template( array( sprintf( "single-%d.php", absint( get_the_ID() ) ), $located_template ) );
+//}
+//add_filter( 'single_template', 'my_single_template_by_post_id' );
 /*
  * Single post by category
  */
 add_filter('single_template', 'check_category_single_template');
 function check_category_single_template( $t )
 {
+	$cat = get_query_var('cat');
 
-    foreach( (array) get_the_category() as $cat )
+    foreach( (array) get_the_category($cat) as $cat )
     {
-        if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) {
-            return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+        if ( file_exists(get_template_directory() . "/templates/single-{$cat->slug}.php") ) {
+            return get_template_directory() . "/templates/single-{$cat->slug}.php";
         } //else return TEMPLATEPATH . "single.php";
-        if($cat->parent)
-        {
+	    if($cat->parent)
+	    {
+		    $cat = get_the_category_by_ID( $cat->parent );
+		    if ( file_exists(get_template_directory() . "/templetes/single-category-{$cat->slug}.php") ) return get_template_directory() . "/templates/single-category-{$cat->slug}.php";
+	    }
 
-            //$cat = get_the_category_by_ID( $cat->parent );
-            //var_dump($cat);
-            //if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
-        }
+//        if(($cat->parent != 0 ) && ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ))
+//        {
+//	        return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+//            //$cat = get_the_category_by_ID( $cat->parent );
+//            //var_dump($cat);
+//            //if ( file_exists(TEMPLATEPATH . "/templates/single-{$cat->slug}.php") ) return TEMPLATEPATH . "/templates/single-{$cat->slug}.php";
+//        }
     }
     return $t;
 }

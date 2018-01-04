@@ -152,6 +152,7 @@ function artalk_widgets_init04()
       wp_safe_redirect( get_category_link('black-square').'#'.$post->post_name );
       exit;
     }
+
   }
 
 /* EXCERPTS */

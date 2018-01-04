@@ -37,10 +37,12 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 
+
 }
 
 body {
   margin: 0;
+
 }
 
 article,
@@ -405,7 +407,6 @@ th {
 
 html {
   font-size: 10px;
-
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -2649,6 +2650,10 @@ Artheme social button
   padding-left: 0px;
 }
 
+.no-margin-bottom{
+  margin-bottom: 0;
+}
+
 .hidden-text{
   height: 160px;
   overflow: hidden;
@@ -3783,6 +3788,43 @@ authors-list-single-text {
   width: 90%
 }
 
-
 //End Mobile menu
+
+.header-revue{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.parent-content-footer-revue{
+  border-bottom: 1px solid $ArtBlack;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+.child-autor-title-revue{
+  font-weight: unset;
+  padding-right: 10%;
+  }
+
+.post-title-child{
+  line-height: 1;
+  height: 2em;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.revude-sidebar{
+  height: auto !important;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.revue-sidebar-author{
+  height: auto !important;
+  border-bottom: 1px solid $ArtBlack;
+  padding-bottom: 5px;
+}
+
+
 

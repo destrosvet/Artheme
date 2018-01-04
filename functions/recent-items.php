@@ -24,35 +24,71 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
     echo $comm;
 }
 
-function bg_popular_post($no_posts = 4) {
-    $ppost ='';
-    //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
-    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
-    //$args = array('meta_key'=>'popular_posts');
-/*    $args = array(
-        'posts_per_page' => 5,
-        'meta_query' => array(
-            array(
-                'key'     => 'popular_posts',
-                'value'   => '0',
-                'compare' => '>'
-        ),
-    ),
-);*/
-    $popular = get_posts ($args);
+function get_child_cat_by_term(){
+	$parent_term_id = get_queried_object()->term_id; // term id of parent term
+	$taxonomies = array(
+		'taxonomy' => 'category'
+	);
 
-    //echo $GLOBALS['wp_query']->request;
-    //while ($popular->have_posts()) : $popular->the_post();
-     //   echo the_title();
-	//$ppost.='<li><a href="'.the_permalink().'">'.the_title().'</a></li>';
-    //endwhile;
-    //var_dump($popular);
-    $ppost.='<ul class="">';
+	$args = array(
+		// 'parent'         => $parent_term_id,
+		'child_of'      => $parent_term_id
+	);
+
+	$terms = get_terms($taxonomies, $args);
+//	var_dump($terms);
+	if (sizeof($terms)>0)
+	{
+		foreach ( $terms as $term ) {
+			// return posts
+			$args = array(
+				'tax_query' => array(
+					array(
+						'taxonomy' =>'category',
+						'field' => 'id',
+						'terms' =>  $term->term_id
+					)
+				)
+			);
+
+			$post_query = new WP_Query( $args );
+
+			if ( $post_query->have_posts() ): ?>
+
+
+					<?php while ( $post_query->have_posts() ): $post_query->the_post(); ?>
+                        <li class="revude-sidebar""><a class="related-link" href="<?php the_permalink();?>">
+                        <?php the_title(); ?></a></li>
+                         <li class="revue-sidebar-author">
+                          <?php the_author_posts_link() ?>
+						</li>
+					<?php endwhile; wp_reset_postdata(); ?>
+
+				</ul>
+			<?php endif;
+		}
+	}
+}
+function bg_popular_post($no_posts = 4,$category_name="") {
+	$ppost = '';
+
+
+
+    $popular = get_posts ($args);
     foreach ( $popular as $post ) : setup_postdata( $post );
-        $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink($post).'" title="'.get_the_title($post).'">&#9679; '.$post->post_title.'</a></li>';
+//        var_dump(wp_get_post_categories($post->ID));
+	    $show = short_title_text($post->post_title,'',10);
+	    ?>
+        <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><li class="revude-sidebar"><?php  echo "Artalk Revue". $id += 1; ?></a></li>
+	    <?php
+	    echo $ppost = '<ul><li class="revue-sidebar-author"><a class="related-link" href="'.get_permalink($post).'" title="'.get_the_title($post).'">'.$show.'</a></li></ul>';
+
+
+
 
     endforeach;
     $ppost.='</ul>';
     wp_reset_postdata();
-    echo $ppost;
+
+
 }
