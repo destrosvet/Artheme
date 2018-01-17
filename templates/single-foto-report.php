@@ -4,7 +4,7 @@
             <article>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title nopadding-i">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-left-sm-10 article-single-title">
                     <h1><?php the_title(); ?></h1>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 padding-right-sm-45 no-padding-left padding-right-45-lg">
@@ -32,7 +32,7 @@
                     <div class="clear"></div>
                 </div>
             </article>
-            <div class="col-lg-8 col-md-8 col-xs-12 norightpadding noleftpadding no-padding-right-md">
+            <div class="col-lg-12 col-md-12 col-xs-12 norightpadding noleftpadding no-padding-right-md">
                 <div id="tags">
                     <?php  get_post_tags($post->ID); ?>
                 </div>
