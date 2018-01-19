@@ -1033,6 +1033,25 @@ body.hidden-scroll {
 .ms-drop .ms-no-results {
   display: none; }
 
+/*
+* Style for Artalk Revue
+*
+*
+/*
+/*
+    Created on : 15.1.2018, 12:02:05
+    Author     : Filip Uhlir
+    Description: Artalk Revue reletad classes
+*/
+.revue-feature {
+  height: 425px;
+  border-bottom: 1px solid #212121; }
+
+.revue-number {
+  font-size: 300px;
+  font-weight: 600;
+  color: #12FF01; }
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1349,7 +1368,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3994,10 +4013,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60.00000006px;
+    height: 60px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20.00000002px;
+    height: 20px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -4005,7 +4024,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 1.42857;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4132,7 +4151,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.3333333333px; }
+    height: 57.33333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 

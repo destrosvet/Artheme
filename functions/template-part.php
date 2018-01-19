@@ -747,6 +747,8 @@ function artalk_get_authors( $args = '', $letter = '') {
 }
 
 
+
+
 function author_letter_line() {
     foreach (range('A', 'Z') as $char) {
         echo '<a href="'.esc_url( add_query_arg( 'c', $char ) ).'">'.$char . " ".'</a>';

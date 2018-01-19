@@ -1,0 +1,19 @@
+/*
+* Style for Artalk Revue
+*
+*
+/*
+/*
+    Created on : 15.1.2018, 12:02:05
+    Author     : Filip Uhlir
+    Description: Artalk Revue reletad classes
+*/
+.revue-feature{
+  height: 425px;
+  border-bottom: 1px solid $ArtBlack;
+}
+.revue-number {
+  font-size: 300px;
+  font-weight: 600;
+  color: $ArtRevueAccent;
+}

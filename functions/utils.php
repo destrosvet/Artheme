@@ -300,6 +300,22 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
 
+/**
+ * Return last child category by ID (time)
+ *
+ * @return object(WP_Term)
+ */
+function get_last_subcategory (){
+$categories = get_the_category();
+$last_category = $categories[0];
+
+foreach($categories as $i => $category) {
+    if ($category->parent == $last_category->cat_ID) {
+        $last_category = $category;
+    }
+}
+return $last_category;
+}
 //function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
 //	$content = get_the_content($more_link_text, $stripteaser, $more_file);
 //	$content = apply_filters('the_content', $content);
