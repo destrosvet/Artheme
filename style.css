@@ -3911,6 +3911,8 @@ footer.post-meta {
     .main-magazine #posts content-service-excerpt {
       height: 6.1em;
       overflow: hidden; }
+  .main-magazine .col-md-8 {
+    padding: 0px 0px; }
 
   .sidebar-author-bio-top {
     display: none; }
@@ -3951,6 +3953,8 @@ footer.post-meta {
   .main-magazine #posts {
     padding-left: 0px !important;
     padding-right: 0px !important; }
+  .main-magazine .col-sm-12 {
+    padding: 0px 0px; }
 
   .magazine {
     border-bottom: none;
@@ -4196,7 +4200,7 @@ Feature Box
     text-decoration: none; }
   .featured ul {
     display: inline;
-    padding-left: 5px; }
+    padding-left: 0px; }
     .featured ul li {
       display: inline;
       text-transform: uppercase;

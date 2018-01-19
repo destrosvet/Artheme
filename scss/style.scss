@@ -3550,6 +3550,9 @@ footer.post-meta {
         overflow: hidden;
       }
     }
+    .col-md-8{
+      padding: 0px 0px;
+    }
   }
   .sidebar-author-bio-top {
     display: none;
@@ -3600,6 +3603,9 @@ footer.post-meta {
     #posts{
       padding-left: 0px !important;
       padding-right: 0px !important;
+    }
+    .col-sm-12{
+      padding: 0px 0px;
     }
   }
   .magazine{
@@ -3954,7 +3960,7 @@ Feature Box
   }
   ul {
     display: inline;
-    padding-left: 5px;
+    padding-left: 0px;
     li {
       display: inline;
       text-transform: uppercase;
