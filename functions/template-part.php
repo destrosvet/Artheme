@@ -769,3 +769,51 @@ function artalk_awatar($authorID) {
     return $content;
 
 }
+
+add_action ('artalk_revue_content','artalk_revue_content');
+function artalk_revue_content ($category='',$echo=true,$class='',$liClass='')
+{
+    $args = array(
+        'cat'=> $category,
+        'post_type' => 'post'
+    );
+
+    $query = new WP_Query($args);
+
+
+    $output = "";
+    $output .= '<div class="col-md-12 col-xs-12">';
+    $output .= "<ul>";
+    while ($query -> have_posts()) : $query->the_post();
+        $output .= '<li class="bott-border triple-sm"><a class="revue-content-link" href="'.get_permalink().'">' . short_title_text_letter(''.get_the_title().'','...',50) . '</a></li>';
+    endwhile;
+
+    wp_reset_postdata();
+
+    $output .= "</ul>";
+    $output .= "</div>";
+
+
+    if ( ! $echo )
+        return $output;
+    echo $output;
+}
+add_action ('artalk_revue_archive','artalk_revue_archive');
+function artalk_revue_archive ($echo=true,$class='',$liClass='')
+{
+
+    $RevueArchive = get_Revue_Categories(false,'ASC');
+    $output = "";
+    $output .= '<div class="col-md-12 col-xs-12">';
+    $output .= '<ul>';
+    foreach ( $RevueArchive as $Revue ) {
+        $RevueName=explode('%',$Revue->name);
+        $output .= '<li class="bott-border triple-sm"><a class="revue-link" href="' . get_category_link( $Revue->cat_ID ) . '">Artalk Revue ' . $RevueName[0] . '</a></li>';
+    }
+    $output .= "</ul>";
+    $output .= "</div>";
+
+    if ( ! $echo )
+        return $output;
+    echo $output;
+}

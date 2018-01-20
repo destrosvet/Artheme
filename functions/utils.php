@@ -299,92 +299,47 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 }
 add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
-
+/**
+ *
+ * REVUE functions
+ *
+ */
 /**
  * Return last child category by ID (time)
  *
  * @return object(WP_Term)
  */
-function get_last_subcategory (){
-$categories = get_the_category();
-$last_category = $categories[0];
+function get_Revue_Categories ($last=false,$order='DESC'){
 
-foreach($categories as $i => $category) {
-    if ($category->parent == $last_category->cat_ID) {
-        $last_category = $category;
+    $RevueCatId = get_cat_ID('Artalk Revue');
+
+    $categories = get_categories(
+        array( 'order' => $order,'hide_empty' => false, 'child_of' => $RevueCatId )
+    );
+
+    return ($last?$categories[0]:$categories);
+}
+
+add_filter( 'single_template', 'revue_single_template' );
+function revue_single_template($single_template)
+{
+    if (in_category(get_cat_ID('Artalk Revue'))) {
+        $file = get_template_directory().'/templates/single-revue.php';
+        if ( file_exists($file) ) {
+            return $file;
+        }
+    }
+    return $single_template;
+}
+function revue_category_template() {
+    if (is_category() && !is_feed()) {
+        if (is_category(get_cat_id('artalk-revue')) || cat_is_ancestor_of(get_cat_id('artalk-revue'), get_query_var('cat'))) {
+            load_template(TEMPLATEPATH . '/category-artalk-revue.php');
+            exit;
+        }
     }
 }
-return $last_category;
-}
-//function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
-//	$content = get_the_content($more_link_text, $stripteaser, $more_file);
-//	$content = apply_filters('the_content', $content);
-//	$content = str_replace(range(700,1400), $var, $content);
-//	return $content;
-//}
-
-// regex pokusy
-
-//add_filter('the_content', 'add_image_responsive_class');
-//function filter_images($content){
-//	return preg_replace('/<img (.*) \/>\s*/iU', '<span class="className"><b><img \1 /></b></span>', $content);
-//}
-//
-//add_filter('the_content', 'filter_images');
-//function filter_p($content){
-//    return preg_replace('/<p>\s*/iU', '<span class="class"> </span>', $content);
-//}
-//
-//add_filter('the_content', 'filter_p');
-
-//function insert_inline_style( $content = null ){
-//
-//	if( null === $content )
-//		return $content;
-//
-//	return str_replace( '<p>', '<p style="color:red;width: 200px;">', $content );
-//
-//}
-//add_filter( 'the_content', 'insert_inline_style', 10, 1 );
-
-
-// responsive images auto class
-//function add_image_responsive_class($content) {
-//	global $post;
-//	$pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
-//	$replacement = '<img$1class="$2 img-responsive"$3>';
-//	$content = preg_replace($pattern, $replacement, $content);
-//	return $content;
-//}
-//add_filter('get_the_content', 'add_image_responsive_class');
-//
-
-//function remove_comment_fields($fields) {
-//	unset($fields['comment-notes']);
-//	return $fields;
-//}
-//add_filter('comment_form_default_fields','remove_comment_fields');
-
-//function fb_unautop_references( $content ) {
-//
-//    $content =  preg_replace('<a href="_ftnref">', '<b class="class"> </b>', $content);
-//    return $content;
-//}
-//add_filter( 'the_content', 'fb_unautop_references', 98 );
-
-// end regex pokus;
-
-
-//apply_filters('the_content',get_the_content()) ;
-
-//function filter_images($content){
-//	return preg_replace('/<img (.*) \/>\s*/iU', '<div class="col-md-12 responsive"><img \1 /></div>', $content);
-//}
-//add_filter('the_content', 'filter_images');
-//add_theme_support( 'post-thumbnails' );
-//remove_filter( 'the_content', 'wp_make_content_images_responsive' );
-
-/* Exclude a Category from Search Results */
+add_action('template_redirect', 'revue_category_template');
 
 add_filter( 'pre_get_posts' , 'search_exc_cats' );
 function search_exc_cats( $query ) {

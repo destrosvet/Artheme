@@ -1048,9 +1048,32 @@ body.hidden-scroll {
   border-bottom: 1px solid #212121; }
 
 .revue-number {
-  font-size: 300px;
+  text-align: center;
+  font-size: 400px;
+  line-height: 310px;
   font-weight: 600;
   color: #12FF01; }
+
+.revue-name, .revue-content-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600; }
+
+.revue-actual-date {
+  float: right;
+  font-weight: 100; }
+
+.revue-single-title {
+  margin-bottom: 40px; }
+  .revue-single-title h1 {
+    display: inline-block;
+    font-size: 20px !important;
+    font-weight: 600; }
+  .revue-single-title h3 {
+    float: right;
+    font-size: 20px !important;
+    font-weight: 100; }
 
 html {
   font-family: Arial, Helvetica, sans-serif;

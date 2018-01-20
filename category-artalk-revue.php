@@ -9,22 +9,32 @@
 
 <?php (!is_category()?'':get_header());?>
 <?php
-$lastCategory = get_last_subcategory();
-$lastCategoryName = explode('%',$lastCategory->name);
+    if (get_queried_object()->parent) {
+        $ActualRevue = get_queried_object();
+        $ActualRevueName = explode('%',$ActualRevue->name);
+
+    }
+    else {
+        $ActualRevue = get_Revue_Categories(true);
+        $ActualRevueName = explode('%',$ActualRevue->name);
+    }
+
 ?>
 <div class="row revue">
     <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 revue-feature">
-        <div class="col-md-6">
+        <div class="col-md-6 noleftpadding">
             <div class="revue-name">
                 Artalk Revue
-                <?php echo $lastCategoryName[1]; ?>
+                <span class="revue-actual-date"><?php echo $ActualRevueName[1]; ?></span>
             </div>
-            <div class="revue-number"> <?php echo $lastCategoryName[0]; ?></div>
+            <div class="revue-number"> <?php echo $ActualRevueName[0]; ?></div>
         </div>
         <div class="col-md-6">
+            <div class="revue-name">
+                <?php echo $ActualRevueName[2]; ?>
+            </div>
             <div class="revue-decription">
-                <?php echo $lastCategoryName[2]; ?>
-                <?php echo $lastCategory->description; ?>
+                <?php echo $ActualRevue->description; ?>
             </div>
         </div>
 
@@ -33,4 +43,4 @@ $lastCategoryName = explode('%',$lastCategory->name);
 
     <?php get_sidebar(); ?>
 
-    <?php  get_template_part('templates/single-revue'); ?>
+    <?php  include(locate_template('templates/single-revue.php')); ?>

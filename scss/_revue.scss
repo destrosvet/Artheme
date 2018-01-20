@@ -13,7 +13,32 @@
   border-bottom: 1px solid $ArtBlack;
 }
 .revue-number {
-  font-size: 300px;
+  text-align: center;
+  font-size: 400px;
+  line-height: 310px;
   font-weight: 600;
   color: $ArtRevueAccent;
+}
+.revue-name, .revue-content-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.revue-actual-date {
+  float: right;
+  font-weight: 100;
+}
+.revue-single-title {
+  margin-bottom: 40px;
+  h1 {
+    display: inline-block;
+    font-size: 20px !important;
+    font-weight: 600;
+  }
+  h3 {
+    float: right;
+    font-size: 20px !important;
+    font-weight: 100;
+  }
 }

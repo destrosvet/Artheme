@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="no title" charset="utf-8"/>
     <script>document.documentElement.className = 'doc-not-ready';</script>
 	<?php wp_head(); ?>
-    <!--        <script>
-			var artalkFontActiveCallback = jQuery.Callbacks();
-			 WebFont.load({
-				 custom: { families: ['SimplonNorm'] },
-				 active: function () { artalkFontActiveCallback.fire(); },
-			 });
-			</script>-->
 </head>
 <body>
 <div class="row-fluid">

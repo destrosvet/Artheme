@@ -6,7 +6,7 @@
  * Time: 12:32
  */
 ?>
-<aside id="sidebar" class="col-md-4 col-xs-12 sidebar-wrapper d-md-block d-sm-none text-center">
-    <?php get_template_part('templates/widgets/dynamic'); ?>
-    <?php get_template_part('templates/widgets/sidebar-popular-posts') ?>
+<aside id="sidebar" class="col-md-4 col-xs-12 sidebar-wrapper d-md-block d-sm-none">
+    <?php get_template_part('templates/widgets/sidebar-revue-content'); ?>
+    <?php get_template_part('templates/widgets/sidebar-revue-archive'); ?>
 </aside>
