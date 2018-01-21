@@ -568,7 +568,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
            'paged' => $page,
            'category_name' => $search_category,
            'tag' => $search_tag,
-           'author' => $author,
+           'author' => $author_id,
            'date_query' => array(
              array(
                'before' => $search_dateTo,

@@ -33,7 +33,9 @@
                     $author = sanitize_text_field($_GET["author"]);
                     global $wpdb;
                     $authorLoop = $wpdb->get_results("SELECT id FROM $wpdb->users WHERE display_name = '".$author."'");
-                    $author = $authorLoop[0]->id;
+                    if(isset($authorLoop[0]->id)){
+                      $author = $authorLoop[0]->id;
+                    }
                   }
                 }else{
                   $author = "";
