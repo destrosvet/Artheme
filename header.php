@@ -57,7 +57,6 @@
         ));
         ?>
             </div>
-
         </div>
     </nav>
-    <div class="container post-container">
+<div class="container post-container">

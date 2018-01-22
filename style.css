@@ -1057,8 +1057,14 @@ body.hidden-scroll {
 .revue-name, .revue-content-title {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600; }
+
+.revue-content-title:last-of-type {
+  margin-top: 20px; }
+
+.revue-content-title span {
+  padding-left: 8px; }
 
 .revue-actual-date {
   float: right;
@@ -1074,6 +1080,22 @@ body.hidden-scroll {
     float: right;
     font-size: 20px !important;
     font-weight: 100; }
+
+.revue-sidebar-list ul {
+  list-style: none;
+  padding-left: 0px; }
+
+.revue-list {
+  height: 54px;
+  margin-bottom: 8px; }
+  .revue-list span {
+    padding-left: 8px; }
+  .revue-list .revue-sidebar-list {
+    display: block;
+    font-size: 15px;
+    font-weight: 600; }
+  .revue-list .revue-sidebar-name {
+    font-size: 15px; }
 
 html {
   font-family: Arial, Helvetica, sans-serif;

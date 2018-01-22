@@ -782,10 +782,10 @@ function artalk_revue_content ($category='',$echo=true,$class='',$liClass='')
 
 
     $output = "";
-    $output .= '<div class="col-md-12 col-xs-12">';
+    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list noleftpadding">';
     $output .= "<ul>";
     while ($query -> have_posts()) : $query->the_post();
-        $output .= '<li class="bott-border triple-sm"><a class="revue-content-link" href="'.get_permalink().'">' . short_title_text_letter(''.get_the_title().'','...',50) . '</a></li>';
+        $output .= '<li class="bott-border revue-list"><a class="revue-content-link" href="'.get_permalink().'"><span class="revue-sidebar-list">' . short_title_text_letter(''.get_the_title().'','...',50) . '</span><span class="revue-sidebar-name">' . get_the_author() . '</span></a></li>';
     endwhile;
 
     wp_reset_postdata();
@@ -804,11 +804,11 @@ function artalk_revue_archive ($echo=true,$class='',$liClass='')
 
     $RevueArchive = get_Revue_Categories(false,'ASC');
     $output = "";
-    $output .= '<div class="col-md-12 col-xs-12">';
+    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list noleftpadding">';
     $output .= '<ul>';
     foreach ( $RevueArchive as $Revue ) {
         $RevueName=explode('%',$Revue->name);
-        $output .= '<li class="bott-border triple-sm"><a class="revue-link" href="' . get_category_link( $Revue->cat_ID ) . '">Artalk Revue ' . $RevueName[0] . '</a></li>';
+        $output .= '<li class="bott-border revue-list"><a class="" href="' . get_category_link( $Revue->cat_ID ) . '"><span class="revue-sidebar-list">Artalk Revue ' . $RevueName[0] . '</span><span class="revue-sidebar-name">' . $RevueName[2] . '</span></a></li>';
     }
     $output .= "</ul>";
     $output .= "</div>";
