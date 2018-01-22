@@ -7,7 +7,7 @@
         $(function () {
             $('.datepicker-from input, .datepicker-until input').datepicker({
                 format: "dd/mm/yyyy",
-                todayBtn: true,
+                todayBtn: "linked",
                 clearBtn: true,
                 language: "cs",
                 orientation: "bottom auto",
@@ -43,8 +43,6 @@
         $("input[name='categoryText']").val($("button.ms-choice > span").text());
       }
     });
-
-
 
 })(jQuery, this);
 
