@@ -8,9 +8,8 @@ jQuery(document).ready( function($) {
     var search_string = $('#more-posts').data('search_string');
     var search_category = $('#more-posts').data('search_category');
     var search_tag = $('#more-posts').data('search_tag');
-    var search_dateTo = $('#more-posts').data('search_dateTo');
-    var search_dateFrom = $('#more-posts').data('search_dateFrom');
-
+    var search_dateTo = $('#more-posts').data('dateto');
+    var search_dateFrom = $('#more-posts').data('datefrom');
     function load_posts() {
         pageNumber++;
         $.ajax({

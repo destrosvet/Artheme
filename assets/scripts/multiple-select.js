@@ -779,5 +779,5 @@
             return false;
         }
     };
-})(jQuery);
-
+}
+)(jQuery);
