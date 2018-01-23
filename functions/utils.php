@@ -333,8 +333,14 @@ function revue_single_template($single_template)
 }
 function revue_category_template() {
     if (is_category() && !is_feed()) {
-        if (is_category(get_cat_id('artalk-revue')) || cat_is_ancestor_of(get_cat_id('artalk-revue'), get_query_var('cat'))) {
+
+        if (is_category(get_cat_id('Artalk Revue')) || cat_is_ancestor_of(get_cat_id('Artalk Revue'), get_query_var('cat'))) {
             load_template(TEMPLATEPATH . '/category-artalk-revue.php');
+            exit;
+        }
+        else
+        {
+            load_template(TEMPLATEPATH . '/archive.php');
             exit;
         }
     }

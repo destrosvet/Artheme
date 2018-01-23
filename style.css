@@ -1085,6 +1085,9 @@ body.hidden-scroll {
   list-style: none;
   padding-left: 0px; }
 
+.revue-sidebar {
+  float: right !important; }
+
 .revue-list {
   height: 54px;
   margin-bottom: 8px; }

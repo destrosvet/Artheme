@@ -21,7 +21,6 @@
 
 ?>
 <div class="row revue">
-
     <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 revue-feature">
         <div class="col-md-6 noleftpadding">
             <div class="revue-name">
@@ -42,7 +41,8 @@
     </div>
 
 
-    <?php get_template_part('templates/sidebar-revue', 'sidebar-revue'); ?>
+
+
 
     <?php include(locate_template('templates/single-revue.php')); ?>
     <?php get_footer(); ?>

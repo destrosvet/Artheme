@@ -8,8 +8,8 @@
 ?>
 
 <?php (is_category()?'':get_header());?>
-
-    <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 no-margin no-padding-sm single-content">
+<?php get_template_part('templates/sidebar-revue', 'sidebar-revue'); ?>
+    <div class="col-lg-8 col-sm-12 col-xs-12 padding-sm-12 no-margin no-padding-sm single-content">
         <article>
             <?php
             if (is_category()) {
@@ -68,9 +68,9 @@
 
 
 
+
     <?php wp_reset_query(); ?>
     <?php wp_reset_postdata(); ?>
-
 
     <?php get_footer(); ?>
 

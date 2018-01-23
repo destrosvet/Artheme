@@ -9,6 +9,23 @@
 <div class="revue-content-title"><span>Obsah čísla</span></div>
 <?php
 
-    do_action(artalk_revue_content(get_query_var('cat'),true));
+    if (is_category()) {
+
+        if (get_query_var('cat') == get_cat_ID('Artalk Revue')) {
+            $RevueCat = get_Revue_Categories(true)->cat_ID;
+
+        }
+            else
+        {
+            $RevueCat  = get_query_var('cat');
+        }
+    }
+        else
+    {
+        $category = get_the_category();
+        $RevueCat = $category[0]->cat_ID;
+    }
+
+    do_action(artalk_revue_content($RevueCat),true);
 
 ?>
