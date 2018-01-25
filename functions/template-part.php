@@ -560,7 +560,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
        $search_dateTo = "";
      }
 
-    if ($search_string or $search_category or $search_tag or $search_dateTo or $search_dateFrom){
+    if ($cat == null and $taxonomy == null ){
        $args = array(
            's'=> $search_string,
            'post_type' => 'post',
