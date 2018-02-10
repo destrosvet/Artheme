@@ -1043,7 +1043,17 @@ body.hidden-scroll {
     Author     : Filip Uhlir
     Description: Artalk Revue reletad classes
 */
+.revue a:hover {
+  color: #12FF01;
+  text-decoration: none; }
+
+.revue .wp-caption-text a:hover {
+  color: #12FF01;
+  text-decoration: none;
+  border-bottom: 2px solid #12FF01 !important; }
+
 .revue-feature {
+  padding-left: 8px !important;
   height: 425px;
   border-bottom: 1px solid #212121; }
 
@@ -1066,12 +1076,17 @@ body.hidden-scroll {
 .revue-content-title span {
   padding-left: 8px; }
 
+.single-revue a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #12FF01 !important; }
+
 .revue-actual-date {
   float: right;
   font-weight: 100; }
 
 .revue-single-title {
-  margin-bottom: 40px; }
+  padding-left: 8px !important;
+  margin-bottom: 13px; }
   .revue-single-title h1 {
     display: inline-block;
     font-size: 20px !important;
@@ -1095,7 +1110,7 @@ body.hidden-scroll {
     padding-left: 8px; }
   .revue-list .revue-sidebar-list {
     display: block;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600; }
   .revue-list .revue-sidebar-name {
     font-size: 15px; }

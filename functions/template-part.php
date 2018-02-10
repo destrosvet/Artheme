@@ -48,7 +48,7 @@ function artalk_favicons() {
 
 /* CATEGORIES */
 add_action( 'artalk_post_cats', 'artalk_post_cats',10,4);
-function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
+function artalk_post_cats( $post_id=null, $args='', $echo=true,$revue=false ) {
 
     if ( ! absint($post_id) )
         $post_id = get_the_ID();
@@ -87,7 +87,8 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
                     $cats_out[] = '<li>' . $cats_Arr[1] . '</li>';
 
                 } else {
-                    $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $cat->name . '</a></li>';
+                    $catName= ($revue ? 'Artalk Revue '.explode('%',$cat->name)[1]: $cat->name);
+                    $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $catName . '</a></li>';
                 }
 
             }
@@ -782,7 +783,7 @@ function artalk_revue_content ($category='',$echo=true,$class='',$liClass='')
 
 
     $output = "";
-    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list noleftpadding">';
+    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list nopadding">';
     $output .= "<ul>";
     while ($query -> have_posts()) : $query->the_post();
         $output .= '<li class="bott-border revue-list"><a class="revue-content-link" href="'.get_permalink().'"><span class="revue-sidebar-list">' . short_title_text_letter(''.get_the_title().'','...',50) . '</span><span class="revue-sidebar-name">' . get_the_author() . '</span></a></li>';
@@ -804,7 +805,7 @@ function artalk_revue_archive ($echo=true,$class='',$liClass='')
 
     $RevueArchive = get_Revue_Categories(false,'ASC');
     $output = "";
-    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list noleftpadding">';
+    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list nopadding">';
     $output .= '<ul>';
     foreach ( $RevueArchive as $Revue ) {
         $RevueName=explode('%',$Revue->name);

@@ -8,7 +8,17 @@
     Author     : Filip Uhlir
     Description: Artalk Revue reletad classes
 */
+.revue a:hover{
+  color: $ArtRevueAccent;
+  text-decoration: none;
+}
+.revue .wp-caption-text a:hover{
+  color: $ArtRevueAccent;
+  text-decoration: none;
+  border-bottom: 2px solid $ArtRevueAccent !important;
+}
 .revue-feature{
+  padding-left: $ArtLeftPadding !important;
   height: 425px;
   border-bottom: 1px solid $ArtBlack;
 }
@@ -33,12 +43,17 @@
     padding-left: $ArtLeftPadding;
   }
 }
+.single-revue a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid $ArtRevueAccent !important;
+}
 .revue-actual-date {
   float: right;
   font-weight: 100;
 }
 .revue-single-title {
-  margin-bottom: 40px;
+  padding-left: $ArtLeftPadding !important;
+  margin-bottom: 13px;
 
   h1 {
     display: inline-block;
@@ -74,7 +89,7 @@
 
   .revue-sidebar-list {
     display: block;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
   }
   .revue-sidebar-name {

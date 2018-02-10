@@ -8,8 +8,9 @@
 ?>
 
 <?php (is_category()?'':get_header());?>
-<?php get_template_part('templates/sidebar-revue', 'sidebar-revue'); ?>
-    <div class="col-lg-8 col-sm-12 col-xs-12 padding-sm-12 no-margin no-padding-sm single-content">
+<div class="row revue">
+    <?php get_template_part('templates/sidebar-revue', 'sidebar-revue'); ?>
+    <div class="col-lg-8 col-sm-12 col-xs-12 padding-sm-12 <?php echo (is_category()? '':'noleftpadding');?> no-padding-sm single-content">
         <article>
             <?php
             if (is_category()) {
@@ -27,11 +28,17 @@
 
 
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 revue-single-title">
-                <h1><?php the_title(); ?></h1><h3><?php the_author_posts_link(); ?></h3>
+                <h1><?php the_title(); ?></h1>
+            </div>
+            <div class="post-meta-single ">
+                <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
+                <span class="post-meta-single-category"> |
+                    <?php do_action('artalk_post_cats','',array('separator' => ' ','main-category' => true),true,true); ?>
+                </span>
             </div>
 
 
-            <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-text-container">
+            <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-revue single-text-container">
 
                 <?php the_content(); ?>
 
@@ -39,7 +46,13 @@
 
                 <?php $loop_first = 1; ?>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 revue-single-title">
-                    <h1><?php the_title(); ?></h1><h3><?php the_author_posts_link(); ?></h3>
+                    <h1><?php the_title(); ?></h1>
+                </div>
+                <div class="post-meta-single ">
+                    <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
+                    <span class="post-meta-single-category"> |
+                        <?php do_action('artalk_post_cats','',array('separator' => ' ','main-category' => true),true,true); ?>
+                </span>
                 </div>
 
 
@@ -65,6 +78,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
