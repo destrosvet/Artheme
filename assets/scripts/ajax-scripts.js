@@ -33,7 +33,7 @@ jQuery(document).ready( function($) {
             beforeSend: function (xhr) {
                 // $('#posts').find('article').remove();
                 $("#more-posts").text('Načítá se obsah, prosím čekejte ...');
-                $(window).scrollTop($("#more-posts").offset().top);
+                //$(window).scrollTop($("#more-posts").offset().top);
             },
             success: function (data) {
                 var $data = $(data);
