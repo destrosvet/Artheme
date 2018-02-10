@@ -7,7 +7,7 @@
  */
 ?>
 
-<aside id="sidebar" class="col-md-4 col-xs-12 norightpadding revue-sidebar d-md-block d-sm-none">
+<aside id="sidebar" class="col-md-4 col-xs-12 <?php echo (is_category()? '':'norightpadding');?> revue-sidebar d-md-block d-sm-none">
     <?php get_template_part('templates/widgets/sidebar-revue-content'); ?>
     <?php get_template_part('templates/widgets/sidebar-revue-archive'); ?>
 </aside>
