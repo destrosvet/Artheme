@@ -37,7 +37,6 @@
                 </span>
             </div>
 
-
             <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-revue single-text-container">
 
                 <?php the_content(); ?>
@@ -54,7 +53,7 @@
                         <?php do_action('artalk_post_cats','',array('separator' => ' ','main-category' => true),true,true); ?>
                 </span>
                 </div>
-
+                <?php get_revue_download() ?>
 
                 <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-text-container">
 

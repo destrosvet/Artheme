@@ -818,3 +818,11 @@ function artalk_revue_archive ($echo=true,$class='',$liClass='')
         return $output;
     echo $output;
 }
+function get_revue_download() {
+    $category = get_the_category();
+    $RevueCat = $category[0]->cat_name;
+    $output ='<div class="revue-download-buttons">';
+    $output .='<a href="/ar-'.$RevueCat[0].'-cz-'.get_the_ID().'/"></a><a href="/ar-'.$RevueCat[0].'-en-'.get_the_ID().'/"></a>';
+    $output .='</div>';
+    echo $output;
+}

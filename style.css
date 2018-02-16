@@ -1086,10 +1086,11 @@ body.hidden-scroll {
 
 .revue-single-title {
   padding-left: 8px !important;
-  margin-bottom: 13px; }
+  margin-bottom: 2px; }
   .revue-single-title h1 {
     display: inline-block;
-    font-size: 20px !important;
+    font-size: 23px !important;
+    line-height: 1.42857143;
     font-weight: 600; }
   .revue-single-title h3 {
     float: right;
@@ -1104,7 +1105,7 @@ body.hidden-scroll {
   float: right !important; }
 
 .revue-list {
-  height: 54px;
+  height: 52px;
   margin-bottom: 8px; }
   .revue-list span {
     padding-left: 8px; }
@@ -1114,6 +1115,18 @@ body.hidden-scroll {
     font-weight: 600; }
   .revue-list .revue-sidebar-name {
     font-size: 15px; }
+
+.revue-download-buttons {
+  position: absolute;
+  right: 15px; }
+  .revue-download-buttons a {
+    margin: 5px;
+    float: left;
+    height: 90px;
+    width: 90px;
+    background-image: url("assets/images/down-pdf-cz.png"); }
+  .revue-download-buttons a:last-child {
+    background-image: url("assets/images/down-pdf-en.png"); }
 
 html {
   font-family: Arial, Helvetica, sans-serif;
