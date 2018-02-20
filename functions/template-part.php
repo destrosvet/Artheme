@@ -826,3 +826,35 @@ function get_revue_download() {
     $output .='</div>';
     echo $output;
 }
+
+
+/**
+ * Customize the title for the home page, if one is not set.
+ *
+ * @param string $title The original title.
+ * @return string The title to use.
+ */
+/*
+ * Override default post/page title - example
+ * @param array $title {
+ *     The document title parts.
+ *
+ *     @type string $title   Title of the viewed page.
+ *     @type string $page    Optional. Page number if paginated.
+ *     @type string $tagline Optional. Site description when on home page.
+ *     @type string $site    Optional. Site title when not on home page.
+ * }
+ *     @since WordPress 4.4
+ *     @website: www.developersq.com
+ *     @author: Aakash Dodiya
+*/
+add_filter( 'wp_title_parts', 'Artalk_wp_title_parts', 10, 1 );
+function Artalk_wp_title_parts($title){
+    // change title for singular blog post
+    //var_dump(get_queried_object()->name);
+    if( is_category() && (get_cat_name(get_queried_object()->parent) == 'Artalk Revue') ){
+
+        $title[0] = 'Artalk Revue - '. str_replace('%',' ',$title[0]);
+    }
+    return $title;
+}

@@ -17,6 +17,11 @@
   text-decoration: none;
   border-bottom: 2px solid $ArtRevueAccent !important;
 }
+.single-revue a:hover{
+  color: $ArtRevueAccent;
+  text-decoration: none;
+  border-bottom: 2px solid $ArtRevueAccent !important;
+}
 .revue-feature{
   padding-left: $ArtLeftPadding !important;
   height: 425px;
@@ -25,7 +30,7 @@
 .revue-number {
   text-align: center;
   font-size: 400px;
-  line-height: 310px;
+  line-height: 308px;
   font-weight: 600;
   color: $ArtRevueAccent;
 }
@@ -49,7 +54,7 @@
 }
 .revue-actual-date {
   float: right;
-  font-weight: 100;
+  //font-weight: 100;
 }
 .revue-single-title {
   padding-left: $ArtLeftPadding !important;
@@ -90,17 +95,17 @@
 
   .revue-sidebar-list {
     display: block;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 600;
   }
   .revue-sidebar-name {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .revue-download-buttons {
   position:absolute;
-  right:15px;
-
+  right:0px;
+  top: 100px;
   a {
     margin: 5px;
     float: left;

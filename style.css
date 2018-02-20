@@ -1052,6 +1052,11 @@ body.hidden-scroll {
   text-decoration: none;
   border-bottom: 2px solid #12FF01 !important; }
 
+.single-revue a:hover {
+  color: #12FF01;
+  text-decoration: none;
+  border-bottom: 2px solid #12FF01 !important; }
+
 .revue-feature {
   padding-left: 8px !important;
   height: 425px;
@@ -1060,7 +1065,7 @@ body.hidden-scroll {
 .revue-number {
   text-align: center;
   font-size: 400px;
-  line-height: 310px;
+  line-height: 308px;
   font-weight: 600;
   color: #12FF01; }
 
@@ -1081,8 +1086,7 @@ body.hidden-scroll {
   border-bottom: 2px solid #12FF01 !important; }
 
 .revue-actual-date {
-  float: right;
-  font-weight: 100; }
+  float: right; }
 
 .revue-single-title {
   padding-left: 8px !important;
@@ -1111,14 +1115,15 @@ body.hidden-scroll {
     padding-left: 8px; }
   .revue-list .revue-sidebar-list {
     display: block;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 600; }
   .revue-list .revue-sidebar-name {
-    font-size: 15px; }
+    font-size: 14px; }
 
 .revue-download-buttons {
   position: absolute;
-  right: 15px; }
+  right: 0px;
+  top: 100px; }
   .revue-download-buttons a {
     margin: 5px;
     float: left;

@@ -41,8 +41,5 @@
     </div>
 
 
-
-
-
     <?php include(locate_template('templates/single-revue.php')); ?>
     <?php get_footer(); ?>

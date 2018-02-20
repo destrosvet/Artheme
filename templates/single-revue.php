@@ -55,7 +55,7 @@
                 </div>
                 <?php get_revue_download() ?>
 
-                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-text-container">
+                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-revue single-text-container">
 
                     <?php the_content(); ?>
 
@@ -72,9 +72,9 @@
             <div id="tags">
                 <?php  get_post_tags($post->ID); ?>
             </div>
-            <div id="comments">
-                <?php  comments_template(); ?>
-            </div>
+<!--            <div id="comments">
+                <?php /* comments_template(); */?>
+            </div>-->
         </div>
     </div>
 </div>
