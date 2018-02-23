@@ -27,6 +27,11 @@
   height: 425px;
   border-bottom: 1px solid $ArtBlack;
 }
+.revue .post-meta-single a:hover{
+  color: $ArtRevueAccent;
+  text-decoration: none;
+}
+
 .revue-number {
   text-align: center;
   font-size: 400px;
@@ -54,7 +59,7 @@
 }
 .revue-actual-date {
   float: right;
-  //font-weight: 100;
+  font-weight: 400;
 }
 .revue-single-title {
   padding-left: $ArtLeftPadding !important;

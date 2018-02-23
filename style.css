@@ -1062,6 +1062,10 @@ body.hidden-scroll {
   height: 425px;
   border-bottom: 1px solid #212121; }
 
+.revue .post-meta-single a:hover {
+  color: #12FF01;
+  text-decoration: none; }
+
 .revue-number {
   text-align: center;
   font-size: 400px;
@@ -1086,7 +1090,8 @@ body.hidden-scroll {
   border-bottom: 2px solid #12FF01 !important; }
 
 .revue-actual-date {
-  float: right; }
+  float: right;
+  font-weight: 400; }
 
 .revue-single-title {
   padding-left: 8px !important;
