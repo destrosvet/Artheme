@@ -1114,11 +1114,14 @@ body.hidden-scroll {
 
 .revue-sidebar {
   float: right !important; }
+  .revue-sidebar ul {
+    padding-left: 0px; }
 
 .revue-list {
   height: auto;
   margin-bottom: 8px;
-  padding-bottom: 8px; }
+  padding-bottom: 8px;
+  list-style: none; }
   .revue-list span {
     padding-left: 8px; }
   .revue-list .revue-sidebar-list {

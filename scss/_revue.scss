@@ -89,14 +89,17 @@
   //padding-bottom: 0px;
 }
 .revue-sidebar {
-
   float: right !important;
+  ul {
+    padding-left: 0px;
+  }
 }
 .revue-list
 {
   height: auto;
   margin-bottom: 8px;
   padding-bottom: 8px;
+  list-style: none;
   span {
     padding-left: $ArtLeftPadding;
   }
