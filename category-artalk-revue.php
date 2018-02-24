@@ -22,14 +22,14 @@
 ?>
 <div class="row revue">
     <div class="col-lg-8 col-md-8  col-sm-12 col-xs-12 revue-feature">
-        <div class="col-md-6 noleftpadding">
+        <div class="col-md-6 col-sm-6 noleftpadding">
             <div class="revue-name">
                 Artalk Revue
                 <span class="revue-actual-date"><?php echo $ActualRevueName[1]; ?></span>
             </div>
             <div class="revue-number"> <?php echo $ActualRevueName[0]; ?></div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6">
             <div class="revue-name">
                 <?php echo $ActualRevueName[2]; ?>
             </div>

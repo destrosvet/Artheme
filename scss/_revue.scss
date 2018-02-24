@@ -26,6 +26,8 @@
   padding-left: $ArtLeftPadding !important;
   height: 425px;
   border-bottom: 1px solid $ArtBlack;
+  display: table;
+  padding-bottom: 20px;
 }
 .revue .post-meta-single a:hover{
   color: $ArtRevueAccent;
@@ -92,8 +94,9 @@
 }
 .revue-list
 {
-  height: 52px;
+  height: auto;
   margin-bottom: 8px;
+  padding-bottom: 8px;
   span {
     padding-left: $ArtLeftPadding;
   }
@@ -120,5 +123,10 @@
   }
   a:last-child {
     background-image: url("assets/images/down-pdf-en.png");
+  }
+}
+@media only screen and (max-width: 990px) {
+  .revue .revue .single-content{
+    display: none;
   }
 }

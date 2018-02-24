@@ -1060,7 +1060,9 @@ body.hidden-scroll {
 .revue-feature {
   padding-left: 8px !important;
   height: 425px;
-  border-bottom: 1px solid #212121; }
+  border-bottom: 1px solid #212121;
+  display: table;
+  padding-bottom: 20px; }
 
 .revue .post-meta-single a:hover {
   color: #12FF01;
@@ -1114,8 +1116,9 @@ body.hidden-scroll {
   float: right !important; }
 
 .revue-list {
-  height: 52px;
-  margin-bottom: 8px; }
+  height: auto;
+  margin-bottom: 8px;
+  padding-bottom: 8px; }
   .revue-list span {
     padding-left: 8px; }
   .revue-list .revue-sidebar-list {
@@ -1138,6 +1141,9 @@ body.hidden-scroll {
   .revue-download-buttons a:last-child {
     background-image: url("assets/images/down-pdf-en.png"); }
 
+@media only screen and (max-width: 990px) {
+  .revue .revue .single-content {
+    display: none; } }
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1454,7 +1460,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4099,10 +4105,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60px;
+    height: 60.00000006px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20px;
+    height: 20.00000002px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -4110,7 +4116,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857;
+    line-height: 1.42857143;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4237,7 +4243,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.33333px; }
+    height: 57.3333333333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 
