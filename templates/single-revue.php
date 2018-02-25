@@ -15,7 +15,7 @@
         get_template_part('templates/sidebar-revue', 'sidebar-revue');
       }
     ?>
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 padding-sm-12 <?php echo (is_category()? '':'noleftpadding');?> no-padding-sm single-content">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 padding-sm-12 <?php echo (is_category()? '':'noleftpadding norightpadding');?> no-padding-sm single-content">
         <article>
             <?php
             if (is_category()) {
