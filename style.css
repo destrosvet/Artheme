@@ -1132,7 +1132,7 @@ body.hidden-scroll {
     font-size: 14px; }
 
 .revue-download-buttons {
-  float: right; }
+  display: inline-block; }
   .revue-download-buttons a {
     margin: 5px;
     float: left;
@@ -1145,6 +1145,9 @@ body.hidden-scroll {
 @media only screen and (max-width: 990px) {
   .revue .revue .single-content {
     display: none; } }
+.revue-download-block {
+  text-align: center; }
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -3884,8 +3887,7 @@ footer.post-meta {
 
 .post-meta-single {
   padding-left: 8px;
-  display: inline-flex;
-  width: 100%; }
+  display: inline-flex; }
   .post-meta-single span {
     margin-left: 0px;
     margin-right: 4px; }
