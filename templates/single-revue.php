@@ -10,9 +10,9 @@
 <?php (is_category()?'':get_header());?>
 
 <div class="row revue">
-    <?php get_template_part('templates/sidebar-revue', 'sidebar-revue'); ?>
     <?php
       if (is_category()){
+        get_template_part('templates/sidebar-revue', 'sidebar-revue');
         get_template_part('templates/widgets/sidebar-revue-archive');
       }
     ?>
@@ -85,6 +85,7 @@
     </div>
     <?php
       if (!is_category()){
+        get_template_part('templates/sidebar-revue', 'sidebar-revue');
         get_template_part('templates/widgets/sidebar-revue-archive');
       }
     ?>

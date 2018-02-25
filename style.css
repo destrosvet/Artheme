@@ -1132,9 +1132,7 @@ body.hidden-scroll {
     font-size: 14px; }
 
 .revue-download-buttons {
-  position: absolute;
-  right: 0px;
-  top: 100px; }
+  float: right; }
   .revue-download-buttons a {
     margin: 5px;
     float: left;
