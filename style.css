@@ -1102,7 +1102,8 @@ body.hidden-scroll {
     display: inline-block;
     font-size: 23px !important;
     line-height: 1.42857143;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-left: 15px; }
   .revue-single-title h3 {
     float: right;
     font-size: 20px !important;
@@ -1132,8 +1133,7 @@ body.hidden-scroll {
     font-size: 14px; }
 
 .revue-download-buttons {
-  display: inline-block;
-  margin-top: 20px; }
+  display: inline-block; }
   .revue-download-buttons a {
     margin: 5px;
     float: left;
@@ -1146,9 +1146,16 @@ body.hidden-scroll {
 @media only screen and (max-width: 990px) {
   .revue .revue .single-content {
     display: none; } }
-.revue-download-block {
-  text-align: center; }
+.revue-download-block, .revue-download-block-mobile {
+  text-align: center;
+  display: none; }
 
+@media (max-width: 1200px) {
+  .revue-download-block-mobile {
+    display: block; } }
+@media (min-width: 1201px) {
+  .revue-download-block {
+    display: block; } }
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
