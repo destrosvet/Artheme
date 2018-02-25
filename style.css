@@ -1059,7 +1059,7 @@ body.hidden-scroll {
 
 .revue-feature {
   padding-left: 8px !important;
-  height: 425px;
+  height: 405px;
   border-bottom: 1px solid #212121;
   display: table;
   padding-bottom: 20px; }
@@ -1102,8 +1102,7 @@ body.hidden-scroll {
     display: inline-block;
     font-size: 23px !important;
     line-height: 1.42857143;
-    font-weight: 600;
-    margin-left: 15px; }
+    font-weight: 600; }
   .revue-single-title h3 {
     float: right;
     font-size: 20px !important;

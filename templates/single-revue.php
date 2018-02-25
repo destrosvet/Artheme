@@ -54,7 +54,7 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 revue-single-title">
                     <h1><?php the_title(); ?></h1>
                 </div>
-                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12">
+                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 noleftpadding">
                   <div class=" post-meta-single">
                       <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
                       <span class="post-meta-single-category"> |
