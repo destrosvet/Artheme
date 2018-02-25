@@ -805,7 +805,7 @@ function artalk_revue_archive ($echo=true,$class='',$liClass='')
 
     $RevueArchive = get_Revue_Categories(false,'ASC');
     $output = "";
-    $output .= '<div class="col-md-4 col-xs-12  revue-sidebar d-md-block"><div class="revue-content-title"><span>Archiv</span></div>';
+    $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list nopadding">';
     $output .= '<ul>';
     foreach ( $RevueArchive as $Revue ) {
         $RevueName=explode('%',$Revue->name);

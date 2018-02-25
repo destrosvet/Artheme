@@ -1133,12 +1133,13 @@ body.hidden-scroll {
     font-size: 14px; }
 
 .revue-download-buttons {
-  display: inline-block; }
+  display: flex;
+  margin-left: -25px; }
   .revue-download-buttons a {
     margin: 5px;
     float: left;
     height: 90px;
-    width: 90px;
+    min-width: 90px;
     background-image: url("assets/images/down-pdf-cz.png"); }
   .revue-download-buttons a:last-child {
     background-image: url("assets/images/down-pdf-en.png"); }
@@ -1152,7 +1153,10 @@ body.hidden-scroll {
 
 @media (max-width: 1200px) {
   .revue-download-block-mobile {
-    display: block; } }
+    display: block; }
+
+  .revue-download-buttons {
+    display: inline-block; } }
 @media (min-width: 1201px) {
   .revue-download-block {
     display: block; } }

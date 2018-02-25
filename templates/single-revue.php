@@ -13,7 +13,6 @@
     <?php
       if (is_category()){
         get_template_part('templates/sidebar-revue', 'sidebar-revue');
-        get_template_part('templates/widgets/sidebar-revue-archive');
       }
     ?>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 padding-sm-12 <?php echo (is_category()? '':'noleftpadding');?> no-padding-sm single-content">
@@ -55,7 +54,7 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 revue-single-title">
                     <h1><?php the_title(); ?></h1>
                 </div>
-                <div class="col-lg-8 col-sm-12 col-xs-12 padding-sm-12">
+                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12">
                   <div class=" post-meta-single">
                       <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
                       <span class="post-meta-single-category"> |
@@ -71,7 +70,7 @@
                       <div class="clear"></div>
                   </div>
                 </div>
-                <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12 revue-download-block">
+                <div class="col-lg-3  col-md-12 col-sm-12 col-xs-12 revue-download-block">
                     <?php get_revue_download() ?>
                 </div>
                     <?php endwhile; else:?>
@@ -93,8 +92,7 @@
     </div>
     <?php
       if (!is_category()){
-        get_template_part('templates/sidebar-revue', 'sidebar-revue');
-        get_template_part('templates/widgets/sidebar-revue-archive');
+                get_template_part('templates/sidebar-revue', 'sidebar-revue');
       }
     ?>
   </div>

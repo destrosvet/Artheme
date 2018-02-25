@@ -6,7 +6,7 @@
  * Time: 12:32
  */
 ?>
-
+<div class="revue-content-title"><span>Archiv</span></div>
 <?php
 
     do_action(artalk_revue_archive(true));
