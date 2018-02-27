@@ -54,7 +54,7 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 revue-single-title">
                     <h1><?php the_title(); ?></h1>
                 </div>
-                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 noleftpadding">
+                <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 noleftpadding no-padding-right-md">
                   <div class=" post-meta-single">
                       <span><?php the_author_posts_link(); ?></span> | <time><?php the_time( get_option( 'date_format' ) ); ?></time>
                       <span class="post-meta-single-category"> |
@@ -64,7 +64,7 @@
                   <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12 revue-download-block-mobile">
                       <?php get_revue_download() ?>
                   </div>
-                  <div class=" single-revue single-text-container">
+                  <div class=" single-revue single-text-container no-padding-right-md">
 
                       <?php the_content(); ?>
                       <div class="clear"></div>

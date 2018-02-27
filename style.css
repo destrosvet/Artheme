@@ -191,7 +191,28 @@ tbody.collapse.show {
     margin-left: 10px; }
 
   .no-padding-right-md {
-    padding-right: 0px !important; } }
+    padding-right: 0px !important; }
+
+  .no-padding-left-md {
+    padding-left: 0px !important; }
+
+  .padding-left-md {
+    padding-left: 15px !important; }
+
+  .no-padding-left-md {
+    padding-left: 0px !important; }
+
+  .no-padding-left-lg {
+    padding-left: 0px !important; }
+
+  .padding-right-lg {
+    padding-right: 15px !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .no-padding-left-lg {
+    padding-left: 0px !important; }
+
+  .padding-right-lg {
+    padding-right: 15px !important; } }
 body.hidden-scroll {
   overflow: hidden; }
 
@@ -1159,6 +1180,11 @@ body.hidden-scroll {
 @media (min-width: 1201px) {
   .revue-download-block {
     display: block; } }
+@media only screen and (max-width: 768px) {
+  .padding-left-md .revue-content-title span {
+    margin-left: 15px; }
+  .padding-left-md ul .revue-sidebar-list, .padding-left-md ul .revue-sidebar-name {
+    margin-left: 15px; } }
 html {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;

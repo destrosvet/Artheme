@@ -191,5 +191,28 @@ tbody.collapse.show {
   .no-padding-right-md {
     padding-right: 0px !important; ;
   }
+  .no-padding-left-md {
+    padding-left: 0px !important; ;
+  }
+  .padding-left-md {
+    padding-left: 15px !important; ;
+  }
+  .no-padding-left-md {
+    padding-left: 0px !important; ;
+  }
+  .no-padding-left-lg {
+    padding-left: 0px !important; ;
+  }
+  .padding-right-lg {
+    padding-right: 15px !important; ;
+  }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .no-padding-left-lg {
+    padding-left: 0px !important; ;
+  }
+  .padding-right-lg {
+    padding-right: 15px !important; ;
+  }
 }

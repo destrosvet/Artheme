@@ -149,3 +149,17 @@
     display: block;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .padding-left-md {
+    .revue-content-title span{
+        margin-left: 15px;
+    }
+    ul{
+      .revue-sidebar-list, .revue-sidebar-name{
+        margin-left: 15px;
+      }
+    }
+  }
+
+}
