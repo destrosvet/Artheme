@@ -3470,7 +3470,6 @@ footer.post-meta {
   margin-bottom: 5px;
   clear: both;
   line-height: 60px;
-  background-color: #D0D0D0;
   color: $ArtBlack;
   text-align: center;
   font-size: 1.3em;
@@ -3482,6 +3481,10 @@ footer.post-meta {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
+}
+
+.further-content #more-posts{
+  background-color: #D0D0D0;
 }
 
 .next-posts-link {

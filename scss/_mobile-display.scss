@@ -216,3 +216,13 @@ tbody.collapse.show {
     padding-right: 15px !important; ;
   }
 }
+
+@media (min-width: 1201px) {
+  .further-content #more-posts{
+    margin-right: 40px;
+    background-color: #D0D0D0;
+  }
+  .main-magazine .col-md-12.col-sm-12.no-padding-md.noleftpadding.norightpadding{
+    padding-right: 40px !important;
+  }
+}
