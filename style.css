@@ -4015,11 +4015,11 @@ footer.post-meta {
   display: inline-block;
   margin-top: 10px;
   width: 100%; }
-  .further-content:hover {
-    background-color: #e5e5e5; }
 
 .further-content #more-posts {
   background-color: #D0D0D0; }
+  .further-content #more-posts:hover {
+    background-color: #e5e5e5; }
 
 .next-posts-link:hover {
   text-decoration: none; }
