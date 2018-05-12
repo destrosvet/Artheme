@@ -273,42 +273,76 @@ body.hidden-scroll {
     display: none; }
     .sl-wrapper .sl-navigation button {
       position: fixed;
-      top: 50%;
+      top: 22.5%;
       margin-top: -22px;
-      height: 44px;
+      height: 60%;
       width: 22px;
       line-height: 44px;
       text-align: center;
       display: block;
       z-index: 1060;
       font-family: Arial, Baskerville, monospace;
-      color: #000; }
+      color: #000;
+      background-color: #fff;
+      			/*
+      
+      			@media (min-width: $sl-breakpoint-medium) {
+      				width: 44px;
+      
+      				&.sl-next {
+      					right: 10px;
+      					font-size: $sl-arrow-fontsize-medium;
+      				}
+      
+      				&.sl-prev {
+      					left: 10px;
+      					font-size: $sl-arrow-fontsize-medium;
+      				}
+      			}
+      			@media (min-width: $sl-breakpoint-large) {
+      				width: 44px;
+      
+      				&.sl-next {
+      					right: 20px;
+      					font-size: $sl-arrow-fontsize-large;
+      				}
+      
+      				&.sl-prev {
+      					left: 20px;
+      					font-size: $sl-arrow-fontsize-large;
+      				}
+      			}*/ }
       .sl-wrapper .sl-navigation button.sl-next {
-        right: 5px;
+        right: 30px;
         font-size: 2rem; }
       .sl-wrapper .sl-navigation button.sl-prev {
-        left: 5px;
+        left: 30px;
         font-size: 2rem; }
       .sl-wrapper .sl-navigation button:focus {
         outline: none; }
-      @media (min-width: 35.5em) {
-        .sl-wrapper .sl-navigation button {
-          width: 44px; }
-          .sl-wrapper .sl-navigation button.sl-next {
-            right: 10px;
-            font-size: 3rem; }
-          .sl-wrapper .sl-navigation button.sl-prev {
-            left: 10px;
-            font-size: 3rem; } }
-      @media (min-width: 50em) {
-        .sl-wrapper .sl-navigation button {
-          width: 44px; }
-          .sl-wrapper .sl-navigation button.sl-next {
-            right: 20px;
-            font-size: 3rem; }
-          .sl-wrapper .sl-navigation button.sl-prev {
-            left: 20px;
-            font-size: 3rem; } }
+    .sl-wrapper .sl-navigation .sl-next {
+      width: 40px; }
+    .sl-wrapper .sl-navigation .sl-prev {
+      width: 40px; }
+    .sl-wrapper .sl-navigation .sl-next:after, .sl-wrapper .sl-navigation .sl-next:before, .sl-wrapper .sl-navigation .sl-prev:after, .sl-wrapper .sl-navigation .sl-prev:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .sl-wrapper .sl-navigation .sl-next:before, .sl-wrapper .sl-navigation .sl-next:after {
+      border-top: 30vh solid transparent;
+      border-bottom: 30vh solid transparent;
+      border-left: 40px solid #272727; }
+    .sl-wrapper .sl-navigation .sl-prev:before, .sl-wrapper .sl-navigation .sl-prev:after {
+      border-top: 30vh solid transparent;
+      border-bottom: 30vh solid transparent;
+      border-right: 40px solid #272727; }
+    .sl-wrapper .sl-navigation .sl-next:after {
+      border-left-color: #fff;
+      left: -1px; }
+    .sl-wrapper .sl-navigation .sl-prev:after {
+      border-right-color: #fff;
+      right: -1px; }
   .sl-wrapper .sl-image {
     position: fixed;
     -ms-touch-action: none;
@@ -1508,7 +1542,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4154,10 +4188,10 @@ footer.post-meta {
   .service-news .s-news-content {
     padding: 10px 10px 3px 10px; }
   .service-news .s-news-content p {
-    height: 60.00000006px;
+    height: 60px;
     -webkit-line-clamp: 3; }
   .service-news .s-news-content h5 {
-    height: 20.00000002px;
+    height: 20px;
     -webkit-line-clamp: 1; }
   .service-news .s-news-content p, .service-news .s-news-content h5 {
     display: block;
@@ -4165,7 +4199,7 @@ footer.post-meta {
     display: -webkit-box;
     margin: 0 auto;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 1.42857;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -4292,7 +4326,7 @@ footer.post-meta {
   .side-recent-item li:last-child {
     border: none !important; }
   .side-recent-item .twice-sm {
-    height: 57.3333333333px; }
+    height: 57.33333px; }
   .side-recent-item .triple-sm {
     height: 34.4px; }
 

@@ -84,11 +84,12 @@ body.hidden-scroll {
 	.sl-navigation {
 		width: 100%;
 		display: none;
+
 		button {
 			position: fixed;
-			top: 50%;
+			top: 22.5%;
 			margin-top: -22px;
-			height: 44px;
+			height: 60%;
 			width: 22px;
 			line-height: 44px;
 			text-align: center;
@@ -96,19 +97,22 @@ body.hidden-scroll {
 			z-index: 1060;
 			font-family: $sl-font-family;
 			color: $sl-navigation-color;
+			background-color: #fff;
+
 			&.sl-next {
-				right: 5px;
+				right: 30px;
 				font-size: $sl-arrow-fontsize-small;
 			}
 
 			&.sl-prev {
-				left: 5px;
+				left: 30px;
 				font-size: $sl-arrow-fontsize-small;
 			}
 
 			&:focus {
 				outline: none;
 			}
+			/*
 
 			@media (min-width: $sl-breakpoint-medium) {
 				width: 44px;
@@ -135,7 +139,41 @@ body.hidden-scroll {
 					left: 20px;
 					font-size: $sl-arrow-fontsize-large;
 				}
-			}
+			}*/
+		}
+
+		.sl-next{
+			width:40px;
+			//height:30vh;
+			//border-left:2px solid white;
+		}
+		.sl-prev{
+			width:40px;
+			//height:30vh;
+			//border-right:2px solid white;
+		}
+		.sl-next:after, .sl-next:before,.sl-prev:after, .sl-prev:before{
+			content:'';
+			position:absolute;
+			top:0; left:0;
+		}
+		.sl-next:before, .sl-next:after{
+			border-top:30vh solid transparent;
+			border-bottom:30vh solid transparent;
+			border-left:40px solid #272727;
+		}
+		.sl-prev:before, .sl-prev:after{
+			border-top:30vh solid transparent;
+			border-bottom:30vh solid transparent;
+			border-right:40px solid #272727;
+		}
+		.sl-next:after{
+			border-left-color: #fff;
+			left: -1px;
+		}
+		.sl-prev:after{
+			border-right-color: #fff;
+			right: -1px;
 		}
 	}
 
