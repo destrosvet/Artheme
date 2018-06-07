@@ -570,6 +570,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
            'category_name' => $search_category,
            'tag' => $search_tag,
            'author' => $author_id,
+           'post_status' => array('publish'),
            'date_query' => array(
              array(
                'before' => $search_dateTo,
@@ -587,6 +588,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'paged' => $page,
                'author'=>$author_id,
                'cat' => $cat,
+               'post_status' => array('publish'),
                //'post__not_in' => array($sticky[0]),
                'ignore_sticky_posts' => 1,
            );
@@ -600,6 +602,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'paged' => $page,
                'post__not_in' => array($sticky[0]),
                'ignore_sticky_posts' => 1,
+               'post_status' => array('publish'),
                'tax_query' => array(
                    array(
                        'taxonomy' => $taxonomy,
