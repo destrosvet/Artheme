@@ -3815,7 +3815,7 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
   line-height: 31px !important; }
   .mailpoet_paragraph:first-child {
     border-right: 1px #212121 solid; }
-  .mailpoet_paragraph:last-child {
+  .mailpoet_paragraph:last-of-type {
     width: 100%;
     font-size: 11px; }
   .mailpoet_paragraph .mailpoet_text {

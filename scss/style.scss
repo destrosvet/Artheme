@@ -3184,7 +3184,7 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
   &:first-child {
     border-right: 1px $ArtBlack solid;
   }
-  &:last-child {
+  &:last-of-type {
     width:100%;
     font-size: 11px;
   }
