@@ -347,19 +347,6 @@ function revue_category_template() {
 }
 add_action('template_redirect', 'revue_category_template');
 
-add_filter( 'pre_get_posts' , 'search_exc_cats' );
-function search_exc_cats( $query ) {
-
-    if( $query->is_admin )
-        return $query;
-
-    if( $query->is_search ) {
-        $query->set( 'category__not_in' , array( get_cat_ID( 'Artalk Revue' ) ) ); // Cat ID
-    }
-    return $query;
-}
-
-
 function add_custom_query_var( $vars ){
     $vars[] = "c";
     return $vars;

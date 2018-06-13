@@ -73,6 +73,7 @@
                     <option value="doprovodne-programy">Doprovodné programy</option>
                     <option value="media-monitoring">Media monitoring</option>
                     <option value="blogy">Blogy</option>
+                    <option value="artalk-revue">Artalk Revue</option>                    
                 </select>
             </div>
             <div class="form-element datepicker-from">
