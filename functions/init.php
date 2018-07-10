@@ -21,6 +21,9 @@ if ( ! function_exists('Artalk_handle_github_update') ) {
     }
 }
 
+/* Theme title tag */
+add_theme_support( 'title-tag' );
+
 /* L10N */
   load_theme_textdomain( 'artalk', get_stylesheet_directory() . '/languages' );
 

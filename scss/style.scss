@@ -3221,6 +3221,44 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
     width:320px !important;
   }
 }
+.mail-poet-subscription .mailpoet_paragraph{
+  width: 100%;
+  margin-bottom: 15px;
+  label {
+    width: 100px;
+    display: inline-block;
+  }
+  input {
+    width: 50% !important;
+    margin-left: 50px !important;
+    padding-left: 5px !important;
+  }
+  select {
+    width: 50% !important;
+    margin-left: 50px !important;
+    padding-left: 5px !important;
+  }
+  .mailpoet_submit {
+    background-image: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    width: 30% !important;
+    margin-left: 0px !important;
+    float: left;
+  }
+  .mailpoet_segment_label {
+    display: block;
+  }
+  .mailpoet_checkbox_label {
+    width: 250px;
+
+    input {
+      width: 10px !important;
+      margin-left: 0px !important;
+    }
+  }
+}
 /*
 Artheme tags
  */
@@ -3892,6 +3930,13 @@ $line-height: 1.42857143;
   }
   .triple-sm {
     height: 86px !important;
+  }
+}
+.popular-posts {
+  .popular-posts-name {
+    margin-top: 8px;
+    font-weight: bold;
+    display: block;
   }
 }
 .recent-comments {

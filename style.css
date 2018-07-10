@@ -3843,6 +3843,36 @@ form.mailpoet_form p.mailpoet_paragraph:last-child {
 @media (min-width: 992px) {
   .mailpoet_text {
     width: 320px !important; } }
+.mail-poet-subscription .mailpoet_paragraph {
+  width: 100%;
+  margin-bottom: 15px; }
+  .mail-poet-subscription .mailpoet_paragraph label {
+    width: 100px;
+    display: inline-block; }
+  .mail-poet-subscription .mailpoet_paragraph input {
+    width: 50% !important;
+    margin-left: 50px !important;
+    padding-left: 5px !important; }
+  .mail-poet-subscription .mailpoet_paragraph select {
+    width: 50% !important;
+    margin-left: 50px !important;
+    padding-left: 5px !important; }
+  .mail-poet-subscription .mailpoet_paragraph .mailpoet_submit {
+    background-image: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    width: 30% !important;
+    margin-left: 0px !important;
+    float: left; }
+  .mail-poet-subscription .mailpoet_paragraph .mailpoet_segment_label {
+    display: block; }
+  .mail-poet-subscription .mailpoet_paragraph .mailpoet_checkbox_label {
+    width: 250px; }
+    .mail-poet-subscription .mailpoet_paragraph .mailpoet_checkbox_label input {
+      width: 10px !important;
+      margin-left: 0px !important; }
+
 /*
 Artheme tags
  */
@@ -4342,6 +4372,11 @@ footer.post-meta {
 
   .triple-sm {
     height: 86px !important; } }
+.popular-posts .popular-posts-name {
+  margin-top: 8px;
+  font-weight: bold;
+  display: block; }
+
 .recent-comments .recent-comments-post {
   display: block;
   font-weight: bold; }

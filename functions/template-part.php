@@ -359,8 +359,10 @@ function get_related_posts() {
     $output = "";
     $output .= '<div class="col-md-12 col-xs-12 side-recent-item">';
     $output .= "<ul>";
-    foreach ( $related_posts as $post ) {
-        $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'...',50) . '</a></li>';
+    if ($related_posts) {
+        foreach ( $related_posts as $post ) {
+            $output .= '<li class="bott-border triple-sm"><a class="related-link" href="' . get_permalink( $post->ID ) . '">' . short_title_text_letter(apply_filters( 'the_title', $post->post_title, $post->ID ),'...',50) . '</a></li>';
+        }
     }
     $output .= "</ul>";
     $output .= "</div>";

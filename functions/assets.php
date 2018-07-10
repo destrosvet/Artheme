@@ -215,7 +215,16 @@ function artalk_assets()
         );
         $deps[] = 'jquery';
     }
-
+    if (is_page('nastaveni-odberu-novinek')) {
+        wp_enqueue_script(
+            'mailpoet-streplace',
+            $dir . '/assets/scripts/mailpoet-streplace.js',
+            array(),
+            $ver,
+            true
+        );
+        $deps[] = 'jQuery-Collision';
+    }
     if (is_single()) {
         // jQuery-Collision
         wp_enqueue_script(
