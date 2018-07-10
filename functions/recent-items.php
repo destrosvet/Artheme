@@ -26,27 +26,10 @@ function bg_recent_comments($no_comments = 3, $comment_len = 30, $avatar_size = 
 
 function bg_popular_post($no_posts = 4) {
     $ppost ='';
-    //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
-    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num', 'category_name' => artalk_get_current_category(), 'date_query' => array('after' => '1 year ago'), 'order' => 'DESC' );
-    //$args = array('meta_key'=>'popular_posts');
-/*    $args = array(
-        'posts_per_page' => 5,
-        'meta_query' => array(
-            array(
-                'key'     => 'popular_posts',
-                'value'   => '0',
-                'compare' => '>'
-        ),
-    ),
-);*/
+    $args = array('post_type' => 'post', 'posts_per_page' => $no_posts, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num', 'category_name' => artalk_get_current_category(), 'date_query' => array('after' => '1 month ago'), 'order' => 'DESC' );
+
     $popular = get_posts ($args);
 
-    //echo $GLOBALS['wp_query']->request;
-    //while ($popular->have_posts()) : $popular->the_post();
-     //   echo the_title();
-	//$ppost.='<li><a href="'.the_permalink().'">'.the_title().'</a></li>';
-    //endwhile;
-    //var_dump($popular);
     $ppost.='<ul class="popular-posts">';
     foreach ( $popular as $post ) : setup_postdata( $post );
         $ppost.= '<li class="twice-sm bott-border"><a  href="'.get_author_posts_url( get_the_author_meta( 'ID' )).'" class="popular-posts-name">&#9679; '.get_the_author().'</a>
