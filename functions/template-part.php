@@ -70,11 +70,17 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true,$revue=false ) {
         if ($args['main-category'])
         {
             $cats_out = array();
+
             foreach ($cats as $key => $cat) {
                 if ('E-mail newsletter' == $cat->name)
                     continue;
                 $pre = '';
-                $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
+                if ($cat->parent != 0)
+                {
+                    $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
+                }
+
+
 
                 if ($parent != 'artservis' && $parent != 'arena' && $parent != 'artalk-revue') {
                     $cats_tree = get_category_parents($cat->parent, 'true', '||', ' &raquo; ');
@@ -83,18 +89,22 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true,$revue=false ) {
                     {
                         $cats_Arr = explode('||', $cats_tree);
                     }
-                    //$cats_out = $cats_Arr[1];
+
                     $cats_out[] = '<li>' . $cats_Arr[1] . '</li>';
 
                 } else {
-                    $catName= ($revue ? 'Artalk Revue '.explode('%',$cat->name)[1]: $cat->name);
-                    $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $catName . '</a></li>';
+                    if ($revue && $cat->name != 'Artalk Revue'){
+                        $catName= ($revue ? 'Artalk Revue '.explode('%',$cat->name)[1]: str_replace('%',' ',$cat->name));
+                        $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . $catName . '</a></li>';
+                    } elseif (!$revue) {
+                        $cats_out[] = '<li>' . $pre . '<a href="' . esc_url(get_term_link($cat)) . '">' . str_replace('%',' ',$cat->name) . '</a></li>';
+                    }
                 }
+
 
             }
 
             $cats_out = '<ul class="post-categories">' . join($args['separator'], $cats_out) . '</ul>';
-            //var_dump($cats_out);
         }
         else
         {
@@ -112,6 +122,7 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true,$revue=false ) {
     }
     else
     {
+
         if ($args['main-category'])
         {
             $cats_out = '';

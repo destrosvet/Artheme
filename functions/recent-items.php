@@ -33,7 +33,7 @@ function bg_popular_post($no_posts = 4) {
     $ppost.='<ul class="popular-posts">';
     foreach ( $popular as $post ) : setup_postdata( $post );
         $ppost.= '<li class="twice-sm bott-border"><a  href="'.get_author_posts_url( get_the_author_meta( 'ID' )).'" class="popular-posts-name">&#9679; '.get_the_author().'</a>
-<a class="xs-top-margin" href="'.get_permalink($post).'" title="'.get_the_title($post).'">'.short_title_text_letter ($post->post_title,'...',56).'</a></li>';
+<a class="" href="'.get_permalink($post).'" title="'.get_the_title($post).'">'.short_title_text_letter ($post->post_title,'...',56).'</a></li>';
 
     endforeach;
     $ppost.='</ul>';
