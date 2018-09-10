@@ -8,7 +8,7 @@
             </header>
 
             <div class="content-service-excerpt hidden-text">
-                <?php //echo short_title_text_letter(get_the_excerpt($post),'...',260); ?>
+                <?php echo short_title_text_letter(get_the_excerpt($post),'...',260); ?>
             </div>
             <footer class="post-meta">
                 <?php get_template_part('templates/post-meta'); ?>
