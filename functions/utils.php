@@ -109,7 +109,7 @@
 		$s_year = 2007;
 		$c_year = date('Y');
 		$year = $s_year == $c_year ? $s_year : "$s_year - $c_year";
-		echo "&copy; COPYRIGHT $year Artalk.cz.";// Jakékoliv užití obsahu včetně převzetí, šíření či dalšího zpřístupňování článků a fotografií je bez souhlasu Artalk z.s., zakázáno.";
+		echo "&copy; COPYRIGHT $year Artalk.cz. ISSN 1805-6989";// Jakékoliv užití obsahu včetně převzetí, šíření či dalšího zpřístupňování článků a fotografií je bez souhlasu Artalk z.s., zakázáno.";
 	}
 
 /**
