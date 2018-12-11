@@ -802,7 +802,7 @@ function artalk_revue_content ($category='',$echo=true,$class='',$liClass='')
     $output .= '<div class="col-md-12 col-xs-12 revue-sidebar-list nopadding">';
     $output .= "<ul>";
     while ($query -> have_posts()) : $query->the_post();
-        $output .= '<li class="bott-border revue-list"><a class="revue-content-link" href="'.get_permalink().'"><span class="revue-sidebar-list">' . short_title_text_letter(''.get_the_title().'','...',43) . '</span><span class="revue-sidebar-name">' . get_the_author() . '</span></a></li>';
+        $output .= '<li class="bott-border revue-list"><a class="revue-content-link" href="'.get_permalink().'"><span class="revue-sidebar-list">' . short_title_text_letter(''.get_the_title().'','...',50) . '</span><span class="revue-sidebar-name">' . get_the_author() . '</span></a></li>';
     endwhile;
 
     wp_reset_postdata();

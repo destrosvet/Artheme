@@ -248,7 +248,7 @@ function short_title_text_letter($text,$after = '',$max_chars = 100) {
 
 
         $text = strip_tags( $text );
-        $text = html_entity_decode( $text, ENT_QUOTES, 'utf-8' );
+        //$text = html_entity_decode( $text, ENT_HTML5, 'utf-8' );
         // \xC2\xA0 is the no-break space
         $text = trim( $text, "\n\r\t .-;–,—\xC2\xA0" );
         $length = strlen( utf8_decode( $text ) );
