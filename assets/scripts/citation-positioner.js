@@ -5,6 +5,15 @@
 
 $(document).ready(function() {
     if ($( window ).width() > 1200) {
+        $('a[href*="#_ftnref"]').each(function() {
+            var suffix= $(this).attr("href").match(/\d+/);
+            console.log($('a[href="#_ftn'+suffix+'"]').position().top);
+            var position = $('a[href="#_ftn'+suffix+'"]').position();
+
+            $(this).parent().attr("class", "citate-left");
+            $(this).parent().css({"top":  + position.top + "px"});
+        });
+
         $.each($('.citate-left'), function (index, value) {
             colliders_selector = this;
 

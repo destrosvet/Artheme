@@ -19,7 +19,9 @@
                     </div>
 
                     <div class="col-lg-9 col-sm-12 col-xs-12 padding-sm-12 single-text-container">
-                        <?php artalk_content_format(); ?>
+                        <?php //artalk_content_format();
+                        the_content();
+                        ?>
 
                         <?php endwhile; else: ?>
 
