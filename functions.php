@@ -49,6 +49,9 @@ function artalk_theme_init() {
 	/* CITACE  */
 	include_once ('functions/simple_html_dom.php');
 
+	/* LANGUAGE */
+	include_once ('functions/language.php');
+
 
 	/* TEMPLATE TAGS */
 	//include_once('functions/template_tags.php');

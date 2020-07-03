@@ -13,7 +13,12 @@
                 <?php endif; ?>
 
             <div class="content-excerpt">
-                <?php echo short_title_text_letter(get_the_excerpt($post),'...',130);  ?>
+               <?php //echo short_title_text_letter(get_the_excerpt($post),'...',130);
+               /*
+                * TODO TESTING ESCAPE
+                */
+
+               echo esc_html(get_the_excerpt($post),'...',130);  ?>
             </div>
             <footer class="post-meta">
                 <?php get_template_part('templates/post-meta'); ?>

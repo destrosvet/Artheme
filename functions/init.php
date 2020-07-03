@@ -33,9 +33,11 @@ add_theme_support( 'title-tag' );
 /*  add_filter('show_admin_bar', '__return_true');*/
   // Menus
   register_nav_menus( array(
-    'main-menu' => 'Main Menu',
-    'short-main-menu' => 'Short Main Menu',
-    'footer-menu'          => 'Footer Menu',
+        'main-menu' => 'Main Menu',
+        'short-main-menu' => 'Short Main Menu',
+        'footer-menu'          => 'Footer Menu',
+        'main-menu-sk' => 'Main Menu Sk',
+        'short-main-menu-sk' => 'Short Main Menu Sk',
   ) );
 
 

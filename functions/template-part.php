@@ -74,12 +74,16 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true,$revue=false ) {
             foreach ($cats as $key => $cat) {
                 if ('E-mail newsletter' == $cat->name)
                     continue;
-                $pre = '';
+
+
                 if ($cat->parent != 0)
                 {
                     $parent = get_category_parents($cat->parent, 'false', false, ' &raquo; ');
+                } else {
+                    continue;
                 }
 
+                $pre = '';
 
 
                 if ($parent != 'artservis' && $parent != 'arena' && $parent != 'artalk-revue') {
@@ -301,8 +305,8 @@ if ( ! function_exists( 'fws_comment' ) ) :
                             echo '<ul class="comment-author-bio">';
 
 							printf( '<li class="">%1$s %2$s</li>',
-								'<a href="mailto:'.get_comment_author_email().'">'.short_title_text_letter(get_comment_author(),'',30).'</a>'
-                                ,'<a href="'.get_comment_author_url().'">'.short_title_text_letter(get_comment_author_url(),'',20).'</a>',
+								short_title_text_letter(get_comment_author(),'',30),
+                                '<a href="'.get_comment_author_url().'">'.short_title_text_letter(get_comment_author_url(),'',20).'</a>',
 								// If current post author is also comment author, make it known visually.
 								( $comment->user_id === $post->post_author ) ? '<span> ' . __( '(Autor příspěvku) ', 'fws' ) . '</span>' : ''
 							);

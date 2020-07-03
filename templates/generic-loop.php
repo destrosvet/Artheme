@@ -25,6 +25,7 @@
                     'post_type' => 'post',
                     'posts_per_page' => 10,
                     'paged' => $paged,
+                    'tag' => lang() === "sk" ? "slovensko" : NULL,
                     'tax_query' => array(
                         array(
                             'taxonomy' => $qobj->taxonomy,

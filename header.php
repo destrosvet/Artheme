@@ -35,27 +35,50 @@
             </div>
             <div id="myNavbar" class="navbar-collapse collapse nopadding">
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'main-menu',
-					'menu' => 'top_menu',
-					'container' => false,
-					'menu_class' => 'main-menu nav navbar-nav',
-					'container_class'   => 'collapse navbar-collapse',
-					'container_id'      => 'bs-example-navbar-collapse-1',
-					//Process nav menu using our custom nav walker
-				));
-				?>
-        <?php
-        wp_nav_menu( array(
-          'theme_location' => 'short-main-menu',
-          'menu' => 'top_menu',
-          'container' => false,
-          'menu_class' => 'short-main-menu nav navbar-nav',
-          'container_class'   => 'collapse navbar-collapse',
-          'container_id'      => 'bs-example-navbar-collapse-1',
-          //Process nav menu using our custom nav walker
-        ));
-        ?>
+				if (lang() !== "sk") {
+                    wp_nav_menu( array(
+                        'theme_location' => 'main-menu',
+                        'menu' => 'top_menu',
+                        'container' => false,
+                        'menu_class' => 'main-menu nav navbar-nav',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'bs-example-navbar-collapse-1',
+                        //Process nav menu using our custom nav walker
+                    ));
+
+                    wp_nav_menu( array(
+                        'theme_location' => 'short-main-menu',
+                        'menu' => 'top_menu',
+                        'container' => false,
+                        'menu_class' => 'short-main-menu nav navbar-nav',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'bs-example-navbar-collapse-1',
+                        //Process nav menu using our custom nav walker
+                    ));
+                } else {
+                    wp_nav_menu( array(
+                        'theme_location' => 'main-menu-sk',
+                        'menu' => 'top_menu',
+                        'container' => false,
+                        'menu_class' => 'main-menu nav navbar-nav',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'bs-example-navbar-collapse-1',
+                        //Process nav menu using our custom nav walker
+                    ));
+
+                    wp_nav_menu( array(
+                        'theme_location' => 'short-main-menu-sk',
+                        'menu' => 'top_menu',
+                        'container' => false,
+                        'menu_class' => 'short-main-menu nav navbar-nav',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'bs-example-navbar-collapse-1',
+                        //Process nav menu using our custom nav walker
+                    ));
+                }
+
+
+                ?>
             </div>
         </div>
     </nav>

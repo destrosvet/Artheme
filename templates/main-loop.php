@@ -18,6 +18,7 @@
                 'posts_per_page' => 8,
                 'category_name' => 'arena',
                 'post__not_in' => array($FeaturePost->post->ID),
+                'tag' => lang() === "sk" ? "slovensko" : NULL,
                 ));
             } else
             {
@@ -26,7 +27,8 @@
                 'ignore_sticky_posts' => true,
                 'paged' => $paged,
                 'posts_per_page' => 14,
-                'category_name' => artalk_get_current_category()
+                'category_name' => artalk_get_current_category(),
+                'tag' => lang() === "sk" ? "slovensko" : NULL,
                 ));
             }
          ?>
