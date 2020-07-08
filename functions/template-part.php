@@ -224,7 +224,10 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
 /* FEATURE POST big picture on home page*/
 add_action( 'artalk_feature', 'artalk_feature' );
 function artalk_feature() {
-    $args = array('posts_per_page' => 1,'post__in'  => get_option( 'sticky_posts' ),'ignore_sticky_posts' => 1 );
+    $args = array('posts_per_page' => 1,
+                    'post__in'  => get_option( 'sticky_posts' ),
+                    'ignore_sticky_posts' => 1,
+                    'tag' => lang() === "sk" ? "slovensko" : NULL,);
     $featured='';
     //$featuredPost = get_posts ($args);
     query_posts($args);
