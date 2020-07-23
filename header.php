@@ -14,7 +14,7 @@
         <h1 class="site-title hidden"><?php bloginfo('name'); ?></h1>
         <div class="row logo-search-container">
             <div class="col-lg-10 col-md-9 col-sm-9 col-xs-3 nopadding">
-                <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a id="logo" href="<?php echo esc_url( home_url( '/cs/' ) ); ?>">
 					<?php do_action('artalk_logo'); ?>
                 </a>
             </div>
