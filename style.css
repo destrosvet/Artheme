@@ -75,7 +75,7 @@ and open the template in the editor.
     height: auto !important; } }
 @media only screen and (min-width: 406px) and (max-width: 989px) {
   .post-content {
-    height: 415px !important; } }
+    height: 585px !important; } }
 @media only screen and (min-width: 360px) and (max-width: 989px) {
   .thumb-link img {
     width: 100%;
