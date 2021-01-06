@@ -620,7 +620,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                'post_type' => 'post',
                'posts_per_page' => 10,
                'paged' => $page,
-               'post__not_in' => array($sticky[0]),
+               //'post__not_in' => array($sticky[0]), // TODO add sticky
                'ignore_sticky_posts' => 1,
                'post_status' => array('publish'),
                'tax_query' => array(
@@ -640,6 +640,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
 
      }
      $query = new WP_Query($args);
+
      while ($query -> have_posts()) : $query->the_post();
 
            if(((artalk_in_artservis($terms) || artalk_get_current_category() == 'foto-report' || $taxonomy == 'post_tag' || $author_id) || ($search_string || $search_category || $search_tag) ) and $cat != '3876') {
@@ -649,6 +650,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
                  get_template_part('/templates/post');
              }
      endwhile;
+
      //if( have_posts() ) :
      //    while( have_posts() ): the_post();
      //       get_template_part('templates/post', artalk_in_artservis() );
