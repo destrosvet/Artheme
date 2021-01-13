@@ -12,7 +12,6 @@ function lang_support() {
 function rewrite_lang(){
     $langs = lang_support();
     global $query_string;
-    var_dump(get_query_var('s'));
     if(isset($_GET["s"])) {
         foreach ($langs as $lang) {
             add_rewrite_endpoint($lang, EP_PERMALINK | EP_PAGES | EP_ROOT | EP_CATEGORIES | EP_AUTHORS | EP_SEARCH);

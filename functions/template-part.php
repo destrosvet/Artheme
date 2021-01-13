@@ -581,7 +581,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      }else{
        $search_dateTo = "";
      }
-    var_dump(isset($_GET["s"]));
+
     if (($search_string) || ($cat == null and $taxonomy == null) ){
        $args = array(
            's'=> $search_string,
@@ -618,7 +618,6 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
        else
        {
            // magazine loop
-           var_dump($search_tag);
            $args = array(
                'post_type' => 'post',
                'posts_per_page' => 10,
@@ -643,7 +642,6 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
 
 
      }
-    var_dump($args);
      $query = new WP_Query($args);
 
      while ($query -> have_posts()) : $query->the_post();
