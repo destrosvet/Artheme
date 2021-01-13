@@ -43,11 +43,10 @@
             ?>
 
     		<?php endwhile; ?>
-            <?php getFurtherContentButton($taxonomy='category',$terms=get_category_by_slug( 'arena' )->cat_ID,$author=0); ?>
+            <?php getFurtherContentButton($taxonomy='category',$terms=get_category_by_slug( 'arena' )->cat_ID,$author=0,"","",lang() === "sk" ? "slovensko" :""); ?>
       </div>
       	<?php  get_template_part('templates/magazine-bottom'); ?>
     </div>
-
 	<?php wp_reset_query(); ?>
 	<?php wp_reset_postdata(); ?>
 

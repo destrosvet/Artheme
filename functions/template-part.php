@@ -550,6 +550,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      $search_string = (isset($_POST['search_string'])) ? $_POST['search_string'] : 0;
      $search_category = (isset($_POST['search_category'])) ? $_POST['search_category'] : 0;
      $search_tag = (isset($_POST['search_tag'])) ? $_POST['search_tag'] : 0;
+
      $search_dateTo = (isset($_POST['search_dateTo'])) ? $_POST['search_dateTo'] : 0;
      $search_dateFrom = (isset($_POST['search_dateFrom'])) ? $_POST['search_dateFrom'] : 0;
      header("Content-Type: text/html");
@@ -559,7 +560,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
 
 
 
-     if($search_dateFrom!=""){
+     if($search_dateFrom!=0){
        $search_dateFrom = explode( '/', $search_dateFrom);
        $search_dateFrom =  array(
          'year'  => $search_dateFrom[2],
@@ -569,7 +570,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      }else{
        $search_dateFrom = "";
      }
-     if($search_dateTo!=""){
+     if($search_dateTo!=0){
        $search_dateTo = explode( '/', $search_dateTo);
        $search_dateTo = array(
          'year'  => $search_dateTo[2],
@@ -580,8 +581,8 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
      }else{
        $search_dateTo = "";
      }
-
-    if ($cat == null and $taxonomy == null ){
+    var_dump(isset($_GET["s"]));
+    if (($search_string) || ($cat == null and $taxonomy == null) ){
        $args = array(
            's'=> $search_string,
            'post_type' => 'post',
@@ -616,12 +617,15 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
        }
        else
        {
+           // magazine loop
+           var_dump($search_tag);
            $args = array(
                'post_type' => 'post',
                'posts_per_page' => 10,
                'paged' => $page,
                //'post__not_in' => array($sticky[0]), // TODO add sticky
                'ignore_sticky_posts' => 1,
+               'tag' => $search_tag != "0" ? $search_tag:'',
                'post_status' => array('publish'),
                'tax_query' => array(
                    array(
@@ -639,6 +643,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
 
 
      }
+    var_dump($args);
      $query = new WP_Query($args);
 
      while ($query -> have_posts()) : $query->the_post();

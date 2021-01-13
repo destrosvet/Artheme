@@ -48,13 +48,13 @@
 
             <?php
             if((!artalk_in_artservis() || artalk_get_current_category() == 'foto-report') && !is_tag()) {
-                get_template_part('templates/post', artalk_get_current_category() );
+                get_template_part('templates/post', artalk_get_current_category());
             } else {
-                get_template_part('templates/post-artservis', artalk_get_current_category() );
+                get_template_part('templates/post-artservis', artalk_get_current_category());
             }?>
 
             <?php endwhile; ?>
-            <?php getFurtherContentButton($qobj->taxonomy,$qobj->term_id); ?>
+            <?php getFurtherContentButton($qobj->taxonomy,$qobj->term_id,0,0,0,lang() === "sk" ? "slovensko" :""); ?>
             <?php endif; ?>
 
         </div>
