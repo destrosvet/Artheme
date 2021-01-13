@@ -618,6 +618,7 @@ function getFurtherContentButton ($taxonomy='', $terms=0, $author=0, $search_str
        else
        {
            // magazine loop
+
            $args = array(
                'post_type' => 'post',
                'posts_per_page' => 10,
