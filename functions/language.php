@@ -14,7 +14,7 @@ function rewrite_lang(){
     global $query_string;
     //if(isset($_GET["s"])) {
         foreach ($langs as $lang) {
-            add_rewrite_endpoint($lang, EP_PERMALINK | EP_PAGES | EP_ROOT | EP_CATEGORIES | EP_AUTHORS | EP_SEARCH);
+            add_rewrite_endpoint($lang, EP_PERMALINK | EP_PAGES | EP_ROOT | EP_CATEGORIES | EP_AUTHORS );
         }
     //}
 }
@@ -44,7 +44,8 @@ add_action('init','init_session',1);
 
 function lang_session() { // Redirect by JS if session is set
     $url_lang= basename($_SERVER['REQUEST_URI']);
-    if(!in_array($url_lang,lang_support()) && isset($_SESSION['lang'])) {
+
+    if((!in_array($url_lang,lang_support()) && isset($_SESSION['lang'])) &&  strpos($_SERVER['QUERY_STRING'], 's=')) {
         if(!is_404()) {
             wp_redirect(currentURL().$_SESSION['lang'],301);
             exit;
